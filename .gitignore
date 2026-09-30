@@ -1,0 +1,13 @@
+# Archivos temporales de extracción
+docx_content.txt
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Node (por si se agrega en el futuro)
+node_modules/
+.env
+
+# Editor
+.vscode/

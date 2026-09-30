@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Sumak Kawsay – Agencia de tours en la Amazonia colombiana. Vive una experiencia única en la selva amazónica con avistamiento de delfines, pesca de pirañas, comunidades indígenas y mucho más."/>
+  <meta name="keywords" content="tours amazonia, selva colombiana, leticia, avistamiento delfines, lago tarapoto, ecoturismo"/>
+  <title>Sumak Kawsay | Tours Amazónia – Espíritu de la Selva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ========== LOADER ========== -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-leaf">🌿</div>
+      <p class="loader-text" data-i18n="loading">Adentrándote en la Selva...</p>
+    </div>
+  </div>
+
+  <!-- ========== SOUND TOGGLE ========== -->
+  <button id="soundBtn" title="Sonido ambiental" aria-label="Toggle ambient sound">
+    <span id="soundIcon">🔇</span>
+  </button>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">
+        <span class="logo-icon">🌿</span>
+        <span class="logo-text">Sumak Kawsay</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#tours" data-i18n="nav_tours">Tours</a></li>
+        <li><a href="#experiencia" data-i18n="nav_experience">Experiencia</a></li>
+        <li><a href="#talleres" data-i18n="nav_workshops">Talleres</a></li>
+        <li><a href="#paquetes" data-i18n="nav_packages">Paquetes</a></li>
+        <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+        <li><a href="#reservar" class="btn-nav" data-i18n="nav_book">Reservar</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="fr">FR</button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section id="hero">
+    <div class="hero-bg" style="background-image:url('img/hero.png')"></div>
+    <div class="hero-overlay"></div>
+    <div class="particles" id="particles"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow" data-i18n="hero_eyebrow">Amazonia Colombiana · Leticia</p>
+      <h1 class="hero-title">
+        <span class="line1" data-i18n="hero_title1">Espíritu</span>
+        <span class="line2" data-i18n="hero_title2">de la Selva</span>
+      </h1>
+      <p class="hero-subtitle" data-i18n="hero_sub">Donde la naturaleza te habla y la aventura no tiene fin. Sumérgete en el corazón del Amazonas.</p>
+      <div class="hero-ctas">
+        <a href="#paquetes" class="btn-primary" data-i18n="hero_cta1">Explorar Paquetes</a>
+        <a href="#reservar" class="btn-ghost" data-i18n="hero_cta2">Reservar Ahora</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label" data-i18n="stat1">Viajeros felices</span></div>
+        <div class="stat"><span class="stat-num">15+</span><span class="stat-label" data-i18n="stat2">Experiencias únicas</span></div>
+        <div class="stat"><span class="stat-num">100%</span><span class="stat-label" data-i18n="stat3">Eco-sostenible</span></div>
+      </div>
+    </div>
+    <div class="scroll-indicator"><div class="scroll-arrow"></div></div>
+  </section>
+
+  <!-- ========== INMERSIÓN ========== -->
+  <section id="inmersion" class="section-immerse">
+    <div class="immerse-overlay-full"></div>
+    <div class="container">
+      <div class="immerse-grid">
+        <div class="immerse-text reveal">
+          <span class="eyebrow" data-i18n="immerse_eyebrow">Una experiencia transformadora</span>
+          <h2 data-i18n="immerse_title">Déjate envolver por la selva</h2>
+          <p data-i18n="immerse_p1">La Amazonia colombiana es uno de los pulmones del planeta. Desde Leticia, en el corazón del triple fronterizo (Colombia, Perú, Brasil), te llevamos a viajar por ríos ancestrales, conocer comunidades indígenas y despertar todos tus sentidos.</p>
+          <p data-i18n="immerse_p2">Nuestros guías locales, conocedores de cada rincón de la selva, garantizan una experiencia auténtica, segura y respetuosa con la naturaleza y las comunidades.</p>
+          <ul class="feature-list">
+            <li><span class="feat-icon">🦋</span><span data-i18n="feat1">Biodiversidad incomparable</span></li>
+            <li><span class="feat-icon">🌊</span><span data-i18n="feat2">Ríos y lagos cristalinos</span></li>
+            <li><span class="feat-icon">🏕️</span><span data-i18n="feat3">Campamentos en la selva</span></li>
+            <li><span class="feat-icon">🤝</span><span data-i18n="feat4">Comunidades indígenas</span></li>
+          </ul>
+        </div>
+        <div class="immerse-cards reveal">
+          <div class="nature-card" style="background-image:url('img/sloth.png')">
+            <div class="nature-card-body"><h3 data-i18n="nc1_title">Perezosos & Fauna</h3><p data-i18n="nc1_desc">San Antonio – Avistamiento de perezosos, capibaras y árbol Ojé</p></div>
+          </div>
+          <div class="nature-card" style="background-image:url('img/dolphin.png')">
+            <div class="nature-card-body"><h3 data-i18n="nc2_title">Delfines Rosados</h3><p data-i18n="nc2_desc">Lago Tarapoto – Avistamiento de delfines, nado y pesca de pirañas</p></div>
+          </div>
+          <div class="nature-card" style="background-image:url('img/community.png')">
+            <div class="nature-card-body"><h3 data-i18n="nc3_title">Cultura Indígena</h3><p data-i18n="nc3_desc">Visita comunidades de artesanía, cerámica y danza tradicional</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TOURS ========== -->
+  <section id="tours" class="section-dark">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="tours_eyebrow">Lo que te espera</span>
+        <h2 data-i18n="tours_title">Nuestras Experiencias</h2>
+        <p data-i18n="tours_sub">Cada tour es una aventura diseñada para conectarte con la esencia más pura del Amazonas</p>
+      </div>
+      <div class="tours-grid">
+        <div class="tour-card reveal" data-delay="0">
+          <div class="tour-img" style="background-image:url('img/dolphin.png')"></div>
+          <div class="tour-body">
+            <div class="tour-tag" data-i18n="tag_lake">Lago</div>
+            <h3 data-i18n="tour1_title">Lago Tarapoto</h3>
+            <p data-i18n="tour1_desc">Pesca de pirañas, nado en aguas oscuras, avistamiento de delfines rosados y caimanes al atardecer.</p>
+            <div class="tour-meta"><span>🕐 <span data-i18n="tour1_dur">1 día</span></span><span>👥 <span data-i18n="tour1_group">Grupos pequeños</span></span></div>
+          </div>
+        </div>
+        <div class="tour-card reveal" data-delay="100">
+          <div class="tour-img" style="background-image:url('img/sloth.png')"></div>
+          <div class="tour-body">
+            <div class="tour-tag" data-i18n="tag_wildlife">Fauna</div>
+            <h3 data-i18n="tour2_title">San Antonio</h3>
+            <p data-i18n="tour2_desc">Visita al santuario de perezosos, avistamiento de capibaras (pelojos) y el imponente árbol Ojé.</p>
+            <div class="tour-meta"><span>🕐 <span data-i18n="tour2_dur">Medio día</span></span><span>👥 <span data-i18n="tour2_group">Todas las edades</span></span></div>
+          </div>
+        </div>
+        <div class="tour-card reveal" data-delay="200">
+          <div class="tour-img" style="background-image:url('img/fishing.png')" title="Caminata nocturna en la selva"></div>
+          <div class="tour-body">
+            <div class="tour-tag" data-i18n="tag_night">Nocturno</div>
+            <h3 data-i18n="tour3_title">Caminata Nocturna</h3>
+            <p data-i18n="tour3_desc">Wochine y caminata nocturna: descubre la selva cuando despierta. Sonidos, criaturas y magia en la oscuridad.</p>
+            <div class="tour-meta"><span>🕐 <span data-i18n="tour3_dur">Noche</span></span><span>👥 <span data-i18n="tour3_group">Aventureros</span></span></div>
+          </div>
+        </div>
+        <div class="tour-card reveal" data-delay="300">
+          <div class="tour-img" style="background-image:url('img/community.png')"></div>
+          <div class="tour-body">
+            <div class="tour-tag" data-i18n="tag_culture">Cultura</div>
+            <h3 data-i18n="tour4_title">City Tour & Comunidades</h3>
+            <p data-i18n="tour4_desc">Natutama, chocolatería artesanal, mirador, Fray y comunidades de artesanía, cerámica y danza tradicional.</p>
+            <div class="tour-meta"><span>🕐 <span data-i18n="tour4_dur">1 día</span></span><span>👥 <span data-i18n="tour4_group">Familias</span></span></div>
+          </div>
+        </div>
+        <div class="tour-card reveal" data-delay="400">
+          <div class="tour-img" style="background-image:url('img/cabin.png')" title="Campamento en selva"></div>
+          <div class="tour-body">
+            <div class="tour-tag" data-i18n="tag_jungle">Selva</div>
+            <h3 data-i18n="tour5_title">Campamento en la Selva</h3>
+            <p data-i18n="tour5_desc">Armado de campamento, leyendas amazónicas, patarasca (comida típica), juegos autóctonos: cerbatana, arco y flecha, lanza.</p>
+            <div class="tour-meta"><span>🕐 <span data-i18n="tour5_dur">2-3 días</span></span><span>👥 <span data-i18n="tour5_group">Aventureros</span></span></div>
+          </div>
+        </div>
+        <div class="tour-card reveal" data-delay="500">
+          <div class="tour-img" style="background-image:url('img/cacao.png')" title="Cultivo de cacao"></div>
+          <div class="tour-body">
+            <div class="tour-tag" data-i18n="tag_cacao">Nuevo</div>
+            <h3 data-i18n="tour6_title">Cultivo de Cacao & Aves</h3>
+            <p data-i18n="tour6_desc">Tour por cultivos de cacao amazónico y avistamiento de aves con guía experto Ismael. Fotografía con drone y cámara 360°.</p>
+            <div class="tour-meta"><span>🕐 <span data-i18n="tour6_dur">1 día</span></span><span>👥 <span data-i18n="tour6_group">Fotógrafos</span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCIA DÍA A DÍA ========== -->
+  <section id="experiencia" class="section-experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="exp_eyebrow">Una propuesta viva</span>
+        <h2 data-i18n="exp_title">Cómo se vive la Amazonia con nosotros</h2>
+        <p data-i18n="exp_sub">Cada día en la selva es distinto. La selva cambia entre la estación de aguas altas y aguas bajas — y con ella, cambia todo.</p>
+      </div>
+
+      <div class="days-timeline">
+
+        <div class="day-item reveal" data-delay="0">
+          <div class="day-number">01</div>
+          <div class="day-content">
+            <div class="day-icon">🌙</div>
+            <h3 data-i18n="day1_title">La selva de noche</h3>
+            <p data-i18n="day1_text">Como introducción a la aventura, la primera noche tendrán una <strong>caminata nocturna</strong> en bosque primario, guiados por nativos expertos con conocimiento ancestral. Descubrirán el mundo que no descansa: los sonidos de miles de insectos, cantos de ranas, búhos y monos nocturnos, plantas que florecen de noche y hongos fosforescentes.</p>
+            <div class="day-tip">💡 <span data-i18n="day1_tip">No olvides tu linterna frontal — la oscuridad amazónica es total y maravillosa.</span></div>
+          </div>
+          <div class="day-img" style="background-image:url('img/fishing.png')"></div>
+        </div>
+
+        <div class="day-item day-item-reverse reveal" data-delay="100">
+          <div class="day-number">02</div>
+          <div class="day-content">
+            <div class="day-icon">🏘️</div>
+            <h3 data-i18n="day2_title">Aldeas indígenas & Selva alta</h3>
+            <p data-i18n="day2_text">Mañana: visita a una <strong>aldea indígena</strong> cercana (El Vergel o Mocagua) para aproximarse a la vida cotidiana. Tarde: caminata por reserva natural hasta la quebrada, donde una canoa los recoge para regresar por agua. Observarán aves, micos, plantas medicinales y escucharán leyendas del bosque desde la visión indígena. En temporada de aguas altas pueden navegar dentro del <strong>bosque inundado</strong>.</p>
+            <div class="day-tip">🌿 <span data-i18n="day2_tip">El nivel del río determina las posibilidades — cada visita es irrepetible.</span></div>
+          </div>
+          <div class="day-img" style="background-image:url('img/community.png')"></div>
+        </div>
+
+        <div class="day-item reveal" data-delay="200">
+          <div class="day-number">03</div>
+          <div class="day-content">
+            <div class="day-icon">🌸</div>
+            <h3 data-i18n="day3_title">Lago Tarapoto & Delfines</h3>
+            <p data-i18n="day3_text">Mañana: caminata en la isla de Mocagua, parte del Parque Nacional Amacayacu, con <strong>lagos con Victoria Amazónica</strong> — el loto más grande del mundo. En aguas altas el recorrido se hace en canoa. Tarde: salida en bote hacia el <strong>Lago Tarapoto</strong> (Patrimonio Ramsar) en busca de delfines rosados, pesca artesanal de piraña y el atardecer desde el Amazonas — siempre distinto, con todos los colores del universo.</p>
+            <div class="day-tip">🐬 <span data-i18n="day3_tip">Los delfines rosados asoman suavemente — es un encuentro íntimo, no un espectáculo.</span></div>
+          </div>
+          <div class="day-img" style="background-image:url('img/dolphin.png')"></div>
+        </div>
+
+        <div class="day-item day-item-reverse reveal" data-delay="300">
+          <div class="day-number">04</div>
+          <div class="day-content">
+            <div class="day-icon">🌿</div>
+            <h3 data-i18n="day4_title">Selva baja & Plantas medicinales</h3>
+            <p data-i18n="day4_text">Viaje en bote a la margen opuesta para caminata en selva baja, observando <strong>osos perezosos, aves y una enorme diversidad</strong> de flora y fauna. Por la tarde, visita al jardín (chagra) de un <strong>médico tradicional Cocama</strong>. Nos guiará por el cultivo tradicional y el uso de plantas medicinales — un saber ancestral que cura y conecta.</p>
+            <div class="day-tip">🍃 <span data-i18n="day4_tip">El cacao amazónico, las plantas curativas y los cultivos tradicionales son la farmacia y la despensa de la selva.</span></div>
+          </div>
+          <div class="day-img" style="background-image:url('img/cacao.png')"></div>
+        </div>
+
+        <div class="day-item reveal" data-delay="400">
+          <div class="day-number">05</div>
+          <div class="day-content">
+            <div class="day-icon">🎯</div>
+            <h3 data-i18n="day5_title">Campamento & Juegos ancestrales</h3>
+            <p data-i18n="day5_text">Para quienes quieren ir más adentro: noches en <strong>campamento en la selva</strong>, hamacas con mosquitero, preparación de <em>patarasca</em> (pescado envuelto en hoja de bijao sobre fuego), historias de leyendas y mitos amazónicos, y el amanecer en la selva — el sonido más antiguo del mundo. De día: <strong>juegos autóctonos</strong> — cerbatana, arco y flecha, lanza — transmitidos de generación en generación.</p>
+            <div class="day-tip">🏕️ <span data-i18n="day5_tip">Pocas comodidades, experiencia total. Esto no es glamping — es la selva real.</span></div>
+          </div>
+          <div class="day-img" style="background-image:url('img/cabin.png')"></div>
+        </div>
+
+      </div>
+
+      <!-- RECOMENDACIONES AL VIAJERO -->
+      <div class="traveler-tips reveal">
+        <h3 data-i18n="tips_title">📋 Recomendaciones al viajero</h3>
+        <div class="tips-grid">
+          <div class="tip-item">
+            <span class="tip-icon">👟</span>
+            <div>
+              <strong data-i18n="tip1_title">Calzado</strong>
+              <p data-i18n="tip1_text">Botas de caucho o zapatos cerrados impermeables. El barro amazónico es profundo e inesperado.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">🦟</span>
+            <div>
+              <strong data-i18n="tip2_title">Protección</strong>
+              <p data-i18n="tip2_text">Ropa larga de colores oscuros o neutros, repelente de insectos natural. Evita perfumes fuertes.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">💧</span>
+            <div>
+              <strong data-i18n="tip3_title">Hidratación</strong>
+              <p data-i18n="tip3_text">El calor y la humedad amazónicos son intensos. Agua siempre a la mano. Te proveemos termo reutilizable.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">📵</span>
+            <div>
+              <strong data-i18n="tip4_title">Desconexión digital</strong>
+              <p data-i18n="tip4_text">La señal es escasa o nula en selva y lago. Esto no es un defecto — es parte de la experiencia.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">🌦️</span>
+            <div>
+              <strong data-i18n="tip5_title">Clima & estaciones</strong>
+              <p data-i18n="tip5_text">Aguas altas (dic–jun): bosque inundado, canoa entre árboles. Aguas bajas (jul–nov): playas de arena blanca, caminatas más largas.</p>
+            </div>
+          </div>
+          <div class="tip-item">
+            <span class="tip-icon">🤝</span>
+            <div>
+              <strong data-i18n="tip6_title">Respeto cultural</strong>
+              <p data-i18n="tip6_text">Las comunidades indígenas nos reciben como invitados. Pedir permiso antes de fotografiar, escuchar antes de hablar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TALLERES ========== -->
+  <section id="talleres" class="section-workshops">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="ws_eyebrow">Aprender con las manos</span>
+        <h2 data-i18n="ws_title">Talleres & Experiencias culturales</h2>
+        <p data-i18n="ws_sub">Con sabedores locales, aprende los oficios que la selva amazónica ha perfeccionado durante milenios</p>
+      </div>
+
+      <div class="workshops-grid">
+
+        <div class="workshop-card reveal" data-delay="0">
+          <div class="ws-img" style="background-image:url('img/weaving.png')"></div>
+          <div class="ws-body">
+            <div class="ws-tag" data-i18n="ws_tag_craft">Artesanía</div>
+            <h3 data-i18n="ws1_title">Cestería en fibras naturales</h3>
+            <p data-i18n="ws1_desc">Aprende a tejer cestas con fibras de palma, chambira y otros materiales amazónicos bajo la guía de artesanos de comunidades locales. Cada pieza cuenta una historia del territorio.</p>
+            <div class="ws-meta">
+              <span>⏱️ 2-3h</span>
+              <span>👥 <span data-i18n="ws_all_ages">Todas las edades</span></span>
+              <span class="ws-level">⭐ <span data-i18n="ws_beginner">Principiante</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="workshop-card reveal" data-delay="100">
+          <div class="ws-img ws-img-icon">
+            <div class="ws-icon-big">🏺</div>
+          </div>
+          <div class="ws-body">
+            <div class="ws-tag" data-i18n="ws_tag_craft">Artesanía</div>
+            <h3 data-i18n="ws2_title">Cerámica tradicional</h3>
+            <p data-i18n="ws2_desc">Con tierra de la región y técnicas transmitidas de generación en generación, moldea con tus propias manos vasijas, figuras y objetos rituales al estilo de los pueblos amazónicos. Te lo llevás a casa.</p>
+            <div class="ws-meta">
+              <span>⏱️ 2-4h</span>
+              <span>👥 <span data-i18n="ws_small_group">Grupos pequeños</span></span>
+              <span class="ws-level">⭐ <span data-i18n="ws_beginner">Principiante</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="workshop-card reveal" data-delay="200">
+          <div class="ws-img ws-img-icon">
+            <div class="ws-icon-big">🌿</div>
+          </div>
+          <div class="ws-body">
+            <div class="ws-tag" data-i18n="ws_tag_medicine">Medicina</div>
+            <h3 data-i18n="ws3_title">Plantas medicinales & Chagra</h3>
+            <p data-i18n="ws3_desc">El médico tradicional Cocama nos guía por su jardín (chagra): plantas que curan, plantas que alimentan, plantas que conectan. Aprende el uso ancestral de la farmacia más antigua de la humanidad.</p>
+            <div class="ws-meta">
+              <span>⏱️ 2h</span>
+              <span>👥 <span data-i18n="ws_all_ages">Todas las edades</span></span>
+              <span class="ws-level">🌟 <span data-i18n="ws_unique">Único</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="workshop-card reveal" data-delay="300">
+          <div class="ws-img ws-img-icon">
+            <div class="ws-icon-big">🦜</div>
+          </div>
+          <div class="ws-body">
+            <div class="ws-tag" data-i18n="ws_tag_nature">Naturaleza</div>
+            <h3 data-i18n="ws4_title">Observación de aves al amanecer</h3>
+            <p data-i18n="ws4_desc">A las 5:30 am, con guías especializados de las comunidades, salen a escuchar y ver la sinfonía de aves amazónicas al despertar. Guacamayas, tucanes, martín pescador y cientos de especies endémicas.</p>
+            <div class="ws-meta">
+              <span>⏱️ 2-3h</span>
+              <span>🌅 5:30 am</span>
+              <span class="ws-level">⭐⭐ <span data-i18n="ws_intermediate">Intermedio</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="workshop-card reveal" data-delay="400">
+          <div class="ws-img ws-img-icon">
+            <div class="ws-icon-big">🎯</div>
+          </div>
+          <div class="ws-body">
+            <div class="ws-tag" data-i18n="ws_tag_cultural">Cultural</div>
+            <h3 data-i18n="ws5_title">Juegos autóctonos</h3>
+            <p data-i18n="ws5_desc">Cerbatana, arco y flecha, lanza y dardos: las artes de caza y destreza de los pueblos amazónicos. Aprendidos directamente de sus portadores, estos juegos son una forma de acercarse a una cosmovisión diferente.</p>
+            <div class="ws-meta">
+              <span>⏱️ 1-2h</span>
+              <span>👥 <span data-i18n="ws_all_ages">Todas las edades</span></span>
+              <span class="ws-level">😄 <span data-i18n="ws_fun">¡Divertido!</span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="workshop-card reveal ws-special" data-delay="500">
+          <div class="ws-img ws-img-icon">
+            <div class="ws-icon-big">🌙</div>
+          </div>
+          <div class="ws-body">
+            <div class="ws-tag ws-tag-special" data-i18n="ws_tag_ancestral">Ancestral</div>
+            <h3 data-i18n="ws6_title">Sanación & Rituales tradicionales</h3>
+            <p data-i18n="ws6_desc">Para una conexión profunda con la selva: rituales personales dirigidos por médicos tradicionales. Baños de humo, hierbas, barro y ceremonias de Huito que armonizan la energía y abren el cuerpo a la conexión espiritual. <em data-i18n="ws6_consult">(Bajo consulta previa — grupos reducidos)</em></p>
+            <div class="ws-meta">
+              <span>⏱️ <span data-i18n="ws_variable">Variable</span></span>
+              <span>👥 <span data-i18n="ws_private">Privado</span></span>
+              <span class="ws-level">🌟 <span data-i18n="ws_transformative">Transformador</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- NOTA SOBRE CANOTAJE NOCTURNO -->
+      <div class="night-canoe-banner reveal">
+        <div class="ncb-icon">🛶</div>
+        <div class="ncb-text">
+          <h4 data-i18n="ncb_title">Canotaje nocturno</h4>
+          <p data-i18n="ncb_desc">Vive la magia de la noche amazónica desde el agua: cantos de ranas, luciérnagas parpadeando sobre el río y el reflejo de las estrellas en la superficie oscura. Una experiencia silenciosa e inolvidable.</p>
+        </div>
+        <a href="#reservar" class="btn-ghost ncb-btn" data-i18n="btn_inquire">Consultar disponibilidad</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PAQUETES ========== -->
+  <section id="paquetes" class="section-packages">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="pkg_eyebrow">Elige tu aventura</span>
+        <h2 data-i18n="pkg_title">Nuestros Paquetes</h2>
+        <p data-i18n="pkg_sub">Diseñados para todos los tipos de viajero, desde el explorador urbano hasta el aventurero de selva profunda</p>
+      </div>
+      <div class="packages-grid">
+        <div class="pkg-card reveal" data-delay="0">
+          <div class="pkg-badge" data-i18n="pkg1_badge">Más popular</div>
+          <div class="pkg-icon">🌅</div>
+          <h3 data-i18n="pkg1_name">Full Day</h3>
+          <p class="pkg-desc" data-i18n="pkg1_desc">Solo actividades diurnas con hospedaje en hotel. Ideal para quienes quieren explorar sin perderse las comodidades.</p>
+          <div class="pkg-duration"><span>📅</span> <span data-i18n="pkg1_dur">3 – 4 días</span></div>
+          <ul class="pkg-itinerary">
+            <li><strong data-i18n="day1">Día 1:</strong> <span data-i18n="pkg1_d1">San Antonio (perezosos, árbol Ojé, capibara)</span></li>
+            <li><strong data-i18n="day2">Día 2:</strong> <span data-i18n="pkg1_d2">City tour (Natutama, chocolatería, mirador, Fray) + Wochine nocturno</span></li>
+            <li><strong data-i18n="day3">Día 3:</strong> <span data-i18n="pkg1_d3">Lago Tarapoto (pesca pirañas, nado, delfines, caimanes)</span></li>
+            <li><strong data-i18n="day4">Día 4 (opc.):</strong> <span data-i18n="pkg1_d4">Comunidad artesanías + canotaje en bosque inundable</span></li>
+          </ul>
+          <div class="pkg-includes">
+            <span data-i18n="includes">Incluye:</span>
+            <div class="tags">
+              <span class="tag">🍳 <span data-i18n="inc_meals">Comidas</span></span>
+              <span class="tag">🏨 <span data-i18n="inc_hotel">Hotel</span></span>
+              <span class="tag">🚤 <span data-i18n="inc_transport">Transporte</span></span>
+              <span class="tag">🧭 <span data-i18n="inc_guide">Guía</span></span>
+            </div>
+          </div>
+          <a href="#reservar" class="btn-pkg" data-package="Full Day" data-i18n="btn_book_pkg">Reservar este paquete</a>
+        </div>
+        <div class="pkg-card pkg-featured reveal" data-delay="150">
+          <div class="pkg-badge featured-badge" data-i18n="pkg2_badge">Recomendado</div>
+          <div class="pkg-icon">🏕️</div>
+          <h3 data-i18n="pkg2_name">Aventura Profunda</h3>
+          <p class="pkg-desc" data-i18n="pkg2_desc">Noches en la selva, campamentos, leyendas y una inmersión total en el corazón amazónico.</p>
+          <div class="pkg-duration"><span>📅</span> <span data-i18n="pkg2_dur">4 – 5 días</span></div>
+          <ul class="pkg-itinerary">
+            <li><strong data-i18n="day1">Día 1:</strong> <span data-i18n="pkg2_d1">Ceiba, Wochine + campamento camino a San Martín</span></li>
+            <li><strong data-i18n="day2">Día 2:</strong> <span data-i18n="pkg2_d2">Comunidad Valencia + bote a San Martín</span></li>
+            <li><strong data-i18n="day3">Día 3:</strong> <span data-i18n="pkg2_d3">Cabañas Yoi + juegos autóctonos</span></li>
+            <li><strong data-i18n="day4">Día 4:</strong> <span data-i18n="pkg2_d4">San Antonio + pesca + convivencia comunitaria</span></li>
+            <li><strong data-i18n="day5">Día 5:</strong> <span data-i18n="pkg2_d5">Lago Tarapoto + caimanes + cabañas en el lago</span></li>
+          </ul>
+          <div class="pkg-includes">
+            <span data-i18n="includes">Incluye:</span>
+            <div class="tags">
+              <span class="tag">🍳 <span data-i18n="inc_meals">Comidas</span></span>
+              <span class="tag">🏕️ <span data-i18n="inc_camp">Campamento</span></span>
+              <span class="tag">🚤 <span data-i18n="inc_transport">Transporte</span></span>
+              <span class="tag">🧭 <span data-i18n="inc_guide">Guía</span></span>
+              <span class="tag">🌿 <span data-i18n="inc_equipment">Equipo selva</span></span>
+            </div>
+          </div>
+          <a href="#reservar" class="btn-pkg btn-pkg-featured" data-package="Aventura Profunda" data-i18n="btn_book_pkg">Reservar este paquete</a>
+        </div>
+        <div class="pkg-card reveal" data-delay="300">
+          <div class="pkg-badge" data-i18n="pkg3_badge">Equilibrado</div>
+          <div class="pkg-icon">⚖️</div>
+          <h3 data-i18n="pkg3_name">Mixto</h3>
+          <p class="pkg-desc" data-i18n="pkg3_desc">Algunas noches en la selva, otras en hotel. La combinación perfecta de aventura y confort.</p>
+          <div class="pkg-duration"><span>📅</span> <span data-i18n="pkg3_dur">4 – 5 días</span></div>
+          <ul class="pkg-itinerary">
+            <li><strong data-i18n="day1">Día 1:</strong> <span data-i18n="pkg3_d1">San Antonio (perezosos) + hotel</span></li>
+            <li><strong data-i18n="day2">Día 2:</strong> <span data-i18n="pkg3_d2">City tour + actividades culturales</span></li>
+            <li><strong data-i18n="day3">Día 3:</strong> <span data-i18n="pkg3_d3">Noche en selva + caminata nocturna</span></li>
+            <li><strong data-i18n="day4">Día 4:</strong> <span data-i18n="pkg3_d4">Lago Tarapoto + cabañas en el lago</span></li>
+            <li><strong data-i18n="day5_opt">Día 5 (opc.):</strong> <span data-i18n="pkg3_d5">Canotaje + artesanías + danza</span></li>
+          </ul>
+          <div class="pkg-includes">
+            <span data-i18n="includes">Incluye:</span>
+            <div class="tags">
+              <span class="tag">🍳 <span data-i18n="inc_meals">Comidas</span></span>
+              <span class="tag">🏨 <span data-i18n="inc_hotel">Hotel</span></span>
+              <span class="tag">🏕️ <span data-i18n="inc_camp">Campamento</span></span>
+              <span class="tag">🧭 <span data-i18n="inc_guide">Guía</span></span>
+            </div>
+          </div>
+          <a href="#reservar" class="btn-pkg" data-package="Mixto" data-i18n="btn_book_pkg">Reservar este paquete</a>
+        </div>
+      </div>
+      <div class="addons reveal">
+        <h3 data-i18n="addons_title">Experiencias adicionales</h3>
+        <div class="addons-grid">
+          <div class="addon-item">📸 <span data-i18n="addon1">Paquete foto (drone, 360°, GoPro)</span></div>
+          <div class="addon-item">🎭 <span data-i18n="addon2">Ceremonia de Huito</span></div>
+          <div class="addon-item">🌿 <span data-i18n="addon3">Plantas medicinales</span></div>
+          <div class="addon-item">🚣 <span data-i18n="addon4">Canotaje en bosque inundable</span></div>
+          <div class="addon-item">🎯 <span data-i18n="addon5">Juegos autóctonos (cerbatana, arco)</span></div>
+          <div class="addon-item">🌙 <span data-i18n="addon6">Ayahuasca (bajo consulta)</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALERÍA ========== -->
+  <section id="galeria" class="section-gallery">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="gal_eyebrow">Momentos reales</span>
+        <h2 data-i18n="gal_title">Galería</h2>
+      </div>
+    </div>
+    <div class="gallery-masonry">
+      <div class="gal-item tall reveal"><img src="img/hero.png" alt="Amazonia aérea" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="img/dolphin.png" alt="Delfines rosados" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="img/sloth.png" alt="Perezoso" loading="lazy"/></div>
+      <div class="gal-item tall reveal"><img src="img/cabin.png" alt="Campamento en selva" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="img/cacao.png" alt="Cultivo de cacao" loading="lazy"/></div>
+      <div class="gal-item reveal"><img src="img/community.png" alt="Comunidad indígena" loading="lazy"/></div>
+    </div>
+    <div id="lightbox" class="lightbox">
+      <button id="lightbox-close" aria-label="Cerrar">✕</button>
+      <button id="lightbox-prev" aria-label="Anterior">‹</button>
+      <button id="lightbox-next" aria-label="Siguiente">›</button>
+      <img id="lightbox-img" src="" alt=""/>
+    </div>
+  </section>
+
+  <!-- ========== NOSOTROS ========== -->
+  <section id="nosotros" class="section-about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img reveal">
+          <img src="img/community.png" alt="Nuestro equipo"/>
+          <div class="about-badge">
+            <span class="badge-num">100%</span>
+            <span class="badge-label" data-i18n="badge_local">Local & Auténtico</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <span class="eyebrow" data-i18n="about_eyebrow">Quiénes somos</span>
+          <h2 data-i18n="about_title">Sumak Kawsay – Buen Vivir</h2>
+          <p data-i18n="about_p1"><strong>Sumak Kawsay</strong> es una filosofía ancestral de los pueblos originarios andinos y amazónicos. Propone un modelo de existencia basado en la armonía y el equilibrio entre los seres humanos, la comunidad y la Madre Tierra.</p>
+          <p data-i18n="about_p2">Somos una agencia nacida en Leticia, Amazonas, formada por guías locales, comunidades indígenas y apasionados de la naturaleza. Cada tour que organizamos respeta el ecosistema y genera un impacto positivo en las comunidades locales.</p>
+          <div class="values-grid">
+            <div class="value"><span class="v-icon">🌿</span><span data-i18n="val1">Ecoturismo responsable</span></div>
+            <div class="value"><span class="v-icon">🤝</span><span data-i18n="val2">Turismo comunitario</span></div>
+            <div class="value"><span class="v-icon">🔒</span><span data-i18n="val3">Seguridad garantizada</span></div>
+            <div class="value"><span class="v-icon">⭐</span><span data-i18n="val4">Experiencias auténticas</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="section-testimonials">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="test_eyebrow">Voces de la selva</span>
+        <h2 data-i18n="test_title">Lo que dicen nuestros viajeros</h2>
+      </div>
+      <div class="testimonials-slider">
+        <div class="testimonial active">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text" data-i18n="test1_text">"Una experiencia que cambió mi forma de ver el mundo. El lago Tarapoto al amanecer, los delfines rosados... simplemente mágico. Volvería mañana mismo."</p>
+          <div class="test-author"><div class="test-avatar">M</div><div><strong>María García</strong><span data-i18n="test1_origin"> · España</span></div></div>
+        </div>
+        <div class="testimonial">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text" data-i18n="test2_text">"The jungle night walk was absolutely incredible. Our guide knew every sound, every creature. This is the real Amazon, not a tourist trap."</p>
+          <div class="test-author"><div class="test-avatar">J</div><div><strong>James Wilson</strong><span data-i18n="test2_origin"> · United Kingdom</span></div></div>
+        </div>
+        <div class="testimonial">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-text" data-i18n="test3_text">"L'immersion dans la forêt amazonienne avec Sumak Kawsay a été un voyage initiatique. Les communautés indigènes nous ont accueillis avec une chaleur incomparable."</p>
+          <div class="test-author"><div class="test-avatar">S</div><div><strong>Sophie Durand</strong><span data-i18n="test3_origin"> · France</span></div></div>
+        </div>
+      </div>
+      <div class="test-dots">
+        <button class="dot active" data-idx="0"></button>
+        <button class="dot" data-idx="1"></button>
+        <button class="dot" data-idx="2"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RESERVAR / PAYMENT ========== -->
+  <section id="reservar" class="section-payment">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="eyebrow" data-i18n="pay_eyebrow">Tu aventura te espera</span>
+        <h2 data-i18n="pay_title">Reserva tu Experiencia</h2>
+        <p data-i18n="pay_sub">Rellena el formulario y recibe confirmación en menos de 24 horas</p>
+      </div>
+      <div class="payment-layout reveal">
+        <div class="booking-form-wrap">
+          <form id="bookingForm" class="booking-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label data-i18n="form_name">Nombre completo</label>
+                <input type="text" id="f_name" name="name" required placeholder="Juan García"/>
+              </div>
+              <div class="form-group">
+                <label data-i18n="form_email">Correo electrónico</label>
+                <input type="email" id="f_email" name="email" required placeholder="juan@email.com"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label data-i18n="form_phone">Teléfono / WhatsApp</label>
+                <input type="tel" id="f_phone" name="phone" placeholder="+57 300 000 0000"/>
+              </div>
+              <div class="form-group">
+                <label data-i18n="form_nationality">Nacionalidad</label>
+                <input type="text" id="f_nationality" name="nationality" placeholder="Colombia"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label data-i18n="form_package">Paquete de interés</label>
+                <select id="f_package" name="package">
+                  <option value="fullday" data-i18n="pkg1_name">Full Day (3-4 días)</option>
+                  <option value="aventura" data-i18n="pkg2_name">Aventura Profunda (4-5 días)</option>
+                  <option value="mixto" data-i18n="pkg3_name">Mixto (4-5 días)</option>
+                  <option value="custom" data-i18n="pkg_custom">Personalizado</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label data-i18n="form_people">Número de personas</label>
+                <input type="number" id="f_people" name="people" min="1" max="20" value="2"/>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label data-i18n="form_date">Fecha de llegada</label>
+                <input type="date" id="f_date" name="date"/>
+              </div>
+              <div class="form-group">
+                <label data-i18n="form_lang">Idioma del guía</label>
+                <select id="f_lang" name="guide_lang">
+                  <option value="es">Español</option>
+                  <option value="en">English</option>
+                  <option value="fr">Français</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group full">
+              <label data-i18n="form_notes">Notas especiales</label>
+              <textarea id="f_notes" name="notes" rows="3" placeholder="Alergias, condiciones médicas, peticiones especiales..."></textarea>
+            </div>
+            <div class="price-estimator" id="priceEstimator">
+              <div class="pe-row"><span data-i18n="pe_package">Paquete:</span><strong id="pe_pkg">Full Day</strong></div>
+              <div class="pe-row"><span data-i18n="pe_people">Personas:</span><strong id="pe_ppl">2</strong></div>
+              <div class="pe-row pe-total"><span data-i18n="pe_estimate">Precio estimado:</span><strong id="pe_price">USD $400</strong></div>
+              <p class="pe-note" data-i18n="pe_note">* Precio aproximado. El precio exacto se confirma en 24h según disponibilidad.</p>
+            </div>
+            <button type="button" id="proceedPayment" class="btn-payment">
+              <span data-i18n="btn_proceed">Continuar al Pago</span> →
+            </button>
+          </form>
+        </div>
+        <div class="payment-panel" id="paymentPanel">
+          <div class="payment-header">
+            <div class="secure-badge">🔒 <span data-i18n="pay_secure">Pago 100% seguro</span></div>
+            <div class="payment-logos">
+              <span class="pay-logo">VISA</span>
+              <span class="pay-logo">MC</span>
+              <span class="pay-logo">AMEX</span>
+              <span class="pay-logo">PayPal</span>
+              <span class="pay-logo">PSE</span>
+            </div>
+          </div>
+          <div class="pay-step active" id="step-contact">
+            <h4 data-i18n="step1_title">1. Información de contacto</h4>
+            <p class="step-note" data-i18n="step1_note">Completa el formulario y presiona "Continuar al Pago"</p>
+            <div class="checklist">
+              <div class="check-item" id="check-name">✓ <span data-i18n="check_name">Nombre</span></div>
+              <div class="check-item" id="check-email">✓ <span data-i18n="check_email">Email</span></div>
+              <div class="check-item" id="check-pkg">✓ <span data-i18n="check_pkg">Paquete seleccionado</span></div>
+              <div class="check-item" id="check-date">✓ <span data-i18n="check_date">Fecha de llegada</span></div>
+            </div>
+          </div>
+          <div class="pay-step" id="step-method">
+            <h4 data-i18n="step2_title">2. Método de pago</h4>
+            <div class="pay-methods">
+              <button class="pay-method-btn active" data-method="card" id="method-card">💳 <span data-i18n="method_card">Tarjeta crédito/débito</span></button>
+              <button class="pay-method-btn" data-method="paypal" id="method-paypal">🅿️ PayPal</button>
+              <button class="pay-method-btn" data-method="pse" id="method-pse">🏦 PSE</button>
+              <button class="pay-method-btn" data-method="cash" id="method-cash">💵 <span data-i18n="method_cash">Pago en destino</span></button>
+            </div>
+            <div class="card-form" id="cardForm">
+              <div class="card-preview" id="cardPreview">
+                <div class="card-front">
+                  <div class="card-brand">SUMAK KAWSAY</div>
+                  <div class="card-chip">▐▌</div>
+                  <div class="card-number" id="disp_number">•••• •••• •••• ••••</div>
+                  <div class="card-bottom">
+                    <div class="card-holder" id="disp_holder">NOMBRE TITULAR</div>
+                    <div class="card-exp" id="disp_exp">MM/AA</div>
+                  </div>
+                </div>
+              </div>
+              <div class="cf-row">
+                <div class="cf-group"><label data-i18n="card_num">Número de tarjeta</label><input type="text" id="card_number" maxlength="19" placeholder="1234 5678 9012 3456"/></div>
+              </div>
+              <div class="cf-row">
+                <div class="cf-group"><label data-i18n="card_name">Titular</label><input type="text" id="card_name" placeholder="JUAN GARCIA"/></div>
+              </div>
+              <div class="cf-row half">
+                <div class="cf-group"><label data-i18n="card_exp">Vencimiento</label><input type="text" id="card_exp" maxlength="5" placeholder="MM/AA"/></div>
+                <div class="cf-group"><label>CVV</label><input type="text" id="card_cvv" maxlength="3" placeholder="123"/></div>
+              </div>
+              <p class="deposit-note" data-i18n="deposit_note">Se cobra un depósito del 30% para confirmar la reserva. El resto se paga en destino.</p>
+              <button class="btn-pay" id="payNowBtn" type="button">
+                🔒 <span data-i18n="btn_pay">Pagar Depósito</span> <span id="pay_amount" class="btn-pay-amount">USD $120</span>
+              </button>
+            </div>
+            <div class="alt-pay-form" id="paypalForm" style="display:none">
+              <p data-i18n="paypal_redirect">Serás redirigido a PayPal para completar el pago de forma segura.</p>
+              <button class="btn-paypal" type="button" id="paypalBtn"><span style="color:#003087;font-weight:700">Pay</span><span style="color:#009cde;font-weight:700">Pal</span></button>
+            </div>
+            <div class="alt-pay-form" id="pseForm" style="display:none">
+              <p data-i18n="pse_info">Transferencia bancaria vía PSE (solo Colombia).</p>
+              <div class="cf-group"><label data-i18n="pse_bank">Selecciona tu banco</label>
+                <select id="pse_bank"><option>Bancolombia</option><option>Davivienda</option><option>BBVA Colombia</option><option>Banco de Bogotá</option><option>Nequi</option><option>Daviplata</option></select>
+              </div>
+              <button class="btn-pay" type="button" id="pseBtn">🏦 <span data-i18n="btn_pse">Ir al banco</span></button>
+            </div>
+            <div class="alt-pay-form" id="cashForm" style="display:none">
+              <div class="cash-info">
+                <p data-i18n="cash_info">Pagas directamente al llegar a Leticia. Te enviaremos una confirmación de reserva por email y WhatsApp.</p>
+                <ul>
+                  <li>✓ <span data-i18n="cash_li1">Sin cargo adicional</span></li>
+                  <li>✓ <span data-i18n="cash_li2">Confirmación inmediata</span></li>
+                  <li>✓ <span data-i18n="cash_li3">Cancela 48h antes sin costo</span></li>
+                </ul>
+                <button class="btn-pay btn-cash" type="button" id="cashBtn"><span data-i18n="btn_cash">Confirmar Reserva (Pago en destino)</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="pay-step" id="step-confirm">
+            <div class="confirmation">
+              <div class="confirm-icon">✅</div>
+              <h4 data-i18n="confirm_title">¡Reserva Confirmada!</h4>
+              <p data-i18n="confirm_msg">Te hemos enviado los detalles a tu correo. Nuestro equipo te contactará en menos de 24 horas por WhatsApp.</p>
+              <div class="confirm-details" id="confirmDetails"></div>
+              <a href="https://wa.me/573000000000" target="_blank" class="btn-whatsapp">
+                📱 <span data-i18n="btn_whatsapp">Contactar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+          <div class="trust-badges">
+            <div class="trust-item">🔒 SSL 256-bit</div>
+            <div class="trust-item">✅ PCI DSS</div>
+            <div class="trust-item">🛡️ <span data-i18n="trust_protected">Datos protegidos</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHATSAPP FLOAT ========== -->
+  <a href="https://wa.me/573000000000" target="_blank" class="whatsapp-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">🌿 Sumak Kawsay</div>
+        <p data-i18n="footer_desc">Espíritu de la Selva – Agencia de ecoturismo en Leticia, Amazonas, Colombia.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_tours">Tours</h4>
+        <ul>
+          <li><a href="#tours" data-i18n="tour1_title">Lago Tarapoto</a></li>
+          <li><a href="#tours" data-i18n="tour2_title">San Antonio</a></li>
+          <li><a href="#tours" data-i18n="tour3_title">Caminata Nocturna</a></li>
+          <li><a href="#tours" data-i18n="tour5_title">Campamento Selva</a></li>
+          <li><a href="#tours" data-i18n="tour6_title">Cacao & Aves</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer_info">Información</h4>
+        <ul>
+          <li><a href="#nosotros" data-i18n="nav_about">Nosotros</a></li>
+          <li><a href="#reservar" data-i18n="nav_book">Reservar</a></li>
+          <li><a href="#" data-i18n="footer_policy">Política de cancelación</a></li>
+          <li><a href="#" data-i18n="footer_terms">Términos y condiciones</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4 data-i18n="footer_contact">Contacto</h4>
+        <p>📍 Leticia, Amazonas, Colombia</p>
+        <p>📱 +57 300 000 0000</p>
+        <p>✉️ hola@sumakkawsay.com</p>
+        <p>🌐 <span data-i18n="footer_triple">Triple frontera CO-PE-BR</span></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Sumak Kawsay – <span data-i18n="footer_rights">Todos los derechos reservados.</span></p>
+      <p data-i18n="footer_philosophy">«Armonía entre los seres humanos, la comunidad y la Madre Tierra»</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
