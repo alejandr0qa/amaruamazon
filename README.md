@@ -1,6 +1,6 @@
 # 🌿 Sumak Kawsay — Espíritu de la Selva
 
-**Agencia de ecoturismo en Leticia, Amazonas, Colombia**  
+**Agencia de ecoturismo en Puerto Nariño, Amazonas, Colombia**  
 Experiencias auténticas en el corazón de la Amazonia colombiana.
 
 ---
@@ -74,7 +74,7 @@ brenjo/
 
 ## 📞 Contacto
 
-- 📍 Leticia, Amazonas, Colombia
+- 📍 Puerto Nariño, Amazonas, Colombia
 - 📱 +57 300 000 0000
 - ✉️ hola@sumakkawsay.com
 - 🌐 Triple frontera Colombia – Perú – Brasil
