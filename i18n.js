@@ -11,7 +11,7 @@ const translations = {
     nav_gallery: "Galería",
     nav_about: "Nosotros",
     nav_book: "Reservar",
-    hero_eyebrow: "Amazonia Colombiana · Leticia",
+    hero_eyebrow: "Amazonia Colombiana · Puerto Nariño",
     hero_title1: "Espíritu",
     hero_title2: "de la Selva",
     hero_sub: "Donde la naturaleza te habla y la aventura no tiene fin. Sumérgete en el corazón del Amazonas.",
