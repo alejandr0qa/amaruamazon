@@ -22,7 +22,9 @@ for (const [lang, copy] of Object.entries(data.translations))
     assert.ok(copy[key], `${lang}: missing dynamic ${key}`);
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
 assert.equal(ids.length, new Set(ids).size, "Duplicate HTML IDs");
-for (const ref of html.matchAll(/(?:href|src)="([^"?#]+)(?:[?#][^"]*)?"/g)) {
+for (const ref of html.matchAll(
+  /(?:href|src|srcset)="([^"?#]+)(?:[?#][^"]*)?"/g,
+)) {
   if (!/^(https?:|data:)/.test(ref[1]))
     assert.ok(fs.existsSync(path.join(root, ref[1])), `Missing ${ref[1]}`);
 }
@@ -40,6 +42,21 @@ assert.notEqual(
   data.experiences.find((e) => e.id === "cacao").id,
 );
 const credits = JSON.parse(read("assets/photos/credits.json"));
+const heroPhotos = [
+  ...html.matchAll(
+    /(?:src|srcset)="assets\/photos\/((?:amazon-river|hero-)[^"/]*?)\.webp"/g,
+  ),
+].map((match) => match[1]);
+assert.equal(
+  heroPhotos.length,
+  8,
+  "Four cover photos need desktop and mobile derivatives",
+);
+for (const name of heroPhotos) {
+  assert.ok(credits[name], `Missing cover photo credit ${name}`);
+  assert.equal(credits[name].width, name.endsWith("-mobile") ? 800 : 1920);
+  assert.equal(credits[name].height, name.endsWith("-mobile") ? 1146 : 1084);
+}
 for (const item of [...data.experiences, ...Object.values(data.journeys)]) {
   assert.ok(credits[item.image], `Missing photo credit ${item.image}`);
   assert.ok(

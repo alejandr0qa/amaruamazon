@@ -261,6 +261,74 @@ p + p {
 .hero picture {
   display: block;
 }
+.hero-slides {
+  position: relative;
+  aspect-ratio: 1920 / 1084;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.hero-slide.is-active {
+  opacity: 1;
+}
+.hero-carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-shrink: 0;
+}
+.hero-carousel-controls button {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid #e3cc9270;
+  border-radius: 50%;
+  background: #0e2c234d;
+  color: var(--cream);
+  font-size: 18px;
+}
+.hero-carousel-controls button:hover {
+  background: #d8bc7840;
+}
+.hero-carousel-controls button:focus-visible {
+  outline-color: var(--gold);
+}
+.hero-carousel-controls .hero-dots {
+  display: flex;
+  gap: 0;
+}
+.hero-dots button {
+  width: 24px;
+  height: 40px;
+  background: none;
+  border: 0;
+}
+.hero-dots button::after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border: 1px solid #f7f5efb3;
+  border-radius: 50%;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+.hero-dots button.active::after {
+  background: var(--gold);
+  border-color: var(--gold);
+  transform: scale(1.4);
+}
+.hero-counter {
+  font-size: 9px;
+  letter-spacing: 1px;
+  min-width: 40px;
+  text-align: center;
+}
 .hero-image {
   width: 100%;
   height: auto;
@@ -312,10 +380,11 @@ p + p {
 }
 .hero-bottom {
   position: absolute;
-  bottom: 9%;
+  bottom: 14%;
   left: 0;
   right: 0;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
   font-size: 10px;
@@ -1305,6 +1374,31 @@ body:has(dialog[open]) {
   }
 }
 @media (max-width: 650px) {
+  .hero-slides {
+    aspect-ratio: 800 / 1146;
+  }
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    bottom: 5%;
+  }
+  .hero-bottom > span {
+    max-width: none;
+  }
+  .hero-carousel-controls {
+    align-self: flex-end;
+    gap: 7px;
+  }
+  .hero-carousel-controls button {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+  .hero-dots button {
+    width: 22px;
+    height: 34px;
+  }
   html {
     scroll-padding-top: 81px;
   }
@@ -1753,6 +1847,32 @@ body:has(dialog[open]) {
   }
   .hero-bottom > a {
     line-height: 1.9;
+  }
+}
+@media (max-width: 650px) {
+  .hero-content {
+    padding-bottom: 27%;
+  }
+  .hero-bottom {
+    align-items: stretch;
+    bottom: 5%;
+    gap: 6px;
+  }
+  .hero-bottom > span {
+    max-width: none;
+  }
+  .hero-carousel-controls {
+    gap: 4px;
+  }
+  .hero-carousel-controls button {
+    width: 44px;
+    height: 44px;
+  }
+  .hero-dots button {
+    width: 28px;
+  }
+  .hero-counter {
+    display: none;
   }
 }
 @media (prefers-reduced-motion: reduce) {

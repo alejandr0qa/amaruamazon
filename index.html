@@ -134,19 +134,62 @@
     </header>
     <main id="main">
       <section class="hero" id="home" aria-labelledby="hero-title">
-        <picture
-          ><source
-            media="(max-width:650px)"
-            srcset="assets/photos/amazon-river-mobile.webp" />
-          <img
-            class="hero-image"
-            src="assets/photos/amazon-river.webp"
-            alt="A wooden canoe on the Amazon River beneath a wide blue sky"
-            data-i18n-alt="heroAlt"
-            width="1920"
-            height="1084"
-            fetchpriority="high"
-        /></picture>
+        <div class="hero-slides" id="hero-slides" aria-hidden="true">
+          <picture class="hero-slide is-active" data-slide="0"
+            ><source
+              media="(max-width:650px)"
+              srcset="assets/photos/amazon-river-mobile.webp" />
+            <img
+              class="hero-image"
+              src="assets/photos/amazon-river.webp"
+              alt=""
+              width="1920"
+              height="1084"
+              fetchpriority="high"
+          /></picture>
+          <picture class="hero-slide" data-slide="1">
+            <source
+              media="(max-width:650px)"
+              data-srcset="assets/photos/hero-forest-mobile.webp"
+            />
+            <img
+              class="hero-image"
+              data-src="assets/photos/hero-forest.webp"
+              alt=""
+              width="1920"
+              height="1084"
+              decoding="async"
+            />
+          </picture>
+          <picture class="hero-slide" data-slide="2">
+            <source
+              media="(max-width:650px)"
+              data-srcset="assets/photos/hero-lilies-mobile.webp"
+            />
+            <img
+              class="hero-image"
+              data-src="assets/photos/hero-lilies.webp"
+              alt=""
+              width="1920"
+              height="1084"
+              decoding="async"
+            />
+          </picture>
+          <picture class="hero-slide" data-slide="3">
+            <source
+              media="(max-width:650px)"
+              data-srcset="assets/photos/hero-sunset-mobile.webp"
+            />
+            <img
+              class="hero-image"
+              data-src="assets/photos/hero-sunset.webp"
+              alt=""
+              width="1920"
+              height="1084"
+              decoding="async"
+            />
+          </picture>
+        </div>
         <div class="hero-shade"></div>
         <div class="hero-content wrap">
           <p class="eyebrow light">
@@ -172,8 +215,81 @@
             ><span data-i18n="heroBottom"
               >A little closer to nature. A little further from ordinary.</span
             ></span
-          ><a href="#our-story" data-i18n="discover">DISCOVER AMARU ↓</a>
+          >
+          <div
+            class="hero-carousel-controls"
+            role="group"
+            aria-label="Cover photographs"
+            data-i18n-aria="carouselLabel"
+          >
+            <button
+              id="hero-prev"
+              type="button"
+              aria-controls="hero-slides"
+              aria-label="Previous photograph"
+              data-i18n-aria="previous"
+            >
+              ←
+            </button>
+            <div class="hero-dots">
+              <button
+                type="button"
+                data-hero-slide="0"
+                class="active"
+                aria-current="true"
+                aria-label="Amazon River"
+                data-i18n-aria="slideRiver"
+              ></button>
+              <button
+                type="button"
+                data-hero-slide="1"
+                aria-current="false"
+                aria-label="Rainforest roots"
+                data-i18n-aria="slideForest"
+              ></button>
+              <button
+                type="button"
+                data-hero-slide="2"
+                aria-current="false"
+                aria-label="Giant water lilies"
+                data-i18n-aria="slideLilies"
+              ></button>
+              <button
+                type="button"
+                data-hero-slide="3"
+                aria-current="false"
+                aria-label="Sunset over the Amazon"
+                data-i18n-aria="slideSunset"
+              ></button>
+            </div>
+            <span class="hero-counter" id="hero-counter" aria-hidden="true"
+              >01 / 04</span
+            >
+            <button
+              id="hero-next"
+              type="button"
+              aria-controls="hero-slides"
+              aria-label="Next photograph"
+              data-i18n-aria="next"
+            >
+              →
+            </button>
+            <button
+              id="hero-pause"
+              type="button"
+              aria-label="Pause slideshow"
+              data-i18n-aria="pauseCarousel"
+            >
+              <span aria-hidden="true">Ⅱ</span>
+            </button>
+          </div>
         </div>
+        <p
+          id="hero-status"
+          class="sr-only"
+          aria-live="polite"
+          aria-atomic="true"
+        ></p>
       </section>
       <div class="promise-strip">
         <div class="wrap">

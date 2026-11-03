@@ -369,3 +369,30 @@ const translations = {
       "Découvrez l’Amazonie colombienne avec Amaru. Kayak de jour, observation des oiseaux, cacao et séjours en forêt depuis Puerto Nariño. Contactez-nous sur WhatsApp.",
   },
 };
+Object.assign(translations.en, {
+  carouselLabel: "Cover photographs",
+  pauseCarousel: "Pause slideshow",
+  playCarousel: "Play slideshow",
+  slideRiver: "Amazon River",
+  slideForest: "Rainforest roots",
+  slideLilies: "Giant water lilies",
+  slideSunset: "Sunset over the Amazon",
+});
+Object.assign(translations.es, {
+  carouselLabel: "Fotografías de portada",
+  pauseCarousel: "Pausar carrusel",
+  playCarousel: "Reproducir carrusel",
+  slideRiver: "Río Amazonas",
+  slideForest: "Raíces de la selva",
+  slideLilies: "Victorias amazónicas",
+  slideSunset: "Atardecer sobre el Amazonas",
+});
+Object.assign(translations.fr, {
+  carouselLabel: "Photographies de couverture",
+  pauseCarousel: "Mettre le diaporama en pause",
+  playCarousel: "Lancer le diaporama",
+  slideRiver: "Fleuve Amazone",
+  slideForest: "Racines de la forêt",
+  slideLilies: "Nénuphars géants",
+  slideSunset: "Coucher de soleil sur l’Amazone",
+});

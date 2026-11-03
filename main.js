@@ -19,6 +19,132 @@
     photo = 0,
     openExperience = null;
   const t = (key) => translations[lang][key] ?? translations.en[key] ?? key;
+  const hero = $("#home");
+  const slides = $$(".hero-slide");
+  const slideNames = [
+    "slideRiver",
+    "slideForest",
+    "slideLilies",
+    "slideSunset",
+  ];
+  const motionPreference = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  );
+  let heroIndex = 0,
+    requestedSlide = 0,
+    heroTimer = null,
+    heroRequest = 0;
+  let heroPaused = motionPreference.matches,
+    heroVisible = true,
+    heroFocused = false;
+  function updateHeroControls() {
+    $("#hero-counter").textContent =
+      `${String(heroIndex + 1).padStart(2, "0")} / 04`;
+    $$("[data-hero-slide]").forEach((button, i) => {
+      button.classList.toggle("active", i === heroIndex);
+      button.setAttribute("aria-current", String(i === heroIndex));
+    });
+    $("#hero-pause").setAttribute(
+      "aria-label",
+      t(heroPaused ? "playCarousel" : "pauseCarousel"),
+    );
+    $("#hero-pause").firstElementChild.textContent = heroPaused ? "▶" : "Ⅱ";
+  }
+  function loadHeroSlide(index) {
+    const picture = slides[index],
+      source = $("source", picture),
+      image = $("img", picture);
+    if (source.dataset.srcset) {
+      source.srcset = source.dataset.srcset;
+      delete source.dataset.srcset;
+    }
+    if (image.dataset.src) {
+      image.src = image.dataset.src;
+      delete image.dataset.src;
+    }
+    return image.decode();
+  }
+  function scheduleHero() {
+    clearTimeout(heroTimer);
+    if (heroPaused || !heroVisible || heroFocused || document.hidden) return;
+    heroTimer = setTimeout(() => showHeroSlide(heroIndex + 1), 7000);
+  }
+  async function showHeroSlide(index, manual = false) {
+    requestedSlide = (index + slides.length) % slides.length;
+    const next = requestedSlide,
+      request = ++heroRequest;
+    clearTimeout(heroTimer);
+    // Keep the current photo visible if a new photo fails to load.
+    try {
+      await loadHeroSlide(next);
+    } catch {
+      if (request === heroRequest) scheduleHero();
+      return;
+    }
+    if (request !== heroRequest) return;
+    slides.forEach((slide, i) =>
+      slide.classList.toggle("is-active", i === next),
+    );
+    heroIndex = next;
+    updateHeroControls();
+    if (manual)
+      $("#hero-status").textContent =
+        `${heroIndex + 1} / ${slides.length} — ${t(slideNames[heroIndex])}`;
+    scheduleHero();
+    // Load only the next slide ahead, after the current photograph is ready.
+    if (!heroPaused && heroVisible && !document.hidden)
+      loadHeroSlide((heroIndex + 1) % slides.length).catch(() => {});
+  }
+  $("#hero-prev").addEventListener("click", () =>
+    showHeroSlide(requestedSlide - 1, true),
+  );
+  $("#hero-next").addEventListener("click", () =>
+    showHeroSlide(requestedSlide + 1, true),
+  );
+  $$("[data-hero-slide]").forEach((button) =>
+    button.addEventListener("click", () =>
+      showHeroSlide(Number(button.dataset.heroSlide), true),
+    ),
+  );
+  $("#hero-pause").addEventListener("click", () => {
+    heroPaused = !heroPaused;
+    // An explicit Play action resumes even while the Play button has focus.
+    if (!heroPaused) heroFocused = false;
+    updateHeroControls();
+    scheduleHero();
+  });
+  hero.addEventListener("focusin", () => {
+    heroFocused = true;
+    scheduleHero();
+  });
+  hero.addEventListener("focusout", (event) => {
+    if (!hero.contains(event.relatedTarget)) {
+      heroFocused = false;
+      scheduleHero();
+    }
+  });
+  hero.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+      event.preventDefault();
+      showHeroSlide(
+        requestedSlide + (event.key === "ArrowRight" ? 1 : -1),
+        true,
+      );
+    }
+  });
+  document.addEventListener("visibilitychange", scheduleHero);
+  motionPreference.addEventListener("change", (event) => {
+    if (event.matches) heroPaused = true;
+    updateHeroControls();
+    scheduleHero();
+  });
+  new IntersectionObserver(
+    (entries) => {
+      heroVisible = entries[0].isIntersecting;
+      scheduleHero();
+    },
+    { threshold: 0.1 },
+  ).observe(hero);
   // Templates only interpolate controlled editorial text, never visitor input.
   const escape = (value) =>
     String(value).replace(
@@ -130,6 +256,7 @@
     renderJourney();
     renderGallery();
     renderInterest();
+    updateHeroControls();
     if (openExperience) renderExperienceDetail(openExperience);
     if ($("#gallery-dialog").open) renderPhoto();
     invalidateMessage();

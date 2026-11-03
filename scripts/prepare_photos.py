@@ -11,6 +11,12 @@ DEST.mkdir(parents=True, exist_ok=True)
 PHOTOS = {
     'amazon-river': ('29912.jpg', (1920, 1040)),
     'amazon-river-mobile': ('29912.jpg', (800, 1120)),
+    'hero-forest': ('58120.jpg', (1920, 1040)),
+    'hero-forest-mobile': ('58120.jpg', (800, 1120)),
+    'hero-lilies': ('29829.jpg', (1920, 1040)),
+    'hero-lilies-mobile': ('29829.jpg', (800, 1120)),
+    'hero-sunset': ('IMG_20260120_175716.jpg', (1920, 1040)),
+    'hero-sunset-mobile': ('IMG_20260120_175716.jpg', (800, 1120)),
     'forest': ('58120.jpg', (1000, 1200)),
     'tarapoto': ('IMG_20260211_165021.jpg', (1200, 800)),
     'kayak': ('IMG_20260211_152854.jpg', (1200, 800)),
