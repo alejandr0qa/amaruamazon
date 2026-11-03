@@ -39,6 +39,8 @@ Kaya / kayak es diurno. Aves y cacao tienen fichas y opciones de consulta indepe
 
 ## Fotografías propias
 
+La portada muestra un carrusel de cuatro fotos propias (río, raíces de selva, victorias amazónicas y atardecer), con fundido suave cada siete segundos, flechas, selección directa y pausa/reproducción. La rotación se detiene al salir de la portada, ocultar la pestaña o usar el teclado en la portada. Con movimiento reducido se inicia pausada. Solo se carga la siguiente imagen cuando hace falta; cada foto tiene versiones de escritorio y móvil con la marca de autor completa.
+
 Los originales de `imagenes-brenda/` se conservan localmente y se excluyen de Git. El sitio solo usa derivados WebP marcados de `assets/photos/`. Cada fotografía tiene una franja inferior de copyright añadida fuera del paisaje. Los derivados no contienen metadatos EXIF/GPS. La foto de la portada tiene versiones separadas para móvil y escritorio para mantener visible la franja.
 
 Para regenerar se requiere Python con Pillow y los originales locales:

@@ -11,6 +11,42 @@
     "height": 1146,
     "bytes": 180828
   },
+  "hero-forest": {
+    "source": "58120.jpg",
+    "width": 1920,
+    "height": 1084,
+    "bytes": 709972
+  },
+  "hero-forest-mobile": {
+    "source": "58120.jpg",
+    "width": 800,
+    "height": 1146,
+    "bytes": 361234
+  },
+  "hero-lilies": {
+    "source": "29829.jpg",
+    "width": 1920,
+    "height": 1084,
+    "bytes": 513664
+  },
+  "hero-lilies-mobile": {
+    "source": "29829.jpg",
+    "width": 800,
+    "height": 1146,
+    "bytes": 287570
+  },
+  "hero-sunset": {
+    "source": "IMG_20260120_175716.jpg",
+    "width": 1920,
+    "height": 1084,
+    "bytes": 214458
+  },
+  "hero-sunset-mobile": {
+    "source": "IMG_20260120_175716.jpg",
+    "width": 800,
+    "height": 1146,
+    "bytes": 112688
+  },
   "forest": {
     "source": "58120.jpg",
     "width": 1000,
