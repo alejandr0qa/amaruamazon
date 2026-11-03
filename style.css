@@ -279,6 +279,7 @@ p + p {
   align-items: center;
   gap: 9px;
   flex-shrink: 0;
+  margin-right: 140px;
 }
 .hero-carousel-controls button {
   display: grid;
@@ -1863,6 +1864,7 @@ body:has(dialog[open]) {
   }
   .hero-carousel-controls {
     gap: 4px;
+    margin-right: 0;
   }
   .hero-carousel-controls button {
     width: 44px;
