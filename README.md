@@ -1,84 +1,69 @@
-# 🌿 Sumak Kawsay — Espíritu de la Selva
+# Amaru Amazon Experiences
 
-**Agencia de ecoturismo en Puerto Nariño, Amazonas, Colombia**  
-Experiencias auténticas en el corazón de la Amazonia colombiana.
+Web de experiencias en Puerto Nariño, Amazonas, Colombia. Inglés principal, español y francés. HTML, CSS y JavaScript sin dependencias de ejecución ni compilación.
 
----
+## Sitio y contacto
 
-## 🌍 Ver el sitio
+- Sitio actual: https://alejandr0qa.github.io/amaruamazon/
+- Repositorio: https://github.com/alejandr0qa/amaruamazon
+- Dominio previsto, pendiente de compra y conexión: amaruamazonexperiences.com
+- WhatsApp: +57 313 256 0145
 
-Abre `index.html` directamente en tu navegador, o despliégalo en cualquier hosting estático (GitHub Pages, Netlify, Vercel).
+## Desarrollo
 
----
+Desde esta carpeta:
 
-## ✨ Características
-
-- **Multiidioma**: Español 🇨🇴 · English 🇬🇧 · Français 🇫🇷
-- **Pasarela de pago**: Tarjeta de crédito/débito, PayPal, PSE, Pago en destino
-- **Experiencias día a día** inspiradas en metodologías de ecoturismo responsable
-- **Talleres culturales**: Cestería, cerámica, plantas medicinales, avistamiento de aves
-- **Diseño inmersivo**: Galería con lightbox, slider de testimonios, partículas animadas
-- **100% HTML + CSS + JavaScript** (sin frameworks, sin dependencias)
-
----
-
-## 📁 Estructura
-
-```
-brenjo/
-├── index.html          # Página principal
-├── style.css           # Estilos (tema amazónico oscuro)
-├── main.js             # Interactividad y pasarela de pago
-├── i18n.js             # Traducciones ES / EN / FR
-├── img/                # Imágenes generadas por IA
-│   ├── hero.png
-│   ├── dolphin.png
-│   ├── sloth.png
-│   ├── cabin.png       # Campamento en la selva
-│   ├── fishing.png     # Caminata nocturna
-│   ├── cacao.png
-│   ├── community.png
-│   └── weaving.png
-└── .gitignore
+```powershell
+python -m http.server 4173 --bind 127.0.0.1
 ```
 
----
+Abrir http://127.0.0.1:4173/ . No abrir como archivo local para las pruebas de navegación y preferencias.
 
-## 🗺️ Tours & Paquetes
+```powershell
+node --check main.js
+node --check content.js
+node --check i18n.js
+node scripts/check-site.mjs
+```
 
-| Paquete | Duración | Descripción |
-|---|---|---|
-| Full Day | 3–4 días | Actividades diurnas + hotel |
-| Aventura Profunda | 4–5 días | Noches en selva + campamento |
-| Mixto | 4–5 días | Combinación selva + hotel |
+## Contenido
 
-**Actividades principales:**
-- Lago Tarapoto (delfines rosados, piraña, caimanes)
-- San Antonio (perezosos, capibara, árbol Ojé)
-- Caminata nocturna en bosque primario
-- Aldeas indígenas (El Vergel, Mocagua)
-- Campamento en la selva (hamaca, patarasca, leyendas)
-- Talleres de cestería, cerámica y plantas medicinales
-- Avistamiento de aves al amanecer (5:30am)
-- Canotaje nocturno
-- Cultivo de cacao amazónico
+- `index.html`: estructura semántica, contenido inglés inicial, metadatos y formulario.
+- `i18n.js`: español, francés y etiquetas dinámicas. Inglés inicial tomado del HTML.
+- `content.js`: ocho experiencias independientes, tres rutas sugeridas y galería.
+- `main.js`: idiomas, filtros, modales, navegación y mensaje de WhatsApp.
+- `style.css`: diseño adaptable, teclado y movimiento reducido.
+- `assets/photos/credits.json`: trazabilidad de cada fotografía publicada.
 
----
+Kaya / kayak es diurno. Aves y cacao tienen fichas y opciones de consulta independientes. Las rutas de varios días son propuestas sujetas a confirmación; no hay precios, testimonios ni cifras de viajeros inventados. La disponibilidad de guía en un idioma se confirma al cotizar.
 
-## 🏛️ Filosofía
+## Fotografías propias
 
-> **Sumak Kawsay** — Filosofía ancestral de los pueblos originarios andinos y amazónicos.  
-> *"Armonía y equilibrio entre los seres humanos, la comunidad y la Madre Tierra"*
+Los originales de `imagenes-brenda/` se conservan localmente y se excluyen de Git. El sitio solo usa derivados WebP marcados de `assets/photos/`. Cada fotografía tiene una franja inferior de copyright añadida fuera del paisaje. Los derivados no contienen metadatos EXIF/GPS. La foto de la portada tiene versiones separadas para móvil y escritorio para mantener visible la franja.
 
----
+Para regenerar se requiere Python con Pillow y los originales locales:
 
-## 📞 Contacto
+```powershell
+python scripts/prepare_photos.py
+```
 
-- 📍 Puerto Nariño, Amazonas, Colombia
-- 📱 +57 300 000 0000
-- ✉️ hola@sumakkawsay.com
-- 🌐 Triple frontera Colombia – Perú – Brasil
+El logo original compartido se conserva en `assets/brand/amaru-original.png`; la web usa una copia optimizada. Las fuentes Cormorant Garamond y Manrope se sirven localmente, con sus licencias OFL en `assets/fonts/`.
 
----
+Las imágenes antiguas de `img/` forman parte de la historia previa y no se usan en esta web.
 
-*Construido con ❤️ para la Amazonia colombiana*
+## Consultas y privacidad
+
+El formulario no envía información a un servidor ni cobra pagos. Primero muestra el mensaje preparado. El visitante decide abrir WhatsApp y enviarlo. La consulta no confirma una reserva. Cambiar cualquier campo invalida el mensaje previo. Solo se guarda el idioma en localStorage; no se incluyen analítica, fuentes remotas ni rastreadores.
+
+## Publicación y dominio futuro
+
+GitHub Pages publica desde `main`, carpeta raíz. `.nojekyll` evita procesamiento innecesario. Los recursos usan rutas relativas compatibles con el subdirectorio `/amaruamazon/`.
+
+No hay `CNAME` mientras el dominio esté pendiente. Cuando la compra y el acceso DNS estén listos:
+
+1. Configurar `amaruamazonexperiences.com` en Settings → Pages y crear los registros DNS indicados por GitHub.
+2. Crear `CNAME` con el dominio y habilitar HTTPS cuando GitHub confirme el certificado.
+3. Sustituir el origen `https://alejandr0qa.github.io/amaruamazon/` en canonical, Open Graph, hreflang, JSON-LD, `main.js`, `robots.txt` y `sitemap.xml` por `https://amaruamazonexperiences.com/`.
+4. Verificar HTTPS, redirecciones, los tres idiomas y enlaces de WhatsApp en el dominio nuevo.
+
+Las condiciones comerciales concretas, disponibilidad y precio total se acuerdan directamente antes de reservar.

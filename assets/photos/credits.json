@@ -1,0 +1,98 @@
+{
+  "amazon-river": {
+    "source": "29912.jpg",
+    "width": 1920,
+    "height": 1084,
+    "bytes": 411370
+  },
+  "amazon-river-mobile": {
+    "source": "29912.jpg",
+    "width": 800,
+    "height": 1146,
+    "bytes": 180828
+  },
+  "forest": {
+    "source": "58120.jpg",
+    "width": 1000,
+    "height": 1226,
+    "bytes": 468412
+  },
+  "tarapoto": {
+    "source": "IMG_20260211_165021.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 338570
+  },
+  "kayak": {
+    "source": "IMG_20260211_152854.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 438616
+  },
+  "birdwatching": {
+    "source": "IMG-20260218-WA0040.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 163018
+  },
+  "cacao": {
+    "source": "IMG_20260611_102632.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 244240
+  },
+  "night-walk": {
+    "source": "IMG_20260128_184901.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 193278
+  },
+  "camp": {
+    "source": "IMG_20260602_173545.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 249522
+  },
+  "community": {
+    "source": "36271.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 276192
+  },
+  "wildlife": {
+    "source": "IMG-20260330-WA0065.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 132866
+  },
+  "water-lilies": {
+    "source": "29829.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 336874
+  },
+  "frog": {
+    "source": "IMG_20260326_211155.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 80382
+  },
+  "sunset": {
+    "source": "IMG_20260120_175716.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 121828
+  },
+  "forest-canoe": {
+    "source": "IMG-20260320-WA0030.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 364466
+  },
+  "roots": {
+    "source": "IMG_20260312_105741.jpg",
+    "width": 1200,
+    "height": 828,
+    "bytes": 447638
+  }
+}

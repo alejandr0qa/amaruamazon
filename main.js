@@ -1,455 +1,292 @@
-/**
- * SUMAK KAWSAY – main.js
- * Interactividad, animaciones, pasarela de pago
- */
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  /* ========== LOADER ========== */
-  setTimeout(() => {
-    document.getElementById('loader').classList.add('hidden');
-    initParticles();
-  }, 2200);
-
-  /* ========== NAVBAR SCROLL ========== */
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 60);
+"use strict";
+(() => {
+  const $ = (s, root = document) => root.querySelector(s);
+  const $$ = (s, root = document) => [...root.querySelectorAll(s)];
+  // Preserve English as an accessible, readable HTML default.
+  $$("[data-i18n]").forEach((el) => {
+    translations.en[el.dataset.i18n] = el.textContent;
   });
+  ["alt", "aria", "placeholder"].forEach((kind) =>
+    $$(`[data-i18n-${kind}]`).forEach((el) => {
+      translations.en[el.getAttribute(`data-i18n-${kind}`)] = el.getAttribute(
+        kind === "aria" ? "aria-label" : kind,
+      );
+    }),
+  );
+  let lang = "en",
+    filter = "all",
+    journey = "gentle",
+    photo = 0,
+    openExperience = null;
+  const t = (key) => translations[lang][key] ?? translations.en[key] ?? key;
+  // Templates only interpolate controlled editorial text, never visitor input.
+  const escape = (value) =>
+    String(value).replace(
+      /[&<>"']/g,
+      (c) =>
+        ({
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': "&quot;",
+          "'": "&#39;",
+        })[c],
+    );
+  const photoPath = (name) => `assets/photos/${name}.webp`;
+  const photoTitle = (item) => item[{ en: 1, es: 2, fr: 3 }[lang]];
+  const interestName = (id) =>
+    experiences.find((e) => e.id === id)?.[lang][0] ??
+    (journeys[id] ? t(`${id}Name`) : t("choose"));
+  const dates = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/Bogota",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(new Date());
+  $("#arrival").min = ["year", "month", "day"]
+    .map((k) => dates.find((p) => p.type === k).value)
+    .join("-");
+  $("#year").textContent = dates.find((p) => p.type === "year").value;
 
-  /* ========== HAMBURGER MENU ========== */
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.querySelector('.nav-links');
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('open');
-  });
-  // Close on link click
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => navLinks.classList.remove('open'));
-  });
-
-  /* ========== SCROLL REVEAL ========== */
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const delay = entry.target.getAttribute('data-delay') || 0;
-        setTimeout(() => {
-          entry.target.classList.add('visible');
-        }, parseInt(delay));
-        revealObserver.unobserve(entry.target);
-      }
+  function renderExperiences() {
+    const list = experiences.filter(
+      (e) => filter === "all" || e.cat === filter,
+    );
+    $("#experience-grid").innerHTML = list
+      .map((e) => {
+        const [title, summary] = e[lang];
+        return `<article class="experience-card" data-experience="${e.id}"><div class="card-image"><img src="${photoPath(e.image)}" width="1200" height="828" alt="${escape(title)}" loading="lazy"><span class="card-index">${String(experiences.indexOf(e) + 1).padStart(2, "0")}</span></div><div class="card-content"><div class="card-meta"><span>${t(e.cat)}</span><span>${t(e.time)}</span></div><h3>${escape(title)}</h3><p>${escape(summary)}</p><button class="card-link" data-open-experience="${e.id}" aria-label="${escape(t("view") + ": " + title)}"><span>${t("view")}</span><span aria-hidden="true">↗</span></button></div></article>`;
+      })
+      .join("");
+    $("#filter-status").textContent = `${list.length} ${t("filterCount")}`;
+  }
+  function renderJourney() {
+    const item = journeys[journey],
+      [description, steps] = item[lang];
+    $("#journey-content").innerHTML =
+      `<img src="${photoPath(item.image)}" width="1200" height="828" alt="${escape(t(`${journey}Name`))}" loading="lazy"><div class="journey-inner"><p>${escape(description)}</p><ol class="journey-steps">${steps.map((step, i) => `<li><span>${i + 1}</span><strong>${escape(step)}</strong></li>`).join("")}</ol><a class="text-link" href="#plan" data-choose-interest="${journey}">${t("journeyCta")}</a></div>`;
+  }
+  function renderGallery() {
+    $("#gallery-grid").innerHTML = gallery
+      .map(
+        (item, i) =>
+          `<button class="gallery-item" data-photo="${i}" aria-label="${escape(t("galleryOpen") + ": " + photoTitle(item))}"><img src="${photoPath(item[0])}" width="1200" height="828" alt="${escape(photoTitle(item))}" loading="lazy"><span class="gallery-zoom" aria-hidden="true">↗</span></button>`,
+      )
+      .join("");
+  }
+  function renderInterest() {
+    const selected = $("#interest").value || "custom";
+    $("#interest").replaceChildren(
+      ...[
+        "custom",
+        ...experiences.map((e) => e.id),
+        ...Object.keys(journeys),
+      ].map((id) => new Option(interestName(id), id)),
+    );
+    $("#interest").value = selected;
+  }
+  function renderExperienceDetail(id) {
+    const item = experiences.find((e) => e.id === id);
+    if (!item) return;
+    const [title, , detail, points] = item[lang];
+    $("#dialog-content").innerHTML =
+      `<img class="dialog-photo" src="${photoPath(item.image)}" width="1200" height="828" alt="${escape(title)}"><div class="dialog-body"><p class="eyebrow">${t(item.cat)} · ${t(item.time)}</p><h2 id="dialog-title">${escape(title)}</h2><p>${escape(detail)}</p><ul>${points.map((p) => `<li>${escape(p)}</li>`).join("")}</ul><p>${t("flexible")}</p><a href="#plan" class="button" data-choose-interest="${item.id}">${t("enquire")}</a></div>`;
+  }
+  function renderPhoto() {
+    const item = gallery[photo];
+    $("#gallery-large").src = photoPath(item[0]);
+    $("#gallery-large").alt = photoTitle(item);
+    $("#gallery-caption").textContent =
+      `${photo + 1} / ${gallery.length} — ${photoTitle(item)}`;
+  }
+  function invalidateMessage() {
+    $("#message-result").hidden = true;
+    $("#send-whatsapp").removeAttribute("href");
+    $("#message-preview").textContent = "";
+  }
+  function setLanguage(next, persist = true) {
+    lang = Object.hasOwn(translations, next) ? next : "en";
+    document.documentElement.lang = lang;
+    $$("[data-i18n]").forEach((el) => {
+      el.textContent = t(el.dataset.i18n);
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-  /* ========== PARTICLES ========== */
-  function initParticles() {
-    const container = document.getElementById('particles');
-    if (!container) return;
-    for (let i = 0; i < 30; i++) {
-      const p = document.createElement('div');
-      p.className = 'particle';
-      p.style.left = Math.random() * 100 + '%';
-      p.style.top = Math.random() * 100 + '%';
-      p.style.setProperty('--dur', (4 + Math.random() * 8) + 's');
-      p.style.setProperty('--delay', (Math.random() * 6) + 's');
-      p.style.width = p.style.height = (2 + Math.random() * 4) + 'px';
-      container.appendChild(p);
+    ["alt", "aria", "placeholder"].forEach((kind) =>
+      $$(`[data-i18n-${kind}]`).forEach((el) =>
+        el.setAttribute(
+          kind === "aria" ? "aria-label" : kind,
+          t(el.getAttribute(`data-i18n-${kind}`)),
+        ),
+      ),
+    );
+    $$("[data-lang]").forEach((el) =>
+      el.setAttribute("aria-pressed", String(el.dataset.lang === lang)),
+    );
+    $('meta[name="description"]').content = t("metaDescription");
+    $('meta[property="og:description"]').content = t("metaDescription");
+    const canonical = `https://alejandr0qa.github.io/amaruamazon/${lang === "en" ? "" : `?lang=${lang}`}`;
+    $('link[rel="canonical"]').href = canonical;
+    $('meta[property="og:url"]').content = canonical;
+    renderExperiences();
+    renderJourney();
+    renderGallery();
+    renderInterest();
+    if (openExperience) renderExperienceDetail(openExperience);
+    if ($("#gallery-dialog").open) renderPhoto();
+    invalidateMessage();
+    if (persist) {
+      try {
+        localStorage.setItem("amaru-language", lang);
+      } catch {}
+      const url = new URL(location.href);
+      url.searchParams.set("lang", lang);
+      try {
+        history.replaceState(null, "", url);
+      } catch {}
     }
   }
-
-  /* ========== GALLERY LIGHTBOX ========== */
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
-  const galItems = document.querySelectorAll('.gal-item img');
-  let currentIdx = 0;
-  const imgSrcs = Array.from(galItems).map(i => i.src);
-
-  function openLightbox(idx) {
-    currentIdx = idx;
-    lbImg.src = imgSrcs[idx];
-    lightbox.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  function closeMenu() {
+    $("#navigation").classList.remove("open");
+    $("#menu-toggle").setAttribute("aria-expanded", "false");
   }
-  function closeLightbox() {
-    lightbox.classList.remove('open');
-    document.body.style.overflow = '';
-  }
-  function nextImg() { openLightbox((currentIdx + 1) % imgSrcs.length); }
-  function prevImg() { openLightbox((currentIdx - 1 + imgSrcs.length) % imgSrcs.length); }
-
-  galItems.forEach((img, idx) => img.parentElement.addEventListener('click', () => openLightbox(idx)));
-  document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
-  document.getElementById('lightbox-next').addEventListener('click', nextImg);
-  document.getElementById('lightbox-prev').addEventListener('click', prevImg);
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
-  document.addEventListener('keydown', e => {
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') nextImg();
-    if (e.key === 'ArrowLeft') prevImg();
+  $("#menu-toggle").addEventListener("click", () => {
+    const expanded = $("#menu-toggle").getAttribute("aria-expanded") !== "true";
+    $("#navigation").classList.toggle("open", expanded);
+    $("#menu-toggle").setAttribute("aria-expanded", String(expanded));
   });
-
-  /* ========== TESTIMONIALS SLIDER ========== */
-  const testimonials = document.querySelectorAll('.testimonial');
-  const dots = document.querySelectorAll('.dot');
-  let testIdx = 0;
-  let testTimer;
-
-  function showTestimonial(idx) {
-    testimonials.forEach(t => t.classList.remove('active'));
-    dots.forEach(d => d.classList.remove('active'));
-    testimonials[idx].classList.add('active');
-    dots[idx].classList.add('active');
-    testIdx = idx;
-  }
-
-  function startTestAutoplay() {
-    testTimer = setInterval(() => {
-      showTestimonial((testIdx + 1) % testimonials.length);
-    }, 5000);
-  }
-
-  dots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      clearInterval(testTimer);
-      showTestimonial(parseInt(dot.getAttribute('data-idx')));
-      startTestAutoplay();
-    });
+  $("#navigation").addEventListener("click", (e) => {
+    if (e.target.closest("a")) closeMenu();
   });
-  startTestAutoplay();
-
-  /* ========== PRICE ESTIMATOR ========== */
-  const prices = {
-    fullday:  { label: 'Full Day',           perPerson: 200 },
-    aventura: { label: 'Aventura Profunda',  perPerson: 320 },
-    mixto:    { label: 'Mixto',              perPerson: 260 },
-    custom:   { label: 'Personalizado',      perPerson: 300 },
-  };
-
-  function updateEstimator() {
-    const pkg = document.getElementById('f_package').value;
-    const ppl = parseInt(document.getElementById('f_people').value) || 1;
-    const info = prices[pkg] || prices.fullday;
-    const total = info.perPerson * ppl;
-    const deposit = Math.round(total * 0.3);
-
-    document.getElementById('pe_pkg').textContent = info.label;
-    document.getElementById('pe_ppl').textContent = ppl;
-    document.getElementById('pe_price').textContent = 'USD $' + total;
-    document.getElementById('pay_amount').textContent = 'USD $' + deposit;
-  }
-
-  document.getElementById('f_package').addEventListener('change', updateEstimator);
-  document.getElementById('f_people').addEventListener('input', updateEstimator);
-  updateEstimator();
-
-  /* ========== PACKAGE CARDS -> SELECT FORM ========== */
-  document.querySelectorAll('[data-package]').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const pkg = btn.getAttribute('data-package');
-      const map = { 'Full Day': 'fullday', 'Aventura Profunda': 'aventura', 'Mixto': 'mixto' };
-      if (map[pkg]) {
-        document.getElementById('f_package').value = map[pkg];
-        updateEstimator();
-      }
-    });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
   });
-
-  /* ========== PAYMENT FLOW ========== */
-  const proceedBtn = document.getElementById('proceedPayment');
-  const stepContact = document.getElementById('step-contact');
-  const stepMethod  = document.getElementById('step-method');
-  const stepConfirm = document.getElementById('step-confirm');
-
-  function showStep(step) {
-    [stepContact, stepMethod, stepConfirm].forEach(s => s.classList.remove('active'));
-    step.classList.add('active');
-    step.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-
-  function validateForm() {
-    const name  = document.getElementById('f_name').value.trim();
-    const email = document.getElementById('f_email').value.trim();
-    const date  = document.getElementById('f_date').value;
-
-    // Update checklist
-    document.getElementById('check-name').classList.toggle('done', name.length > 2);
-    document.getElementById('check-email').classList.toggle('done', email.includes('@'));
-    document.getElementById('check-pkg').classList.add('done');
-    document.getElementById('check-date').classList.toggle('done', date !== '');
-
-    return name.length > 2 && email.includes('@');
-  }
-
-  proceedBtn.addEventListener('click', () => {
-    if (validateForm()) {
-      showStep(stepMethod);
-    } else {
-      proceedBtn.classList.add('shake');
-      setTimeout(() => proceedBtn.classList.remove('shake'), 600);
-      // Highlight missing fields
-      const name = document.getElementById('f_name');
-      const email = document.getElementById('f_email');
-      if (!name.value.trim()) name.focus();
-      else if (!email.value.includes('@')) email.focus();
-    }
-  });
-
-  /* ========== PAYMENT METHODS SWITCH ========== */
-  const methodBtns = document.querySelectorAll('.pay-method-btn');
-  const cardForm    = document.getElementById('cardForm');
-  const paypalForm  = document.getElementById('paypalForm');
-  const pseForm     = document.getElementById('pseForm');
-  const cashForm    = document.getElementById('cashForm');
-
-  methodBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      methodBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const method = btn.getAttribute('data-method');
-      cardForm.style.display   = method === 'card'   ? 'flex' : 'none';
-      paypalForm.style.display = method === 'paypal' ? 'flex' : 'none';
-      pseForm.style.display    = method === 'pse'    ? 'flex' : 'none';
-      cashForm.style.display   = method === 'cash'   ? 'flex' : 'none';
-    });
-  });
-
-  /* ========== CARD INPUT FORMATTING ========== */
-  const cardNumberInput = document.getElementById('card_number');
-  const cardNameInput   = document.getElementById('card_name');
-  const cardExpInput    = document.getElementById('card_exp');
-  const dispNumber = document.getElementById('disp_number');
-  const dispHolder = document.getElementById('disp_holder');
-  const dispExp    = document.getElementById('disp_exp');
-
-  cardNumberInput.addEventListener('input', (e) => {
-    let v = e.target.value.replace(/\D/g, '').slice(0, 16);
-    v = v.replace(/(.{4})/g, '$1 ').trim();
-    e.target.value = v;
-    dispNumber.textContent = v || '•••• •••• •••• ••••';
-  });
-  cardNameInput.addEventListener('input', (e) => {
-    dispHolder.textContent = e.target.value.toUpperCase() || 'NOMBRE TITULAR';
-  });
-  cardExpInput.addEventListener('input', (e) => {
-    let v = e.target.value.replace(/\D/g, '').slice(0, 4);
-    if (v.length > 2) v = v.slice(0,2) + '/' + v.slice(2);
-    e.target.value = v;
-    dispExp.textContent = v || 'MM/AA';
-  });
-
-  /* ========== PAY NOW BUTTON ========== */
-  document.getElementById('payNowBtn').addEventListener('click', () => {
-    const num = document.getElementById('card_number').value.replace(/\s/g,'');
-    const name = document.getElementById('card_name').value.trim();
-    const exp  = document.getElementById('card_exp').value;
-    const cvv  = document.getElementById('card_cvv').value;
-
-    if (num.length < 16 || !name || exp.length < 5 || cvv.length < 3) {
-      showNotification('⚠️ Por favor completa todos los datos de la tarjeta', 'error');
+  document.addEventListener("click", (e) => {
+    const langButton = e.target.closest("[data-lang]");
+    if (langButton) {
+      setLanguage(langButton.dataset.lang);
       return;
     }
-    processPayment();
-  });
-
-  document.getElementById('paypalBtn').addEventListener('click', processPayment);
-  document.getElementById('pseBtn').addEventListener('click', processPayment);
-  document.getElementById('cashBtn').addEventListener('click', () => {
-    showConfirmation('cash');
-  });
-
-  function processPayment() {
-    const payBtn = document.getElementById('payNowBtn');
-    payBtn.innerHTML = '<span class="spinner">⏳</span> Procesando...';
-    payBtn.disabled = true;
-
-    setTimeout(() => {
-      showConfirmation('card');
-    }, 2500);
-  }
-
-  function showConfirmation(method) {
-    const name  = document.getElementById('f_name').value.trim();
-    const email = document.getElementById('f_email').value.trim();
-    const pkg   = document.getElementById('f_package');
-    const pkgLabel = pkg.options[pkg.selectedIndex].text;
-    const date  = document.getElementById('f_date').value;
-    const people = document.getElementById('f_people').value;
-
-    const details = document.getElementById('confirmDetails');
-    const t = window.translations[window.applyTranslations ? currentLang : 'es'];
-
-    details.innerHTML = `
-      <div>👤 ${name}</div>
-      <div>✉️ ${email}</div>
-      <div>🌿 ${pkgLabel} · ${people} persona${people > 1 ? 's' : ''}</div>
-      <div>📅 ${date || '—'}</div>
-      <div>💰 ${method === 'cash' ? 'Pago en destino' : 'Depósito pagado ✓'}</div>
-    `;
-
-    showStep(stepConfirm);
-    launchConfetti();
-    showNotification('🎉 ¡Reserva confirmada! Revisa tu email.', 'success');
-  }
-
-  /* ========== NOTIFICATION TOAST ========== */
-  function showNotification(msg, type = 'info') {
-    const toast = document.createElement('div');
-    toast.style.cssText = `
-      position:fixed; bottom:90px; left:50%; transform:translateX(-50%);
-      background:${type === 'success' ? 'var(--green-vivid)' : type === 'error' ? '#c0392b' : 'var(--glass)'};
-      color:#fff; padding:14px 28px; border-radius:40px;
-      font-size:0.9rem; font-weight:600; z-index:9999;
-      box-shadow:0 8px 32px rgba(0,0,0,0.4);
-      animation:fadeUp 0.4s ease forwards;
-      font-family:var(--font-body);
-    `;
-    toast.textContent = msg;
-    document.body.appendChild(toast);
-    setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 500); }, 4000);
-  }
-
-  /* ========== CONFETTI ========== */
-  function launchConfetti() {
-    const colors = ['#5dde7a','#c9a84c','#2e8b57','#f5a623','#fff'];
-    for (let i = 0; i < 80; i++) {
-      const c = document.createElement('div');
-      c.style.cssText = `
-        position:fixed;
-        left:${Math.random() * 100}vw;
-        top:-10px;
-        width:${6 + Math.random() * 8}px;
-        height:${6 + Math.random() * 8}px;
-        background:${colors[Math.floor(Math.random() * colors.length)]};
-        border-radius:${Math.random() > 0.5 ? '50%' : '2px'};
-        z-index:9999;
-        pointer-events:none;
-        animation: confettiFall ${1.5 + Math.random() * 2}s ease-in ${Math.random() * 1}s forwards;
-      `;
-      document.body.appendChild(c);
-      setTimeout(() => c.remove(), 4000);
-    }
-
-    if (!document.querySelector('#confettiStyle')) {
-      const style = document.createElement('style');
-      style.id = 'confettiStyle';
-      style.textContent = `
-        @keyframes confettiFall {
-          to { transform: translateY(110vh) rotate(720deg); opacity: 0; }
-        }
-        .shake {
-          animation: shake 0.6s ease !important;
-        }
-        @keyframes shake {
-          0%,100%{transform:translateX(0)}
-          20%{transform:translateX(-8px)}
-          40%{transform:translateX(8px)}
-          60%{transform:translateX(-5px)}
-          80%{transform:translateX(5px)}
-        }
-      `;
-      document.head.appendChild(style);
-    }
-  }
-
-  /* ========== SOUND AMBIENT TOGGLE ========== */
-  const soundBtn  = document.getElementById('soundBtn');
-  const soundIcon = document.getElementById('soundIcon');
-  let soundPlaying = false;
-
-  const ctx = new (window.AudioContext || window.webkitAudioContext)();
-
-  function createJungleSound() {
-    const nodes = [];
-    // Generate soft ambient sound with oscillators
-    [110, 220, 330, 880].forEach((freq, i) => {
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.type = i < 2 ? 'sine' : 'triangle';
-      osc.frequency.value = freq;
-      gain.gain.value = i < 2 ? 0.02 : 0.005;
-      osc.connect(gain);
-      gain.connect(ctx.destination);
-      osc.start();
-      nodes.push({ osc, gain });
-    });
-    return nodes;
-  }
-
-  let soundNodes = null;
-  soundBtn.addEventListener('click', () => {
-    if (!soundPlaying) {
-      if (ctx.state === 'suspended') ctx.resume();
-      soundNodes = createJungleSound();
-      soundIcon.textContent = '🔊';
-      soundPlaying = true;
-    } else {
-      soundNodes?.forEach(({ osc, gain }) => {
-        gain.gain.setTargetAtTime(0, ctx.currentTime, 0.3);
-        setTimeout(() => osc.stop(), 500);
+    const filterButton = e.target.closest("[data-filter]");
+    if (filterButton) {
+      filter = filterButton.dataset.filter;
+      $$("[data-filter]").forEach((b) => {
+        const active = b.dataset.filter === filter;
+        b.classList.toggle("active", active);
+        b.setAttribute("aria-pressed", String(active));
       });
-      soundNodes = null;
-      soundIcon.textContent = '🔇';
-      soundPlaying = false;
+      renderExperiences();
+      return;
     }
+    const journeyButton = e.target.closest("[data-journey]");
+    if (journeyButton) {
+      journey = journeyButton.dataset.journey;
+      $$("[data-journey]").forEach((b) => {
+        const active = b.dataset.journey === journey;
+        b.classList.toggle("active", active);
+        b.setAttribute("aria-pressed", String(active));
+      });
+      renderJourney();
+      return;
+    }
+    const expButton = e.target.closest("[data-open-experience]");
+    if (expButton) {
+      openExperience = expButton.dataset.openExperience;
+      renderExperienceDetail(openExperience);
+      $("#experience-dialog").showModal();
+      return;
+    }
+    const photoButton = e.target.closest("[data-photo]");
+    if (photoButton) {
+      photo = Number(photoButton.dataset.photo);
+      renderPhoto();
+      $("#gallery-dialog").showModal();
+      return;
+    }
+    const interestLink = e.target.closest("[data-choose-interest]");
+    if (interestLink) {
+      $("#interest").value = interestLink.dataset.chooseInterest;
+      invalidateMessage();
+      if ($("#experience-dialog").open) $("#experience-dialog").close();
+      // Let the native anchor navigate, then put keyboard focus in the enquiry.
+      requestAnimationFrame(() => $("#name").focus({ preventScroll: true }));
+      return;
+    }
+    const close = e.target.closest("[data-close-dialog]");
+    if (close) close.closest("dialog").close();
   });
-
-  /* ========== SMOOTH SCROLL NAV ========== */
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth' });
+  $$("dialog").forEach((dialog) => {
+    dialog.addEventListener("click", (e) => {
+      if (e.target === dialog) {
+        const r = dialog.getBoundingClientRect();
+        if (
+          e.clientX < r.left ||
+          e.clientX > r.right ||
+          e.clientY < r.top ||
+          e.clientY > r.bottom
+        )
+          dialog.close();
       }
     });
   });
-
-  /* ========== PARALLAX HERO ========== */
-  const heroBg = document.querySelector('.hero-bg');
-  window.addEventListener('scroll', () => {
-    if (!heroBg) return;
-    const scrolled = window.pageYOffset;
-    if (scrolled < window.innerHeight) {
-      heroBg.style.transform = `scale(1.08) translateY(${scrolled * 0.3}px)`;
+  $("#experience-dialog").addEventListener("close", () => {
+    openExperience = null;
+  });
+  $("#privacy-button").addEventListener("click", () =>
+    $("#privacy-dialog").showModal(),
+  );
+  $("#photo-prev").addEventListener("click", () => {
+    photo = (photo + gallery.length - 1) % gallery.length;
+    renderPhoto();
+  });
+  $("#photo-next").addEventListener("click", () => {
+    photo = (photo + 1) % gallery.length;
+    renderPhoto();
+  });
+  $("#gallery-dialog").addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      photo =
+        (photo + (e.key === "ArrowRight" ? 1 : gallery.length - 1)) %
+        gallery.length;
+      renderPhoto();
     }
-  }, { passive: true });
-
-  /* ========== COUNTER ANIMATION ========== */
-  const statNums = document.querySelectorAll('.stat-num');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const text = el.textContent.trim();
-        const num = parseInt(text.replace(/\D/g, ''));
-        const suffix = text.replace(/[\d]/g, '');
-        let current = 0;
-        const step = num / 40;
-        const timer = setInterval(() => {
-          current = Math.min(current + step, num);
-          el.textContent = Math.floor(current) + suffix;
-          if (current >= num) clearInterval(timer);
-        }, 40);
-        counterObserver.unobserve(el);
-      }
-    });
-  }, { threshold: 0.5 });
-
-  statNums.forEach(el => counterObserver.observe(el));
-
-  /* ========== CURRENT DATE MIN ========== */
-  const dateInput = document.getElementById('f_date');
-  if (dateInput) {
-    const today = new Date();
-    const dd = String(today.getDate()).padStart(2, '0');
-    const mm = String(today.getMonth() + 1).padStart(2, '0');
-    const yyyy = today.getFullYear();
-    dateInput.min = `${yyyy}-${mm}-${dd}`;
-  }
-
-  console.log('%c🌿 Sumak Kawsay – Espíritu de la Selva', 'font-size:1.2rem;color:#5dde7a;font-weight:bold;');
-  console.log('%c«Armonía entre los seres humanos, la comunidad y la Madre Tierra»', 'color:#c9a84c;font-style:italic;');
-});
+  });
+  $("#trip-form").addEventListener("input", invalidateMessage);
+  $("#trip-form").addEventListener("change", invalidateMessage);
+  $("#trip-form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = $("#name").value.trim();
+    if (!name) {
+      $("#name").focus();
+      return;
+    }
+    if (!form.reportValidity()) return;
+    const message = [
+      t("hello"),
+      "",
+      `${t("msgName")}: ${name}`,
+      `${t("msgPeople")}: ${$("#travelers").value}`,
+      `${t("msgDate")}: ${$("#arrival").value || t("unspecified")}`,
+      `${t("msgLanguage")}: ${$("#guide-language").value}`,
+      `${t("msgInterest")}: ${interestName($("#interest").value)}`,
+    ];
+    const notes = $("#notes").value.trim();
+    if (notes) message.push(`${t("msgNotes")}: ${notes}`);
+    message.push("", t("msgEnd"));
+    const text = message.join("\n");
+    $("#message-preview").textContent = text;
+    $("#send-whatsapp").href =
+      `https://wa.me/573132560145?text=${encodeURIComponent(text)}`;
+    $("#message-result").hidden = false;
+    $("#send-whatsapp").focus();
+  });
+  let preferred = "en";
+  try {
+    preferred = localStorage.getItem("amaru-language") || "en";
+  } catch {}
+  const query = new URLSearchParams(location.search).get("lang");
+  setLanguage(query || preferred, false);
+  $("#guide-language").value = { en: "English", es: "Español", fr: "Français" }[
+    lang
+  ];
+})();

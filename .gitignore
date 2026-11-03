@@ -11,3 +11,8 @@ node_modules/
 
 # Editor
 .vscode/
+
+# Original photographs remain local; publish only marked derivatives
+imagenes-brenda/
+.codex-preview/
+__pycache__/
