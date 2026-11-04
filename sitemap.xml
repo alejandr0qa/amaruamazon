@@ -3,22 +3,22 @@
   <url>
     <loc>https://alejandr0qa.github.io/amaruamazon/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://alejandr0qa.github.io/amaruamazon/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://alejandr0qa.github.io/amaruamazon/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://alejandr0qa.github.io/amaruamazon/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alejandr0qa.github.io/amaruamazon/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alejandr0qa.github.io/amaruamazon/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alejandr0qa.github.io/amaruamazon/"/>
   </url>
   <url>
-    <loc>https://alejandr0qa.github.io/amaruamazon/?lang=es</loc>
+    <loc>https://alejandr0qa.github.io/amaruamazon/es/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://alejandr0qa.github.io/amaruamazon/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://alejandr0qa.github.io/amaruamazon/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://alejandr0qa.github.io/amaruamazon/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alejandr0qa.github.io/amaruamazon/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alejandr0qa.github.io/amaruamazon/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alejandr0qa.github.io/amaruamazon/"/>
   </url>
   <url>
-    <loc>https://alejandr0qa.github.io/amaruamazon/?lang=fr</loc>
+    <loc>https://alejandr0qa.github.io/amaruamazon/fr/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://alejandr0qa.github.io/amaruamazon/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://alejandr0qa.github.io/amaruamazon/?lang=es"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://alejandr0qa.github.io/amaruamazon/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://alejandr0qa.github.io/amaruamazon/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://alejandr0qa.github.io/amaruamazon/fr/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alejandr0qa.github.io/amaruamazon/"/>
   </url>
 </urlset>

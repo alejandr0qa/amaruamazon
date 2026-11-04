@@ -2,19 +2,17 @@
 (() => {
   const $ = (s, root = document) => root.querySelector(s);
   const $$ = (s, root = document) => [...root.querySelectorAll(s)];
-  // Preserve English as an accessible, readable HTML default.
-  $$("[data-i18n]").forEach((el) => {
-    translations.en[el.dataset.i18n] = el.textContent;
-  });
-  ["alt", "aria", "placeholder"].forEach((kind) =>
-    $$(`[data-i18n-${kind}]`).forEach((el) => {
-      translations.en[el.getAttribute(`data-i18n-${kind}`)] = el.getAttribute(
-        kind === "aria" ? "aria-label" : kind,
-      );
-    }),
-  );
-  let lang = "en",
-    filter = "all",
+  const lang = Object.hasOwn(translations, document.documentElement.lang)
+    ? document.documentElement.lang
+    : "en";
+  const legacyLanguage = new URLSearchParams(location.search).get("lang");
+  if (legacyLanguage && Object.hasOwn(translations, legacyLanguage)) {
+    const destination = new URL($(`[data-lang="${legacyLanguage}"]`).href);
+    destination.hash = location.hash;
+    location.replace(destination.href);
+    return;
+  }
+  let filter = "all",
     journey = "gentle",
     photo = 0,
     openExperience = null;
@@ -146,19 +144,9 @@
     { threshold: 0.1 },
   ).observe(hero);
   // Templates only interpolate controlled editorial text, never visitor input.
-  const escape = (value) =>
-    String(value).replace(
-      /[&<>"']/g,
-      (c) =>
-        ({
-          "&": "&amp;",
-          "<": "&lt;",
-          ">": "&gt;",
-          '"': "&quot;",
-          "'": "&#39;",
-        })[c],
-    );
-  const photoPath = (name) => `assets/photos/${name}.webp`;
+  const escape = AmaruRender.escape;
+  const photoPath = (name) =>
+    `${document.documentElement.dataset.assetBase || ""}assets/photos/${name}.webp`;
   const photoTitle = (item) => item[{ en: 1, es: 2, fr: 3 }[lang]];
   const interestName = (id) =>
     experiences.find((e) => e.id === id)?.[lang][0] ??
@@ -175,41 +163,17 @@
   $("#year").textContent = dates.find((p) => p.type === "year").value;
 
   function renderExperiences() {
-    const list = experiences.filter(
-      (e) => filter === "all" || e.cat === filter,
-    );
-    $("#experience-grid").innerHTML = list
-      .map((e) => {
-        const [title, summary] = e[lang];
-        return `<article class="experience-card" data-experience="${e.id}"><div class="card-image"><img src="${photoPath(e.image)}" width="1200" height="828" alt="${escape(title)}" loading="lazy"><span class="card-index">${String(experiences.indexOf(e) + 1).padStart(2, "0")}</span></div><div class="card-content"><div class="card-meta"><span>${t(e.cat)}</span><span>${t(e.time)}</span></div><h3>${escape(title)}</h3><p>${escape(summary)}</p><button class="card-link" data-open-experience="${e.id}" aria-label="${escape(t("view") + ": " + title)}"><span>${t("view")}</span><span aria-hidden="true">↗</span></button></div></article>`;
-      })
-      .join("");
-    $("#filter-status").textContent = `${list.length} ${t("filterCount")}`;
+    let count = 0;
+    $$(".experience-card").forEach((card) => {
+      card.hidden = filter !== "all" && card.dataset.category !== filter;
+      if (!card.hidden) count++;
+    });
+    $("#filter-status").textContent = `${count} ${t("filterCount")}`;
   }
   function renderJourney() {
-    const item = journeys[journey],
-      [description, steps] = item[lang];
-    $("#journey-content").innerHTML =
-      `<img src="${photoPath(item.image)}" width="1200" height="828" alt="${escape(t(`${journey}Name`))}" loading="lazy"><div class="journey-inner"><p>${escape(description)}</p><ol class="journey-steps">${steps.map((step, i) => `<li><span>${i + 1}</span><strong>${escape(step)}</strong></li>`).join("")}</ol><a class="text-link" href="#plan" data-choose-interest="${journey}">${t("journeyCta")}</a></div>`;
-  }
-  function renderGallery() {
-    $("#gallery-grid").innerHTML = gallery
-      .map(
-        (item, i) =>
-          `<button class="gallery-item" data-photo="${i}" aria-label="${escape(t("galleryOpen") + ": " + photoTitle(item))}"><img src="${photoPath(item[0])}" width="1200" height="828" alt="${escape(photoTitle(item))}" loading="lazy"><span class="gallery-zoom" aria-hidden="true">↗</span></button>`,
-      )
-      .join("");
-  }
-  function renderInterest() {
-    const selected = $("#interest").value || "custom";
-    $("#interest").replaceChildren(
-      ...[
-        "custom",
-        ...experiences.map((e) => e.id),
-        ...Object.keys(journeys),
-      ].map((id) => new Option(interestName(id), id)),
-    );
-    $("#interest").value = selected;
+    $$("[data-journey-panel]").forEach((panel) => {
+      panel.hidden = panel.dataset.journeyPanel !== journey;
+    });
   }
   function renderExperienceDetail(id) {
     const item = experiences.find((e) => e.id === id);
@@ -230,51 +194,52 @@
     $("#send-whatsapp").removeAttribute("href");
     $("#message-preview").textContent = "";
   }
-  function setLanguage(next, persist = true) {
-    lang = Object.hasOwn(translations, next) ? next : "en";
-    document.documentElement.lang = lang;
-    $$("[data-i18n]").forEach((el) => {
-      el.textContent = t(el.dataset.i18n);
-    });
-    ["alt", "aria", "placeholder"].forEach((kind) =>
-      $$(`[data-i18n-${kind}]`).forEach((el) =>
-        el.setAttribute(
-          kind === "aria" ? "aria-label" : kind,
-          t(el.getAttribute(`data-i18n-${kind}`)),
-        ),
-      ),
-    );
-    $$("[data-lang]").forEach((el) =>
-      el.setAttribute("aria-pressed", String(el.dataset.lang === lang)),
-    );
-    $('meta[name="description"]').content = t("metaDescription");
-    $('meta[property="og:description"]').content = t("metaDescription");
-    const canonical = `https://alejandr0qa.github.io/amaruamazon/${lang === "en" ? "" : `?lang=${lang}`}`;
-    $('link[rel="canonical"]').href = canonical;
-    $('meta[property="og:url"]').content = canonical;
-    renderExperiences();
-    renderJourney();
-    renderGallery();
-    renderInterest();
-    updateHeroControls();
-    if (openExperience) renderExperienceDetail(openExperience);
-    if ($("#gallery-dialog").open) renderPhoto();
-    invalidateMessage();
-    if (persist) {
-      try {
-        localStorage.setItem("amaru-language", lang);
-      } catch {}
-      const url = new URL(location.href);
-      url.searchParams.set("lang", lang);
-      try {
-        history.replaceState(null, "", url);
-      } catch {}
-    }
-  }
   function closeMenu() {
     $("#navigation").classList.remove("open");
     $("#menu-toggle").setAttribute("aria-expanded", "false");
   }
+  function updateQuickMessage() {
+    const selected = $$("#quick-experiences input:checked").map((input) =>
+      interestName(input.value),
+    );
+    const message = [
+      t("hello"),
+      "",
+      `${t("msgInterest")}: ${selected.length ? selected.join(", ") : t("choose")}`,
+      `${t("msgPeople")}: ${$("#quick-travelers").value || t("unspecified")}`,
+      `${t("msgDate")}: ${$("#quick-date").value || t("unspecified")}`,
+    ];
+    const notes = $("#quick-notes").value.trim();
+    if (notes) message.push(`${t("msgNotes")}: ${notes}`);
+    message.push("", t("msgEnd"));
+    const text = message.join("\n");
+    $("#quick-message").textContent = text;
+    $("#quick-send").href =
+      `https://wa.me/573132560145?text=${encodeURIComponent(text)}`;
+  }
+  function openQuickEnquiry() {
+    const selected = $("#interest").value;
+    if (
+      !$("#quick-experiences input:checked") &&
+      experiences.some((item) => item.id === selected)
+    ) {
+      $(`#quick-experiences input[value="${selected}"]`).checked = true;
+    }
+    updateQuickMessage();
+    $("#quick-dialog").showModal();
+  }
+  $("#quick-form").addEventListener("input", updateQuickMessage);
+  $("#quick-form").addEventListener("change", updateQuickMessage);
+  $("#quick-form").addEventListener("submit", (event) =>
+    event.preventDefault(),
+  );
+  $("#quick-send").addEventListener("click", (event) => {
+    if (!$("#quick-form").reportValidity()) {
+      event.preventDefault();
+      return;
+    }
+    updateQuickMessage();
+  });
   $("#menu-toggle").addEventListener("click", () => {
     const expanded = $("#menu-toggle").getAttribute("aria-expanded") !== "true";
     $("#navigation").classList.toggle("open", expanded);
@@ -287,9 +252,10 @@
     if (e.key === "Escape") closeMenu();
   });
   document.addEventListener("click", (e) => {
-    const langButton = e.target.closest("[data-lang]");
-    if (langButton) {
-      setLanguage(langButton.dataset.lang);
+    const quickLink = e.target.closest("[data-quick-enquiry]");
+    if (quickLink) {
+      e.preventDefault();
+      openQuickEnquiry();
       return;
     }
     const filterButton = e.target.closest("[data-filter]");
@@ -316,6 +282,7 @@
     }
     const expButton = e.target.closest("[data-open-experience]");
     if (expButton) {
+      e.preventDefault();
       openExperience = expButton.dataset.openExperience;
       renderExperienceDetail(openExperience);
       $("#experience-dialog").showModal();
@@ -323,6 +290,7 @@
     }
     const photoButton = e.target.closest("[data-photo]");
     if (photoButton) {
+      e.preventDefault();
       photo = Number(photoButton.dataset.photo);
       renderPhoto();
       $("#gallery-dialog").showModal();
@@ -407,13 +375,12 @@
     $("#message-result").hidden = false;
     $("#send-whatsapp").focus();
   });
-  let preferred = "en";
-  try {
-    preferred = localStorage.getItem("amaru-language") || "en";
-  } catch {}
-  const query = new URLSearchParams(location.search).get("lang");
-  setLanguage(query || preferred, false);
-  $("#guide-language").value = { en: "English", es: "Español", fr: "Français" }[
-    lang
-  ];
+  $("#trip-form").removeAttribute("inert");
+  $("#quick-date").min = $("#arrival").min;
+  $$("[data-quick-enquiry]").forEach((link) =>
+    link.setAttribute("aria-haspopup", "dialog"),
+  );
+  updateHeroControls();
+  renderExperiences();
+  renderJourney();
 })();
