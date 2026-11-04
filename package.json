@@ -1,0 +1,12 @@
+{
+  "name": "amaru-amazon-experiences",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-site.mjs",
+    "check": "node scripts/check-site.mjs"
+  },
+  "devDependencies": {
+    "parse5": "7.3.0"
+  }
+}

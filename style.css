@@ -232,7 +232,7 @@ p + p {
   align-items: center;
   font-size: 10px;
 }
-.languages button {
+.languages :is(button, a) {
   border: 0;
   background: none;
   color: #697369;
@@ -240,7 +240,7 @@ p + p {
   font-size: 10px;
   min-height: 40px;
 }
-.languages button[aria-pressed="true"] {
+.languages :is(button[aria-pressed="true"], a[aria-current="page"]) {
   color: var(--green);
   font-weight: 800;
   text-decoration: underline;
@@ -605,6 +605,153 @@ p + p {
 }
 .card-link > span:last-child {
   font-size: 19px;
+}
+.experience-details {
+  margin-top: auto;
+}
+.experience-details summary {
+  list-style: none;
+  cursor: pointer;
+}
+.experience-details summary::-webkit-details-marker {
+  display: none;
+}
+.card-detail-copy {
+  padding-bottom: 20px;
+}
+.card-detail-copy ul {
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.journey-panel > img {
+  width: 100%;
+  height: auto;
+}
+.journey-panel-title {
+  padding: 22px 30px;
+  font-size: 29px;
+}
+.journey-panel + .journey-panel {
+  border-top: 1px solid var(--line);
+}
+.trip-form[inert] {
+  display: none;
+}
+.quick-content {
+  padding: 42px 36px 30px;
+}
+.quick-content h2 {
+  font-size: 43px;
+  max-width: 480px;
+  margin-bottom: 15px;
+}
+.quick-content > .eyebrow {
+  padding-right: 25px;
+}
+.quick-intro {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 23px;
+}
+.quick-fieldset {
+  padding: 0;
+  margin: 0 0 22px;
+  border: 0;
+  min-width: 0;
+}
+.quick-choices {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+.quick-choice {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  font-size: 11px;
+  line-height: 1.5;
+  min-height: 48px;
+}
+.quick-choice:has(input:checked) {
+  background: #e7ecdf;
+  border-color: #617554;
+}
+.quick-choice input {
+  accent-color: var(--green);
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  flex-shrink: 0;
+}
+.quick-fields {
+  margin-bottom: 16px;
+}
+.quick-fields label,
+.quick-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 600;
+}
+.quick-fields input,
+.quick-notes textarea {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #cdd2c3;
+  border-radius: 0;
+  background: transparent;
+  padding: 10px;
+  color: var(--ink);
+  font-size: 12px;
+  min-height: 44px;
+}
+.quick-notes textarea {
+  resize: vertical;
+}
+.quick-preview {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 17px;
+}
+.quick-preview > summary {
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  padding-bottom: 16px;
+}
+#quick-message {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: 11px/1.8 var(--sans);
+  color: var(--muted);
+  margin: 10px 0 20px;
+}
+#quick-send {
+  width: 100%;
+}
+@media (max-width: 650px) {
+  .quick-content {
+    padding: 42px 22px 25px;
+  }
+  .quick-content h2 {
+    font-size: 35px;
+  }
+  .quick-choice {
+    font-size: 10px;
+    padding: 10px;
+  }
+  .quick-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+  .languages a {
+    font-size: 12px;
+    padding-inline: 5px;
+  }
 }
 .section-note {
   font-size: 10px;

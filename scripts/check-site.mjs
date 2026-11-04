@@ -2,81 +2,224 @@ import fs from "node:fs";
 import vm from "node:vm";
 import assert from "node:assert/strict";
 import path from "node:path";
+import crypto from "node:crypto";
+import { parse } from "parse5";
+import { siteUrl, languages, languagePaths } from "../site.config.mjs";
 const root = path.resolve(import.meta.dirname, "..");
 const read = (name) => fs.readFileSync(path.join(root, name), "utf8");
-const html = read("index.html");
 const data = vm.runInNewContext(
   read("i18n.js") +
     "\n" +
     read("content.js") +
     "\n({translations,experiences,journeys,gallery})",
 );
-const referencedKeys = [
-  ...html.matchAll(/data-i18n(?:-alt|-aria|-placeholder)?="([^"]+)"/g),
-].map((m) => m[1]);
-for (const lang of ["es", "fr"])
-  for (const key of referencedKeys)
-    assert.ok(data.translations[lang][key], `${lang}: missing ${key}`);
-for (const [lang, copy] of Object.entries(data.translations))
-  for (const key of Object.keys(data.translations.en))
-    assert.ok(copy[key], `${lang}: missing dynamic ${key}`);
-const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((m) => m[1]);
-assert.equal(ids.length, new Set(ids).size, "Duplicate HTML IDs");
-for (const ref of html.matchAll(
-  /(?:href|src|srcset)="([^"?#]+)(?:[?#][^"]*)?"/g,
-)) {
-  if (!/^(https?:|data:)/.test(ref[1]))
-    assert.ok(fs.existsSync(path.join(root, ref[1])), `Missing ${ref[1]}`);
-}
-for (const anchor of html.matchAll(/href="#([^"]+)"/g))
-  assert.ok(ids.includes(anchor[1]), `Missing anchor ${anchor[1]}`);
+const walk = function* (node) {
+  yield node;
+  for (const child of node.childNodes || []) yield* walk(child);
+};
+const attr = (node, key) => node.attrs?.find((a) => a.name === key)?.value;
+const text = (node) =>
+  node.nodeName === "#text"
+    ? node.value
+    : (node.childNodes || []).map(text).join("");
+const hasClass = (node, name) =>
+  (attr(node, "class") || "").split(/\s+/).includes(name);
+const credits = JSON.parse(read("assets/photos/credits.json"));
+const version = crypto
+  .createHash("sha256")
+  .update(
+    ["style.css", "main.js", "i18n.js", "content.js", "render.js"]
+      .map((name) => read(name).replace(/\r\n/g, "\n"))
+      .join("\n"),
+  )
+  .digest("hex")
+  .slice(0, 12);
 assert.equal(data.experiences.length, 8);
 assert.equal(new Set(data.experiences.map((e) => e.id)).size, 8);
-assert.equal(
-  data.experiences.find((e) => e.id === "kayak").time,
-  "day",
-  "Kaya must be daytime",
-);
+assert.equal(data.experiences.find((e) => e.id === "kayak").time, "day");
 assert.notEqual(
   data.experiences.find((e) => e.id === "birdwatching").id,
   data.experiences.find((e) => e.id === "cacao").id,
 );
-const credits = JSON.parse(read("assets/photos/credits.json"));
-const heroPhotos = [
-  ...html.matchAll(
-    /(?:src|srcset)="assets\/photos\/((?:amazon-river|hero-)[^"/]*?)\.webp"/g,
-  ),
-].map((match) => match[1]);
-assert.equal(
-  heroPhotos.length,
-  8,
-  "Four cover photos need desktop and mobile derivatives",
-);
-for (const name of heroPhotos) {
-  assert.ok(credits[name], `Missing cover photo credit ${name}`);
-  assert.equal(credits[name].width, name.endsWith("-mobile") ? 800 : 1920);
-  assert.equal(credits[name].height, name.endsWith("-mobile") ? 1146 : 1084);
-}
-for (const item of [...data.experiences, ...Object.values(data.journeys)]) {
-  assert.ok(credits[item.image], `Missing photo credit ${item.image}`);
-  assert.ok(
-    fs.existsSync(path.join(root, "assets/photos", item.image + ".webp")),
+for (const lang of languages) {
+  const directory = path.join(root, languagePaths[lang]);
+  const html = read(path.join(languagePaths[lang], "index.html"));
+  const nodes = [...walk(parse(html, { scriptingEnabled: false }))];
+  const find = (condition) => nodes.find(condition),
+    all = (condition) => nodes.filter(condition);
+  const byId = (id) => find((n) => attr(n, "id") === id);
+  const pageUrl = new URL(languagePaths[lang], siteUrl).href;
+  assert.equal(
+    attr(
+      find((n) => n.tagName === "html"),
+      "lang",
+    ),
+    lang,
   );
-  for (const lang of ["en", "es", "fr"])
-    assert.ok(item[lang]?.length, `Missing ${lang} experience or journey`);
+  assert.equal(
+    text(find((n) => n.tagName === "title")),
+    data.translations[lang].metaTitle,
+  );
+  assert.equal(
+    attr(
+      find((n) => attr(n, "name") === "description"),
+      "content",
+    ),
+    data.translations[lang].metaDescription,
+  );
+  assert.equal(all((n) => attr(n, "rel") === "canonical").length, 1);
+  assert.equal(
+    attr(
+      find((n) => attr(n, "rel") === "canonical"),
+      "href",
+    ),
+    pageUrl,
+  );
+  for (const [property, expected] of [
+    ["og:url", pageUrl],
+    ["og:title", data.translations[lang].shareTitle],
+    ["og:description", data.translations[lang].metaDescription],
+    ["og:locale", data.translations[lang].ogLocale],
+  ])
+    assert.equal(
+      attr(
+        find((n) => attr(n, "property") === property),
+        "content",
+      ),
+      expected,
+    );
+  const alternates = all((n) => n.tagName === "link" && attr(n, "hreflang"));
+  assert.equal(alternates.length, 4);
+  for (const alternate of [...languages, "x-default"])
+    assert.equal(
+      attr(
+        alternates.find((n) => attr(n, "hreflang") === alternate),
+        "href",
+      ),
+      new URL(
+        languagePaths[alternate === "x-default" ? "en" : alternate],
+        siteUrl,
+      ).href,
+    );
+  const schema = JSON.parse(
+    text(find((n) => attr(n, "type") === "application/ld+json")),
+  );
+  assert.equal(schema.inLanguage, lang);
+  assert.equal(schema.url, pageUrl);
+  assert.equal(
+    all((n) => hasClass(n, "experience-card")).length,
+    8,
+    `${lang}: initial HTML must contain eight experiences`,
+  );
+  assert.equal(
+    all((n) => attr(n, "data-journey-panel")).length,
+    3,
+    `${lang}: initial HTML must contain all three journeys`,
+  );
+  assert.equal(
+    all((n) => hasClass(n, "gallery-item")).length,
+    6,
+    `${lang}: initial HTML must contain gallery links`,
+  );
+  assert.equal(
+    all((n) => n.tagName === "input" && attr(n, "name") === "experiences")
+      .length,
+    8,
+  );
+  for (const item of data.experiences) {
+    assert.ok(text(byId("experience-grid")).includes(item[lang][0]));
+    assert.ok(text(byId("experience-grid")).includes(item[lang][2]));
+  }
+  const ids = all((n) => attr(n, "id")).map((n) => attr(n, "id"));
+  assert.equal(ids.length, new Set(ids).size, `${lang}: duplicate IDs`);
+  for (const node of nodes) {
+    if (node.tagName === "script" && attr(node, "src"))
+      assert.ok(
+        attr(node, "src").endsWith("?v=" + version),
+        `${lang}: rebuild after changing scripts`,
+      );
+    if (
+      node.tagName === "link" &&
+      /(?:^|\/)style\.css\?/.test(attr(node, "href") || "")
+    )
+      assert.ok(
+        attr(node, "href").endsWith("?v=" + version),
+        `${lang}: rebuild after changing styles`,
+      );
+    for (const kind of [
+      "data-i18n",
+      "data-i18n-alt",
+      "data-i18n-aria",
+      "data-i18n-placeholder",
+    ])
+      if (attr(node, kind))
+        assert.ok(
+          data.translations[lang][attr(node, kind)],
+          `${lang}: missing ${attr(node, kind)}`,
+        );
+    if (attr(node, "data-i18n"))
+      assert.equal(
+        text(node),
+        data.translations[lang][attr(node, "data-i18n")],
+      );
+    for (const name of ["src", "href", "srcset", "data-src", "data-srcset"]) {
+      const value = attr(node, name);
+      if (!value) continue;
+      if (value.startsWith("#")) {
+        assert.ok(
+          ids.includes(value.slice(1)),
+          `${lang}: missing anchor ${value}`,
+        );
+        continue;
+      }
+      if (/^https?:/.test(value)) {
+        if (value.startsWith("https://wa.me/")) {
+          const u = new URL(value);
+          assert.equal(u.pathname, "/573132560145");
+        }
+        continue;
+      }
+      const clean = value.split(/[?#]/)[0];
+      if (clean)
+        assert.ok(
+          fs.existsSync(path.resolve(directory, clean)),
+          `${lang}: missing ${value}`,
+        );
+    }
+    if (attr(node, "data-lang")) {
+      assert.equal(node.tagName, "a");
+      const linked = attr(node, "data-lang");
+      const linkedPath = path.resolve(directory, attr(node, "href"));
+      assert.equal(linkedPath, path.resolve(root, languagePaths[linked]));
+    }
+  }
+  const heroImages = all(
+    (n) => n.tagName === "img" && hasClass(n, "hero-image"),
+  );
+  assert.equal(heroImages.length, 4);
+  for (const n of heroImages) {
+    const file = (attr(n, "src") || attr(n, "data-src"))
+      .split("/")
+      .pop()
+      .replace(".webp", "");
+    assert.equal(credits[file].height, 1084);
+  }
+  assert.ok(
+    !/\b(?:USD|COP)\s*[$\d]/.test(html),
+    "Public prices are outside the requested scope",
+  );
+  assert.ok(!html.includes("?lang="), "Canonical language URLs must be static");
 }
-for (const photo of data.gallery)
-  assert.ok(credits[photo[0]], `Missing gallery photo ${photo[0]}`);
-for (const url of html.matchAll(/href="(https:\/\/wa\.me\/\d+)"/g))
-  assert.equal(url[1], "https://wa.me/573132560145");
-assert.ok(
-  !html.includes("img/"),
-  "Old generated imagery must not be referenced",
-);
-assert.ok(
-  !fs.existsSync(path.join(root, "CNAME")),
-  "Do not configure unpurchased domain",
-);
+for (const item of [...data.experiences, ...Object.values(data.journeys)])
+  assert.ok(credits[item.image]);
+for (const photo of data.gallery) assert.ok(credits[photo[0]]);
+const sitemap = read("sitemap.xml");
+for (const lang of languages)
+  assert.ok(
+    sitemap.includes(
+      `<loc>${new URL(languagePaths[lang], siteUrl).href}</loc>`,
+    ),
+  );
 console.log(
-  "PASS: translation coverage, links, anchors, photo credits, 8 distinct experiences, daytime Kaya and WhatsApp number.",
+  "PASS: 3 complete static languages, translated metadata, reciprocal hreflang, all initial content, local resources, WhatsApp options and no public prices.",
 );

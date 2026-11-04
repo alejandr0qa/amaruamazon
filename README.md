@@ -1,71 +1,78 @@
 # Amaru Amazon Experiences
 
-Web de experiencias en Puerto Nariño, Amazonas, Colombia. Inglés principal, español y francés. HTML, CSS y JavaScript sin dependencias de ejecución ni compilación.
+Web estática de experiencias en Puerto Nariño, Amazonas, Colombia. Inglés principal, español y francés. Los precios se consultan directamente con Amaru; la historia de los anfitriones se incorporará cuando entreguen el material real.
 
 ## Sitio y contacto
 
-- Sitio actual: https://alejandr0qa.github.io/amaruamazon/
+- Inglés: https://alejandr0qa.github.io/amaruamazon/
+- Español: https://alejandr0qa.github.io/amaruamazon/es/
+- Francés: https://alejandr0qa.github.io/amaruamazon/fr/
 - Repositorio: https://github.com/alejandr0qa/amaruamazon
-- Dominio previsto, pendiente de compra y conexión: amaruamazonexperiences.com
 - WhatsApp: +57 313 256 0145
+- Dominio previsto, pendiente de compra y conexión: amaruamazonexperiences.com
 
-## Desarrollo
+## Desarrollo y generación
 
-Desde esta carpeta:
-
-```powershell
-python -m http.server 4173 --bind 127.0.0.1
-```
-
-Abrir http://127.0.0.1:4173/ . No abrir como archivo local para las pruebas de navegación y preferencias.
+Se requiere Node.js 22 o posterior. Las dependencias solo se usan para generar y comprobar el HTML; el sitio publicado no requiere servidor Node ni framework.
 
 ```powershell
+npm ci
+npm run build
+npm run check
 node --check main.js
-node --check content.js
-node --check i18n.js
-node scripts/check-site.mjs
+python -m http.server 8077 --bind 127.0.0.1
 ```
 
-## Contenido
+Abrir http://127.0.0.1:8077/ o /es/ o /fr/. No abrir como archivo local para probar la navegación.
 
-- `index.html`: estructura semántica, contenido inglés inicial, metadatos y formulario.
-- `i18n.js`: español, francés y etiquetas dinámicas. Inglés inicial tomado del HTML.
-- `content.js`: ocho experiencias independientes, tres rutas sugeridas y galería.
-- `main.js`: idiomas, filtros, modales, navegación y mensaje de WhatsApp.
-- `style.css`: diseño adaptable, teclado y movimiento reducido.
-- `assets/photos/credits.json`: trazabilidad de cada fotografía publicada.
+Editar las fuentes y ejecutar `npm run build` antes de publicar. Los tres archivos HTML, i18n.js, sitemap.xml y robots.txt se generan y se incluyen en Git para que GitHub Pages pueda servirlos desde la raíz.
 
-Kaya / kayak es diurno. Aves y cacao tienen fichas y opciones de consulta independientes. Las rutas de varios días son propuestas sujetas a confirmación; no hay precios, testimonios ni cifras de viajeros inventados. La disponibilidad de guía en un idioma se confirma al cotizar.
+## Fuentes
+
+- `src/index.template.html`: estructura semántica y texto inglés inicial. No editar directamente los HTML generados.
+- `src/translations.js`: traducciones y etiquetas dinámicas; el generador completa el inglés desde la plantilla.
+- `content.js`: ocho experiencias independientes, tres rutas sugeridas y seis fotografías de galería.
+- `render.js`: plantillas compartidas para las tarjetas y contenido estático.
+- `scripts/build-site.mjs`: generación con parse5; canonical, hreflang, metadatos sociales, JSON-LD y recursos relativos por idioma.
+- `site.config.mjs`: URL pública y rutas de idioma.
+- `main.js`: mejora progresiva, filtros, modales, carrusel y consultas de WhatsApp.
+- `style.css`: estilos adaptables, teclado y movimiento reducido.
+
+Los tres idiomas entregan contenido completo en el HTML inicial, incluidos detalles de experiencias, las tres propuestas de viaje y galería. Sin JavaScript se pueden desplegar las fichas con controles HTML nativos, leer todas las rutas, abrir fotografías y navegar entre idiomas. Con JavaScript se habilitan los modales, filtros y formularios. Los enlaces antiguos con ?lang=es o ?lang=fr llevan a sus nuevas rutas cuando JavaScript está disponible.
+
+Cada idioma tiene canonical propio, hreflang recíproco y metadatos de vista previa traducidos. El generador calcula automáticamente una versión de los estilos y scripts para evitar combinar archivos antiguos de caché con HTML nuevo.
+
+## Consultas por WhatsApp
+
+El botón flotante y el número de contacto abren un selector de varias experiencias, viajeros, fecha opcional y notas. Se puede revisar el mensaje preparado antes de continuar a WhatsApp. No elegir una experiencia genera una solicitud de ayuda para decidir. El enlace se actualiza al editar y no envía mensajes automáticamente.
+
+El formulario principal conserva la consulta detallada con nombre e idioma del guía. Ambos flujos validan viajeros y fecha, codifican el mensaje y permiten que el visitante lo envíe desde WhatsApp. No hay pagos, precios públicos, analítica ni almacenamiento de los formularios. La preferencia de idioma se expresa en la URL y no depende de localStorage.
+
+Kaya / kayak es diurno. Aves y cacao son tours independientes. Las rutas son propuestas sujetas a confirmación. La disponibilidad de guía en un idioma se confirma al cotizar.
 
 ## Fotografías propias
 
-La portada muestra un carrusel de cuatro fotos propias (río, raíces de selva, victorias amazónicas y atardecer), con fundido suave cada siete segundos, flechas, selección directa y pausa/reproducción. La rotación se detiene al salir de la portada, ocultar la pestaña o usar el teclado en la portada. Con movimiento reducido se inicia pausada. Solo se carga la siguiente imagen cuando hace falta; cada foto tiene versiones de escritorio y móvil con la marca de autor completa.
+Los originales de `imagenes-brenda/` se conservan localmente y se excluyen de Git. La web usa derivados WebP con una franja inferior de copyright fuera del paisaje, sin EXIF/GPS. Su trazabilidad está en `assets/photos/credits.json`.
 
-Los originales de `imagenes-brenda/` se conservan localmente y se excluyen de Git. El sitio solo usa derivados WebP marcados de `assets/photos/`. Cada fotografía tiene una franja inferior de copyright añadida fuera del paisaje. Los derivados no contienen metadatos EXIF/GPS. La foto de la portada tiene versiones separadas para móvil y escritorio para mantener visible la franja.
+La portada tiene cuatro escenas con versiones de móvil y escritorio, fundido cada siete segundos y controles de reproducción. Se detiene fuera de la portada, con la pestaña oculta o con foco de teclado; con movimiento reducido empieza pausada.
 
-Para regenerar se requiere Python con Pillow y los originales locales:
+Para regenerar las imágenes se requiere Python, Pillow, los originales locales y la fuente Arial de Windows:
 
 ```powershell
 python scripts/prepare_photos.py
 ```
 
-El logo original compartido se conserva en `assets/brand/amaru-original.png`; la web usa una copia optimizada. Las fuentes Cormorant Garamond y Manrope se sirven localmente, con sus licencias OFL en `assets/fonts/`.
-
-Las imágenes antiguas de `img/` forman parte de la historia previa y no se usan en esta web.
-
-## Consultas y privacidad
-
-El formulario no envía información a un servidor ni cobra pagos. Primero muestra el mensaje preparado. El visitante decide abrir WhatsApp y enviarlo. La consulta no confirma una reserva. Cambiar cualquier campo invalida el mensaje previo. Solo se guarda el idioma en localStorage; no se incluyen analítica, fuentes remotas ni rastreadores.
+El logo original está en `assets/brand/amaru-original.png`. Las fuentes se sirven localmente con sus licencias OFL. Las imágenes antiguas de `img/` no se usan.
 
 ## Publicación y dominio futuro
 
-GitHub Pages publica desde `main`, carpeta raíz. `.nojekyll` evita procesamiento innecesario. Los recursos usan rutas relativas compatibles con el subdirectorio `/amaruamazon/`.
+GitHub Pages publica desde `main`, carpeta raíz, con `.nojekyll`. Antes de subir cambios, generar y comprobar las tres páginas; las verificaciones incluyen traducciones, metadatos, canonical, hreflang, contenido sin JavaScript, enlaces y recursos por idioma.
 
-No hay `CNAME` mientras el dominio esté pendiente. Cuando la compra y el acceso DNS estén listos:
+No se añade CNAME mientras el dominio esté pendiente. Cuando la compra y el DNS estén listos:
 
-1. Configurar `amaruamazonexperiences.com` en Settings → Pages y crear los registros DNS indicados por GitHub.
-2. Crear `CNAME` con el dominio y habilitar HTTPS cuando GitHub confirme el certificado.
-3. Sustituir el origen `https://alejandr0qa.github.io/amaruamazon/` en canonical, Open Graph, hreflang, JSON-LD, `main.js`, `robots.txt` y `sitemap.xml` por `https://amaruamazonexperiences.com/`.
-4. Verificar HTTPS, redirecciones, los tres idiomas y enlaces de WhatsApp en el dominio nuevo.
+1. Configurar amaruamazonexperiences.com en Settings → Pages y crear los registros DNS indicados por GitHub.
+2. Crear CNAME con el dominio y habilitar HTTPS cuando esté disponible.
+3. Cambiar `siteUrl` en `site.config.mjs` a `https://amaruamazonexperiences.com/`.
+4. Ejecutar `npm run build` y `npm run check`, publicar los resultados y verificar HTTPS, idiomas y consultas en el dominio nuevo.
 
-Las condiciones comerciales concretas, disponibilidad y precio total se acuerdan directamente antes de reservar.
+Las condiciones comerciales, disponibilidad y precio total se acuerdan por contacto antes de reservar.
