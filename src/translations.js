@@ -138,7 +138,8 @@ const translations = {
       "Cuéntanos cómo imaginas tu viaje. Juntos afinamos los detalles, directamente por WhatsApp.",
     planLocation: "Puerto Nariño · Amazonas · Colombia",
     planNote:
-      "Planes con intención. Fotografías reales. Una conexión personal con el Amazonas.",
+      "Tu consulta no es una reserva confirmada. Esta web no recibe pagos; los precios y detalles del viaje se acuerdan directamente.",
+    emailLabel: "¿Prefieres escribir por correo?",
     formTitle: "Un poco sobre tu viaje",
     nameLabel: "Tu nombre",
     travelersLabel: "Viajeros",
@@ -165,7 +166,7 @@ const translations = {
     previous: "Fotografía anterior",
     next: "Siguiente fotografía",
     privacyText1:
-      "Esta web estática no envía tu consulta a un servidor, no usa analítica ni recibe pagos. Solo guarda tu preferencia de idioma en este dispositivo. Los campos del formulario permanecen en la página actual y la web no los almacena.",
+      "Esta web estática no envía tu consulta a un servidor, no usa analítica ni recibe pagos. Los campos de consulta permanecen en la página actual y la web no los almacena.",
     privacyText2:
       "Cuando eliges abrir WhatsApp, el mensaje que revisaste se incluye en un enlace de WhatsApp. Es un servicio externo con sus propias condiciones de privacidad. Envía solo los datos que quieras compartir. Para preguntas sobre tu consulta o para solicitar la eliminación de información compartida con Amaru, escribe al +57 313 256 0145.",
     privacyText3:
@@ -308,7 +309,8 @@ const translations = {
       "Racontez-nous le voyage dont vous rêvez. Nous en préparons les détails ensemble, directement sur WhatsApp.",
     planLocation: "Puerto Nariño · Amazonas · Colombie",
     planNote:
-      "Des projets réfléchis. Des photographies réelles. Un lien personnel avec l’Amazonie.",
+      "Votre demande ne confirme pas une réservation. Ce site ne reçoit aucun paiement ; les tarifs et les détails du voyage sont discutés directement.",
+    emailLabel: "Vous préférez le courriel ?",
     formTitle: "Quelques mots sur votre voyage",
     nameLabel: "Votre prénom",
     travelersLabel: "Voyageurs",
@@ -335,7 +337,7 @@ const translations = {
     previous: "Photo précédente",
     next: "Photo suivante",
     privacyText1:
-      "Ce site statique n’envoie pas votre demande à un serveur, n’utilise pas d’analytique et ne collecte aucun paiement. Seule votre préférence de langue est enregistrée sur cet appareil. Les champs restent dans la page actuelle et ne sont pas conservés par le site.",
+      "Ce site statique n’envoie pas votre demande à un serveur, n’utilise pas d’analytique et ne collecte aucun paiement. Les champs de demande restent dans la page actuelle et ne sont pas conservés par le site.",
     privacyText2:
       "Lorsque vous choisissez d’ouvrir WhatsApp, le message relu est inclus dans un lien WhatsApp. Ce service externe possède ses propres règles de confidentialité. Partagez uniquement les informations souhaitées. Contactez le +57 313 256 0145 pour toute question ou pour demander la suppression d’informations partagées avec Amaru.",
     privacyText3:
