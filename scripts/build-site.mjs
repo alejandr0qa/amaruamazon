@@ -3,7 +3,7 @@ import path from "node:path";
 import vm from "node:vm";
 import crypto from "node:crypto";
 import { parse, parseFragment, serialize } from "parse5";
-import { siteUrl, languages, languagePaths } from "../site.config.mjs";
+import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const read = (name) =>
@@ -116,6 +116,12 @@ for (const lang of languages) {
       setAttr(node, "content", t("shareTitle"));
     if (attr(node, "name") === "twitter:description")
       setAttr(node, "content", t("metaDescription"));
+    if (attr(node, "name") === "twitter:image")
+      setAttr(node, "content", new URL("assets/photos/amazon-river.webp", siteUrl).href);
+    if (attr(node, "data-contact-email") !== undefined) {
+      setAttr(node, "href", "mailto:" + contactEmail);
+      setText(node, contactEmail);
+    }
     if (attr(node, "rel") === "canonical")
       setAttr(node, "href", languageUrl(lang));
     if (attr(node, "hreflang"))
@@ -131,6 +137,8 @@ for (const lang of languages) {
     if (attr(node, "type") === "application/ld+json") {
       const schema = JSON.parse(text(node));
       schema.url = languageUrl(lang);
+      schema["@id"] = new URL("#organization", siteUrl).href;
+      schema.email = contactEmail;
       schema.logo = new URL("assets/brand/amaru-logo.webp", siteUrl).href;
       schema.inLanguage = lang;
       setText(node, JSON.stringify(schema));

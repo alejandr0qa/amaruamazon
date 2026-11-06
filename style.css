@@ -1030,6 +1030,19 @@ p + p {
 .contact-number:hover {
   color: var(--gold);
 }
+.contact-email a {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: var(--cream);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-top: 6px;
+}
+.contact-email a:hover {
+  color: var(--gold);
+}
 .whatsapp-icon {
   font-size: 27px;
   color: var(--gold);
