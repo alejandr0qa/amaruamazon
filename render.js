@@ -13,7 +13,7 @@ const AmaruRender = (() => {
         })[c],
     );
   const image = (base, name) => `${base}assets/photos/${name}.webp`;
-  function experienceCards({ experiences, lang, t, base = "" }) {
+  function experienceCards({ experiences, lang, t, base = "", pagePaths, fullExperienceLabel }) {
     return experiences
       .map((item, index) => {
         const [title, summary, detail, points] = item[lang];
@@ -21,7 +21,8 @@ const AmaruRender = (() => {
         <div class="card-image"><img src="${image(base, item.image)}" width="1200" height="828" alt="${escape(title)}" loading="lazy"><span class="card-index">${String(index + 1).padStart(2, "0")}</span></div>
         <div class="card-content"><div class="card-meta"><span>${t(item.cat)}</span><span>${t(item.time)}</span></div><h3>${escape(title)}</h3><p>${escape(summary)}</p>
         <details class="experience-details"><summary class="card-link" data-open-experience="${item.id}" aria-label="${escape(t("view") + ": " + title)}"><span>${t("view")}</span><span aria-hidden="true">↗</span></summary>
-        <div class="card-detail-copy"><p>${escape(detail)}</p><ul>${points.map((point) => `<li>${escape(point)}</li>`).join("")}</ul><a class="text-link" href="#plan" data-choose-interest="${item.id}">${t("enquire")}</a></div></details></div></article>`;
+        <div class="card-detail-copy"><p>${escape(detail)}</p><ul>${points.map((point) => `<li>${escape(point)}</li>`).join("")}</ul><a class="text-link" href="#plan" data-choose-interest="${item.id}">${t("enquire")}</a></div></details>
+        <a class="text-link experience-page-link" data-experience-page="${item.id}" href="${pagePaths[item.id]}" aria-label="${escape(fullExperienceLabel + ": " + title)}">${escape(fullExperienceLabel)} ↗</a></div></article>`;
       })
       .join("");
   }

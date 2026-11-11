@@ -1043,6 +1043,109 @@ p + p {
 .contact-email a:hover {
   color: var(--gold);
 }
+.experience-page-link {
+  display: block;
+  margin-top: 16px;
+  width: fit-content;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.experience-page .experience-intro {
+  padding-top: 64px;
+}
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 42px;
+  font-size: 12px;
+}
+.breadcrumbs a {
+  text-decoration: underline;
+}
+.experience-layout,
+.experience-information,
+.experience-contact {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 55px;
+  align-items: start;
+}
+.experience-page h1 {
+  font-size: clamp(42px, 4.8vw, 68px);
+  letter-spacing: -1.5px;
+}
+.experience-lead {
+  margin-block: 25px;
+}
+.experience-page figure {
+  margin: 0;
+}
+.experience-cover,
+.experience-related img {
+  width: 100%;
+  height: auto;
+}
+.experience-page figcaption {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+.experience-information {
+  border-top: 1px solid var(--line);
+  padding-top: 65px;
+}
+.experience-information h2,
+.experience-contact h2 {
+  font-size: clamp(34px, 3.4vw, 48px);
+  margin-bottom: 22px;
+}
+.experience-information h3 {
+  font-size: 28px;
+  margin-block: 30px 15px;
+}
+.experience-information dt {
+  font-weight: 700;
+}
+.experience-information dd {
+  margin: 0 0 18px;
+}
+.experience-confirm {
+  grid-column: 1 / -1;
+  max-width: 820px;
+}
+.experience-contact .button {
+  margin-top: 25px;
+}
+.experience-contact a {
+  overflow-wrap: anywhere;
+}
+.experience-related {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-block: 35px;
+}
+.experience-related h3 {
+  font-size: 28px;
+  margin-top: 18px;
+}
+@media (max-width: 850px) {
+  .experience-layout,
+  .experience-information,
+  .experience-contact {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+  .experience-page .experience-intro {
+    padding-top: 36px;
+  }
+}
+@media (max-width: 650px) {
+  .experience-related {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
 .whatsapp-icon {
   font-size: 27px;
   color: var(--gold);

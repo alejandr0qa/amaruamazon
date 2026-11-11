@@ -27,7 +27,7 @@ const translations = {
     msgEnd:
       "Please share availability, the full price, inclusions and booking conditions.",
     metaDescription:
-      "Discover the Colombian Amazon with Amaru. Daytime kayaking, birdwatching, cacao and rainforest journeys from Puerto Nariño. Plan your trip on WhatsApp.",
+      "Explore the Colombian Amazon from Puerto Nariño: Lake Tarapoto, dolphin watching, daytime kayaking, birds and cacao. Plan your visit with Amaru.",
   },
   es: {
     skip: "Ir al contenido",
@@ -40,7 +40,7 @@ const translations = {
     hero1: "Hay viajes que",
     hero2: "se quedan contigo.",
     heroText:
-      "Sigue el río. Escucha la selva. Descubre otro ritmo de vida en el corazón del Amazonas.",
+      "Explora la Amazonía colombiana desde Puerto Nariño. Sigue el río, escucha la selva y encuentra tu propio ritmo.",
     exploreCta: "Encuentra tu experiencia",
     heroBottom: "Más cerca de la naturaleza. Más lejos de lo cotidiano.",
     discover: "DESCUBRE AMARU ↓",
@@ -62,8 +62,8 @@ const translations = {
       "Elige una experiencia o construyamos juntos unos días alrededor de lo que te inspira. Esta es tu invitación a ir más despacio y mirar más de cerca.",
     introCta: "Un viaje que se parezca a ti",
     expEyebrow: "DESCUBRE UN POCO MÁS",
-    exp1: "Encuentra tu forma",
-    exp2: "de explorar.",
+    exp1: "Qué hacer",
+    exp2: "en Puerto Nariño.",
     expText:
       "En el agua, bajo los árboles o a través de las historias locales. Hay muchas maneras de conocer el Amazonas.",
     filterLabel: "Filtrar experiencias",
@@ -197,7 +197,7 @@ const translations = {
     msgEnd:
       "Por favor, compártanme disponibilidad, precio total, servicios incluidos y condiciones de reserva.",
     metaDescription:
-      "Descubre el Amazonas colombiano con Amaru. Kayak diurno, avistamiento de aves, cacao y viajes por la selva desde Puerto Nariño. Planea tu viaje por WhatsApp.",
+      "Descubre qué hacer en Puerto Nariño, Amazonas: lago Tarapoto, delfines, kayak diurno, aves y cacao. Planea tus tours con Amaru por contacto directo.",
   },
   fr: {
     skip: "Aller au contenu",
@@ -210,7 +210,7 @@ const translations = {
     hero1: "Certains voyages",
     hero2: "restent en vous.",
     heroText:
-      "Suivez le fleuve. Écoutez la forêt. Découvrez un autre rythme de vie, au cœur de l’Amazonie.",
+      "Explorez l’Amazonie colombienne depuis Puerto Nariño. Suivez le fleuve, écoutez la forêt et trouvez votre propre rythme.",
     exploreCta: "Trouvez votre expérience",
     heroBottom: "Plus près de la nature. Plus loin du quotidien.",
     discover: "DÉCOUVRIR AMARU ↓",
@@ -233,8 +233,8 @@ const translations = {
       "Choisissez une expérience ou imaginons quelques jours selon vos envies. Une invitation à ralentir et à regarder de plus près.",
     introCta: "Un voyage qui vous ressemble",
     expEyebrow: "ALLEZ UN PEU PLUS LOIN",
-    exp1: "À chacun sa façon",
-    exp2: "d’explorer.",
+    exp1: "Que faire",
+    exp2: "à Puerto Nariño ?",
     expText:
       "Sur l’eau, sous la canopée ou à travers les récits locaux. Il existe mille façons de rencontrer l’Amazonie.",
     filterLabel: "Filtrer les expériences",
@@ -368,7 +368,7 @@ const translations = {
     msgEnd:
       "Merci de partager la disponibilité, le prix total, les prestations et les conditions de réservation.",
     metaDescription:
-      "Découvrez l’Amazonie colombienne avec Amaru. Kayak de jour, observation des oiseaux, cacao et séjours en forêt depuis Puerto Nariño. Contactez-nous sur WhatsApp.",
+      "Excursions en Amazonie colombienne depuis Puerto Nariño : lac Tarapoto, dauphins, kayak de jour, oiseaux et cacao. Préparez votre voyage avec Amaru.",
   },
 };
 Object.assign(translations.en, {
@@ -399,14 +399,14 @@ Object.assign(translations.fr, {
   slideSunset: "Coucher de soleil sur l’Amazone",
 });
 Object.assign(translations.en, {
-  metaTitle: "Amazon Tours in Puerto Nariño | Amaru Amazon Experiences",
+  metaTitle: "Colombian Amazon Tours in Puerto Nariño | Amaru",
   shareTitle: "Your Amazon adventure starts here | Amaru",
   ogLocale: "en_GB",
   quickFallback:
     "I would like help choosing experiences and organising my visit.",
 });
 Object.assign(translations.es, {
-  metaTitle: "Tours en Puerto Nariño, Amazonas | Amaru Amazon Experiences",
+  metaTitle: "Tours en Puerto Nariño, Amazonas | Amaru",
   shareTitle: "Tu aventura en el Amazonas empieza aquí | Amaru",
   ogLocale: "es_CO",
   brandHome: "Amaru Amazon Experiences — inicio",
@@ -430,7 +430,7 @@ Object.assign(translations.es, {
     "Esta web estática no envía tu consulta a un servidor, no usa analítica ni recibe pagos. Los campos de consulta permanecen en la página actual y la web no los almacena.",
 });
 Object.assign(translations.fr, {
-  metaTitle: "Excursions à Puerto Nariño, Amazonie | Amaru Amazon Experiences",
+  metaTitle: "Excursions en Amazonie colombienne, Puerto Nariño | Amaru",
   shareTitle: "Votre aventure en Amazonie commence ici | Amaru",
   ogLocale: "fr_FR",
   brandHome: "Amaru Amazon Experiences — accueil",

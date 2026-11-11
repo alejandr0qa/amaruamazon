@@ -4,6 +4,8 @@ import vm from "node:vm";
 import crypto from "node:crypto";
 import { parse, parseFragment, serialize } from "parse5";
 import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
+import { experiencePath, experienceCopy } from "../src/experience-pages.mjs";
+import { buildExperiencePages } from "./build-experience-pages.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
 const read = (name) =>
@@ -65,7 +67,7 @@ fs.writeFileSync(
 const version = crypto
   .createHash("sha256")
   .update(
-    ["style.css", "main.js", "i18n.js", "content.js", "render.js"]
+    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js"]
       .map(read)
       .join("\n"),
   )
@@ -174,7 +176,10 @@ for (const lang of languages) {
           encodeURIComponent(t("hello") + "\n\n" + t("quickFallback")),
       );
   }
-  const context = { ...data, lang, t, base };
+  const context = { ...data, lang, t, base,
+    pagePaths: Object.fromEntries(data.experiences.map((item) => [item.id, base + experiencePath(item.id, lang)])),
+    fullExperienceLabel: experienceCopy[lang].full,
+  };
   setHtml(byId("experience-grid"), data.render.experienceCards(context));
   setText(byId("filter-status"), `8 ${t("filterCount")}`);
   setHtml(byId("journey-content"), data.render.journeyPanels(context));
@@ -206,20 +211,20 @@ for (const lang of languages) {
       "\n",
   );
 }
-const alternates = [...languages, "x-default"]
-  .map(
-    (lang) =>
-      `    <xhtml:link rel="alternate" hreflang="${lang}" href="${languageUrl(lang === "x-default" ? "en" : lang)}"/>`,
-  )
-  .join("\n");
+const experienceRoutes = buildExperiencePages({ root, data, version });
+const sitemapGroups = [
+  Object.fromEntries(languages.map((lang) => [lang, languagePaths[lang]])),
+  ...data.experiences.map((item) => Object.fromEntries(languages.map((lang) => [lang, experiencePath(item.id, lang)]))),
+];
 fs.writeFileSync(
   path.join(root, "sitemap.xml"),
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' +
-    languages
-      .map(
-        (lang) =>
-          `  <url>\n    <loc>${languageUrl(lang)}</loc>\n${alternates}\n  </url>`,
-      )
+    sitemapGroups.flatMap((group) => languages.map((lang) => {
+      const alternates = [...languages, "x-default"].map((alternate) =>
+        `    <xhtml:link rel="alternate" hreflang="${alternate}" href="${new URL(group[alternate === "x-default" ? "en" : alternate], siteUrl).href}"/>`,
+      ).join("\n");
+      return `  <url>\n    <loc>${new URL(group[lang], siteUrl).href}</loc>\n${alternates}\n  </url>`;
+    }))
       .join("\n") +
     "\n</urlset>\n",
 );
@@ -228,5 +233,5 @@ fs.writeFileSync(
   `User-agent: *\nAllow: /\nSitemap: ${new URL("sitemap.xml", siteUrl).href}\n`,
 );
 console.log(
-  `Built ${languages.length} complete language pages; asset version ${version}.`,
+  `Built ${languages.length} homepages and ${experienceRoutes.length} experience pages; asset version ${version}.`,
 );

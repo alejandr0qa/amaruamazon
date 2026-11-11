@@ -5,6 +5,8 @@ import path from "node:path";
 import crypto from "node:crypto";
 import { parse } from "parse5";
 import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
+import { experiencePath } from "../src/experience-pages.mjs";
+import { checkExperiencePages } from "./check-experience-pages.mjs";
 const root = path.resolve(import.meta.dirname, "..");
 const read = (name) => fs.readFileSync(path.join(root, name), "utf8");
 const data = vm.runInNewContext(
@@ -28,7 +30,7 @@ const credits = JSON.parse(read("assets/photos/credits.json"));
 const version = crypto
   .createHash("sha256")
   .update(
-    ["style.css", "main.js", "i18n.js", "content.js", "render.js"]
+    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js"]
       .map((name) => read(name).replace(/\r\n/g, "\n"))
       .join("\n"),
   )
@@ -131,6 +133,13 @@ for (const lang of languages) {
   assert.ok(text(byId("plan")).includes(contactEmail), `${lang}: visible email fallback`);
   assert.ok(!html.includes("alejandr0qa.github.io/amaruamazon"), `${lang}: old production URL`);
   assert.ok(!/cloudflareinsights|data-cf-beacon|analytics\.js/.test(html), "Analytics is deferred");
+  const pageLinks = all((n) => attr(n, "data-experience-page"));
+  assert.equal(pageLinks.length, 8, `${lang}: crawlable experience links`);
+  for (const item of data.experiences)
+    assert.equal(
+      path.resolve(directory, attr(pageLinks.find((n) => attr(n, "data-experience-page") === item.id), "href")),
+      path.resolve(root, experiencePath(item.id, lang)),
+    );
   assert.equal(
     all((n) => hasClass(n, "experience-card")).length,
     8,
@@ -243,8 +252,8 @@ for (const item of [...data.experiences, ...Object.values(data.journeys)])
   assert.ok(credits[item.image]);
 for (const photo of data.gallery) assert.ok(credits[photo[0]]);
 const sitemap = read("sitemap.xml");
-assert.equal((sitemap.match(/<loc>/g) || []).length, 3);
-assert.equal((sitemap.match(/<xhtml:link /g) || []).length, 12);
+assert.equal((sitemap.match(/<loc>/g) || []).length, 27);
+assert.equal((sitemap.match(/<xhtml:link /g) || []).length, 108);
 assert.ok(!sitemap.includes("alejandr0qa.github.io"));
 for (const lang of languages)
   assert.ok(
@@ -259,6 +268,7 @@ for (const alternate of [...languages, "x-default"])
     `Sitemap: reciprocal ${alternate} on all pages`,
   );
 assert.equal(read("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${new URL("sitemap.xml", siteUrl).href}\n`);
+checkExperiencePages({ root, data, version, sitemap });
 console.log(
-  "PASS: 3 complete static languages, custom-domain SEO/social metadata, reciprocal hreflang, sitemap/robots, verified contact channels, all initial content, local resources, WhatsApp options, no analytics and no public prices.",
+  "PASS: 3 homepages + 24 experience pages, localized SEO, reciprocal hreflang, 27-URL sitemap/robots, local/cross-page resources and anchors, contextual WhatsApp, no analytics or public prices.",
 );

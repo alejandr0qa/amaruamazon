@@ -26,13 +26,17 @@ python -m http.server 8077 --bind 127.0.0.1
 
 Abrir http://127.0.0.1:8077/ o /es/ o /fr/. No abrir como archivo local para probar la navegación.
 
-Editar las fuentes y ejecutar `npm run build` antes de publicar. Los tres archivos HTML, i18n.js, sitemap.xml y robots.txt se generan y se incluyen en Git para que GitHub Pages pueda servirlos desde la raíz.
+Editar las fuentes y ejecutar `npm run build` antes de publicar. Las tres portadas, las 24 páginas de experiencias, i18n.js, sitemap.xml y robots.txt se generan y se incluyen en Git para que GitHub Pages pueda servirlos desde la raíz.
 
 ## Fuentes
 
 - `src/index.template.html`: estructura semántica y texto inglés inicial. No editar directamente los HTML generados.
 - `src/translations.js`: traducciones y etiquetas dinámicas; el generador completa el inglés desde la plantilla.
 - `content.js`: ocho experiencias independientes, tres rutas sugeridas y seis fotografías de galería.
+- `src/experience-pages.mjs`: rutas localizadas, títulos y recomendaciones de las ocho experiencias; no contiene tarifas ni duraciones supuestas.
+- `scripts/build-experience-pages.mjs`: genera páginas individuales reutilizando cabecera, pie, privacidad, estilos y datos de la portada. No editar sus HTML de salida.
+- `experience.js`: menú móvil y diálogo de privacidad de las páginas individuales, sin cargar el carrusel ni los datos de toda la portada.
+- `scripts/check-experience-pages.mjs`: comprueba las 24 páginas, enlaces locales y cruzados, metadatos únicos, hreflang, JSON-LD y contacto contextual.
 - `render.js`: plantillas compartidas para las tarjetas y contenido estático.
 - `scripts/build-site.mjs`: generación con parse5; canonical, hreflang, metadatos sociales, JSON-LD y recursos relativos por idioma.
 - `site.config.mjs`: URL pública, rutas de idioma y correo corporativo.
@@ -42,6 +46,10 @@ Editar las fuentes y ejecutar `npm run build` antes de publicar. Los tres archiv
 Los tres idiomas entregan contenido completo en el HTML inicial, incluidos detalles de experiencias, las tres propuestas de viaje y galería. Sin JavaScript se pueden desplegar las fichas con controles HTML nativos, leer todas las rutas, abrir fotografías y navegar entre idiomas. Con JavaScript se habilitan los modales, filtros y formularios. Los enlaces antiguos con ?lang=es o ?lang=fr llevan a sus nuevas rutas cuando JavaScript está disponible.
 
 Cada idioma tiene canonical propio, hreflang recíproco y metadatos de vista previa traducidos. El generador calcula automáticamente una versión de los estilos y scripts para evitar combinar archivos antiguos de caché con HTML nuevo.
+
+Las tarjetas y modales conservan su funcionamiento y ahora enlazan una guía completa por experiencia. Cada guía tiene H1, title y descripción propios, fotografía existente con copyright visible, información práctica, enlaces relacionados y mensajes de WhatsApp con la actividad seleccionada. El enlace al formulario de portada utiliza `?experience=<id>#plan`; solo se aceptan los ocho identificadores conocidos y la canonical sigue siendo la ruta limpia. La duración no se publica como una cifra mientras no esté validada.
+
+Las rutas de salida son `experiences/<slug>/`, `es/experiencias/<slug>/` y `fr/experiences/<slug>/`; los slugs exactos se definen en `src/experience-pages.mjs`. El sitemap incluye las 27 páginas con sus traducciones equivalentes.
 
 El dominio propio se aplica a canonical, Open Graph, Twitter, sitemap, robots.txt y JSON-LD. La entidad TravelAgency mantiene un identificador común en los tres idiomas, con teléfono y correo de contacto. No se publican valoraciones, RNT, certificaciones ni precios sin evidencia.
 
@@ -56,6 +64,8 @@ El correo corporativo ofrece una alternativa mediante `mailto:` en contacto y pr
 ## Siguiente fase y analítica
 
 El inventario de información pendiente y los puntos de integración están en [docs/pending-operator-information.md](docs/pending-operator-information.md). No se muestran fichas vacías ni datos de ejemplo al visitante. Los precios seguirán comunicándose por contacto directo.
+
+Los pasos externos para verificar el dominio, enviar el sitemap y revisar indexación están en [docs/google-search-console.md](docs/google-search-console.md). No se ha activado Search Console mediante una cuenta externa ni cambiado la configuración del alojamiento en esta fase.
 
 Por decisión del propietario, Cloudflare Web Analytics queda para una fase posterior a la consolidación y promoción comercial. Esta fase no incluye scripts, tokens, configuración ni dependencias de analítica. La [documentación oficial](https://developers.cloudflare.com/web-analytics/about/) indica que el servicio es gratuito y puede utilizarse sin cambiar DNS; su [FAQ](https://developers.cloudflare.com/web-analytics/faq/) aclara que actualmente no permite eventos personalizados, por lo que no debe presentarse como medición de clics en WhatsApp. Evaluar de nuevo alcance, privacidad e información al visitante cuando se retome.
 
@@ -77,7 +87,7 @@ El logo original está en `assets/brand/amaru-original.png`. Las fuentes se sirv
 
 ## Revisión y publicación
 
-GitHub Pages publica desde `main`, carpeta raíz, con `.nojekyll`. Antes de subir cambios, generar y comprobar las tres páginas; las verificaciones incluyen traducciones, metadatos, canonical, hreflang, contenido sin JavaScript, enlaces y recursos por idioma.
+GitHub Pages publica desde `main`, carpeta raíz, con `.nojekyll`. Antes de subir cambios, generar y comprobar las 27 páginas; las verificaciones incluyen traducciones, metadatos, canonical, hreflang, contenido sin JavaScript, enlaces y recursos por idioma.
 
 Los cambios de esta fase se presentan en una rama independiente y PR sin fusionar. No modificar `CNAME`, DNS, Cloudflare ni los ajustes de Pages como parte de esta optimización. Tras la revisión y aprobación, integrar los cambios mediante el proceso habitual del repositorio y verificar las tres rutas en el dominio público.
 

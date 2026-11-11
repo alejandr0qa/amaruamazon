@@ -9,6 +9,7 @@ Documento de preparación editorial, sin integración automática en el sitio. N
 - Canal de correo: el enlace abre el cliente del visitante. El operador debe confirmar que recibe mensajes en el buzón; no se ha enviado correo de prueba.
 - Contacto: se aclara que una consulta no confirma una reserva y que esta web no cobra. La disponibilidad, precio total y detalles se tratan directamente con el operador.
 - Analítica: aplazada expresamente por el propietario. Sin scripts, token, dependencias ni cambios en Cloudflare.
+- Páginas individuales: preparadas con el catálogo existente y preguntas de planificación. Para completar cada ficha hacen falta duración, dificultad, edades, tamaños de grupo, equipo e inclusiones validados. Las recomendaciones no constituyen compromisos operativos.
 
 ## Datos por recopilar y verificar
 
@@ -21,7 +22,7 @@ Documento de preparación editorial, sin integración automática en el sitio. N
 | Seguridad | Protocolos reales por actividad, responsable, equipo disponible, chalecos, botiquín, comunicaciones, emergencias, restricciones de edad/condición física y cobertura de seguros si existe. | FAQ y fichas de `content.js` tras revisión del operador. No afirmar guías certificados, seguros o cobertura de emergencias sin documentación. |
 | Condiciones comerciales | Procedimiento real de confirmación, medios de pago, moneda, anticipos, inclusiones, cambios, cancelación, clima y reembolsos; aprobación del operador. | FAQ y contenido de consulta en los tres idiomas. Mantener la web sin cobros, reservas automáticas ni nuevas obligaciones. No publicar políticas genéricas como si fueran de Amaru. |
 | Llegada | Puntos de encuentro, responsables de traslados, ruta Leticia–Puerto Nariño validada localmente, operadores de bote, horarios, duración, costos, reserva previa y alternativas según temporada. Registrar fuente y fecha de comprobación. | Ampliación de FAQ o sección de llegada; no publicar horarios, tarifas o frecuencias estimados como hechos. |
-| Fichas prácticas | Para cada una de las ocho experiencias: duración, dificultad, edad, grupo mínimo/máximo, equipo e inclusiones, accesibilidad, estacionalidad y restricciones confirmadas. | Ampliar los datos y traducciones de `content.js` y su presentación en `render.js`, manteniendo el tour de kayak diurno y aves/cacao separados. |
+| Fichas prácticas | Para cada una de las ocho experiencias: duración, dificultad, edad, grupo mínimo/máximo, equipo e inclusiones, accesibilidad, estacionalidad y restricciones confirmadas. | Ampliar `content.js` y `src/experience-pages.mjs` y su presentación en los generadores. La duración validada se integra con `duration: { en, es, fr }` en la experiencia; mientras falte, se pide confirmarla. Mantener kayak diurno y aves/cacao separados. |
 
 ## Ficha para entregar cada dato
 
