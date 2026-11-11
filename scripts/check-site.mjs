@@ -4,7 +4,9 @@ import assert from "node:assert/strict";
 import path from "node:path";
 import crypto from "node:crypto";
 import { parse } from "parse5";
-import { siteUrl, languages, languagePaths } from "../site.config.mjs";
+import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
+import { experiencePath } from "../src/experience-pages.mjs";
+import { checkExperiencePages } from "./check-experience-pages.mjs";
 const root = path.resolve(import.meta.dirname, "..");
 const read = (name) => fs.readFileSync(path.join(root, name), "utf8");
 const data = vm.runInNewContext(
@@ -28,13 +30,16 @@ const credits = JSON.parse(read("assets/photos/credits.json"));
 const version = crypto
   .createHash("sha256")
   .update(
-    ["style.css", "main.js", "i18n.js", "content.js", "render.js"]
+    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js"]
       .map((name) => read(name).replace(/\r\n/g, "\n"))
       .join("\n"),
   )
   .digest("hex")
   .slice(0, 12);
 assert.equal(data.experiences.length, 8);
+assert.equal(siteUrl, "https://amaruamazonexperiences.com/");
+assert.deepEqual(languages, ["en", "es", "fr"]);
+assert.equal(read("CNAME").trim(), new URL(siteUrl).hostname);
 assert.equal(new Set(data.experiences.map((e) => e.id)).size, 8);
 assert.equal(data.experiences.find((e) => e.id === "kayak").time, "day");
 assert.notEqual(
@@ -80,6 +85,7 @@ for (const lang of languages) {
     ["og:title", data.translations[lang].shareTitle],
     ["og:description", data.translations[lang].metaDescription],
     ["og:locale", data.translations[lang].ogLocale],
+    ["og:image", new URL("assets/photos/amazon-river.webp", siteUrl).href],
   ])
     assert.equal(
       attr(
@@ -88,6 +94,12 @@ for (const lang of languages) {
       ),
       expected,
     );
+  for (const [name, expected] of [
+    ["twitter:title", data.translations[lang].shareTitle],
+    ["twitter:description", data.translations[lang].metaDescription],
+    ["twitter:image", new URL("assets/photos/amazon-river.webp", siteUrl).href],
+  ])
+    assert.equal(attr(find((n) => attr(n, "name") === name), "content"), expected);
   const alternates = all((n) => n.tagName === "link" && attr(n, "hreflang"));
   assert.equal(alternates.length, 4);
   for (const alternate of [...languages, "x-default"])
@@ -106,6 +118,28 @@ for (const lang of languages) {
   );
   assert.equal(schema.inLanguage, lang);
   assert.equal(schema.url, pageUrl);
+  assert.equal(schema["@id"], new URL("#organization", siteUrl).href);
+  assert.equal(schema.email, contactEmail);
+  assert.equal(schema.telephone, "+573132560145");
+  assert.equal(schema.logo, new URL("assets/brand/amaru-logo.webp", siteUrl).href);
+  for (const field of ["priceRange", "aggregateRating", "review", "award"])
+    assert.equal(schema[field], undefined, `${lang}: do not publish unverified ${field}`);
+  const emailLinks = all((n) => attr(n, "data-contact-email") !== undefined);
+  assert.ok(emailLinks.length >= 2, `${lang}: contact and privacy email links`);
+  for (const link of emailLinks) {
+    assert.equal(attr(link, "href"), "mailto:" + contactEmail);
+    assert.equal(text(link), contactEmail);
+  }
+  assert.ok(text(byId("plan")).includes(contactEmail), `${lang}: visible email fallback`);
+  assert.ok(!html.includes("alejandr0qa.github.io/amaruamazon"), `${lang}: old production URL`);
+  assert.ok(!/cloudflareinsights|data-cf-beacon|analytics\.js/.test(html), "Analytics is deferred");
+  const pageLinks = all((n) => attr(n, "data-experience-page"));
+  assert.equal(pageLinks.length, 8, `${lang}: crawlable experience links`);
+  for (const item of data.experiences)
+    assert.equal(
+      path.resolve(directory, attr(pageLinks.find((n) => attr(n, "data-experience-page") === item.id), "href")),
+      path.resolve(root, experiencePath(item.id, lang)),
+    );
   assert.equal(
     all((n) => hasClass(n, "experience-card")).length,
     8,
@@ -165,6 +199,10 @@ for (const lang of languages) {
     for (const name of ["src", "href", "srcset", "data-src", "data-srcset"]) {
       const value = attr(node, name);
       if (!value) continue;
+      if (value.startsWith("mailto:")) {
+        assert.equal(value, "mailto:" + contactEmail);
+        continue;
+      }
       if (value.startsWith("#")) {
         assert.ok(
           ids.includes(value.slice(1)),
@@ -214,12 +252,23 @@ for (const item of [...data.experiences, ...Object.values(data.journeys)])
   assert.ok(credits[item.image]);
 for (const photo of data.gallery) assert.ok(credits[photo[0]]);
 const sitemap = read("sitemap.xml");
+assert.equal((sitemap.match(/<loc>/g) || []).length, 27);
+assert.equal((sitemap.match(/<xhtml:link /g) || []).length, 108);
+assert.ok(!sitemap.includes("alejandr0qa.github.io"));
 for (const lang of languages)
   assert.ok(
     sitemap.includes(
       `<loc>${new URL(languagePaths[lang], siteUrl).href}</loc>`,
     ),
   );
+for (const alternate of [...languages, "x-default"])
+  assert.equal(
+    sitemap.split(`hreflang="${alternate}" href="${new URL(languagePaths[alternate === "x-default" ? "en" : alternate], siteUrl).href}"`).length - 1,
+    3,
+    `Sitemap: reciprocal ${alternate} on all pages`,
+  );
+assert.equal(read("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${new URL("sitemap.xml", siteUrl).href}\n`);
+checkExperiencePages({ root, data, version, sitemap });
 console.log(
-  "PASS: 3 complete static languages, translated metadata, reciprocal hreflang, all initial content, local resources, WhatsApp options and no public prices.",
+  "PASS: 3 homepages + 24 experience pages, localized SEO, reciprocal hreflang, 27-URL sitemap/robots, local/cross-page resources and anchors, contextual WhatsApp, no analytics or public prices.",
 );

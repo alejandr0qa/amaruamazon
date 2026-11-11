@@ -17,6 +17,9 @@
     photo = 0,
     openExperience = null;
   const t = (key) => translations[lang][key] ?? translations.en[key] ?? key;
+  const requestedExperience = new URLSearchParams(location.search).get("experience");
+  if (experiences.some((item) => item.id === requestedExperience))
+    $("#interest").value = requestedExperience;
   const hero = $("#home");
   const slides = $$(".hero-slide");
   const slideNames = [
@@ -181,6 +184,8 @@
     const [title, , detail, points] = item[lang];
     $("#dialog-content").innerHTML =
       `<img class="dialog-photo" src="${photoPath(item.image)}" width="1200" height="828" alt="${escape(title)}"><div class="dialog-body"><p class="eyebrow">${t(item.cat)} · ${t(item.time)}</p><h2 id="dialog-title">${escape(title)}</h2><p>${escape(detail)}</p><ul>${points.map((p) => `<li>${escape(p)}</li>`).join("")}</ul><p>${t("flexible")}</p><a href="#plan" class="button" data-choose-interest="${item.id}">${t("enquire")}</a></div>`;
+    const pageLink = $(`[data-experience-page="${id}"]`).cloneNode(true);
+    $(".dialog-body", $("#dialog-content")).append(pageLink);
   }
   function renderPhoto() {
     const item = gallery[photo];
