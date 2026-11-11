@@ -115,7 +115,7 @@ const translations = {
     faqCta: "Conversemos",
     faqQ1: "¿Dónde comienza el viaje?",
     faqA1:
-      "Estamos en Puerto Nariño, en la Amazonía colombiana. La entrada habitual por avión es Leticia; desde allí se continúa por río hasta Puerto Nariño. Escríbenos antes de comprar conexiones para coordinar el punto de encuentro y los traslados en bote con tu llegada.",
+      "Estamos en Puerto Nariño, en la Amazonía colombiana. La entrada habitual por avión es Leticia; desde allí se continúa por río. Confirma el horario, el punto de embarque y las conexiones antes de comprar los tiquetes. Comparte tu llegada con Amaru y consulta dónde empieza tu experiencia y qué transporte, si lo hay, está incluido en la propuesta.",
     faqQ2: "¿Cuándo puedo visitarlos?",
     faqA2:
       "El río cambia a lo largo del año. Las aguas altas pueden abrir recorridos por el bosque inundado; las aguas bajas permiten otras caminatas y paisajes. Cuéntanos tus fechas y te explicamos qué es posible en esa temporada. La lluvia es parte de la experiencia.",
@@ -124,7 +124,7 @@ const translations = {
       "Indícanos tu idioma preferido al consultar. Antes de reservar confirmamos la disponibilidad de guía o intérprete y cualquier costo adicional. El idioma de esta web no garantiza un guía en ese idioma.",
     faqQ4: "¿Qué debo llevar?",
     faqA4:
-      "Viaja ligero: ropa fresca de manga larga, pantalones largos, protección para la lluvia, calzado para caminar, sombrero, repelente y botella reutilizable. Para las noches en selva confirmamos una lista específica y el equipo incluido.",
+      "Viaja ligero: ropa fresca de manga larga, pantalones largos, protección para la lluvia, calzado para caminar, sombrero, repelente y botella reutilizable. Pide la lista de equipo para tu salida y confirma qué se facilita. La conexión a internet en Puerto Nariño puede ser limitada: guarda los datos útiles de tu viaje para consultarlos sin conexión. Prevé efectivo para gastos locales y pregunta qué medios de pago se aceptan antes de depender de las tarjetas.",
     faqQ5: "¿Cómo funcionan los precios y las reservas?",
     faqA5:
       "Envíanos tus fechas, número de viajeros e intereses por WhatsApp. Revisamos la disponibilidad y enviamos una propuesta con precio total, servicios incluidos, condiciones de pago y cancelación. Una consulta no es una reserva confirmada. Esta web no recibe pagos.",
@@ -286,7 +286,7 @@ const translations = {
     faqCta: "Parlons-en",
     faqQ1: "Où commence le voyage ?",
     faqA1:
-      "Nous sommes à Puerto Nariño, en Amazonie colombienne. Leticia est la porte d’entrée habituelle en avion ; la suite du trajet se fait par bateau. Contactez-nous avant d’acheter vos correspondances pour coordonner le rendez-vous et les trajets fluviaux avec votre arrivée.",
+      "Nous sommes à Puerto Nariño, en Amazonie colombienne. Leticia est la porte d’entrée habituelle en avion ; la suite du trajet se fait par bateau. Confirmez l’horaire, le point d’embarquement et les correspondances avant d’acheter les billets. Indiquez votre arrivée à Amaru et demandez où commence votre expérience et quels transports sont éventuellement inclus dans la proposition.",
     faqQ2: "Quand venir ?",
     faqA2:
       "Le fleuve évolue au fil de l’année. Les hautes eaux peuvent ouvrir des passages dans la forêt inondée ; les basses eaux offrent d’autres promenades et paysages. Donnez-nous vos dates et nous vous expliquerons les possibilités. La pluie fait partie de l’expérience.",
@@ -295,7 +295,7 @@ const translations = {
       "Indiquez votre langue lors de votre demande. Nous confirmerons la disponibilité d’un guide ou interprète et tout supplément avant la réservation. La langue du site ne garantit pas un guide dans cette langue.",
     faqQ4: "Que faut-il emporter ?",
     faqA4:
-      "Voyagez léger : vêtements respirants à manches longues, pantalon, protection contre la pluie, chaussures de marche, chapeau, répulsif et gourde. Pour les nuits en forêt, nous confirmerons une liste précise et le matériel fourni.",
+      "Voyagez léger : vêtements respirants à manches longues, pantalon, protection contre la pluie, chaussures de marche, chapeau, répulsif et gourde. Demandez la liste adaptée à votre sortie et confirmez le matériel fourni. La connexion internet peut être limitée à Puerto Nariño : enregistrez les informations utiles pour les consulter hors ligne. Prévoyez des espèces pour les dépenses locales et vérifiez les moyens de paiement acceptés avant de compter sur une carte.",
     faqQ5: "Comment fonctionnent les tarifs et les réservations ?",
     faqA5:
       "Envoyez vos dates, le nombre de voyageurs et vos envies sur WhatsApp. Nous proposerons un séjour personnalisé avec le prix total, les prestations, les conditions de paiement et d’annulation. Une demande ne constitue pas une réservation. Aucun paiement n’est encaissé sur le site.",

@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import { parse } from "parse5";
 import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
 import { experiencePath, experiencePages, experienceCopy, experienceDescriptions, experienceAlt } from "../src/experience-pages.mjs";
+import { experienceEditorial, editorialSources } from "../src/experience-editorial.mjs";
 
 export function checkExperiencePages({ root, data, version, sitemap }) {
   const walk = function* (node) {
@@ -32,6 +33,13 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
     assert.ok(text(find((n) => n.tagName === "main")).includes(item[lang][2]), `${route}: static detail text`);
     assert.ok(text(find((n) => n.tagName === "main")).includes(experiencePages[item.id][lang][2]));
     assert.ok(text(find((n) => n.tagName === "main")).includes(item.duration?.[lang] || copy.confirmDuration));
+    const context = all((n) => attr(n, "data-editorial-context") !== undefined);
+    assert.equal(context.length, 2, `${route}: readable territorial context in initial HTML`);
+    assert.deepEqual(context.map(text), experienceEditorial[item.id][lang].paragraphs);
+    const tips = find((n) => attr(n, "data-editorial-tips") !== undefined);
+    assert.equal(text(tips), experiencePages[item.id][lang][2]);
+    const sources = [...walk(find((n) => attr(n, "data-editorial-sources") !== undefined))].filter((n) => n.tagName === "a");
+    assert.deepEqual(sources.map((n) => attr(n, "href")), experienceEditorial[item.id].sources.map((id) => editorialSources[id].url));
     assert.equal(all((n) => attr(n, "rel") === "canonical").length, 1);
     assert.equal(attr(find((n) => attr(n, "rel") === "canonical"), "href"), pageUrl);
     for (const [property, expected] of [["og:url", pageUrl], ["og:title", title], ["og:description", description], ["og:locale", data.translations[lang].ogLocale], ["og:image", new URL(`assets/photos/${item.image}.webp`, siteUrl).href]])

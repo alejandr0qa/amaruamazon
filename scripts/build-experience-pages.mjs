@@ -3,6 +3,7 @@ import path from "node:path";
 import { parse, parseFragment, serialize } from "parse5";
 import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
 import { experiencePages, experienceCopy, experiencePath, experienceDescriptions, experienceAlt } from "../src/experience-pages.mjs";
+import { experienceEditorial, editorialSources, editorialSourceLabel } from "../src/experience-editorial.mjs";
 
 // Three complementary choices per experience; each activity receives three links.
 const relatedExperiences = {
@@ -41,6 +42,11 @@ export function buildExperiencePages({ root, data, version }) {
     const home = base + languagePaths[lang];
     const pageUrl = new URL(route, siteUrl).href;
     const copy = experienceCopy[lang];
+    const editorial = experienceEditorial[item.id][lang];
+    const sourceLinks = experienceEditorial[item.id].sources.map((id) => {
+      const source = editorialSources[id];
+      return `<a href="${escape(source.url)}" target="_blank" rel="noopener noreferrer">${escape(source.name)} ↗</a>`;
+    }).join(" · ");
     const [, heading, advice] = experiencePages[item.id][lang];
     const [name, summary, detail, points] = item[lang];
     const title = `${heading} | Puerto Nariño | Amaru`;
@@ -116,8 +122,8 @@ export function buildExperiencePages({ root, data, version }) {
         </div><figure><img class="experience-cover" src="${base}assets/photos/${item.image}.webp" srcset="${base}assets/photos/${item.image}-480.webp 480w, ${base}assets/photos/${item.image}-800.webp 800w, ${base}assets/photos/${item.image}.webp 1200w" sizes="(max-width:650px) calc(100vw - 40px), (max-width:850px) calc(100vw - 72px), (max-width:1100px) calc((100vw - 120px) / 2), (max-width:1352px) calc((100vw - 160px) / 2), 596px" width="1200" height="828" alt="${escape(experienceAlt[item.id][lang])}" fetchpriority="high" decoding="async"><figcaption>${escape(t("photoCredit"))}</figcaption></figure></div>
       </section>
       <section class="section wrap experience-information" aria-labelledby="about-title">
-        <div><h2 id="about-title">${escape(copy.about)}</h2><p>${escape(detail)}</p><h3>${escape(copy.highlights)}</h3><ul>${points.map((point) => `<li>${escape(point)}</li>`).join("")}</ul></div>
-        <div id="practical"><h2>${escape(copy.practical)}</h2><dl><dt>${escape(copy.timing)}</dt><dd>${escape(t(item.time))}</dd><dt>${escape(copy.duration)}</dt><dd>${escape(item.duration?.[lang] || copy.confirmDuration)}</dd></dl><p>${escape(advice)}</p><p>${escape(copy.bring)}</p></div>
+        <div><h2 id="about-title">${escape(copy.about)}</h2><p>${escape(detail)}</p>${editorial.paragraphs.map((paragraph) => `<p data-editorial-context>${escape(paragraph)}</p>`).join("")}<p class="photo-credit" data-editorial-sources>${escape(editorialSourceLabel[lang])}: ${sourceLinks}</p><h3>${escape(copy.highlights)}</h3><ul>${points.map((point) => `<li>${escape(point)}</li>`).join("")}</ul></div>
+        <div id="practical"><h2>${escape(copy.practical)}</h2><dl><dt>${escape(copy.timing)}</dt><dd>${escape(t(item.time))}</dd><dt>${escape(copy.duration)}</dt><dd>${escape(item.duration?.[lang] || copy.confirmDuration)}</dd></dl><p data-editorial-tips>${escape(advice)}</p></div>
         <div class="experience-confirm"><h3>${escape(copy.confirm)}</h3><p>${escape(copy.confirmText)}</p><p>${escape(copy.note)}</p></div>
       </section>
       <section class="plan-section section" id="plan" aria-labelledby="contact-title"><div class="wrap experience-contact"><div>
