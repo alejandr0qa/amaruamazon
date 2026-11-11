@@ -3,7 +3,7 @@ import path from "node:path";
 import assert from "node:assert/strict";
 import { parse } from "parse5";
 import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
-import { experiencePath, experiencePages, experienceCopy } from "../src/experience-pages.mjs";
+import { experiencePath, experiencePages, experienceCopy, experienceDescriptions, experienceAlt } from "../src/experience-pages.mjs";
 
 export function checkExperiencePages({ root, data, version, sitemap }) {
   const walk = function* (node) {
@@ -21,7 +21,7 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
     const pageUrl = new URL(route, siteUrl).href;
     const copy = experienceCopy[lang];
     const heading = experiencePages[item.id][lang][1];
-    const description = `${item[lang][1]} ${copy.metaSuffix}`;
+    const description = experienceDescriptions[item.id][lang];
     const title = `${heading} | Puerto Nariño | Amaru`;
     assert.equal(attr(find((n) => n.tagName === "html"), "lang"), lang);
     assert.equal(text(find((n) => n.tagName === "title")), title);
@@ -51,6 +51,8 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
     const breadcrumb = graph.find((s) => s["@type"] === "BreadcrumbList");
     assert.equal(organization.email, contactEmail);
     assert.equal(organization["@id"], siteUrl + "#organization");
+    assert.equal(organization.inLanguage, undefined);
+    assert.equal(organization.url, siteUrl);
     assert.equal(webpage.url, pageUrl); assert.equal(webpage.inLanguage, lang);
     assert.equal(service.name, heading); assert.equal(service.description, item[lang][2]);
     assert.equal(service.url, pageUrl); assert.equal(service.provider["@id"], organization["@id"]);
@@ -79,7 +81,14 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
     assert.ok(attr(scripts[0], "src").endsWith(`experience.js?v=${version}`));
     for (const image of all((n) => n.tagName === "img")) {
       assert.ok(attr(image, "alt")); assert.ok(attr(image, "width")); assert.ok(attr(image, "height"));
+      for (const candidate of (attr(image, "srcset") || "").split(",").filter(Boolean)) {
+        const file = candidate.trim().split(/\s+/)[0];
+        assert.ok(fs.existsSync(path.resolve(root, route, file)), `${route}: missing responsive ${file}`);
+      }
     }
+    const cover = find((n) => (attr(n, "class") || "").split(" ").includes("experience-cover"));
+    assert.equal(attr(cover, "alt"), experienceAlt[item.id][lang]);
+    assert.ok(attr(cover, "srcset")?.includes("480w"));
     const contact = all((n) => attr(n, "data-experience-whatsapp") !== undefined);
     assert.equal(contact.length, 2);
     for (const link of contact) {
@@ -91,7 +100,10 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
     const enquiry = new URL(attr(find((n) => attr(n, "data-home-enquiry") !== undefined), "href"), new URL(route, siteUrl));
     assert.equal(enquiry.pathname, new URL(languagePaths[lang], siteUrl).pathname);
     assert.equal(enquiry.searchParams.get("experience"), item.id); assert.equal(enquiry.hash, "#plan");
-    assert.equal(all((n) => attr(n, "data-related-experience") !== undefined).length, 3);
+    const related = all((n) => attr(n, "data-related-experience") !== undefined).map((n) => new URL(attr(n, "href"), pageUrl).href);
+    assert.equal(related.length, 3);
+    assert.equal(new Set(related).size, 3, `${route}: duplicate related experiences`);
+    assert.ok(!related.includes(pageUrl), `${route}: related experience links to itself`);
     assert.ok(!/alejandr0qa.github.io|cloudflareinsights|data-cf-beacon|noindex|\b(?:USD|COP)\s*[$\d]/.test(html));
     const sitemapEntry = sitemap.split("<url>").find((entry) => entry.includes(`<loc>${pageUrl}</loc>`));
     assert.ok(sitemapEntry, `${route}: absent from sitemap`);

@@ -2,7 +2,19 @@ import fs from "node:fs";
 import path from "node:path";
 import { parse, parseFragment, serialize } from "parse5";
 import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
-import { experiencePages, experienceCopy, experiencePath } from "../src/experience-pages.mjs";
+import { experiencePages, experienceCopy, experiencePath, experienceDescriptions, experienceAlt } from "../src/experience-pages.mjs";
+
+// Three complementary choices per experience; each activity receives three links.
+const relatedExperiences = {
+  tarapoto: ["kayak", "birdwatching", "community"],
+  kayak: ["tarapoto", "wildlife", "cacao"],
+  birdwatching: ["wildlife", "tarapoto", "night-walk"],
+  cacao: ["community", "kayak", "camp"],
+  "night-walk": ["camp", "birdwatching", "wildlife"],
+  camp: ["night-walk", "community", "cacao"],
+  community: ["cacao", "camp", "tarapoto"],
+  wildlife: ["birdwatching", "night-walk", "kayak"],
+};
 
 export function buildExperiencePages({ root, data, version }) {
   const walk = function* (node) {
@@ -32,7 +44,7 @@ export function buildExperiencePages({ root, data, version }) {
     const [, heading, advice] = experiencePages[item.id][lang];
     const [name, summary, detail, points] = item[lang];
     const title = `${heading} | Puerto Nariño | Amaru`;
-    const description = `${summary} ${copy.metaSuffix}`;
+    const description = experienceDescriptions[item.id][lang];
     const t = (key) => data.translations[lang][key];
     const message = `${t("hello")}\n\n${t("msgInterest")}: ${name}\n${copy.message}\n\n${t("msgEnd")}`;
     const whatsapp = "https://wa.me/573132560145?text=" + encodeURIComponent(message);
@@ -41,7 +53,7 @@ export function buildExperiencePages({ root, data, version }) {
     const nodes = [...walk(doc)];
     const byId = (id) => nodes.find((n) => attr(n, "id") === id);
     const originalBase = lang === "en" ? "" : "../";
-    const organization = JSON.parse(nodes.find((n) => attr(n, "type") === "application/ld+json").childNodes[0].value);
+    const organization = JSON.parse(nodes.find((n) => attr(n, "type") === "application/ld+json").childNodes[0].value)["@graph"].find((entry) => entry["@type"] === "TravelAgency");
     for (const node of nodes) {
       if (node.tagName === "script" && attr(node, "src")) { remove(node); continue; }
       if (node.tagName === "dialog" && attr(node, "id") !== "privacy-dialog") { remove(node); continue; }
@@ -91,8 +103,7 @@ export function buildExperiencePages({ root, data, version }) {
         }));
       }
     }
-    const related = data.experiences.filter((e) => e.id !== item.id)
-      .sort((a, b) => Number(b.cat === item.cat) - Number(a.cat === item.cat)).slice(0, 3);
+    const related = relatedExperiences[item.id].map((id) => data.experiences.find((e) => e.id === id));
     const main = byId("main");
     main.childNodes = parseFragment(`
       <section class="section wrap experience-intro" aria-labelledby="experience-title">
@@ -102,7 +113,7 @@ export function buildExperiencePages({ root, data, version }) {
           <h1 id="experience-title">${escape(heading)}</h1>
           <p class="experience-lead">${escape(summary)}</p>
           <a class="button" data-experience-whatsapp href="${whatsapp}" target="_blank" rel="noopener noreferrer">${escape(copy.cta)}</a>
-        </div><figure><img class="experience-cover" src="${base}assets/photos/${item.image}.webp" width="1200" height="828" alt="${escape(name)}" fetchpriority="high" decoding="async"><figcaption>${escape(t("photoCredit"))}</figcaption></figure></div>
+        </div><figure><img class="experience-cover" src="${base}assets/photos/${item.image}.webp" srcset="${base}assets/photos/${item.image}-480.webp 480w, ${base}assets/photos/${item.image}-800.webp 800w, ${base}assets/photos/${item.image}.webp 1200w" sizes="(max-width:650px) calc(100vw - 40px), (max-width:850px) calc(100vw - 72px), (max-width:1100px) calc((100vw - 120px) / 2), (max-width:1352px) calc((100vw - 160px) / 2), 596px" width="1200" height="828" alt="${escape(experienceAlt[item.id][lang])}" fetchpriority="high" decoding="async"><figcaption>${escape(t("photoCredit"))}</figcaption></figure></div>
       </section>
       <section class="section wrap experience-information" aria-labelledby="about-title">
         <div><h2 id="about-title">${escape(copy.about)}</h2><p>${escape(detail)}</p><h3>${escape(copy.highlights)}</h3><ul>${points.map((point) => `<li>${escape(point)}</li>`).join("")}</ul></div>
@@ -114,7 +125,7 @@ export function buildExperiencePages({ root, data, version }) {
         <a class="button button-gold" data-experience-whatsapp href="${whatsapp}" target="_blank" rel="noopener noreferrer">${escape(copy.cta)}</a>
         <p><a class="text-link" data-home-enquiry href="${home}?experience=${item.id}#plan">${escape(copy.form)}</a></p>
       </div><div><p>${escape(t("planLocation"))}</p><p><a href="https://wa.me/573132560145?text=${encodeURIComponent(message)}" target="_blank" rel="noopener noreferrer">+57 313 256 0145 ↗</a></p><p class="contact-email"><a data-contact-email href="mailto:${contactEmail}">${contactEmail}</a></p></div></div></section>
-      <section class="section wrap" aria-labelledby="related-title"><h2 id="related-title">${escape(copy.related)}</h2><div class="experience-related">${related.map((other) => `<a data-related-experience href="${base + experiencePath(other.id, lang)}" aria-label="${escape(other[lang][0])}"><img src="${base}assets/photos/${other.image}.webp" width="1200" height="828" alt="${escape(other[lang][0])}" loading="lazy" decoding="async"><h3>${escape(other[lang][0])} ↗</h3></a>`).join("")}</div><a class="text-link" href="${home}#experiences">${escape(copy.back)} ↗</a></section>
+      <section class="section wrap" aria-labelledby="related-title"><h2 id="related-title">${escape(copy.related)}</h2><div class="experience-related">${related.map((other) => `<a data-related-experience href="${base + experiencePath(other.id, lang)}" aria-label="${escape(other[lang][0])}"><img src="${base}assets/photos/${other.image}.webp" srcset="${base}assets/photos/${other.image}-480.webp 480w, ${base}assets/photos/${other.image}-800.webp 800w, ${base}assets/photos/${other.image}.webp 1200w" sizes="(max-width:650px) calc(100vw - 40px), (max-width:1100px) calc((100vw - 128px) / 3), (max-width:1352px) calc((100vw - 168px) / 3), 395px" width="1200" height="828" alt="${escape(experienceAlt[other.id][lang])}" loading="lazy" decoding="async"><h3>${escape(other[lang][0])} ↗</h3></a>`).join("")}</div><a class="text-link" href="${home}#experiences">${escape(copy.back)} ↗</a></section>
     `).childNodes;
     main.childNodes.forEach((node) => { node.parentNode = main; });
     const body = nodes.find((n) => n.tagName === "body");

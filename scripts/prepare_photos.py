@@ -56,3 +56,10 @@ for name, (filename, size) in PHOTOS.items():
     manifest[name] = {'source': filename, **make_photo(path, size, DEST / f'{name}.webp')}
 (DEST / 'credits.json').write_text(json.dumps(manifest, indent=2, ensure_ascii=False), encoding='utf-8')
 print(f'{len(manifest)} watermarked derivatives, {sum(p["bytes"] for p in manifest.values()) / 1024 / 1024:.1f} MB')
+
+# Keep the supplied full logo at the standard browser and home-screen sizes.
+brand = ROOT / 'assets/brand'
+logo = Image.open(brand / 'amaru-original.png').convert('RGBA')
+logo.resize((64, 64), Image.Resampling.LANCZOS).save(
+    brand / 'favicon.ico', sizes=[(16, 16), (32, 32), (48, 48)])
+logo.resize((180, 180), Image.Resampling.LANCZOS).save(brand / 'apple-touch-icon.png')

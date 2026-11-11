@@ -4,7 +4,7 @@ import vm from "node:vm";
 import crypto from "node:crypto";
 import { parse, parseFragment, serialize } from "parse5";
 import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
-import { experiencePath, experienceCopy } from "../src/experience-pages.mjs";
+import { experiencePath, experienceCopy, experienceAlt, sceneAlt } from "../src/experience-pages.mjs";
 import { buildExperiencePages } from "./build-experience-pages.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
@@ -138,16 +138,28 @@ for (const lang of languages) {
       );
     if (attr(node, "type") === "application/ld+json") {
       const schema = JSON.parse(text(node));
-      schema.url = languageUrl(lang);
+      schema.url = siteUrl;
       schema["@id"] = new URL("#organization", siteUrl).href;
       schema.email = contactEmail;
       schema.logo = new URL("assets/brand/amaru-logo.webp", siteUrl).href;
-      schema.inLanguage = lang;
-      setText(node, JSON.stringify(schema));
+      setText(node, JSON.stringify({
+        "@context": "https://schema.org",
+        "@graph": [schema, {
+          "@type": "WebPage", "@id": languageUrl(lang) + "#webpage",
+          url: languageUrl(lang), name: t("metaTitle"),
+          description: t("metaDescription"), inLanguage: lang,
+          about: { "@id": schema["@id"] },
+        }],
+      }));
     }
     for (const key of ["href", "src", "srcset", "data-src", "data-srcset"]) {
       const value = attr(node, key);
-      if (value && !/^(?:[a-z]+:|#|\/)/i.test(value))
+      if (value && (key === "srcset" || key === "data-srcset")) {
+        setAttr(node, key, value.split(",").map((candidate) => {
+          const [url, ...descriptor] = candidate.trim().split(/\s+/);
+          return [ /^(?:[a-z]+:|#|\/)/i.test(url) ? url : base + url, ...descriptor ].join(" ");
+        }).join(", "));
+      } else if (value && !/^(?:[a-z]+:|#|\/)/i.test(value))
         setAttr(node, key, base + value.replace(/\?v=[^#]+/, ""));
     }
     if (node.tagName === "script" && attr(node, "src"))
@@ -177,6 +189,7 @@ for (const lang of languages) {
       );
   }
   const context = { ...data, lang, t, base,
+    photoAlt: { ...experienceAlt, ...sceneAlt },
     pagePaths: Object.fromEntries(data.experiences.map((item) => [item.id, base + experiencePath(item.id, lang)])),
     fullExperienceLabel: experienceCopy[lang].full,
   };

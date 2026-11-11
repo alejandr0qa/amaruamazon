@@ -1,32 +1,35 @@
-# Google: publicación, verificación e indexación
+# Google Search Console: seguimiento de las 27 URL
 
-Preparado el 11 de noviembre de 2026. No se ha accedido a una cuenta de Google ni cambiado DNS, Cloudflare o GitHub Pages. Search Console no requiere activar analítica en la web.
+Actualizado el 11 de noviembre de 2026. El propietario confirma que Search Console se inició hoy y ha descubierto las 27 páginas. **Descubiertas no significa indexadas**: indexadas, clics, impresiones, CTR y posición inicial siguen pendientes de datos, no equivalen a cero. No se ha accedido a la cuenta ni cambiado DNS, Cloudflare o GitHub Pages. No hace falta activar analítica.
 
-## Antes de enviar el sitemap
+## Tras aprobar y publicar el PR
 
-Integrar primero el PR revisado y esperar a que GitHub Pages publique esa revisión. Comprobar las 27 URL públicas: tres portadas y ocho experiencias por idioma. El sitemap con las páginas nuevas debe estar disponible en `https://amaruamazonexperiences.com/sitemap.xml`; no enviarlo como si ya estuviera publicado mientras el cambio siga en una rama.
+1. Esperar al despliegue de GitHub Pages. Comprobar HTTPS 200 en las tres portadas y las ocho fichas de cada idioma; canonical propio, recursos accesibles, ausencia de `noindex` y alternancias equivalentes. Las mismas 27 URL se conservan.
+2. En la propiedad existente, abrir **Sitemaps** y comprobar lectura correcta de [sitemap.xml](https://amaruamazonexperiences.com/sitemap.xml), con 27 URL. Si ya se envió, no crear otra propiedad ni repetir la verificación. `robots.txt` debe seguir indicando este sitemap.
+3. En **Inspección de URL**, revisar `/`, `/es/`, `/fr/` y una ficha por idioma. Probar la URL publicada, revisar el HTML renderizado y, en la versión indexada cuando exista, comparar canonical declarada y seleccionada por Google. Solicitar indexación de las páginas prioritarias actualizadas sin repetir solicitudes en masa. Una prueba en directo favorable no confirma indexación. [Guía de inspección](https://support.google.com/webmasters/answer/9012289).
+4. Registrar fecha y revisión publicada, estado del sitemap y exclusiones concretas. Si aparece un desafío, 403 o 5xx, revisar el caso con el administrador antes de cambiar reglas de Cloudflare. No desactivar protecciones de forma general.
 
-Verificar respuestas HTTPS 200, canonical propio, ausencia de `noindex`, recursos accesibles y enlaces de idioma equivalentes. `robots.txt` debe permitir rastreo y señalar el sitemap. La comprobación técnica facilita el rastreo; no confirma la indexación real ni una posición en Google.
+## Revisiones a 30, 60 y 90 días
 
-## Pasos que necesita realizar el propietario
+La línea base de Search Console empieza el **11 de noviembre de 2026**. Las fechas siguientes se cuentan desde ese día; anotar por separado la fecha real de publicación de este PR para no atribuirle datos anteriores.
 
-1. Entrar en [Google Search Console](https://search.google.com/search-console/) con la cuenta que administrará Amaru. Si la propiedad ya existe, seleccionarla y revisar su estado de verificación.
-2. Si no existe, añadir una propiedad de tipo **Dominio** con `amaruamazonexperiences.com`, sin protocolo ni rutas.
-3. Copiar el TXT exacto que Google proporcione. En la zona autoritativa de Cloudflare, añadir un registro **TXT**, nombre **@**, con ese valor, conservando los registros existentes. Volver a Google y pulsar **Verificar**. No compartir contraseñas ni inventar un token; conservar el TXT después de verificar. Este cambio queda a cargo del propietario o de una tarea expresamente autorizada. [Verificación oficial](https://support.google.com/webmasters/answer/9008080).
-4. Si se decide no modificar DNS, la alternativa es una propiedad **Prefijo de URL** para `https://amaruamazonexperiences.com/` y el método de archivo HTML que Google ofrezca. En ese caso entregar el archivo original para incluirlo en la raíz del repositorio y publicarlo. No sustituir `index.html` ni colocar el código solo en el HTML generado. Esta alternativa verifica ese prefijo, no la propiedad Dominio. [Métodos de verificación](https://support.google.com/webmasters/answer/9008080).
-5. Con la propiedad verificada y la versión publicada, abrir **Sitemaps**, enviar `https://amaruamazonexperiences.com/sitemap.xml` y comprobar que Google lo puede leer. No hay que enviar un sitemap distinto por idioma. [Documentación de sitemaps](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap).
+| Revisión | Fecha orientativa | Periodo y comprobación | Decisión |
+| --- | --- | --- | --- |
+| Días 0–7 | 11–18 nov. 2026 | Guardar descubiertas/indexadas, estado del sitemap y motivos de exclusión. Inspeccionar una portada y una ficha por idioma. | Investigar errores concretos; no cambiar rutas para forzar indexación. |
+| Día 30 | 11 dic. 2026 | Exportar los primeros 28 días completos disponibles de rendimiento y revisar indexación. | Establecer la primera línea base real por idioma y actividad. |
+| Día 60 | 10 ene. 2027 | Comparar los últimos 28 días completos con los 28 anteriores usando los mismos filtros. | Identificar páginas con exposición relevante y oportunidades de contenido o presentación. |
+| Día 90 | 9 feb. 2027 | Repetir la comparación y contrastar con la línea base; revisar las 27 URL y sus exclusiones. | Priorizar fichas e idiomas según evidencia, sin prometer posiciones. |
 
-## Inspección posterior a la publicación
+En **Rendimiento → Resultados de búsqueda**, mantener el mismo tipo de búsqueda Web y activar clics, impresiones, CTR y posición media. Exportar tablas de consultas, páginas, países y dispositivos con periodo y filtros visibles. Separar consultas de marca (Amaru y variaciones reconocibles) de búsquedas genéricas. [Configuración del informe](https://support.google.com/webmasters/answer/7576553).
 
-En **Inspección de URL**, revisar `/`, `/es/`, `/fr/` y una experiencia por idioma. Ejecutar la prueba de URL publicada y revisar el HTML renderizado. Pedir indexación para las páginas prioritarias; el sitemap permite descubrir el resto. En el informe de la versión indexada, comparar la canonical declarada con la seleccionada por Google. Una prueba en directo favorable o una solicitud no garantizan que Google indexe la página. [Inspección de URL](https://support.google.com/webmasters/answer/9012289).
+Agrupar las páginas así; el idioma de una URL no identifica el idioma o la nacionalidad del visitante:
 
-Si Google o sus herramientas reciben un desafío, 403 o 5xx, revisar los eventos de Cloudflare con el administrador antes de cambiar reglas. No desactivar protecciones de forma general. Aquí no se han modificado esas reglas.
+- **EN:** `/` y las ocho fichas `/experiences/` de la raíz; excluir `/es/` y `/fr/`.
+- **ES:** `/es/` y sus ocho fichas `/es/experiencias/`.
+- **FR:** `/fr/` y sus ocho fichas `/fr/experiences/`.
 
-Las traducciones tienen canonical propio y hreflang recíproco, incluido `x-default` en inglés. Los selectores cambian a la misma experiencia en el otro idioma. [Versiones localizadas](https://developers.google.com/search/docs/specialty/international/localized-versions).
+Comparar por separado las tres portadas y las ocho familias de actividad. Conservar clics, impresiones, CTR, posición media, país, dispositivo y periodo de cada exportación. El CTR es clics/impresiones; no promediar porcentajes de filas para obtener el total. La posición media no es una posición fija y depende de la agrupación del informe. [Definiciones de métricas](https://support.google.com/webmasters/answer/7042828).
 
-## Seguimiento
+Si hay pocas impresiones, ampliar la observación antes de decidir por diferencias pequeñas de CTR. La temporada y la composición de consultas, países y dispositivos también influyen; una variación no prueba por sí sola el efecto de una edición. Search Console no mide consultas por WhatsApp: mantener un recuento comercial agregado separado y no calcular una tasa de conversión mezclando fuentes sin el mismo recorrido.
 
-- Revisar en Search Console las páginas indexadas, exclusiones, consultas, impresiones y clics por página y país cuando haya datos. No son métricas de consultas recibidas por WhatsApp.
-- Medir la versión publicada con [PageSpeed Insights](https://pagespeed.web.dev/) en móvil y escritorio. Las pruebas locales de esta fase no sustituyen métricas de visitantes reales ni una auditoría Lighthouse.
-- Comprobar los datos estructurados publicados. `Service` describe la experiencia y `BreadcrumbList` su navegación; no se añaden ofertas ni valoraciones ficticias, ni se promete una apariencia especial en Google. [Reglas de datos estructurados](https://developers.google.com/search/docs/appearance/structured-data/sd-policies).
-- Revisar resultados antes de ampliar idiomas o crear artículos. El posicionamiento necesita contenido validado, publicación y seguimiento; no se ha estimado un puesto ni un plazo de resultados.
+Después de publicar, medir portada y ficha representativa con [PageSpeed Insights](https://pagespeed.web.dev/) en móvil y escritorio, conservando fecha, URL y modo. Distinguir resultados de laboratorio de datos de usuarios reales cuando existan. Los metadatos, hreflang y datos estructurados favorecen una interpretación coherente; no garantizan indexación, apariencia especial ni posiciones en Google.

@@ -2,7 +2,7 @@
 
 Documento de preparación editorial, sin integración automática en el sitio. Ningún dato pendiente se sustituye por contenido ficticio, números de ejemplo, testimonios inventados o promesas de respuesta.
 
-## Primera fase
+## Estado de la evolución actual
 
 - Dominio y correo corporativo: proporcionados por el propietario; centralizados en `site.config.mjs`.
 - WhatsApp, ocho experiencias, tres itinerarios y fotografías propias: se conservan del sitio existente.
@@ -10,6 +10,16 @@ Documento de preparación editorial, sin integración automática en el sitio. N
 - Contacto: se aclara que una consulta no confirma una reserva y que esta web no cobra. La disponibilidad, precio total y detalles se tratan directamente con el operador.
 - Analítica: aplazada expresamente por el propietario. Sin scripts, token, dependencias ni cambios en Cloudflare.
 - Páginas individuales: preparadas con el catálogo existente y preguntas de planificación. Para completar cada ficha hacen falta duración, dificultad, edades, tamaños de grupo, equipo e inclusiones validados. Las recomendaciones no constituyen compromisos operativos.
+- Search Console: iniciado el 11 de noviembre de 2026 según el propietario, con 27 páginas descubiertas. Falta confirmar cuántas están indexadas y obtener los primeros datos de rendimiento; ver `docs/google-search-console.md`.
+
+## Entrega mínima solicitada al operador
+
+1. **Una ficha aprobada por cada experiencia:** recorrido y entorno, duración, punto de encuentro, exigencia física y restricciones, equipo, inclusiones/exclusiones y cambios por clima o nivel del río. Mantener kayak diurno y aves/cacao como experiencias separadas.
+2. **Identidad pública:** nombre del responsable y guías, vínculo con Amaru, biografía y fotos autorizadas, idiomas de atención y de guía realmente disponibles, RNT y titular verificables si corresponde, dirección que pueda publicarse y enlaces oficiales de perfiles/reseñas.
+3. **Condiciones y llegada:** confirmación de la consulta, pagos acordados directamente, cambios/cancelación, logística Leticia–Puerto Nariño, quién organiza cada traslado y cómo se confirma el encuentro. No publicar horarios, tarifas ni promesas sin validación.
+4. **Seguridad:** protocolos y equipo reales de cada actividad, restricciones y responsable de emergencias. No sustituirlos por una política genérica.
+
+Solicitar fuente, fecha y persona que aprueba cada dato. El tarifario puede servir para cotización interna; **los precios siguen fuera de la web**. Mientras falten datos, conservar las explicaciones verificadas y dirigir las preguntas operativas al contacto, sin publicar fichas provisionales.
 
 ## Datos por recopilar y verificar
 

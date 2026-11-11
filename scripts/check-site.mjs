@@ -8,7 +8,10 @@ import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.
 import { experiencePath } from "../src/experience-pages.mjs";
 import { checkExperiencePages } from "./check-experience-pages.mjs";
 const root = path.resolve(import.meta.dirname, "..");
-const read = (name) => fs.readFileSync(path.join(root, name), "utf8");
+// Git may check text files out with CRLF on Windows; content checks are
+// independent of the checkout's line endings, just like the build hash.
+const read = (name) =>
+  fs.readFileSync(path.join(root, name), "utf8").replace(/\r\n/g, "\n");
 const data = vm.runInNewContext(
   read("i18n.js") +
     "\n" +
@@ -116,14 +119,19 @@ for (const lang of languages) {
   const schema = JSON.parse(
     text(find((n) => attr(n, "type") === "application/ld+json")),
   );
-  assert.equal(schema.inLanguage, lang);
-  assert.equal(schema.url, pageUrl);
-  assert.equal(schema["@id"], new URL("#organization", siteUrl).href);
-  assert.equal(schema.email, contactEmail);
-  assert.equal(schema.telephone, "+573132560145");
-  assert.equal(schema.logo, new URL("assets/brand/amaru-logo.webp", siteUrl).href);
+  const organization = schema["@graph"].find((entry) => entry["@type"] === "TravelAgency");
+  const webpage = schema["@graph"].find((entry) => entry["@type"] === "WebPage");
+  assert.equal(webpage.inLanguage, lang);
+  assert.equal(webpage.url, pageUrl);
+  assert.equal(webpage.about["@id"], organization["@id"]);
+  assert.equal(organization.inLanguage, undefined, "Language describes the page, not the agency");
+  assert.equal(organization.url, siteUrl);
+  assert.equal(organization["@id"], new URL("#organization", siteUrl).href);
+  assert.equal(organization.email, contactEmail);
+  assert.equal(organization.telephone, "+573132560145");
+  assert.equal(organization.logo, new URL("assets/brand/amaru-logo.webp", siteUrl).href);
   for (const field of ["priceRange", "aggregateRating", "review", "award"])
-    assert.equal(schema[field], undefined, `${lang}: do not publish unverified ${field}`);
+    assert.equal(organization[field], undefined, `${lang}: do not publish unverified ${field}`);
   const emailLinks = all((n) => attr(n, "data-contact-email") !== undefined);
   assert.ok(emailLinks.length >= 2, `${lang}: contact and privacy email links`);
   for (const link of emailLinks) {
@@ -199,6 +207,13 @@ for (const lang of languages) {
     for (const name of ["src", "href", "srcset", "data-src", "data-srcset"]) {
       const value = attr(node, name);
       if (!value) continue;
+      if (name === "srcset" || name === "data-srcset") {
+        for (const candidate of value.split(",")) {
+          const file = candidate.trim().split(/\s+/)[0];
+          assert.ok(fs.existsSync(path.resolve(directory, file)), `${lang}: missing responsive image ${file}`);
+        }
+        continue;
+      }
       if (value.startsWith("mailto:")) {
         assert.equal(value, "mailto:" + contactEmail);
         continue;

@@ -1,0 +1,170 @@
+{
+  "forest": {
+    "480": {
+      "width": 480,
+      "height": 588,
+      "bytes": 118952
+    },
+    "800": {
+      "width": 800,
+      "height": 981,
+      "bytes": 311432
+    }
+  },
+  "tarapoto": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 54870
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 151128
+    }
+  },
+  "kayak": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 68678
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 195126
+    }
+  },
+  "birdwatching": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 50594
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 102344
+    }
+  },
+  "cacao": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 41904
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 113204
+    }
+  },
+  "night-walk": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 48186
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 109986
+    }
+  },
+  "camp": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 54788
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 129642
+    }
+  },
+  "community": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 40498
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 117344
+    }
+  },
+  "wildlife": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 35930
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 73528
+    }
+  },
+  "water-lilies": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 65168
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 168770
+    }
+  },
+  "frog": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 27340
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 49498
+    }
+  },
+  "sunset": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 21444
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 56788
+    }
+  },
+  "forest-canoe": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 64236
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 176364
+    }
+  },
+  "roots": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 72702
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 201036
+    }
+  }
+}

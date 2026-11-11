@@ -42,6 +42,122 @@ export const experiencePages = {
   },
 };
 
+// Specific snippets, separate from card copy so each page answers its own search intent.
+export const experienceDescriptions = {
+  tarapoto: {
+    en: "Explore Lake Tarapoto and look for river dolphins from Puerto Nariño, Colombia. Discover the experience and ask Amaru about routes and conditions.",
+    es: "Descubre el lago Tarapoto y busca delfines de río desde Puerto Nariño, Amazonas. Conoce la experiencia y consulta rutas y condiciones con Amaru.",
+    fr: "Découvrez le lac Tarapoto et cherchez les dauphins depuis Puerto Nariño, en Colombie. Consultez le parcours et les conditions avec Amaru.",
+  },
+  kayak: {
+    en: "Daytime kayaking in the Colombian Amazon from Puerto Nariño. Discover Kaya and ask Amaru about the route, equipment and requirements for your group.",
+    es: "Kayak diurno en el Amazonas colombiano desde Puerto Nariño. Descubre Kaya y consulta con Amaru la ruta, el equipo y los requisitos para tu grupo.",
+    fr: "Kayak de jour en Amazonie colombienne depuis Puerto Nariño. Découvrez Kaya et renseignez-vous sur le parcours, le matériel et les prérequis.",
+  },
+  birdwatching: {
+    en: "A dedicated birdwatching experience in Puerto Nariño, Colombian Amazon. Listen to the forest and ask Amaru about the early departure and route.",
+    es: "Avistamiento de aves en Puerto Nariño, Amazonas colombiano. Una experiencia dedicada a escuchar y observar. Consulta la salida y la ruta con Amaru.",
+    fr: "Observation des oiseaux à Puerto Nariño, en Amazonie colombienne. Une sortie pour écouter et observer. Préparez le départ et le parcours avec Amaru.",
+  },
+  cacao: {
+    en: "Discover Amazonian cacao, its cultivation and local stories in Puerto Nariño, Colombia. A standalone experience; ask Amaru about your visit.",
+    es: "Descubre el cacao amazónico, su cultivo y sus historias locales en Puerto Nariño, Colombia. Una experiencia independiente para consultar con Amaru.",
+    fr: "Découvrez le cacao amazonien, sa culture et ses récits locaux à Puerto Nariño, en Colombie. Préparez cette expérience indépendante avec Amaru.",
+  },
+  "night-walk": {
+    en: "Discover the Amazon rainforest after dark on a guided night walk from Puerto Nariño. Forest sounds and nocturnal life; plan your outing with Amaru.",
+    es: "Descubre la selva amazónica de noche en una caminata guiada desde Puerto Nariño. Sonidos y vida nocturna; consulta tu salida con Amaru.",
+    fr: "Découvrez la forêt amazonienne de nuit lors d’une promenade guidée depuis Puerto Nariño. Sons et vie nocturne ; préparez votre sortie avec Amaru.",
+  },
+  camp: {
+    en: "Make a night in the Amazon rainforest part of your Puerto Nariño journey. Ask Amaru about sleeping arrangements, walking distances and equipment.",
+    es: "Incluye una noche en la selva amazónica en tu viaje a Puerto Nariño. Consulta con Amaru cómo se organiza el descanso, las caminatas y el equipo.",
+    fr: "Intégrez une nuit dans la forêt amazonienne à votre séjour à Puerto Nariño. Discutez du couchage, des distances à pied et du matériel avec Amaru.",
+  },
+  community: {
+    en: "Discover local stories and cultural encounters in Puerto Nariño, Colombian Amazon. Visits depend on the hosts; enquire about your dates with Amaru.",
+    es: "Historias locales y encuentros culturales en Puerto Nariño, Amazonas colombiano. Visitas según disponibilidad de anfitriones; consulta con Amaru.",
+    fr: "Récits locaux et rencontres culturelles à Puerto Nariño, en Amazonie colombienne. Visites selon la disponibilité des hôtes ; contactez Amaru.",
+  },
+  wildlife: {
+    en: "Rainforest walks in Puerto Nariño, Colombian Amazon. Explore plants and look for wildlife; ask Amaru about routes, walking distances and conditions.",
+    es: "Caminatas por la selva en Puerto Nariño, Amazonas colombiano. Descubre plantas y busca fauna; consulta rutas, distancias y condiciones con Amaru.",
+    fr: "Randonnées en forêt à Puerto Nariño, en Amazonie colombienne. Plantes et observation de la faune ; consultez les parcours et distances avec Amaru.",
+  },
+};
+
+// Descriptions of the supplied photographs, visually checked; no species or location inferred.
+export const experienceAlt = {
+  tarapoto: {
+    en: "Wooden houses, trees and boats beside calm water",
+    es: "Casas de madera, árboles y embarcaciones junto a aguas tranquilas",
+    fr: "Maisons en bois, arbres et embarcations au bord d’une eau calme",
+  },
+  kayak: {
+    en: "The bow of a wooden boat facing forest reflected in still water",
+    es: "Proa de una embarcación de madera frente a la selva reflejada en el agua",
+    fr: "Proue d’une embarcation en bois face à la forêt reflétée dans l’eau",
+  },
+  birdwatching: {
+    en: "A bird perched on a branch among the leaves",
+    es: "Un ave posada en una rama entre las hojas",
+    fr: "Un oiseau perché sur une branche parmi les feuilles",
+  },
+  cacao: {
+    en: "Cacao beans spread across a drying table",
+    es: "Granos de cacao extendidos sobre una mesa de secado",
+    fr: "Fèves de cacao étalées sur une table de séchage",
+  },
+  "night-walk": {
+    en: "A green frog clinging to a tree trunk in the dark",
+    es: "Una rana verde sobre el tronco de un árbol en la oscuridad",
+    fr: "Une grenouille verte agrippée à un tronc dans l’obscurité",
+  },
+  camp: {
+    en: "Two people sitting beside a small fire among forest trees",
+    es: "Dos personas sentadas junto a un pequeño fuego entre árboles de la selva",
+    fr: "Deux personnes assises près d’un petit feu parmi les arbres de la forêt",
+  },
+  community: {
+    en: "People walking outside a wooden building with a thatched roof",
+    es: "Personas caminando frente a una construcción de madera con techo tejido",
+    fr: "Des personnes devant un bâtiment en bois au toit de chaume",
+  },
+  wildlife: {
+    en: "A sloth resting among branches and green leaves",
+    es: "Un perezoso entre ramas y hojas verdes",
+    fr: "Un paresseux parmi les branches et les feuilles vertes",
+  },
+};
+
+export const sceneAlt = {
+  "forest-canoe": {
+    en: "Two people in a wooden canoe among trees and floating green plants",
+    es: "Dos personas en una canoa de madera entre árboles y plantas acuáticas",
+    fr: "Deux personnes dans une pirogue en bois parmi les arbres et les plantes aquatiques",
+  },
+  "water-lilies": {
+    en: "Large round water-lily leaves and white flowers floating on the water",
+    es: "Grandes hojas redondas y flores blancas de nenúfar sobre el agua",
+    fr: "De grandes feuilles rondes de nénuphars et des fleurs blanches sur l’eau",
+  },
+  frog: {
+    en: "A black frog with orange stripes on a green leaf",
+    es: "Una rana negra con franjas naranjas sobre una hoja verde",
+    fr: "Une grenouille noire aux rayures orange sur une feuille verte",
+  },
+  roots: {
+    en: "The spreading roots of a large tree surrounded by forest plants",
+    es: "Raíces extendidas de un gran árbol entre las plantas de la selva",
+    fr: "Les racines étendues d’un grand arbre parmi les plantes de la forêt",
+  },
+  sunset: {
+    en: "Warm evening light over a wide river, trees and riverside houses",
+    es: "Luz de atardecer sobre un río ancho, árboles y casas de la orilla",
+    fr: "La lumière du soir sur un large fleuve, des arbres et des maisons au bord de l’eau",
+  },
+};
+
 export const experienceCopy = {
   en: {
     home: "Home", breadcrumbs: "Breadcrumbs", full: "View full experience", location: "Puerto Nariño · Colombian Amazon",

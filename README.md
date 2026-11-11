@@ -65,7 +65,7 @@ El correo corporativo ofrece una alternativa mediante `mailto:` en contacto y pr
 
 El inventario de información pendiente y los puntos de integración están en [docs/pending-operator-information.md](docs/pending-operator-information.md). No se muestran fichas vacías ni datos de ejemplo al visitante. Los precios seguirán comunicándose por contacto directo.
 
-Los pasos externos para verificar el dominio, enviar el sitemap y revisar indexación están en [docs/google-search-console.md](docs/google-search-console.md). No se ha activado Search Console mediante una cuenta externa ni cambiado la configuración del alojamiento en esta fase.
+Search Console está activo desde el 11 de noviembre de 2026 según el propietario, con 27 páginas descubiertas; falta confirmar cuántas están indexadas. El procedimiento posterior a publicación y el seguimiento a 30, 60 y 90 días están en [docs/google-search-console.md](docs/google-search-console.md).
 
 Por decisión del propietario, Cloudflare Web Analytics queda para una fase posterior a la consolidación y promoción comercial. Esta fase no incluye scripts, tokens, configuración ni dependencias de analítica. La [documentación oficial](https://developers.cloudflare.com/web-analytics/about/) indica que el servicio es gratuito y puede utilizarse sin cambiar DNS; su [FAQ](https://developers.cloudflare.com/web-analytics/faq/) aclara que actualmente no permite eventos personalizados, por lo que no debe presentarse como medición de clics en WhatsApp. Evaluar de nuevo alcance, privacidad e información al visitante cuando se retome.
 
@@ -81,9 +81,12 @@ Para regenerar las imágenes se requiere Python, Pillow, los originales locales 
 
 ```powershell
 python scripts/prepare_photos.py
+python scripts/prepare_responsive_photos.py
 ```
 
-El logo original está en `assets/brand/amaru-original.png`. Las fuentes se sirven localmente con sus licencias OFL. Las imágenes antiguas de `img/` no se usan.
+El segundo comando genera copias de 480 y 800 px desde los derivados existentes, conservando el encuadre y toda la franja de copyright. No requiere los originales; su inventario está en `assets/photos/responsive.json`. Estos pasos de mantenimiento son opcionales: las imágenes están versionadas y `npm run build` no requiere Python ni Pillow.
+
+El logo original está en `assets/brand/amaru-original.png`. El primer comando también prepara ICO de 16/32/48 px y el icono de inicio de 180 px a partir del logo suministrado. Las fuentes se sirven localmente con sus licencias OFL. Las imágenes antiguas de `img/` no se usan.
 
 ## Revisión y publicación
 
