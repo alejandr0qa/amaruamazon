@@ -41,8 +41,8 @@ const version = crypto
   .digest("hex")
   .slice(0, 12);
 const expectedPages = languages.length * (data.experiences.length + 1);
-assert.equal(data.experiences.length, 12); // approved catalogue: 8 retained + 4 distinct additions
-assert.ok(!data.experiences.some((e) => /ceramic|san-antonio|sloth|wochine/.test(e.id)));
+assert.equal(data.experiences.length, 13); // 8 retained + 5 additions, including one combined San Antonio excursion
+assert.ok(!data.experiences.some((e) => /ceramic|^sloth$|victoria-regia|^wochine$/.test(e.id)));
 assert.equal(siteUrl, "https://amaruamazonexperiences.com/");
 assert.deepEqual(languages, ["en", "es", "fr"]);
 assert.equal(read("CNAME").trim(), new URL(siteUrl).hostname);
@@ -278,6 +278,8 @@ for (const route of JSON.parse(read("scripts/fixtures/preserved-routes.json"))) 
   assert.ok(publishedRoutes.has(route), "Existing URL must remain: " + route);
 }
 assert.ok(data.experiences.find((e) => e.id === "night-walk").es[0].includes("Wochine"));
+assert.equal(data.experiences.filter((e) => e.id === "san-antonio").length, 1);
+for (const lang of languages) assert.ok(data.experiences.find((e) => e.id === "san-antonio")[lang][2].includes("Cacao"));
 for (const lang of languages) {
   const html = read(path.join(languagePaths[lang], "index.html"));
   assert.ok(!html.includes('traveller-voices-title'), "No unapproved testimonials");

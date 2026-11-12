@@ -27,15 +27,16 @@ Se revisaron las 270 fotografías en 13 hojas de contacto y muestras del 25 % y 
 
 ## Material integrado en la rama de desarrollo
 
-Los tres clips están integrados en las fichas de Tarapoto, cacao y canotaje, en los tres idiomas; las cuatro fotografías se usan en tarjetas y fichas, y City Tour y canotaje también en la galería. La trazabilidad completa (ruta y SHA-256 del original, huellas y tamaños de cada derivado) figura en `media-optimization-2026-11-12.json`.
+Los cuatro clips están integrados en las fichas de Tarapoto, cacao, canotaje y San Antonio, en los tres idiomas; las seis fotografías se usan en tarjetas y fichas, y City Tour y canotaje también en la galería. La trazabilidad completa (ruta y SHA-256 del original, huellas y tamaños de cada derivado) figura en `media-optimization-2026-11-12.json`.
 
 | Video | Original | Fragmento MP4 | Poster WebP | Duración |
 | --- | ---: | ---: | ---: | ---: |
 | `assets/videos/flooded-forest.mp4` | 66.751.980 B | 1.633.189 B | 80.596 B | 8,0 s |
 | `assets/videos/tarapoto-water.mp4` | 65.967.327 B | 1.458.768 B | 41.398 B | 10,0 s |
 | `assets/videos/cacao-drying.mp4` | 11.690.571 B | 1.160.920 B | 69.964 B | 5,5 s |
+| `assets/videos/san-antonio-sloth.mp4` | 130.445.872 B | 1.327.709 B | 44.096 B | 8 s |
 
-MP4 H.264 Main 3.1/yuv420p, 24 fps y 396×720 píxeles (escena de 396×704 más franja inferior de 16 px), sin sonido ni metadatos de origen y con `faststart`. Los tres fragmentos suman 4,06 MiB. La reproducción debe activarse mediante controles, a petición del visitante; el sitio debe usar `preload="none"` y no asignar `src` antes de la interacción para evitar descargar videos en la apertura.
+MP4 H.264 Main 3.1/yuv420p, 24 fps y 396×720 píxeles (escena de 396×704 más franja inferior de 16 px), sin sonido ni metadatos de origen y con `faststart`. Los cuatro fragmentos suman 5,32 MiB. La reproducción debe activarse mediante controles, a petición del visitante; el sitio debe usar `preload="none"` y no asignar `src` antes de la interacción para evitar descargar videos en la apertura.
 
 | Foto nueva | Origen del inventario | Variantes | Estado |
 | --- | --- | --- | --- |
@@ -43,8 +44,8 @@ MP4 H.264 Main 3.1/yuv420p, 24 fps y 396×720 píxeles (escena de 396×704 más 
 | `flooded-forest` | `canotaje-en-selva-inundada/CANOTAJE EN SELVA INUNDADA/IMG_20260223_110936.jpg` | 1200/800/480 px, franja inferior fuera de la escena| Integrada en tarjetas y fichas |
 | `birdwatching-new` | `tour-avistamiento-de-aves/avistamiento de aves/IMG-20260730-WA0278.jpg` | 1200/800/480 px, franja inferior fuera de la escena| Integrada en tarjetas y fichas |
 | `oje` | `58120.jpg` | 1200/800/480 px, franja inferior fuera de la escena| Integrada en tarjetas y fichas |
-| `sloth` | `avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20251224_105430.jpg` | 1200/800/480 px, franja inferior fuera de la escena| Solo en preparación; decisión de catálogo pendiente |
-| `victoria-regia` | `avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20260102_115836.jpg` | 1200/800/480 px, franja inferior fuera de la escena| Solo en preparación; decisión de catálogo pendiente |
+| `sloth` | `avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20251224_105430.jpg` | 1200/800/480 px, franja inferior fuera de la escena| Integrada en la ficha combinada de San Antonio |
+| `victoria-regia` | `avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20260102_115836.jpg` | 1200/800/480 px, franja inferior fuera de la escena| Integrada en la ficha combinada de San Antonio |
 
 El encuadre centrado/adaptado fue preparado para revisión visual; el original no se distorsiona ni se edita. La fotografía nueva de aves muestra un ojo más definido y menos ruido que el recurso grande anterior, que se mantiene intacto. No se atribuyen especies.
 

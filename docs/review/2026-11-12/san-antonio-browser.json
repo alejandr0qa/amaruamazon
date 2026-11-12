@@ -1,0 +1,283 @@
+{
+  "matrix": [
+    {
+      "viewport": "390x844",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "en",
+      "overflow": -15,
+      "path": "/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "390x844",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "es",
+      "overflow": -15,
+      "path": "/es/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "390x844",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "fr",
+      "overflow": -15,
+      "path": "/fr/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "390x844",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "en",
+      "overflow": -15,
+      "path": "/experiences/san-antonio-cacao-victoria-regia-sloths/",
+      "secondaryPhoto": "A sloth hanging among leafy branches",
+      "videoCount": 0
+    },
+    {
+      "viewport": "390x844",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "es",
+      "overflow": -15,
+      "path": "/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+      "secondaryPhoto": "Un perezoso colgado entre ramas con hojas",
+      "videoCount": 0
+    },
+    {
+      "viewport": "390x844",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "fr",
+      "overflow": -15,
+      "path": "/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+      "secondaryPhoto": "Un paresseux suspendu parmi les branches feuillues",
+      "videoCount": 0
+    },
+    {
+      "viewport": "768x1024",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "en",
+      "overflow": -15,
+      "path": "/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "768x1024",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "es",
+      "overflow": -15,
+      "path": "/es/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "768x1024",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "fr",
+      "overflow": -15,
+      "path": "/fr/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "768x1024",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "en",
+      "overflow": -15,
+      "path": "/experiences/san-antonio-cacao-victoria-regia-sloths/",
+      "secondaryPhoto": "A sloth hanging among leafy branches",
+      "videoCount": 0
+    },
+    {
+      "viewport": "768x1024",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "es",
+      "overflow": -15,
+      "path": "/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+      "secondaryPhoto": "Un perezoso colgado entre ramas con hojas",
+      "videoCount": 0
+    },
+    {
+      "viewport": "768x1024",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "fr",
+      "overflow": -15,
+      "path": "/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+      "secondaryPhoto": "Un paresseux suspendu parmi les branches feuillues",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1366x768",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "en",
+      "overflow": -15,
+      "path": "/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1366x768",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "es",
+      "overflow": -15,
+      "path": "/es/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1366x768",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "fr",
+      "overflow": -15,
+      "path": "/fr/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1366x768",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "en",
+      "overflow": -15,
+      "path": "/experiences/san-antonio-cacao-victoria-regia-sloths/",
+      "secondaryPhoto": "A sloth hanging among leafy branches",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1366x768",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "es",
+      "overflow": -15,
+      "path": "/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+      "secondaryPhoto": "Un perezoso colgado entre ramas con hojas",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1366x768",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "fr",
+      "overflow": -15,
+      "path": "/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+      "secondaryPhoto": "Un paresseux suspendu parmi les branches feuillues",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1920x1080",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "en",
+      "overflow": -15,
+      "path": "/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1920x1080",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "es",
+      "overflow": -15,
+      "path": "/es/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1920x1080",
+      "bodyFont": "17px",
+      "cards": 13,
+      "h1": 1,
+      "lang": "fr",
+      "overflow": -15,
+      "path": "/fr/",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1920x1080",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "en",
+      "overflow": -15,
+      "path": "/experiences/san-antonio-cacao-victoria-regia-sloths/",
+      "secondaryPhoto": "A sloth hanging among leafy branches",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1920x1080",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "es",
+      "overflow": -15,
+      "path": "/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+      "secondaryPhoto": "Un perezoso colgado entre ramas con hojas",
+      "videoCount": 0
+    },
+    {
+      "viewport": "1920x1080",
+      "bodyFont": "17px",
+      "cards": 0,
+      "h1": 1,
+      "lang": "fr",
+      "overflow": -15,
+      "path": "/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+      "secondaryPhoto": "Un paresseux suspendu parmi les branches feuillues",
+      "videoCount": 0
+    }
+  ],
+  "forms": [
+    {
+      "home": "/",
+      "form": "Hello Amaru! I would like to plan a trip to the Amazon.\n\nName: Prueba Amaru\nTravellers: 2\nPreferred start date: To be decided\nPreferred guide language (subject to availability): English\nInterested in: San Antonio · Victoria Regia & sloths\n\nPlease share availability, the full price, inclusions and booking conditions.",
+      "quick": "Hello Amaru! I would like to plan a trip to the Amazon.\n\nInterested in: San Antonio · Victoria Regia & sloths\nTravellers: 2\nPreferred start date: To be decided\n\nPlease share availability, the full price, inclusions and booking conditions."
+    },
+    {
+      "home": "/es/",
+      "form": "¡Hola, Amaru! Me gustaría planear un viaje al Amazonas.\n\nNombre: Prueba Amaru\nViajeros: 2\nFecha de inicio: Por definir\nIdioma preferido del guía (sujeto a disponibilidad): Español\nMe interesa: San Antonio · Victoria Regia y perezosos\n\nPor favor, compártanme disponibilidad, precio total, servicios incluidos y condiciones de reserva.",
+      "quick": "¡Hola, Amaru! Me gustaría planear un viaje al Amazonas.\n\nMe interesa: San Antonio · Victoria Regia y perezosos\nViajeros: 2\nFecha de inicio: Por definir\n\nPor favor, compártanme disponibilidad, precio total, servicios incluidos y condiciones de reserva."
+    },
+    {
+      "home": "/fr/",
+      "form": "Bonjour Amaru ! Je souhaite organiser un voyage en Amazonie.\n\nPrénom: Prueba Amaru\nVoyageurs: 2\nDate de début souhaitée: À définir\nLangue souhaitée pour le guide (selon disponibilité): Français\nJe m’intéresse à: San Antonio · Victoria Regia et paresseux\n\nMerci de partager la disponibilité, le prix total, les prestations et les conditions de réservation.",
+      "quick": "Bonjour Amaru ! Je souhaite organiser un voyage en Amazonie.\n\nJe m’intéresse à: San Antonio · Victoria Regia et paresseux\nVoyageurs: 2\nDate de début souhaitée: À définir\n\nMerci de partager la disponibilité, le prix total, les prestations et les conditions de réservation."
+    }
+  ],
+  "video": {
+    "autoplay": false,
+    "controls": true,
+    "duration": 8,
+    "error": null,
+    "height": 720,
+    "ready": 4,
+    "src": "http://127.0.0.1:8077/assets/videos/san-antonio-sloth.mp4",
+    "width": 396
+  }
+}

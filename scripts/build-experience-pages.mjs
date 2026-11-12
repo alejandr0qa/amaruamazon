@@ -8,10 +8,11 @@ import { experienceEditorial, editorialSources, editorialSourceLabel } from "../
 import { experienceMedia, mediaCopy } from "../src/experience-media.mjs";
 // Complementary experiences, including all newly confirmed activities.
 const relatedExperiences = {
-  tarapoto: ["kayak", "caimans", "city-tour"],
+  tarapoto: ["kayak", "san-antonio", "city-tour"],
+  "san-antonio": ["tarapoto", "wildlife", "cacao"],
   kayak: ["tarapoto", "wildlife", "cacao"],
   birdwatching: ["wildlife", "tarapoto", "night-walk"],
-  cacao: ["community", "kayak", "camp"],
+  cacao: ["community", "kayak", "san-antonio"],
   "night-walk": ["camp", "birdwatching", "wildlife"],
   camp: ["night-walk", "community", "cacao"],
   community: ["cacao", "camp", "tarapoto"],
@@ -59,6 +60,8 @@ export function buildExperiencePages({ root, data, version }) {
     const t = (key) => data.translations[lang][key];
     const media = experienceMedia[item.id], mc = mediaCopy[lang];
     const mediaHtml = media ? `<figure class="experience-media" data-media-error="${escape(mc.error)}"><button class="media-play" type="button" data-media-src="${base}assets/videos/${media.file}.mp4" data-media-description="${escape(media[lang])}" aria-label="${escape(mc.play + ': ' + media[lang])}"><img src="${base}assets/videos/${media.file}-poster.webp" width="396" height="720" loading="lazy" decoding="async" alt="${escape(media[lang])}"><span class="media-play-label">▶ ${escape(mc.play)}</span></button><figcaption>${escape(media[lang])}<small>${escape(mc.note)} · ${media.seconds} s</small></figcaption><p data-media-status role="status"></p><a data-media-fallback hidden href="${base}assets/videos/${media.file}.mp4">${escape(mc.fallback)} ↗</a><noscript><a href="${base}assets/videos/${media.file}.mp4">${escape(mc.fallback)} ↗</a></noscript></figure>` : '';
+    const secondary = item.secondaryPhoto;
+    const secondaryHtml = secondary ? `<figure class="experience-media" data-experience-photo><img class="experience-cover" src="${base}assets/photos/${secondary.image}.webp" srcset="${base}assets/photos/${secondary.image}-480.webp 480w, ${base}assets/photos/${secondary.image}-800.webp 800w, ${base}assets/photos/${secondary.image}.webp 1200w" sizes="(max-width:650px) calc(100vw - 72px), 560px" width="1200" height="828" loading="lazy" decoding="async" alt="${escape(secondary.alt[lang])}"><figcaption>${escape(secondary.alt[lang])} · ${escape(t("photoCredit"))}</figcaption></figure>` : '';
     const message = `${t("hello")}\n\n${t("msgInterest")}: ${name}\n${copy.message}\n\n${t("msgEnd")}`;
     const whatsapp = "https://wa.me/573132560145?text=" + encodeURIComponent(message);
     const photoUrl = new URL(`assets/photos/${item.image}.webp`, siteUrl).href;
@@ -105,7 +108,7 @@ export function buildExperiencePages({ root, data, version }) {
           }, {
             "@type": "Service", "@id": pageUrl + "#experience", url: pageUrl,
             name: heading, description: detail, image: photoUrl,
-            provider: { "@id": organization["@id"] }, areaServed: organization.areaServed,
+            provider: { "@id": organization["@id"] }, areaServed: item.areaServed || organization.areaServed,
           }, {
             "@type": "BreadcrumbList", "@id": pageUrl + "#breadcrumb",
             itemListElement: [
@@ -129,7 +132,7 @@ export function buildExperiencePages({ root, data, version }) {
         </div><figure><img class="experience-cover" src="${base}assets/photos/${item.image}.webp" srcset="${base}assets/photos/${item.image}-480.webp 480w, ${base}assets/photos/${item.image}-800.webp 800w, ${base}assets/photos/${item.image}.webp 1200w" sizes="(max-width:650px) calc(100vw - 40px), (max-width:850px) calc(100vw - 72px), (max-width:1100px) calc((100vw - 120px) / 2), (max-width:1352px) calc((100vw - 160px) / 2), 596px" width="1200" height="828" alt="${escape(experienceAlt[item.id][lang])}" fetchpriority="high" decoding="async"><figcaption>${escape(item.photoContext?.[lang] || t("photoCredit"))}</figcaption></figure></div>
       </section>
       <section class="section wrap experience-information" aria-labelledby="about-title">
-        <div><h2 id="about-title">${escape(copy.about)}</h2><p>${escape(detail)}</p>${editorial.paragraphs.map((paragraph) => `<p data-editorial-context>${escape(paragraph)}</p>`).join("")}<p class="photo-credit" data-editorial-sources>${escape(editorialSourceLabel[lang])}: ${sourceLinks}</p><h3>${escape(copy.highlights)}</h3><ul>${points.map((point) => `<li>${escape(point)}</li>`).join("")}</ul></div>
+        <div><h2 id="about-title">${escape(copy.about)}</h2><p>${escape(detail)}</p>${editorial.paragraphs.map((paragraph) => `<p data-editorial-context>${escape(paragraph)}</p>`).join("")}<p class="photo-credit" data-editorial-sources>${escape(editorialSourceLabel[lang])}: ${sourceLinks}</p><h3>${escape(copy.highlights)}</h3><ul>${points.map((point) => `<li>${escape(point)}</li>`).join("")}</ul>${secondaryHtml}</div>
         <div id="practical"><h2>${escape(copy.practical)}</h2><dl><dt>${escape(copy.timing)}</dt><dd>${escape(t(item.time))}</dd><dt>${escape(copy.duration)}</dt><dd>${escape(item.duration?.[lang] || copy.confirmDuration)}</dd><dt>${escape(t("effortLabel"))}</dt><dd data-effort>${escape(t(item.effort || "effortConfirm"))}</dd></dl><p class="effort-note">${escape(t("effortNote"))}</p><p data-editorial-tips>${escape(advice)}</p>${mediaHtml}</div>
         <div class="experience-confirm"><h3>${escape(copy.confirm)}</h3><p>${escape(copy.confirmText)}</p><p>${escape(copy.note)}</p></div>
       </section>

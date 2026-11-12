@@ -81,6 +81,32 @@
       "faststart": true,
       "poster": "assets/videos/cacao-drying-poster.webp",
       "poster_bytes": 69964
+    },
+    {
+      "id": "san-antonio-sloth",
+      "status": "integrated_in_development_branch",
+      "source": "avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/VID_20260120_132721.mp4",
+      "source_sha256": "fcdfc449c4e3e48d23f6e00bb4b8cd8b81e074d8368c8d809456fb856c8342d6",
+      "source_bytes": 130445872,
+      "source_duration_seconds": 50.94,
+      "start_seconds": 10,
+      "clip_duration_seconds": 8,
+      "output": "assets/videos/san-antonio-sloth.mp4",
+      "output_sha256": "c8f13646baadf6bc323b1d93defd5ca16e9c00e347d298e7fc9a6cf5fc5f1691",
+      "output_bytes": 1327709,
+      "width": 396,
+      "height": 720,
+      "scene_width": 396,
+      "scene_height": 704,
+      "footer_height": 16,
+      "video_codec": "H264 Main 3.1",
+      "pixel_format": "yuv420p",
+      "fps": 24,
+      "audio": false,
+      "metadata_stripped": true,
+      "faststart": true,
+      "poster": "assets/videos/san-antonio-sloth-poster.webp",
+      "poster_bytes": 44096
     }
   ],
   "photos": [
@@ -254,7 +280,7 @@
     },
     {
       "id": "sloth",
-      "status": "prepared_only_catalogue_decision_pending",
+      "status": "integrated_in_development_branch",
       "source": "avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20251224_105430.jpg",
       "source_sha256": "cf472c0cf27420b2be8f1673307bcaf337141578c0737acda7349c37ca2146d2",
       "source_bytes": 3483816,
@@ -272,21 +298,21 @@
       "metadata_stripped": true,
       "variants": {
         "480": {
-          "file": ".codex-preview/integral-20261112/prepared-media/sloth-480.webp",
+          "file": "assets/photos/sloth-480.webp",
           "width": 480,
           "height": 331,
           "bytes": 60346,
           "sha256": "f660dfb1482db62375068aeec979a1641a328664e8b9cef51df3398d9a27f6e1"
         },
         "800": {
-          "file": ".codex-preview/integral-20261112/prepared-media/sloth-800.webp",
+          "file": "assets/photos/sloth-800.webp",
           "width": 800,
           "height": 552,
           "bytes": 129550,
           "sha256": "ccde218f267372a7c3ef46fabd76147fb97c12cbb00c4d5d2b7b677d226bce85"
         },
         "1200": {
-          "file": ".codex-preview/integral-20261112/prepared-media/sloth.webp",
+          "file": "assets/photos/sloth.webp",
           "width": 1200,
           "height": 828,
           "bytes": 209770,
@@ -296,7 +322,7 @@
     },
     {
       "id": "victoria-regia",
-      "status": "prepared_only_catalogue_decision_pending",
+      "status": "integrated_in_development_branch",
       "source": "avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20260102_115836.jpg",
       "source_sha256": "e3f57467c4843bba2d98e3bc1b97a3c8834146eba23373a007432aa6fdf7efdf",
       "source_bytes": 4986575,
@@ -314,21 +340,21 @@
       "metadata_stripped": true,
       "variants": {
         "480": {
-          "file": ".codex-preview/integral-20261112/prepared-media/victoria-regia-480.webp",
+          "file": "assets/photos/victoria-regia-480.webp",
           "width": 480,
           "height": 331,
           "bytes": 65176,
           "sha256": "3b0e703d985606d5d15d396c3ce2b3effdbf46b3afdc78b39431a2e0297b9229"
         },
         "800": {
-          "file": ".codex-preview/integral-20261112/prepared-media/victoria-regia-800.webp",
+          "file": "assets/photos/victoria-regia-800.webp",
           "width": 800,
           "height": 552,
           "bytes": 171258,
           "sha256": "8b50ef63281fad977f3ec150abe2829a09d5fa3840efe1012a01bca54fed33de"
         },
         "1200": {
-          "file": ".codex-preview/integral-20261112/prepared-media/victoria-regia.webp",
+          "file": "assets/photos/victoria-regia.webp",
           "width": 1200,
           "height": 828,
           "bytes": 344058,

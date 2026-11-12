@@ -120,5 +120,25 @@
     "mp4Requests": 0,
     "warnings": [],
     "automaticAccessibilityFailures": []
+  },
+  {
+    "name": "san-antonio-es-mobile",
+    "url": "http://127.0.0.1:8077/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+    "date": "2026-11-12T19:55:01.160Z",
+    "lighthouseVersion": "13.0.1",
+    "formFactor": "mobile",
+    "scores": {
+      "performance": 89,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 3592.4025999999994,
+    "cls": 0,
+    "tbtMs": 8,
+    "mp4Requests": 0,
+    "warnings": [
+      "The tested device appears to have a slower CPU than  Lighthouse expects. This can negatively affect your performance score. Learn more about [calibrating an appropriate CPU slowdown multiplier](https://github.com/GoogleChrome/lighthouse/blob/main/docs/throttling.md#cpu-throttling)."
+    ]
   }
 ]

@@ -38,6 +38,61 @@ const experiences = [
     "effort": "effortLow"
   },
   {
+    "id": "san-antonio",
+    "cat": "water",
+    "time": "byArrangement",
+    "image": "victoria-regia",
+    "effort": "effortLowModerate",
+    "secondaryPhoto": {
+      "image": "sloth",
+      "alt": {
+        "en": "A sloth hanging among leafy branches",
+        "es": "Un perezoso colgado entre ramas con hojas",
+        "fr": "Un paresseux suspendu parmi les branches feuillues"
+      }
+    },
+    "en": [
+      "San Antonio · Victoria Regia & sloths",
+      "Travel by river to San Antonio del Cacao, discover Victoria Regia and look for sloths among the branches. One excursion from Puerto Nariño.",
+      "Set out from Puerto Nariño by boat towards San Antonio, in the Peruvian area of Cacao Island. The excursion brings together the river landscape, a visit to the community and the broad leaves of Victoria Regia. A sloth may appear among the branches: observation depends on the animals and the conditions of the day, without guaranteed sightings. This is one combined outing, planned with Amaru around your dates.",
+      [
+        "River excursion from Puerto Nariño to San Antonio",
+        "Victoria Regia and the surrounding vegetation",
+        "The possibility of observing sloths, without guaranteed sightings"
+      ]
+    ],
+    "es": [
+      "San Antonio · Victoria Regia y perezosos",
+      "Navega hasta San Antonio del Cacao, conoce la Victoria Regia y busca perezosos entre las ramas. Una sola excursión desde Puerto Nariño.",
+      "Sal desde Puerto Nariño en embarcación hacia San Antonio, en la zona peruana de la isla Cacao. La excursión reúne el paisaje fluvial, la visita a la comunidad y las grandes hojas de Victoria Regia. Entre las ramas puede aparecer un perezoso: la observación depende de los animales y de las condiciones del día, sin avistamientos garantizados. Es una sola salida que preparas con Amaru para tus fechas.",
+      [
+        "Excursión fluvial desde Puerto Nariño hasta San Antonio",
+        "Victoria Regia y la vegetación del entorno",
+        "Posibilidad de observar perezosos, sin avistamientos garantizados"
+      ]
+    ],
+    "fr": [
+      "San Antonio · Victoria Regia et paresseux",
+      "Rejoignez San Antonio del Cacao par le fleuve, découvrez la Victoria Regia et recherchez les paresseux dans les arbres. Une seule excursion depuis Puerto Nariño.",
+      "Partez de Puerto Nariño en bateau vers San Antonio, dans la zone péruvienne de l’île Cacao. L’excursion associe paysages fluviaux, visite de la communauté et grandes feuilles de Victoria Regia. Un paresseux peut apparaître parmi les branches : l’observation dépend des animaux et des conditions du jour, sans rencontre garantie. Il s’agit d’une seule sortie, à préparer avec Amaru pour vos dates.",
+      [
+        "Excursion fluviale de Puerto Nariño à San Antonio",
+        "Victoria Regia et végétation environnante",
+        "Possibilité d’observer des paresseux, sans rencontre garantie"
+      ]
+    ],
+    "areaServed": [
+      {
+        "@type": "Place",
+        "name": "Puerto Nariño, Amazonas, Colombia"
+      },
+      {
+        "@type": "Place",
+        "name": "San Antonio, isla Cacao, Perú"
+      }
+    ]
+  },
+  {
     "id": "kayak",
     "cat": "water",
     "time": "day",

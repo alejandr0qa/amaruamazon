@@ -158,5 +158,19 @@
     "width": 1200,
     "height": 828,
     "bytes": 393458
+  },
+  "sloth": {
+    "source": "avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20251224_105430.jpg",
+    "source_sha256": "cf472c0cf27420b2be8f1673307bcaf337141578c0737acda7349c37ca2146d2",
+    "width": 1200,
+    "height": 828,
+    "bytes": 209770
+  },
+  "victoria-regia": {
+    "source": "avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20260102_115836.jpg",
+    "source_sha256": "e3f57467c4843bba2d98e3bc1b97a3c8834146eba23373a007432aa6fdf7efdf",
+    "width": 1200,
+    "height": 828,
+    "bytes": 344058
   }
 }

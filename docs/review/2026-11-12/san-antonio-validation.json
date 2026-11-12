@@ -1,0 +1,222 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/"
+    },
+    {
+      "route": "/es/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/"
+    },
+    {
+      "route": "/fr/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/"
+    },
+    {
+      "route": "/experiences/lake-tarapoto/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/lake-tarapoto/"
+    },
+    {
+      "route": "/es/experiencias/lago-tarapoto/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/lago-tarapoto/"
+    },
+    {
+      "route": "/fr/experiences/lac-tarapoto/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/lac-tarapoto/"
+    },
+    {
+      "route": "/experiences/san-antonio-cacao-victoria-regia-sloths/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/"
+    },
+    {
+      "route": "/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/"
+    },
+    {
+      "route": "/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/"
+    },
+    {
+      "route": "/experiences/daytime-kayaking/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/daytime-kayaking/"
+    },
+    {
+      "route": "/es/experiencias/kayak-diurno-amazonas/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/"
+    },
+    {
+      "route": "/fr/experiences/kayak-de-jour-amazonie/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/"
+    },
+    {
+      "route": "/experiences/birdwatching/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/birdwatching/"
+    },
+    {
+      "route": "/es/experiencias/avistamiento-aves/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/avistamiento-aves/"
+    },
+    {
+      "route": "/fr/experiences/observation-oiseaux/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/observation-oiseaux/"
+    },
+    {
+      "route": "/experiences/amazonian-cacao/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/amazonian-cacao/"
+    },
+    {
+      "route": "/es/experiencias/cacao-amazonico/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/cacao-amazonico/"
+    },
+    {
+      "route": "/fr/experiences/cacao-amazonien/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/cacao-amazonien/"
+    },
+    {
+      "route": "/experiences/rainforest-night-walk/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/rainforest-night-walk/"
+    },
+    {
+      "route": "/es/experiencias/caminata-nocturna-selva/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/caminata-nocturna-selva/"
+    },
+    {
+      "route": "/fr/experiences/promenade-nocturne-foret/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/promenade-nocturne-foret/"
+    },
+    {
+      "route": "/experiences/night-in-rainforest/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/night-in-rainforest/"
+    },
+    {
+      "route": "/es/experiencias/noche-selva-amazonica/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/noche-selva-amazonica/"
+    },
+    {
+      "route": "/fr/experiences/nuit-foret-amazonienne/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/nuit-foret-amazonienne/"
+    },
+    {
+      "route": "/experiences/cultural-encounters/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/cultural-encounters/"
+    },
+    {
+      "route": "/es/experiencias/encuentros-culturales/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/encuentros-culturales/"
+    },
+    {
+      "route": "/fr/experiences/rencontres-culturelles/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/rencontres-culturelles/"
+    },
+    {
+      "route": "/experiences/rainforest-walks/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/rainforest-walks/"
+    },
+    {
+      "route": "/es/experiencias/caminatas-selva-fauna/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/caminatas-selva-fauna/"
+    },
+    {
+      "route": "/fr/experiences/randonnees-foret-faune/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/randonnees-foret-faune/"
+    },
+    {
+      "route": "/experiences/puerto-narino-city-tour/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/"
+    },
+    {
+      "route": "/es/experiencias/city-tour-puerto-narino/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/city-tour-puerto-narino/"
+    },
+    {
+      "route": "/fr/experiences/visite-puerto-narino/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/visite-puerto-narino/"
+    },
+    {
+      "route": "/experiences/oje-tree/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/oje-tree/"
+    },
+    {
+      "route": "/es/experiencias/arbol-oje/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/arbol-oje/"
+    },
+    {
+      "route": "/fr/experiences/arbre-oje/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/arbre-oje/"
+    },
+    {
+      "route": "/experiences/night-caiman-watching/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/night-caiman-watching/"
+    },
+    {
+      "route": "/es/experiencias/avistamiento-caimanes/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/avistamiento-caimanes/"
+    },
+    {
+      "route": "/fr/experiences/observation-caimans-nuit/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/observation-caimans-nuit/"
+    },
+    {
+      "route": "/experiences/flooded-forest-canoeing/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"
+    },
+    {
+      "route": "/es/experiencias/canotaje-selva-inundada/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/"
+    },
+    {
+      "route": "/fr/experiences/canoe-foret-inondee/",
+      "status": 200,
+      "canonical": "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"
+    }
+  ],
+  "assetResponses200": 44,
+  "originalsUnchanged": 288,
+  "existingPhotoAssetsUnchanged": 50,
+  "baseline": "7b4dd72",
+  "previousReviewRoutesPreserved": 39,
+  "previousReviewCommit": "aeaa1da",
+  "browserEvidence": "san-antonio-browser.json",
+  "builtPageCount": 42
+}

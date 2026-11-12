@@ -66,6 +66,7 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
     assert.equal(webpage.url, pageUrl); assert.equal(webpage.inLanguage, lang);
     assert.equal(service.name, heading); assert.equal(service.description, item[lang][2]);
     assert.equal(service.url, pageUrl); assert.equal(service.provider["@id"], organization["@id"]);
+    assert.deepEqual(service.areaServed, JSON.parse(JSON.stringify(item.areaServed || organization.areaServed)));
     assert.equal(breadcrumb.itemListElement[0].item, new URL(languagePaths[lang], siteUrl).href);
     assert.equal(breadcrumb.itemListElement[1].item, pageUrl);
     for (const entry of graph) for (const field of ["offers", "aggregateRating", "review", "award", "duration", "openingHours"])
@@ -105,6 +106,13 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
     } else assert.equal(mediaButton, undefined);
     assert.ok(text(find((n) => attr(n, "data-effort") !== undefined)).trim());
     const cover = find((n) => (attr(n, "class") || "").split(" ").includes("experience-cover"));
+    if (item.secondaryPhoto) {
+      const figure = find((n) => attr(n, "data-experience-photo") !== undefined);
+      assert.ok(figure, `${route}: secondary owner photograph`);
+      const photo = [...walk(figure)].find((n) => n.tagName === "img");
+      assert.equal(attr(photo, "alt"), item.secondaryPhoto.alt[lang]);
+      assert.ok(attr(photo, "src").endsWith(item.secondaryPhoto.image + ".webp"));
+    }
     assert.equal(attr(cover, "alt"), experienceAlt[item.id][lang]);
     assert.ok(attr(cover, "srcset")?.includes("480w"));
     const contact = all((n) => attr(n, "data-experience-whatsapp") !== undefined);

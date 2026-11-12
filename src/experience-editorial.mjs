@@ -183,4 +183,27 @@ export const experienceEditorial = {
       "Dans certaines parties de l’Amazonie, la montée de l’eau transforme les liens entre forêt et fleuve. Arbres et végétation entourent le canoë et offrent un autre regard qu’une marche sur terre ferme. Le niveau de l’eau détermine les possibilités : la sortie se prépare selon les conditions, sans promesse fixe d’accès.",
     ] },
   },
+  "san-antonio": {
+    "sources": [
+      "destination"
+    ],
+    "en": {
+      "paragraphs": [
+        "The journey begins on the river, with time to watch the changing banks before reaching San Antonio. Here, Victoria Regia and the chance of spotting sloths bring two different ways of looking at the Amazon together: across the water and up into the trees.",
+        "Take time to notice the shapes of the leaves, the surrounding vegetation and movement among the branches. This excursion combines the destination and its natural attractions; Victoria Regia and sloths are not presented as separate tours. Wildlife remains free to move, so patience is part of the experience."
+      ]
+    },
+    "es": {
+      "paragraphs": [
+        "El viaje comienza en el río, con tiempo para mirar las orillas antes de llegar a San Antonio. Allí, la Victoria Regia y la posibilidad de encontrar perezosos reúnen dos formas de descubrir el Amazonas: observar el agua y levantar la mirada hacia los árboles.",
+        "Detente en las formas de las hojas, la vegetación cercana y el movimiento entre las ramas. Esta excursión combina el destino y sus atractivos naturales; Victoria Regia y perezosos forman parte de la misma propuesta. La fauna se desplaza libremente y observar con paciencia también es parte de la experiencia."
+      ]
+    },
+    "fr": {
+      "paragraphs": [
+        "Le voyage commence sur le fleuve, avec le temps d’observer les rives avant de rejoindre San Antonio. La Victoria Regia et la possibilité d’apercevoir des paresseux réunissent deux regards sur l’Amazonie : à la surface de l’eau et dans les arbres.",
+        "Prenez le temps d’observer les formes des feuilles, la végétation et les mouvements dans les branches. Cette excursion associe la destination et ses attraits naturels ; Victoria Regia et paresseux font partie de la même proposition. La faune se déplace librement et la patience fait aussi partie de l’expérience."
+      ]
+    }
+  },
 };

@@ -45,6 +45,7 @@ const translations = {
     "effortConfirm": "Confirm for your route",
     "effortLabel": "Physical effort",
     "effortNote": "Levels are indicative. Terrain, water levels, weather and your group can change the demands of an outing.",
+    "effortLowModerate": "Low to moderate effort",
     "skip": "Skip to content",
     "brandHome": "Amaru Amazon Experiences — home",
     "menu": "Menu",
@@ -362,7 +363,8 @@ const translations = {
     "effortHigh": "Exigencia alta",
     "effortConfirm": "A confirmar según el recorrido",
     "effortLabel": "Exigencia física",
-    "effortNote": "Los niveles son orientativos. El terreno, el agua, el clima y las características del grupo pueden cambiar la exigencia."
+    "effortNote": "Los niveles son orientativos. El terreno, el agua, el clima y las características del grupo pueden cambiar la exigencia.",
+    "effortLowModerate": "Exigencia baja a moderada"
   },
   "fr": {
     "skip": "Aller au contenu",
@@ -545,6 +547,7 @@ const translations = {
     "effortHigh": "Effort élevé",
     "effortConfirm": "À confirmer selon le parcours",
     "effortLabel": "Effort physique",
-    "effortNote": "Les niveaux sont indicatifs. Terrain, eau, météo et composition du groupe peuvent modifier les exigences de la sortie."
+    "effortNote": "Les niveaux sont indicatifs. Terrain, eau, météo et composition du groupe peuvent modifier les exigences de la sortie.",
+    "effortLowModerate": "Effort faible à modéré"
   }
 };

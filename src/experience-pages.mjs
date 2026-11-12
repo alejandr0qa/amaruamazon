@@ -61,6 +61,23 @@ export const experiencePages = {
     es: ["canotaje-selva-inundada","Canotaje en la selva inundada","Usa ropa que pueda mojarse y protege los dispositivos electrónicos. Comparte tu experiencia remando y consulta corriente, embarque, equipo y esfuerzo. La posibilidad del recorrido depende del nivel del agua; no es un itinerario fijo disponible todo el año."],
     fr: ["canoe-foret-inondee","Canoë en forêt amazonienne inondée","Portez des vêtements pouvant être mouillés et protégez vos appareils. Indiquez votre expérience de la pagaie et discutez du courant, de l’embarquement, du matériel et de l’effort. Le parcours dépend du niveau de l’eau ; il n’est pas annoncé comme disponible toute l’année."],
   },
+  "san-antonio": {
+    "en": [
+      "san-antonio-cacao-victoria-regia-sloths",
+      "San Antonio del Cacao: Victoria Regia & sloths",
+      "Bring sun and rain protection, drinking water and a waterproof bag for your belongings. Allow for boarding and disembarking and for any walking agreed for the outing. Confirm the total duration, meeting point, route, equipment and inclusions with Amaru. Observe wildlife quietly and give animals space."
+    ],
+    "es": [
+      "san-antonio-cacao-victoria-regia-perezosos",
+      "San Antonio del Cacao: Victoria Regia y perezosos",
+      "Lleva protección solar y para la lluvia, agua y una bolsa impermeable para tus pertenencias. Ten en cuenta el embarque, el desembarque y las caminatas que se acuerden para la salida. Confirma con Amaru duración total, punto de encuentro, recorrido, equipo e inclusiones. Observa la fauna con calma y deja espacio a los animales."
+    ],
+    "fr": [
+      "san-antonio-cacao-victoria-regia-paresseux",
+      "San Antonio del Cacao : Victoria Regia et paresseux",
+      "Prévoyez protection solaire, vêtement de pluie, eau et sac étanche. Tenez compte de l’embarquement, du débarquement et des marches convenues pour la sortie. Confirmez avec Amaru la durée totale, le rendez-vous, le parcours, le matériel et les prestations. Observez la faune dans le calme et laissez de l’espace aux animaux."
+    ]
+  },
 };
 
 export const experienceDescriptions = {
@@ -124,6 +141,11 @@ export const experienceDescriptions = {
     es: "Descubre el canotaje en selva inundada desde Puerto Nariño, Amazonas colombiano. Consulta con Amaru el nivel del agua, la ruta y los requisitos.",
     fr: "Découvrez le canoë en forêt inondée depuis Puerto Nariño, en Amazonie colombienne. Consultez Amaru sur le niveau de l’eau, le parcours et les prérequis.",
   },
+  "san-antonio": {
+    "en": "Explore San Antonio del Cacao from Puerto Nariño: a river excursion with Victoria Regia and the possibility of observing sloths. Plan your visit with Amaru.",
+    "es": "Descubre San Antonio del Cacao desde Puerto Nariño: excursión fluvial, Victoria Regia y posibilidad de observar perezosos. Planea tu visita con Amaru.",
+    "fr": "Découvrez San Antonio del Cacao depuis Puerto Nariño : excursion fluviale, Victoria Regia et observation possible de paresseux. Préparez votre visite avec Amaru."
+  },
 };
 
 export const experienceAlt = {
@@ -186,6 +208,11 @@ export const experienceAlt = {
     en: "Travellers in a canoe among trees standing in water",
     es: "Viajeros en una canoa entre árboles rodeados de agua",
     fr: "Des voyageurs en canoë parmi des arbres entourés d’eau",
+  },
+  "san-antonio": {
+    "en": "Large Victoria Regia leaves and white flowers on the water",
+    "es": "Grandes hojas de Victoria Regia y flores blancas sobre el agua",
+    "fr": "De grandes feuilles de Victoria Regia et des fleurs blanches sur l’eau"
   },
 };
 

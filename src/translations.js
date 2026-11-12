@@ -514,3 +514,9 @@ Object.assign(translations.fr, {
   "effortLabel": "Effort physique",
   "effortNote": "Les niveaux sont indicatifs. Terrain, eau, météo et composition du groupe peuvent modifier les exigences de la sortie."
 });
+
+Object.assign(translations.en, { effortLowModerate: "Low to moderate effort" });
+
+Object.assign(translations.es, { effortLowModerate: "Exigencia baja a moderada" });
+
+Object.assign(translations.fr, { effortLowModerate: "Effort faible à modéré" });

@@ -26,17 +26,17 @@ python -m http.server 8077 --bind 127.0.0.1
 
 Abrir http://127.0.0.1:8077/ o /es/ o /fr/. No abrir como archivo local para probar la navegación.
 
-Editar las fuentes y ejecutar `npm run build` antes de publicar. Las tres portadas, las 36 páginas de experiencias, i18n.js, sitemap.xml y robots.txt se generan y se incluyen en Git para que GitHub Pages pueda servirlos desde la raíz.
+Editar las fuentes y ejecutar `npm run build` antes de publicar. Las tres portadas, las 39 páginas de experiencias, i18n.js, sitemap.xml y robots.txt se generan y se incluyen en Git para que GitHub Pages pueda servirlos desde la raíz.
 
 ## Fuentes
 
 - `src/index.template.html`: estructura semántica y texto inglés inicial. No editar directamente los HTML generados.
 - `src/translations.js`: traducciones y etiquetas dinámicas; el generador completa el inglés desde la plantilla.
-- `content.js`: doce experiencias (ocho conservadas y cuatro nuevas), tres rutas sugeridas y ocho fotografías de galería.
-- `src/experience-pages.mjs`: rutas localizadas, títulos y recomendaciones de las doce experiencias; no contiene tarifas ni duraciones supuestas.
+- `content.js`: trece experiencias (ocho conservadas y cinco nuevas), tres rutas sugeridas y ocho fotografías de galería.
+- `src/experience-pages.mjs`: rutas localizadas, títulos y recomendaciones de las trece experiencias; no contiene tarifas ni duraciones supuestas.
 - `scripts/build-experience-pages.mjs`: genera páginas individuales reutilizando cabecera, pie, privacidad, estilos y datos de la portada. No editar sus HTML de salida.
 - `experience.js`: menú móvil y diálogo de privacidad de las páginas individuales, sin cargar el carrusel ni los datos de toda la portada.
-- `scripts/check-experience-pages.mjs`: comprueba las 36 páginas, enlaces locales y cruzados, metadatos únicos, hreflang, JSON-LD y contacto contextual.
+- `scripts/check-experience-pages.mjs`: comprueba las 39 páginas, enlaces locales y cruzados, metadatos únicos, hreflang, JSON-LD y contacto contextual.
 - `render.js`: plantillas compartidas para las tarjetas y contenido estático.
 - `scripts/build-site.mjs`: generación con parse5; canonical, hreflang, metadatos sociales, JSON-LD y recursos relativos por idioma.
 - `site.config.mjs`: URL pública, rutas de idioma y correo corporativo.
@@ -47,9 +47,9 @@ Los tres idiomas entregan contenido completo en el HTML inicial, incluidos detal
 
 Cada idioma tiene canonical propio, hreflang recíproco y metadatos de vista previa traducidos. El generador calcula automáticamente una versión de los estilos y scripts para evitar combinar archivos antiguos de caché con HTML nuevo.
 
-Las tarjetas y modales conservan su funcionamiento y ahora enlazan una guía completa por experiencia. Cada guía tiene H1, title y descripción propios, fotografía existente con copyright visible, información práctica, enlaces relacionados y mensajes de WhatsApp con la actividad seleccionada. El enlace al formulario de portada utiliza `?experience=<id>#plan`; solo se aceptan los doce identificadores conocidos y la canonical sigue siendo la ruta limpia. La duración total se consulta cuando no está validada. En Ojé se indica únicamente el tramo de caminata aproximado de 1–2 horas descrito por el equipo, sin convertirlo en duración total.
+Las tarjetas y modales conservan su funcionamiento y ahora enlazan una guía completa por experiencia. Cada guía tiene H1, title y descripción propios, fotografía existente con copyright visible, información práctica, enlaces relacionados y mensajes de WhatsApp con la actividad seleccionada. El enlace al formulario de portada utiliza `?experience=<id>#plan`; solo se aceptan los trece identificadores conocidos y la canonical sigue siendo la ruta limpia. La duración total se consulta cuando no está validada. En Ojé se indica únicamente el tramo de caminata aproximado de 1–2 horas descrito por el equipo, sin convertirlo en duración total.
 
-Las rutas de salida son `experiences/<slug>/`, `es/experiencias/<slug>/` y `fr/experiences/<slug>/`; los slugs exactos se definen en `src/experience-pages.mjs`. El sitemap de esta rama incluye 39 páginas con sus traducciones equivalentes; conserva las 27 URL existentes.
+Las rutas de salida son `experiences/<slug>/`, `es/experiencias/<slug>/` y `fr/experiences/<slug>/`; los slugs exactos se definen en `src/experience-pages.mjs`. El sitemap de esta rama incluye 42 páginas con sus traducciones equivalentes; conserva las 27 URL existentes.
 
 El dominio propio se aplica a canonical, Open Graph, Twitter, sitemap, robots.txt y JSON-LD. La entidad TravelAgency mantiene un identificador común en los tres idiomas, con teléfono y correo de contacto. No se publican valoraciones, RNT, certificaciones ni precios sin evidencia.
 
@@ -98,8 +98,8 @@ Las condiciones comerciales, disponibilidad y precio total se acuerdan por conta
 
 ## Actualización integrada del 12 de noviembre
 
-Resumen, catálogo, pruebas y comparativas: [docs/integral-update-2026-11-12.md](docs/integral-update-2026-11-12.md). City Tour, Ojé, caimanes y canotaje en selva inundada añaden cuatro experiencias; Wochine se combina con la caminata nocturna en su URL existente. San Antonio/perezosos/Victoria Regia sigue pendiente de recorrido y cruce fronterizo; cerámica no se publica.
+Resumen, catálogo, pruebas y comparativas: [docs/integral-update-2026-11-12.md](docs/integral-update-2026-11-12.md). City Tour, Ojé, caimanes y canotaje en selva inundada añaden cuatro experiencias; Wochine se combina con la caminata nocturna en su URL existente. San Antonio del Cacao se incorpora como una quinta alta que reúne navegación hacia la zona peruana de la isla Cacao, Victoria Regia y la posibilidad de observar perezosos en una sola experiencia; cerámica no se publica.
 
-`src/experience-media.mjs` asigna tres clips locales a sus fichas. `media.js` crea el reproductor solo al pulsar reproducir: no hay descarga inicial de MP4, audio ni reproducción automática. Los originales se conservan fuera de Git. [Inventario y optimización](docs/media-inventory-2026-11-12.md).
+`src/experience-media.mjs` asigna cuatro clips locales a sus fichas. `media.js` crea el reproductor solo al pulsar reproducir: no hay descarga inicial de MP4, audio ni reproducción automática. Los originales se conservan fuera de Git. [Inventario y optimización](docs/media-inventory-2026-11-12.md).
 
 `src/testimonials.mjs` contiene una colección vacía y el componente para futuras reseñas autorizadas. Cada entrada exige aprobación, referencia no sensible del permiso, nombre publicable, URL de origen y texto en los tres idiomas; la referencia del permiso no se muestra al visitante. Sin entradas no se genera sección ni Schema de reseñas. Nunca almacenar permisos privados ni datos personales adicionales en este repositorio público.
