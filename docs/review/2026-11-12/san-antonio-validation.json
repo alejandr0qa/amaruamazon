@@ -218,5 +218,12 @@
   "previousReviewRoutesPreserved": 39,
   "previousReviewCommit": "aeaa1da",
   "browserEvidence": "san-antonio-browser.json",
-  "builtPageCount": 42
+  "builtPageCount": 42,
+  "cleanWindowsCheckout": {
+    "codeCommit": "eb9ee225a9cb6469c36b6d46b520adf3d2ffe805",
+    "commands": ["npm ci", "npm run check", "npm run build", "npm run check", "git diff --exit-code", "git status --porcelain"],
+    "allExitCodes": 0,
+    "generatedAssetVersion": "938503b8e291",
+    "workingTreeCleanAfterBuild": true
+  }
 }
