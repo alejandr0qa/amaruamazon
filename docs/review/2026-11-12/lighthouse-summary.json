@@ -1,0 +1,144 @@
+[
+  {
+    "name": "before-es-home-mobile",
+    "url": "http://127.0.0.1:8081/es/",
+    "date": "2026-11-12T15:19:33.680Z",
+    "lighthouseVersion": "13.0.1",
+    "formFactor": "mobile",
+    "scores": {
+      "performance": 76,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 5132.968961324455,
+    "cls": 0,
+    "tbtMs": 225.5155193377725,
+    "transferredBytes": 1242251,
+    "mp4Requests": 0,
+    "warnings": [],
+    "automaticAccessibilityFailures": []
+  },
+  {
+    "name": "es-home-mobile",
+    "url": "http://127.0.0.1:8077/es/",
+    "date": "2026-11-12T15:18:44.353Z",
+    "lighthouseVersion": "13.0.1",
+    "formFactor": "mobile",
+    "scores": {
+      "performance": 79,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 5073.784451968496,
+    "cls": 0,
+    "tbtMs": 59,
+    "transferredBytes": 1224957,
+    "mp4Requests": 0,
+    "warnings": [
+      "The tested device appears to have a slower CPU than  Lighthouse expects. This can negatively affect your performance score. Learn more about [calibrating an appropriate CPU slowdown multiplier](https://github.com/GoogleChrome/lighthouse/blob/main/docs/throttling.md#cpu-throttling)."
+    ],
+    "automaticAccessibilityFailures": []
+  },
+  {
+    "name": "fr-home-mobile",
+    "url": "http://127.0.0.1:8077/fr/",
+    "date": "2026-11-12T15:21:36.872Z",
+    "lighthouseVersion": "13.0.1",
+    "formFactor": "mobile",
+    "scores": {
+      "performance": 79,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 5057.7665,
+    "cls": 0,
+    "tbtMs": 33,
+    "transferredBytes": 1226106,
+    "mp4Requests": 0,
+    "warnings": [],
+    "automaticAccessibilityFailures": []
+  },
+  {
+    "name": "en-home-mobile",
+    "url": "http://127.0.0.1:8077/",
+    "date": "2026-11-12T15:22:38.398Z",
+    "lighthouseVersion": "13.0.1",
+    "formFactor": "mobile",
+    "scores": {
+      "performance": 79,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 5059.7820971331585,
+    "cls": 0,
+    "tbtMs": 39,
+    "transferredBytes": 1223699,
+    "mp4Requests": 0,
+    "warnings": [],
+    "automaticAccessibilityFailures": []
+  },
+  {
+    "name": "es-canoe-mobile",
+    "url": "http://127.0.0.1:8077/es/experiencias/canotaje-selva-inundada/",
+    "date": "2026-11-12T15:20:23.521Z",
+    "lighthouseVersion": "13.0.1",
+    "formFactor": "mobile",
+    "scores": {
+      "performance": 92,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 3167.6304,
+    "cls": 0,
+    "tbtMs": 60,
+    "transferredBytes": 427216,
+    "mp4Requests": 0,
+    "warnings": [],
+    "automaticAccessibilityFailures": []
+  },
+  {
+    "name": "es-home-desktop",
+    "url": "http://127.0.0.1:8077/es/",
+    "date": "2026-11-12T15:23:54.018Z",
+    "lighthouseVersion": "13.0.1",
+    "formFactor": "desktop",
+    "scores": {
+      "performance": 97,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 1274.567,
+    "cls": 0.000174278923996212,
+    "tbtMs": 0,
+    "transferredBytes": 1278777,
+    "mp4Requests": 0,
+    "warnings": [],
+    "automaticAccessibilityFailures": []
+  },
+  {
+    "name": "san-antonio-es-mobile",
+    "url": "http://127.0.0.1:8077/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+    "date": "2026-11-12T19:55:01.160Z",
+    "lighthouseVersion": "13.0.1",
+    "formFactor": "mobile",
+    "scores": {
+      "performance": 89,
+      "accessibility": 100,
+      "best-practices": 100,
+      "seo": 100
+    },
+    "lcpMs": 3592.4025999999994,
+    "cls": 0,
+    "tbtMs": 8,
+    "mp4Requests": 0,
+    "warnings": [
+      "The tested device appears to have a slower CPU than  Lighthouse expects. This can negatively affect your performance score. Learn more about [calibrating an appropriate CPU slowdown multiplier](https://github.com/GoogleChrome/lighthouse/blob/main/docs/throttling.md#cpu-throttling)."
+    ]
+  }
+]

@@ -43,6 +43,27 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/lake-tarapoto/"/>
   </url>
   <url>
+    <loc>https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/"/>
+  </url>
+  <url>
     <loc>https://amaruamazonexperiences.com/experiences/daytime-kayaking/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/daytime-kayaking/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/"/>
@@ -188,5 +209,89 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/caminatas-selva-fauna/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/randonnees-foret-faune/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/rainforest-walks/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/city-tour-puerto-narino/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/visite-puerto-narino/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/es/experiencias/city-tour-puerto-narino/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/city-tour-puerto-narino/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/visite-puerto-narino/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/fr/experiences/visite-puerto-narino/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/city-tour-puerto-narino/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/visite-puerto-narino/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/experiences/oje-tree/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/oje-tree/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/arbol-oje/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/arbre-oje/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/oje-tree/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/es/experiencias/arbol-oje/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/oje-tree/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/arbol-oje/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/arbre-oje/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/oje-tree/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/fr/experiences/arbre-oje/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/oje-tree/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/arbol-oje/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/arbre-oje/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/oje-tree/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/experiences/night-caiman-watching/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/night-caiman-watching/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/avistamiento-caimanes/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/observation-caimans-nuit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/night-caiman-watching/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/es/experiencias/avistamiento-caimanes/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/night-caiman-watching/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/avistamiento-caimanes/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/observation-caimans-nuit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/night-caiman-watching/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/fr/experiences/observation-caimans-nuit/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/night-caiman-watching/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/avistamiento-caimanes/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/observation-caimans-nuit/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/night-caiman-watching/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"/>
+  </url>
+  <url>
+    <loc>https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"/>
   </url>
 </urlset>

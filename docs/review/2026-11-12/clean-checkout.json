@@ -1,0 +1,11 @@
+{
+  "codeCommit": "1d17d278eb3e4cb8e0e3ddbd652fbbad17347db5",
+  "platform": "Windows",
+  "nodeVersion": "24.19.0",
+  "commands": ["npm ci", "npm run check", "npm run build", "npm run check", "git diff --exit-code", "git status --porcelain"],
+  "allExitCodes": 0,
+  "generatedAssetVersion": "b169d955933b",
+  "generatedPages": 39,
+  "workingTreeCleanAfterBuild": true,
+  "notes": "Detached fresh checkout with committed .gitattributes; no original image directory required for build/check. No global Git configuration changed."
+}

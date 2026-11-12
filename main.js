@@ -183,14 +183,19 @@
     if (!item) return;
     const [title, , detail, points] = item[lang];
     $("#dialog-content").innerHTML =
-      `<img class="dialog-photo" src="${photoPath(item.image)}" width="1200" height="828" alt="${escape(title)}"><div class="dialog-body"><p class="eyebrow">${t(item.cat)} · ${t(item.time)}</p><h2 id="dialog-title">${escape(title)}</h2><p>${escape(detail)}</p><ul>${points.map((p) => `<li>${escape(p)}</li>`).join("")}</ul><p>${t("flexible")}</p><a href="#plan" class="button" data-choose-interest="${item.id}">${t("enquire")}</a></div>`;
+      `<div class="dialog-body"><p class="eyebrow">${t(item.cat)} · ${t(item.time)}</p><h2 id="dialog-title">${escape(title)}</h2><p>${escape(detail)}</p><ul>${points.map((p) => `<li>${escape(p)}</li>`).join("")}</ul><p>${t("flexible")}</p><a href="#plan" class="button" data-choose-interest="${item.id}">${t("enquire")}</a></div>`;
+    const photo = $(`[data-experience="${id}"] .card-image img`).cloneNode();
+    photo.className = "dialog-photo";
+    photo.loading = "eager";
+    photo.sizes = "(max-width:692px) calc(100vw - 32px), 660px";
+    $("#dialog-content").prepend(photo);
     const pageLink = $(`[data-experience-page="${id}"]`).cloneNode(true);
     $(".dialog-body", $("#dialog-content")).append(pageLink);
   }
   function renderPhoto() {
     const item = gallery[photo];
     $("#gallery-large").src = photoPath(item[0]);
-    $("#gallery-large").alt = photoTitle(item);
+    $("#gallery-large").alt = $(`[data-photo="${photo}"] img`).alt;
     $("#gallery-caption").textContent =
       `${photo + 1} / ${gallery.length} — ${photoTitle(item)}`;
   }

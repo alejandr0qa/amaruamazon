@@ -130,5 +130,47 @@
     "width": 1200,
     "height": 828,
     "bytes": 447638
+  },
+  "city-tour": {
+    "source": "city-tour/city tour/IMG_20260728_110420.jpg",
+    "source_sha256": "db3240d367c2e6f04552a67a8c2bba31d762046ad96f64188320e69214f8ba41",
+    "width": 1200,
+    "height": 828,
+    "bytes": 222514
+  },
+  "flooded-forest": {
+    "source": "canotaje-en-selva-inundada/CANOTAJE EN SELVA INUNDADA/IMG_20260223_110936.jpg",
+    "source_sha256": "04bed1a90cae5efa2562f6d08dc631f6f8a7d09a6fcb7e8027d36e5af08ca278",
+    "width": 1200,
+    "height": 828,
+    "bytes": 316592
+  },
+  "birdwatching-new": {
+    "source": "tour-avistamiento-de-aves/avistamiento de aves/IMG-20260730-WA0278.jpg",
+    "source_sha256": "da4d3c0256ce1dcaeed211c30bbb4b02999ce2f7892c10c080d27676dbe09358",
+    "width": 1200,
+    "height": 828,
+    "bytes": 72678
+  },
+  "oje": {
+    "source": "58120.jpg",
+    "source_sha256": "03816939a78c389a1cd178f99dac9862b73d98138a96ac7f7f9fd13228172a86",
+    "width": 1200,
+    "height": 828,
+    "bytes": 393458
+  },
+  "sloth": {
+    "source": "avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20251224_105430.jpg",
+    "source_sha256": "cf472c0cf27420b2be8f1673307bcaf337141578c0737acda7349c37ca2146d2",
+    "width": 1200,
+    "height": 828,
+    "bytes": 209770
+  },
+  "victoria-regia": {
+    "source": "avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20260102_115836.jpg",
+    "source_sha256": "e3f57467c4843bba2d98e3bc1b97a3c8834146eba23373a007432aa6fdf7efdf",
+    "width": 1200,
+    "height": 828,
+    "bytes": 344058
   }
 }

@@ -1,0 +1,29 @@
+[
+  {
+    "home": "/",
+    "preview": "Hello Amaru! I would like to plan a trip to the Amazon.\n\nName: Prueba Amaru\nTravellers: 3\nPreferred start date: 2026-12-15\nPreferred guide language (subject to availability): Français\nInterested in: Puerto Nariño City Tour\nNotes: Consulta de prueba local, sin enviar.\n\nPlease share availability, the full price, inclusions and booking conditions.",
+    "href": "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AName%3A%20Prueba%20Amaru%0ATravellers%3A%203%0APreferred%20start%20date%3A%202026-12-15%0APreferred%20guide%20language%20(subject%20to%20availability)%3A%20Fran%C3%A7ais%0AInterested%20in%3A%20Puerto%20Nari%C3%B1o%20City%20Tour%0ANotes%3A%20Consulta%20de%20prueba%20local%2C%20sin%20enviar.%0A%0APlease%20share%20availability%2C%20the%20full%20price%2C%20inclusions%20and%20booking%20conditions.",
+    "hasTravelers": true,
+    "hasDate": true,
+    "invalidTravelersBlocked": true,
+    "staleMessageRemoved": true
+  },
+  {
+    "home": "/es/",
+    "preview": "¡Hola, Amaru! Me gustaría planear un viaje al Amazonas.\n\nNombre: Prueba Amaru\nViajeros: 3\nFecha de inicio: 2026-12-15\nIdioma preferido del guía (sujeto a disponibilidad): Français\nMe interesa: City Tour de Puerto Nariño\nNotas: Consulta de prueba local, sin enviar.\n\nPor favor, compártanme disponibilidad, precio total, servicios incluidos y condiciones de reserva.",
+    "href": "https://wa.me/573132560145?text=%C2%A1Hola%2C%20Amaru!%20Me%20gustar%C3%ADa%20planear%20un%20viaje%20al%20Amazonas.%0A%0ANombre%3A%20Prueba%20Amaru%0AViajeros%3A%203%0AFecha%20de%20inicio%3A%202026-12-15%0AIdioma%20preferido%20del%20gu%C3%ADa%20(sujeto%20a%20disponibilidad)%3A%20Fran%C3%A7ais%0AMe%20interesa%3A%20City%20Tour%20de%20Puerto%20Nari%C3%B1o%0ANotas%3A%20Consulta%20de%20prueba%20local%2C%20sin%20enviar.%0A%0APor%20favor%2C%20comp%C3%A1rtanme%20disponibilidad%2C%20precio%20total%2C%20servicios%20incluidos%20y%20condiciones%20de%20reserva.",
+    "hasTravelers": true,
+    "hasDate": true,
+    "invalidTravelersBlocked": true,
+    "staleMessageRemoved": true
+  },
+  {
+    "home": "/fr/",
+    "preview": "Bonjour Amaru ! Je souhaite organiser un voyage en Amazonie.\n\nPrénom: Prueba Amaru\nVoyageurs: 3\nDate de début souhaitée: 2026-12-15\nLangue souhaitée pour le guide (selon disponibilité): Français\nJe m’intéresse à: Visite de Puerto Nariño à pied\nPrécisions: Consulta de prueba local, sin enviar.\n\nMerci de partager la disponibilité, le prix total, les prestations et les conditions de réservation.",
+    "href": "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0APr%C3%A9nom%3A%20Prueba%20Amaru%0AVoyageurs%3A%203%0ADate%20de%20d%C3%A9but%20souhait%C3%A9e%3A%202026-12-15%0ALangue%20souhait%C3%A9e%20pour%20le%20guide%20(selon%20disponibilit%C3%A9)%3A%20Fran%C3%A7ais%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20Visite%20de%20Puerto%20Nari%C3%B1o%20%C3%A0%20pied%0APr%C3%A9cisions%3A%20Consulta%20de%20prueba%20local%2C%20sin%20enviar.%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+    "hasTravelers": true,
+    "hasDate": true,
+    "invalidTravelersBlocked": true,
+    "staleMessageRemoved": true
+  }
+]

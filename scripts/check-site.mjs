@@ -7,8 +7,12 @@ import { parse } from "parse5";
 import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.mjs";
 import { experiencePath } from "../src/experience-pages.mjs";
 import { checkExperiencePages } from "./check-experience-pages.mjs";
+import { checkFeatures } from "./check-features.mjs";
 const root = path.resolve(import.meta.dirname, "..");
-const read = (name) => fs.readFileSync(path.join(root, name), "utf8");
+// Git may check text files out with CRLF on Windows; content checks are
+// independent of the checkout's line endings, just like the build hash.
+const read = (name) =>
+  fs.readFileSync(path.join(root, name), "utf8").replace(/\r\n/g, "\n");
 const data = vm.runInNewContext(
   read("i18n.js") +
     "\n" +
@@ -30,17 +34,19 @@ const credits = JSON.parse(read("assets/photos/credits.json"));
 const version = crypto
   .createHash("sha256")
   .update(
-    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js"]
+    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js", "media.js"]
       .map((name) => read(name).replace(/\r\n/g, "\n"))
       .join("\n"),
   )
   .digest("hex")
   .slice(0, 12);
-assert.equal(data.experiences.length, 8);
+const expectedPages = languages.length * (data.experiences.length + 1);
+assert.equal(data.experiences.length, 13); // 8 retained + 5 additions, including one combined San Antonio excursion
+assert.ok(!data.experiences.some((e) => /ceramic|^sloth$|victoria-regia|^wochine$/.test(e.id)));
 assert.equal(siteUrl, "https://amaruamazonexperiences.com/");
 assert.deepEqual(languages, ["en", "es", "fr"]);
 assert.equal(read("CNAME").trim(), new URL(siteUrl).hostname);
-assert.equal(new Set(data.experiences.map((e) => e.id)).size, 8);
+assert.equal(new Set(data.experiences.map((e) => e.id)).size, data.experiences.length);
 assert.equal(data.experiences.find((e) => e.id === "kayak").time, "day");
 assert.notEqual(
   data.experiences.find((e) => e.id === "birdwatching").id,
@@ -116,14 +122,19 @@ for (const lang of languages) {
   const schema = JSON.parse(
     text(find((n) => attr(n, "type") === "application/ld+json")),
   );
-  assert.equal(schema.inLanguage, lang);
-  assert.equal(schema.url, pageUrl);
-  assert.equal(schema["@id"], new URL("#organization", siteUrl).href);
-  assert.equal(schema.email, contactEmail);
-  assert.equal(schema.telephone, "+573132560145");
-  assert.equal(schema.logo, new URL("assets/brand/amaru-logo.webp", siteUrl).href);
+  const organization = schema["@graph"].find((entry) => entry["@type"] === "TravelAgency");
+  const webpage = schema["@graph"].find((entry) => entry["@type"] === "WebPage");
+  assert.equal(webpage.inLanguage, lang);
+  assert.equal(webpage.url, pageUrl);
+  assert.equal(webpage.about["@id"], organization["@id"]);
+  assert.equal(organization.inLanguage, undefined, "Language describes the page, not the agency");
+  assert.equal(organization.url, siteUrl);
+  assert.equal(organization["@id"], new URL("#organization", siteUrl).href);
+  assert.equal(organization.email, contactEmail);
+  assert.equal(organization.telephone, "+573132560145");
+  assert.equal(organization.logo, new URL("assets/brand/amaru-logo.webp", siteUrl).href);
   for (const field of ["priceRange", "aggregateRating", "review", "award"])
-    assert.equal(schema[field], undefined, `${lang}: do not publish unverified ${field}`);
+    assert.equal(organization[field], undefined, `${lang}: do not publish unverified ${field}`);
   const emailLinks = all((n) => attr(n, "data-contact-email") !== undefined);
   assert.ok(emailLinks.length >= 2, `${lang}: contact and privacy email links`);
   for (const link of emailLinks) {
@@ -134,7 +145,7 @@ for (const lang of languages) {
   assert.ok(!html.includes("alejandr0qa.github.io/amaruamazon"), `${lang}: old production URL`);
   assert.ok(!/cloudflareinsights|data-cf-beacon|analytics\.js/.test(html), "Analytics is deferred");
   const pageLinks = all((n) => attr(n, "data-experience-page"));
-  assert.equal(pageLinks.length, 8, `${lang}: crawlable experience links`);
+  assert.equal(pageLinks.length, data.experiences.length, `${lang}: crawlable experience links`);
   for (const item of data.experiences)
     assert.equal(
       path.resolve(directory, attr(pageLinks.find((n) => attr(n, "data-experience-page") === item.id), "href")),
@@ -142,8 +153,8 @@ for (const lang of languages) {
     );
   assert.equal(
     all((n) => hasClass(n, "experience-card")).length,
-    8,
-    `${lang}: initial HTML must contain eight experiences`,
+    data.experiences.length,
+    `${lang}: initial HTML must contain all experiences`,
   );
   assert.equal(
     all((n) => attr(n, "data-journey-panel")).length,
@@ -152,13 +163,13 @@ for (const lang of languages) {
   );
   assert.equal(
     all((n) => hasClass(n, "gallery-item")).length,
-    6,
+    data.gallery.length,
     `${lang}: initial HTML must contain gallery links`,
   );
   assert.equal(
     all((n) => n.tagName === "input" && attr(n, "name") === "experiences")
       .length,
-    8,
+    data.experiences.length,
   );
   for (const item of data.experiences) {
     assert.ok(text(byId("experience-grid")).includes(item[lang][0]));
@@ -199,6 +210,13 @@ for (const lang of languages) {
     for (const name of ["src", "href", "srcset", "data-src", "data-srcset"]) {
       const value = attr(node, name);
       if (!value) continue;
+      if (name === "srcset" || name === "data-srcset") {
+        for (const candidate of value.split(",")) {
+          const file = candidate.trim().split(/\s+/)[0];
+          assert.ok(fs.existsSync(path.resolve(directory, file)), `${lang}: missing responsive image ${file}`);
+        }
+        continue;
+      }
       if (value.startsWith("mailto:")) {
         assert.equal(value, "mailto:" + contactEmail);
         continue;
@@ -252,9 +270,20 @@ for (const item of [...data.experiences, ...Object.values(data.journeys)])
   assert.ok(credits[item.image]);
 for (const photo of data.gallery) assert.ok(credits[photo[0]]);
 const sitemap = read("sitemap.xml");
-assert.equal((sitemap.match(/<loc>/g) || []).length, 27);
-assert.equal((sitemap.match(/<xhtml:link /g) || []).length, 108);
+assert.equal((sitemap.match(/<loc>/g) || []).length, expectedPages);
+assert.equal((sitemap.match(/<xhtml:link /g) || []).length, expectedPages * 4);
 assert.ok(!sitemap.includes("alejandr0qa.github.io"));
+const publishedRoutes = new Set([...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => new URL(match[1]).pathname));
+for (const route of JSON.parse(read("scripts/fixtures/preserved-routes.json"))) {
+  assert.ok(publishedRoutes.has(route), "Existing URL must remain: " + route);
+}
+assert.ok(data.experiences.find((e) => e.id === "night-walk").es[0].includes("Wochine"));
+assert.equal(data.experiences.filter((e) => e.id === "san-antonio").length, 1);
+for (const lang of languages) assert.ok(data.experiences.find((e) => e.id === "san-antonio")[lang][2].includes("Cacao"));
+for (const lang of languages) {
+  const html = read(path.join(languagePaths[lang], "index.html"));
+  assert.ok(!html.includes('traveller-voices-title'), "No unapproved testimonials");
+}
 for (const lang of languages)
   assert.ok(
     sitemap.includes(
@@ -269,6 +298,7 @@ for (const alternate of [...languages, "x-default"])
   );
 assert.equal(read("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${new URL("sitemap.xml", siteUrl).href}\n`);
 checkExperiencePages({ root, data, version, sitemap });
+await checkFeatures();
 console.log(
-  "PASS: 3 homepages + 24 experience pages, localized SEO, reciprocal hreflang, 27-URL sitemap/robots, local/cross-page resources and anchors, contextual WhatsApp, no analytics or public prices.",
+  `PASS: 3 homepages + ${data.experiences.length * 3} experience pages, all 27 existing URLs retained, ${expectedPages}-URL sitemap, localized SEO, links, WhatsApp, no analytics or public prices.`,
 );
