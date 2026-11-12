@@ -42,6 +42,7 @@ H.264, 396×720, 24 fps, sin audio, `faststart`, portada WebP y franja inferior.
 ## Validación
 
 - `npm ci`: correcto, dos paquetes de desarrollo, cero vulnerabilidades reportadas; sin dependencias añadidas.
+- Checkout limpio independiente de Windows: `check` correcto antes y después de `build`, sin diferencias ni archivos modificados al terminar. [Evidencia](review/2026-11-12/clean-checkout.json).
 - `npm run build` y `npm run check`: correctos en Windows. Pruebas ampliadas a las 39 URL, preservación explícita de las 27 anteriores, títulos/descripciones, canonical, Open Graph/Twitter, JSON-LD, cuatro alternancias hreflang por URL, sitemap/robots, enlaces/anclas/recursos, correo y mensajes de WhatsApp. El generador mantiene HTML estático completo. `.gitattributes` fija LF para las fuentes y salidas generadas: evita cambios aparentes CRLF/LF al compilar en un checkout limpio de Windows, sin cambiar la configuración global de Git.
 - Pruebas de video: integridad SHA-256, tamaño/resolución, faststart, descarga solo por acción, controles y alternativa de error. Testimonios: colección vacía y rechazo de entradas sin autorización o datos completos.
 - HTTP: **39 páginas y 40 recursos distintos referenciados directamente responden 200**. Las variantes `srcset` también se comprueban en las pruebas de archivos. [Evidencia de HTTP e integridad](review/2026-11-12/http-and-integrity.json).
