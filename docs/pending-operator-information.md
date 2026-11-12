@@ -5,7 +5,7 @@ Documento de preparación editorial, sin integración automática en el sitio. N
 ## Estado de la evolución actual
 
 - Dominio y correo corporativo: proporcionados por el propietario; centralizados en `site.config.mjs`.
-- WhatsApp, ocho experiencias, tres itinerarios y fotografías propias: se conservan del sitio existente.
+- WhatsApp, las ocho experiencias anteriores, tres itinerarios y fotografías propias se conservan. Se añaden City Tour, Ojé, caimanes y canotaje: doce experiencias en esta rama. Wochine y la caminata nocturna forman una sola experiencia por confirmación del propietario.
 - Canal de correo: el enlace abre el cliente del visitante. El operador debe confirmar que recibe mensajes en el buzón; no se ha enviado correo de prueba.
 - Contacto: se aclara que una consulta no confirma una reserva y que esta web no cobra. La disponibilidad, precio total y detalles se tratan directamente con el operador.
 - Analítica: aplazada expresamente por el propietario. Sin scripts, token, dependencias ni cambios en Cloudflare.
@@ -32,7 +32,7 @@ Solicitar fuente, fecha y persona que aprueba cada dato. El tarifario puede serv
 | Seguridad | Protocolos reales por actividad, responsable, equipo disponible, chalecos, botiquín, comunicaciones, emergencias, restricciones de edad/condición física y cobertura de seguros si existe. | FAQ y fichas de `content.js` tras revisión del operador. No afirmar guías certificados, seguros o cobertura de emergencias sin documentación. |
 | Condiciones comerciales | Procedimiento real de confirmación, medios de pago, moneda, anticipos, inclusiones, cambios, cancelación, clima y reembolsos; aprobación del operador. | FAQ y contenido de consulta en los tres idiomas. Mantener la web sin cobros, reservas automáticas ni nuevas obligaciones. No publicar políticas genéricas como si fueran de Amaru. |
 | Llegada | Puntos de encuentro, responsables de traslados, ruta Leticia–Puerto Nariño validada localmente, operadores de bote, horarios, duración, costos, reserva previa y alternativas según temporada. Registrar fuente y fecha de comprobación. | Ampliación de FAQ o sección de llegada; no publicar horarios, tarifas o frecuencias estimados como hechos. |
-| Fichas prácticas | Para cada una de las ocho experiencias: duración, dificultad, edad, grupo mínimo/máximo, equipo e inclusiones, accesibilidad, estacionalidad y restricciones confirmadas. | Ampliar `content.js` y `src/experience-pages.mjs` y su presentación en los generadores. La duración validada se integra con `duration: { en, es, fr }` en la experiencia; mientras falte, se pide confirmarla. Mantener kayak diurno y aves/cacao separados. |
+| Fichas prácticas | Para cada una de las doce experiencias: duración, dificultad, edad, grupo mínimo/máximo, equipo e inclusiones, accesibilidad, estacionalidad y restricciones confirmadas. | Ampliar `content.js` y `src/experience-pages.mjs` y su presentación en los generadores. La duración validada se integra con `duration: { en, es, fr }` en la experiencia; mientras falte, se pide confirmarla. Mantener kayak diurno y aves/cacao separados. |
 
 ## Ficha para entregar cada dato
 
@@ -54,3 +54,7 @@ Hasta completar y aprobar la ficha, conservar el dato fuera del contenido públi
 3. Ejecutar `npm run build` y `npm run check`.
 4. Revisar navegación, accesibilidad, formularios y versión móvil en `/`, `/es/` y `/fr/`.
 5. Presentar los cambios en una rama y PR para revisión antes de incorporarlos a producción.
+
+## Aclaraciones del 12 de noviembre
+
+La historia de dos viajeros, la llegada por Leticia y río, servicios coordinables, preparación personal y niveles orientativos se integran desde los documentos del equipo. Confirmar aún duraciones totales, restricciones y equipo por propuesta. Ojé describe un tramo de marcha aproximado de 1–2 horas, no la duración total. San Antonio/perezosos/Victoria Regia permanece sin publicar hasta confirmar recorrido y cruce fronterizo. La visita a Wochine y caminata nocturna ya quedó resuelta como una sola experiencia. Fotografías en libertad de caimanes de noche, datos públicos del operador y testimonios autorizados siguen pendientes.

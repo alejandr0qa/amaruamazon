@@ -1,0 +1,621 @@
+{
+  "date": "2026-11-12",
+  "originals_verified_unchanged": 288,
+  "existing_photo_assets_verified_unchanged": 50,
+  "photo_variants_contract": "1200x828 including separate footer; full watermarked derivative resized to480and800; original source untouched",
+  "videos": [
+    {
+      "id": "flooded-forest",
+      "status": "integrated_in_development_branch",
+      "source": "canotaje-en-selva-inundada/CANOTAJE EN SELVA INUNDADA/VID_20260214_163147.mp4",
+      "source_sha256": "095bc2fa9aa924c1db8a597be9797a2d2e237114f5dcdb7a413447e31fbf06c5",
+      "source_bytes": 66751980,
+      "source_duration_seconds": 26.01,
+      "start_seconds": 5,
+      "clip_duration_seconds": 8,
+      "output": "assets/videos/flooded-forest.mp4",
+      "output_sha256": "5f113787ef80c17a65ae6ea0eb74333c84804d47bb5ca4c7549875c6d195d6b4",
+      "output_bytes": 1633189,
+      "width": 396,
+      "height": 720,
+      "scene_width": 396,
+      "scene_height": 704,
+      "footer_height": 16,
+      "video_codec": "H264 Main 3.1",
+      "pixel_format": "yuv420p",
+      "fps": 24,
+      "audio": false,
+      "metadata_stripped": true,
+      "faststart": true,
+      "poster": "assets/videos/flooded-forest-poster.webp",
+      "poster_bytes": 80596
+    },
+    {
+      "id": "tarapoto-water",
+      "status": "integrated_in_development_branch",
+      "source": "lago-tarapoto/lago tarapoto/VID_20260120_171950.mp4",
+      "source_sha256": "d33d1fb53e19c5a84a83da31a2ebeba5fb1a74d7807283216010360ce3515a3a",
+      "source_bytes": 65967327,
+      "source_duration_seconds": 25.56,
+      "start_seconds": 2,
+      "clip_duration_seconds": 10,
+      "output": "assets/videos/tarapoto-water.mp4",
+      "output_sha256": "47da6667910334768990c5b782bdc443b99b5afce3906f1b6e6d6f35534c2ab6",
+      "output_bytes": 1458768,
+      "width": 396,
+      "height": 720,
+      "scene_width": 396,
+      "scene_height": 704,
+      "footer_height": 16,
+      "video_codec": "H264 Main 3.1",
+      "pixel_format": "yuv420p",
+      "fps": 24,
+      "audio": false,
+      "metadata_stripped": true,
+      "faststart": true,
+      "poster": "assets/videos/tarapoto-water-poster.webp",
+      "poster_bytes": 41398
+    },
+    {
+      "id": "cacao-drying",
+      "status": "integrated_in_development_branch",
+      "source": "city-tour/city tour/VID_20260611_102552.mp4",
+      "source_sha256": "61947c74031cd5319e6ca36e10c39209e81f07aa71d8a5d5fd9d36895b618a97",
+      "source_bytes": 11690571,
+      "source_duration_seconds": 5.56,
+      "start_seconds": 0,
+      "clip_duration_seconds": 5.5,
+      "output": "assets/videos/cacao-drying.mp4",
+      "output_sha256": "4b99c760f77e01873c2da3ec12b4a85806afa00e0eed81d4ced55fca233af68e",
+      "output_bytes": 1160920,
+      "width": 396,
+      "height": 720,
+      "scene_width": 396,
+      "scene_height": 704,
+      "footer_height": 16,
+      "video_codec": "H264 Main 3.1",
+      "pixel_format": "yuv420p",
+      "fps": 24,
+      "audio": false,
+      "metadata_stripped": true,
+      "faststart": true,
+      "poster": "assets/videos/cacao-drying-poster.webp",
+      "poster_bytes": 69964
+    }
+  ],
+  "photos": [
+    {
+      "id": "city-tour",
+      "status": "integrated_in_development_branch",
+      "source": "city-tour/city tour/IMG_20260728_110420.jpg",
+      "source_sha256": "db3240d367c2e6f04552a67a8c2bba31d762046ad96f64188320e69214f8ba41",
+      "source_bytes": 4932629,
+      "source_width": 4080,
+      "source_height": 3072,
+      "crop_focus": [
+        0.5,
+        0.7
+      ],
+      "scene_dimensions": [
+        1200,
+        800
+      ],
+      "footer_height": 28,
+      "metadata_stripped": true,
+      "variants": {
+        "480": {
+          "file": "assets/photos/city-tour-480.webp",
+          "width": 480,
+          "height": 331,
+          "bytes": 37508,
+          "sha256": "aac4f6a8381e246c2afc8de10d9d3d6e0c0b98776a7a7b7098832db14ce9e26c"
+        },
+        "800": {
+          "file": "assets/photos/city-tour-800.webp",
+          "width": 800,
+          "height": 552,
+          "bytes": 101718,
+          "sha256": "2a70b18676dfb19205746e874ef3bce28801c9e06fc76bfae433febf60339016"
+        },
+        "1200": {
+          "file": "assets/photos/city-tour.webp",
+          "width": 1200,
+          "height": 828,
+          "bytes": 222514,
+          "sha256": "9df40205f0099c69e0d826064c9a9bead5446a393b681acb75493148f0a91236"
+        }
+      }
+    },
+    {
+      "id": "flooded-forest",
+      "status": "integrated_in_development_branch",
+      "source": "canotaje-en-selva-inundada/CANOTAJE EN SELVA INUNDADA/IMG_20260223_110936.jpg",
+      "source_sha256": "04bed1a90cae5efa2562f6d08dc631f6f8a7d09a6fcb7e8027d36e5af08ca278",
+      "source_bytes": 6320379,
+      "source_width": 3072,
+      "source_height": 4080,
+      "crop_focus": [
+        0.5,
+        0.6
+      ],
+      "scene_dimensions": [
+        1200,
+        800
+      ],
+      "footer_height": 28,
+      "metadata_stripped": true,
+      "variants": {
+        "480": {
+          "file": "assets/photos/flooded-forest-480.webp",
+          "width": 480,
+          "height": 331,
+          "bytes": 52590,
+          "sha256": "2cefda369da8ffb8243b867a926460671dbe19818ed9434cf548e246d9aa5f04"
+        },
+        "800": {
+          "file": "assets/photos/flooded-forest-800.webp",
+          "width": 800,
+          "height": 552,
+          "bytes": 146628,
+          "sha256": "414cb844b0aa06c3f78882edb4cd97d65fa1c23bde281827fed46454d9478379"
+        },
+        "1200": {
+          "file": "assets/photos/flooded-forest.webp",
+          "width": 1200,
+          "height": 828,
+          "bytes": 316592,
+          "sha256": "5371f6eb7157eb904a987836532ddd2707b71ea4a8e12066121f764ada470144"
+        }
+      }
+    },
+    {
+      "id": "birdwatching-new",
+      "status": "integrated_in_development_branch",
+      "source": "tour-avistamiento-de-aves/avistamiento de aves/IMG-20260730-WA0278.jpg",
+      "source_sha256": "da4d3c0256ce1dcaeed211c30bbb4b02999ce2f7892c10c080d27676dbe09358",
+      "source_bytes": 157852,
+      "source_width": 1599,
+      "source_height": 1200,
+      "crop_focus": [
+        0.5,
+        0.5
+      ],
+      "scene_dimensions": [
+        1200,
+        800
+      ],
+      "footer_height": 28,
+      "metadata_stripped": true,
+      "variants": {
+        "480": {
+          "file": "assets/photos/birdwatching-new-480.webp",
+          "width": 480,
+          "height": 331,
+          "bytes": 22840,
+          "sha256": "87d9a71803963f14df5551b1382c8dd8e4dc9be80f2ed154de1ddc8e8ba26e1b"
+        },
+        "800": {
+          "file": "assets/photos/birdwatching-new-800.webp",
+          "width": 800,
+          "height": 552,
+          "bytes": 44356,
+          "sha256": "60e2e6c46e6aea7846b5ef721025b0e169b62c9b5922f1c5bdbdbcd281799809"
+        },
+        "1200": {
+          "file": "assets/photos/birdwatching-new.webp",
+          "width": 1200,
+          "height": 828,
+          "bytes": 72678,
+          "sha256": "2f063f7e43dd68b8343508c5504b8edd252339c41d1cbb2ad5931f6120eff69a"
+        }
+      }
+    },
+    {
+      "id": "oje",
+      "status": "integrated_in_development_branch",
+      "source": "58120.jpg",
+      "source_sha256": "03816939a78c389a1cd178f99dac9862b73d98138a96ac7f7f9fd13228172a86",
+      "source_bytes": 6030425,
+      "source_width": 4080,
+      "source_height": 3072,
+      "crop_focus": [
+        0.5,
+        0.95
+      ],
+      "scene_dimensions": [
+        1200,
+        800
+      ],
+      "footer_height": 28,
+      "metadata_stripped": true,
+      "variants": {
+        "480": {
+          "file": "assets/photos/oje-480.webp",
+          "width": 480,
+          "height": 331,
+          "bytes": 65448,
+          "sha256": "52b4d82e11a4519eb6011ef80ec655c50f55a75574d60ac25bea075d9ea6eb1d"
+        },
+        "800": {
+          "file": "assets/photos/oje-800.webp",
+          "width": 800,
+          "height": 552,
+          "bytes": 181384,
+          "sha256": "22d5e5a75e58768034c8a03a5c27a198a9158adcf6b738f7e461c5727666e5ca"
+        },
+        "1200": {
+          "file": "assets/photos/oje.webp",
+          "width": 1200,
+          "height": 828,
+          "bytes": 393458,
+          "sha256": "975949b1c343f2de091b66a17c79c550c465bc216004d32afd81a623277ff41d"
+        }
+      }
+    },
+    {
+      "id": "sloth",
+      "status": "prepared_only_catalogue_decision_pending",
+      "source": "avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20251224_105430.jpg",
+      "source_sha256": "cf472c0cf27420b2be8f1673307bcaf337141578c0737acda7349c37ca2146d2",
+      "source_bytes": 3483816,
+      "source_width": 3072,
+      "source_height": 4080,
+      "crop_focus": [
+        0.5,
+        0.55
+      ],
+      "scene_dimensions": [
+        1200,
+        800
+      ],
+      "footer_height": 28,
+      "metadata_stripped": true,
+      "variants": {
+        "480": {
+          "file": ".codex-preview/integral-20261112/prepared-media/sloth-480.webp",
+          "width": 480,
+          "height": 331,
+          "bytes": 60346,
+          "sha256": "f660dfb1482db62375068aeec979a1641a328664e8b9cef51df3398d9a27f6e1"
+        },
+        "800": {
+          "file": ".codex-preview/integral-20261112/prepared-media/sloth-800.webp",
+          "width": 800,
+          "height": 552,
+          "bytes": 129550,
+          "sha256": "ccde218f267372a7c3ef46fabd76147fb97c12cbb00c4d5d2b7b677d226bce85"
+        },
+        "1200": {
+          "file": ".codex-preview/integral-20261112/prepared-media/sloth.webp",
+          "width": 1200,
+          "height": 828,
+          "bytes": 209770,
+          "sha256": "ffd1f0e8992ecdef644a7e870edbc8b6e763e6b160e87144cbd2328b1f3dee11"
+        }
+      }
+    },
+    {
+      "id": "victoria-regia",
+      "status": "prepared_only_catalogue_decision_pending",
+      "source": "avistamiento-de-osos-perezosos-y-victoria-regia/avistamiento de osos perezosos y victoria regia/IMG_20260102_115836.jpg",
+      "source_sha256": "e3f57467c4843bba2d98e3bc1b97a3c8834146eba23373a007432aa6fdf7efdf",
+      "source_bytes": 4986575,
+      "source_width": 4080,
+      "source_height": 3072,
+      "crop_focus": [
+        0.5,
+        0.5
+      ],
+      "scene_dimensions": [
+        1200,
+        800
+      ],
+      "footer_height": 28,
+      "metadata_stripped": true,
+      "variants": {
+        "480": {
+          "file": ".codex-preview/integral-20261112/prepared-media/victoria-regia-480.webp",
+          "width": 480,
+          "height": 331,
+          "bytes": 65176,
+          "sha256": "3b0e703d985606d5d15d396c3ce2b3effdbf46b3afdc78b39431a2e0297b9229"
+        },
+        "800": {
+          "file": ".codex-preview/integral-20261112/prepared-media/victoria-regia-800.webp",
+          "width": 800,
+          "height": 552,
+          "bytes": 171258,
+          "sha256": "8b50ef63281fad977f3ec150abe2829a09d5fa3840efe1012a01bca54fed33de"
+        },
+        "1200": {
+          "file": ".codex-preview/integral-20261112/prepared-media/victoria-regia.webp",
+          "width": 1200,
+          "height": 828,
+          "bytes": 344058,
+          "sha256": "e68141aadefb6c1ab8a99e8157e58edf7b2005c2620d7dbaac2acc9db004868e"
+        }
+      }
+    }
+  ],
+  "review_artifacts": ".codex-preview/integral-20261112/media-review/",
+  "tool": {
+    "ffmpeg": "ffmpeg-win-x86_64-v9.0.2.exe",
+    "installed_only_in_ignored_preview": true,
+    "pillow": "12.2.0"
+  },
+  "excluded_media": {
+    "reason": "No handling,feeding,chasing or unverified captive wildlife promoted",
+    "video_indices": [
+      45,
+      46,
+      288
+    ],
+    "caiman": "No verified photo of wild nocturnal observation found;34936.jpg daytimebankcontextunknown;IMG-20260330-WA0061.jpgheldanimal;IMG_20260616_113623.jpgreservecontext"
+  },
+  "existing_site_photo_sources": [
+    {
+      "id": "amazon-river",
+      "source": "29912.jpg",
+      "source_sha256": "7e2dc62d1e4b66261a4a19e8fe7acd1d4516ecd6d4c189289bc0c7e1315f4fa1",
+      "source_bytes": 3996564,
+      "output": "assets/photos/amazon-river.webp",
+      "output_sha256": "a244ba7f313dc48d50b93000336864d8ddc5425e7252d2df69f3634b0add3c89",
+      "output_bytes": 411370,
+      "width": 1920,
+      "height": 1084,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "amazon-river-mobile",
+      "source": "29912.jpg",
+      "source_sha256": "7e2dc62d1e4b66261a4a19e8fe7acd1d4516ecd6d4c189289bc0c7e1315f4fa1",
+      "source_bytes": 3996564,
+      "output": "assets/photos/amazon-river-mobile.webp",
+      "output_sha256": "2cd7657b028f56f7b4663b039d5d483d6d986b30ab8de980e4bab36c9ee5dd83",
+      "output_bytes": 180828,
+      "width": 800,
+      "height": 1146,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "hero-forest",
+      "source": "58120.jpg",
+      "source_sha256": "03816939a78c389a1cd178f99dac9862b73d98138a96ac7f7f9fd13228172a86",
+      "source_bytes": 6030425,
+      "output": "assets/photos/hero-forest.webp",
+      "output_sha256": "f5a76273b88742bccd34491ade2a636834f96102881b8306a38f14e8c37e3b15",
+      "output_bytes": 709972,
+      "width": 1920,
+      "height": 1084,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "hero-forest-mobile",
+      "source": "58120.jpg",
+      "source_sha256": "03816939a78c389a1cd178f99dac9862b73d98138a96ac7f7f9fd13228172a86",
+      "source_bytes": 6030425,
+      "output": "assets/photos/hero-forest-mobile.webp",
+      "output_sha256": "31c458e6d309d604bfb1870621affbefebb1ac713a7922f182605276c0e7fa03",
+      "output_bytes": 361234,
+      "width": 800,
+      "height": 1146,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "hero-lilies",
+      "source": "29829.jpg",
+      "source_sha256": "a7868713df6703fdc495c362d792aa15ac0f6498fd142bf174ff883dfe3dfecc",
+      "source_bytes": 4934236,
+      "output": "assets/photos/hero-lilies.webp",
+      "output_sha256": "0b4b46a3b07e3b7a95287a68fce7c8aa08eab19266608ee14a76fecd6701ef3e",
+      "output_bytes": 513664,
+      "width": 1920,
+      "height": 1084,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "hero-lilies-mobile",
+      "source": "29829.jpg",
+      "source_sha256": "a7868713df6703fdc495c362d792aa15ac0f6498fd142bf174ff883dfe3dfecc",
+      "source_bytes": 4934236,
+      "output": "assets/photos/hero-lilies-mobile.webp",
+      "output_sha256": "31a77a8e2620543fb0fa12ed7e8114928f9d849977f522c1c18ce24985ebe3ed",
+      "output_bytes": 287570,
+      "width": 800,
+      "height": 1146,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "hero-sunset",
+      "source": "IMG_20260120_175716.jpg",
+      "source_sha256": "521dd6757c6bf630c1b714154be4bc411a5f500ea43a20082f652f3f04d0b30b",
+      "source_bytes": 3354320,
+      "output": "assets/photos/hero-sunset.webp",
+      "output_sha256": "f452055f0f6918b6bb0b6be2e509c20878b098195413a05bdd1a9c5f2596aec7",
+      "output_bytes": 214458,
+      "width": 1920,
+      "height": 1084,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "hero-sunset-mobile",
+      "source": "IMG_20260120_175716.jpg",
+      "source_sha256": "521dd6757c6bf630c1b714154be4bc411a5f500ea43a20082f652f3f04d0b30b",
+      "source_bytes": 3354320,
+      "output": "assets/photos/hero-sunset-mobile.webp",
+      "output_sha256": "53c82629be714635a3389136c81b87a9d3800f5208af05777248c1107bae7bff",
+      "output_bytes": 112688,
+      "width": 800,
+      "height": 1146,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "forest",
+      "source": "58120.jpg",
+      "source_sha256": "03816939a78c389a1cd178f99dac9862b73d98138a96ac7f7f9fd13228172a86",
+      "source_bytes": 6030425,
+      "output": "assets/photos/forest.webp",
+      "output_sha256": "1ac1ff06cba8e59b11342313591967ebeef2b2becbc3f68823b86e3abd3cf667",
+      "output_bytes": 468412,
+      "width": 1000,
+      "height": 1226,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "tarapoto",
+      "source": "IMG_20260211_165021.jpg",
+      "source_sha256": "a2c5f30987835df66e9d656c223638d435966ed5de43c9716c7d476de2b98c42",
+      "source_bytes": 6625073,
+      "output": "assets/photos/tarapoto.webp",
+      "output_sha256": "57daa57c7d897b856c9f8a8a91d7d3a0da3c13a34e5a8c3e8e7c83ef9b936ac3",
+      "output_bytes": 338570,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "kayak",
+      "source": "IMG_20260211_152854.jpg",
+      "source_sha256": "b2d77ae9d028d0928b513ba8b104594b5046be520fa96c74fc4b95d0065f8575",
+      "source_bytes": 7715263,
+      "output": "assets/photos/kayak.webp",
+      "output_sha256": "be2c37140838d5eea6c0ce21067b619f5d52125037b3de19c4c0b8beeac45550",
+      "output_bytes": 438616,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "birdwatching",
+      "source": "IMG-20260218-WA0040.jpg",
+      "source_sha256": "cb503c7865d7a73de5d2ea0a07867125fae42a6da50e69c92a787383b41b3573",
+      "source_bytes": 1002327,
+      "output": "assets/photos/birdwatching.webp",
+      "output_sha256": "f997a6ed8a8d77d0f9373f36320ca28a18856538e5c36bff84b099362d223680",
+      "output_bytes": 163018,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "cacao",
+      "source": "IMG_20260611_102632.jpg",
+      "source_sha256": "8fe73eb7142f65f953ad6412c98288fd8dcd299d23fb0a965889913a8d67dee0",
+      "source_bytes": 4177877,
+      "output": "assets/photos/cacao.webp",
+      "output_sha256": "bc69f1eac45bbc91c506e1e1365fcac0350a5b61b5c2de866b472a62ce0164fe",
+      "output_bytes": 244240,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "night-walk",
+      "source": "IMG_20260128_184901.jpg",
+      "source_sha256": "2d9c7f789c88628b35509b503b7a2521ca1e6998b34c5092ff25219b03566842",
+      "source_bytes": 3216896,
+      "output": "assets/photos/night-walk.webp",
+      "output_sha256": "4ca74661811a2d7a8200f3a44da963087629354ec8a7f828db8222aea41d781c",
+      "output_bytes": 193278,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "camp",
+      "source": "IMG_20260602_173545.jpg",
+      "source_sha256": "8e474c1898c8b33b31dcab51483ede0d5942d5a7a7544d8034dffb01cb657e1c",
+      "source_bytes": 3836962,
+      "output": "assets/photos/camp.webp",
+      "output_sha256": "b8df75593e73086e46a2fe2981b89a68855425a66a46d560d648feed0add232c",
+      "output_bytes": 249522,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "community",
+      "source": "36271.jpg",
+      "source_sha256": "197afa390efa6fa50f88efd89e65a7099b2298e4f92d4a85fa02e26b55298c6b",
+      "source_bytes": 5727601,
+      "output": "assets/photos/community.webp",
+      "output_sha256": "9905cb5b3fe85707d5dfa4b0529109b9baeee14a2f3734fa786c7952a1062d79",
+      "output_bytes": 276192,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "wildlife",
+      "source": "IMG-20260330-WA0065.jpg",
+      "source_sha256": "7ca9f3ea9120c6f30bcc19088da5eb6c12d3de0e27d1c916e49a948bc2eb7d46",
+      "source_bytes": 1020889,
+      "output": "assets/photos/wildlife.webp",
+      "output_sha256": "fbdbe2563012a434d015bb72040839f60f16867345c7c2ca5b9e37545462e614",
+      "output_bytes": 132866,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "water-lilies",
+      "source": "29829.jpg",
+      "source_sha256": "a7868713df6703fdc495c362d792aa15ac0f6498fd142bf174ff883dfe3dfecc",
+      "source_bytes": 4934236,
+      "output": "assets/photos/water-lilies.webp",
+      "output_sha256": "f3d95cb310e6abe068b9f42112188b3e475c9671b847e2aa1c4bc642e3610bc4",
+      "output_bytes": 336874,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "frog",
+      "source": "IMG_20260326_211155.jpg",
+      "source_sha256": "7736546123ead172e58423f33f485250c560f02f38ff261249c9e94e0f8f002d",
+      "source_bytes": 2027788,
+      "output": "assets/photos/frog.webp",
+      "output_sha256": "18081ca49ea20f58a721fc94340f42f7a2de0fcb56065650e242e14d3ab24b54",
+      "output_bytes": 80382,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "sunset",
+      "source": "IMG_20260120_175716.jpg",
+      "source_sha256": "521dd6757c6bf630c1b714154be4bc411a5f500ea43a20082f652f3f04d0b30b",
+      "source_bytes": 3354320,
+      "output": "assets/photos/sunset.webp",
+      "output_sha256": "bb38f67a576a58d2724d1f2609d2dab93c4c0b4456d1c551eb2b19a06115bb87",
+      "output_bytes": 121828,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "forest-canoe",
+      "source": "IMG-20260320-WA0030.jpg",
+      "source_sha256": "136657472876445723a1d62d83881961dd956c7e22dbf013ca6a4ece2df9de45",
+      "source_bytes": 1371248,
+      "output": "assets/photos/forest-canoe.webp",
+      "output_sha256": "41e3d4bc2e15b05c9ce1d21b4b92aa7fff914fa987e0bb61af9795112cf6df32",
+      "output_bytes": 364466,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    },
+    {
+      "id": "roots",
+      "source": "IMG_20260312_105741.jpg",
+      "source_sha256": "16f520a04ab3635573e619ec2cb95f4db0fd8f6892b499926158d2f95e49007f",
+      "source_bytes": 7368854,
+      "output": "assets/photos/roots.webp",
+      "output_sha256": "28e6c2371a61beea5caa3f9d457bd799809a7f3e1f622a0382f0bbd0de176eee",
+      "output_bytes": 447638,
+      "width": 1200,
+      "height": 828,
+      "status": "retained_unchanged"
+    }
+  ]
+}

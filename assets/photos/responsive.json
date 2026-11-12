@@ -166,5 +166,53 @@
       "height": 552,
       "bytes": 201036
     }
+  },
+  "city-tour": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 37508
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 101718
+    }
+  },
+  "flooded-forest": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 52590
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 146628
+    }
+  },
+  "birdwatching-new": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 22840
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 44356
+    }
+  },
+  "oje": {
+    "480": {
+      "width": 480,
+      "height": 331,
+      "bytes": 65448
+    },
+    "800": {
+      "width": 800,
+      "height": 552,
+      "bytes": 181384
+    }
   }
 }

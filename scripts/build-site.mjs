@@ -7,6 +7,7 @@ import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.
 import { experiencePath, experienceCopy, experienceAlt, sceneAlt } from "../src/experience-pages.mjs";
 import { buildExperiencePages } from "./build-experience-pages.mjs";
 
+import { testimonials, renderTestimonials } from "../src/testimonials.mjs";
 const root = path.resolve(import.meta.dirname, "..");
 const read = (name) =>
   fs.readFileSync(path.join(root, name), "utf8").replace(/\r\n/g, "\n");
@@ -67,7 +68,7 @@ fs.writeFileSync(
 const version = crypto
   .createHash("sha256")
   .update(
-    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js"]
+    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js", "media.js"]
       .map(read)
       .join("\n"),
   )
@@ -194,7 +195,14 @@ for (const lang of languages) {
     fullExperienceLabel: experienceCopy[lang].full,
   };
   setHtml(byId("experience-grid"), data.render.experienceCards(context));
-  setText(byId("filter-status"), `8 ${t("filterCount")}`);
+  const testimonialHtml = renderTestimonials(testimonials, lang, data.render.escape);
+  if (testimonialHtml) {
+    const faq = byId("travel-info");
+    const section = parseFragment(testimonialHtml).childNodes[0];
+    section.parentNode = faq.parentNode;
+    faq.parentNode.childNodes.splice(faq.parentNode.childNodes.indexOf(faq), 0, section);
+  }
+  setText(byId("filter-status"), `${data.experiences.length} ${t("filterCount")}`);
   setHtml(byId("journey-content"), data.render.journeyPanels(context));
   setHtml(byId("gallery-grid"), data.render.galleryItems(context));
   setHtml(byId("interest"), data.render.interestOptions(context));

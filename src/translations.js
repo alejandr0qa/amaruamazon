@@ -2,7 +2,7 @@
 const translations = {
   en: {
     filterCount: "experiences to explore",
-    view: "Explore experience",
+    view: "Quick view",
     enquire: "Make this part of my trip ↗",
     flexible: "Route & duration confirmed together",
     choose: "Help me plan my journey",
@@ -51,15 +51,15 @@ const translations = {
     promise3: "Naturaleza con respeto",
     promise4: "Una conversación directa, un viaje personal",
     introNote: "Aquí, la selva marca el ritmo.",
-    introEyebrow: "BIENVENIDO A NUESTRO RINCÓN DEL MUNDO",
-    intro1: "El Amazonas es un lugar.",
-    intro2: "Y una emoción.",
+    introEyebrow: "LOS VIAJEROS DETRÁS DE AMARU",
+    intro1: "Dos viajeros.",
+    intro2: "Un encuentro con el Amazonas.",
     introText1:
-      "El silencio de una canoa entre los árboles. El canto de un ave que nunca habías oído. Una historia compartida junto al río.",
+      "Después de recorrer distintos lugares, encontramos en Puerto Nariño otro ritmo para viajar: escuchar el río, caminar sin prisa y volver a mirar la naturaleza con curiosidad.",
     introText2:
-      "Somos Amaru Amazon Experiences, en Puerto Nariño, Colombia. Descubre el lago Tarapoto, rema de día, observa aves o conoce el cacao: ocho experiencias para acercarte al río, la selva y la vida local.",
+      "Somos dos viajeros amantes de la naturaleza. Amaru nace de ese encuentro con el Amazonas colombiano y del deseo de compartirlo mediante salidas por el río, caminatas por el bosque y encuentros locales, con guías de la región.",
     introText3:
-      "Elige una experiencia o construyamos juntos unos días alrededor de lo que te inspira. Esta es tu invitación a ir más despacio y mirar más de cerca.",
+      "Cuéntanos qué te interesa y de cuánto tiempo dispones. Diseñamos contigo una propuesta con las actividades, el alojamiento, las comidas y los servicios que decidas coordinar, según disponibilidad y condiciones locales.",
     introCta: "Un viaje que se parezca a ti",
     expEyebrow: "DESCUBRE UN POCO MÁS",
     exp1: "Experiencias",
@@ -113,9 +113,9 @@ const translations = {
     faq1: "Algunas cosas",
     faq2: "que debes saber.",
     faqCta: "Conversemos",
-    faqQ1: "¿Dónde comienza el viaje?",
+    faqQ1: "¿Cómo llego de Leticia a Puerto Nariño?",
     faqA1:
-      "Estamos en Puerto Nariño, en la Amazonía colombiana. La entrada habitual por avión es Leticia; desde allí se continúa por río. Confirma el horario, el punto de embarque y las conexiones antes de comprar los tiquetes. Comparte tu llegada con Amaru y consulta dónde empieza tu experiencia y qué transporte, si lo hay, está incluido en la propuesta.",
+      "Viaja hasta Leticia y continúa por el río Amazonas en lancha hasta Puerto Nariño. Amaru puede coordinar los pasajes fluviales y el encuentro cuando formen parte de tu propuesta. Confirma el muelle, los horarios vigentes y el margen para las conexiones antes de comprar otros tiquetes. Las condiciones del río pueden influir en el trayecto.",
     faqQ2: "¿Cuándo puedo visitarlos?",
     faqA2:
       "El río cambia a lo largo del año. Las aguas altas pueden abrir recorridos por el bosque inundado; las aguas bajas permiten otras caminatas y paisajes. Cuéntanos tus fechas y te explicamos qué es posible en esa temporada. La lluvia es parte de la experiencia.",
@@ -124,7 +124,7 @@ const translations = {
       "Indícanos tu idioma preferido al consultar. Antes de reservar confirmamos la disponibilidad de guía o intérprete y cualquier costo adicional. El idioma de esta web no garantiza un guía en ese idioma.",
     faqQ4: "¿Qué debo llevar?",
     faqA4:
-      "Viaja ligero: ropa fresca de manga larga, pantalones largos, protección para la lluvia, calzado para caminar, sombrero, repelente y botella reutilizable. Pide la lista de equipo para tu salida y confirma qué se facilita. La conexión a internet en Puerto Nariño puede ser limitada: guarda los datos útiles de tu viaje para consultarlos sin conexión. Prevé efectivo para gastos locales y pregunta qué medios de pago se aceptan antes de depender de las tarjetas.",
+      "Lleva ropa fresca de secado rápido, manga larga, calzado para caminar, protección solar y contra insectos, botella reutilizable, artículos personales y una bolsa impermeable. Ten a mano tus documentos y la medicación que utilices habitualmente. Consulta con un profesional las necesidades de salud particulares antes de viajar. Pide la lista de equipaje para las experiencias elegidas.",
     faqQ5: "¿Cómo funcionan los precios y las reservas?",
     faqA5:
       "Envíanos tus fechas, número de viajeros e intereses por WhatsApp. Revisamos la disponibilidad y enviamos una propuesta con precio total, servicios incluidos, condiciones de pago y cancelación. Una consulta no es una reserva confirmada. Esta web no recibe pagos.",
@@ -172,7 +172,7 @@ const translations = {
     privacyText3:
       "Las fotografías y el logo pertenecen a Amaru Amazon Experiences. Las fotos se presentan con una franja discreta de derechos de autor. Su reutilización requiere permiso previo.",
     filterCount: "experiencias para explorar",
-    view: "Explorar experiencia",
+    view: "Vista rápida",
     enquire: "Quiero incluirla en mi viaje ↗",
     flexible: "Ruta y duración por confirmar juntos",
     choose: "Ayúdenme a planear mi viaje",
@@ -222,15 +222,15 @@ const translations = {
     promise3: "La nature, avec respect",
     promise4: "Un échange direct, un voyage personnel",
     introNote: "Ici, la forêt donne le rythme.",
-    introEyebrow: "BIENVENUE DANS NOTRE COIN DU MONDE",
-    intro1: "L’Amazonie est un lieu.",
-    intro2: "Et une émotion.",
+    introEyebrow: "LES VOYAGEURS DERRIÈRE AMARU",
+    intro1: "Deux voyageurs.",
+    intro2: "L’Amazonie pour horizon.",
     introText1:
-      "Le silence d’une pirogue entre les arbres. Le chant d’un oiseau inconnu. Une histoire partagée au bord du fleuve.",
+      "Après avoir découvert différents lieux, nous avons trouvé un autre rythme à Puerto Nariño : écouter le fleuve, marcher sans se presser et regarder la nature avec curiosité.",
     introText2:
-      "Nous sommes Amaru Amazon Experiences, à Puerto Nariño, en Colombie. Lac Tarapoto, kayak de jour, oiseaux ou cacao : huit expériences pour découvrir le fleuve, la forêt et la vie locale.",
+      "Nous sommes deux voyageurs amoureux de la nature. Amaru est né de cette rencontre avec l’Amazonie colombienne et de l’envie de la partager à travers des sorties sur le fleuve, des marches en forêt et des rencontres locales, avec des guides de la région.",
     introText3:
-      "Choisissez une expérience ou imaginons quelques jours selon vos envies. Une invitation à ralentir et à regarder de plus près.",
+      "Dites-nous ce qui vous attire et le temps dont vous disposez. Nous préparons ensemble une proposition selon vos activités, les hébergements, repas et services que vous souhaitez organiser, en fonction des disponibilités et des conditions locales.",
     introCta: "Un voyage qui vous ressemble",
     expEyebrow: "ALLEZ UN PEU PLUS LOIN",
     exp1: "Vos expériences",
@@ -284,9 +284,9 @@ const translations = {
     faq1: "Quelques choses",
     faq2: "à savoir.",
     faqCta: "Parlons-en",
-    faqQ1: "Où commence le voyage ?",
+    faqQ1: "Comment rejoindre Puerto Nariño depuis Leticia ?",
     faqA1:
-      "Nous sommes à Puerto Nariño, en Amazonie colombienne. Leticia est la porte d’entrée habituelle en avion ; la suite du trajet se fait par bateau. Confirmez l’horaire, le point d’embarquement et les correspondances avant d’acheter les billets. Indiquez votre arrivée à Amaru et demandez où commence votre expérience et quels transports sont éventuellement inclus dans la proposition.",
+      "Rejoignez Leticia, puis continuez en bateau sur l’Amazone jusqu’à Puerto Nariño. Amaru peut coordonner les billets fluviaux et le rendez-vous lorsqu’ils figurent dans votre proposition. Confirmez l’embarcadère, les horaires en vigueur et la marge entre correspondances avant d’acheter les autres billets. Les conditions du fleuve peuvent modifier le trajet.",
     faqQ2: "Quand venir ?",
     faqA2:
       "Le fleuve évolue au fil de l’année. Les hautes eaux peuvent ouvrir des passages dans la forêt inondée ; les basses eaux offrent d’autres promenades et paysages. Donnez-nous vos dates et nous vous expliquerons les possibilités. La pluie fait partie de l’expérience.",
@@ -295,7 +295,7 @@ const translations = {
       "Indiquez votre langue lors de votre demande. Nous confirmerons la disponibilité d’un guide ou interprète et tout supplément avant la réservation. La langue du site ne garantit pas un guide dans cette langue.",
     faqQ4: "Que faut-il emporter ?",
     faqA4:
-      "Voyagez léger : vêtements respirants à manches longues, pantalon, protection contre la pluie, chaussures de marche, chapeau, répulsif et gourde. Demandez la liste adaptée à votre sortie et confirmez le matériel fourni. La connexion internet peut être limitée à Puerto Nariño : enregistrez les informations utiles pour les consulter hors ligne. Prévoyez des espèces pour les dépenses locales et vérifiez les moyens de paiement acceptés avant de compter sur une carte.",
+      "Prévoyez des vêtements légers séchant vite, des manches longues, des chaussures de marche, une protection solaire et contre les insectes, une gourde, vos affaires personnelles et un sac étanche. Gardez vos documents et votre traitement habituel à disposition. Consultez un professionnel pour vos besoins de santé particuliers avant le départ. Demandez la liste adaptée aux expériences choisies.",
     faqQ5: "Comment fonctionnent les tarifs et les réservations ?",
     faqA5:
       "Envoyez vos dates, le nombre de voyageurs et vos envies sur WhatsApp. Nous proposerons un séjour personnalisé avec le prix total, les prestations, les conditions de paiement et d’annulation. Une demande ne constitue pas une réservation. Aucun paiement n’est encaissé sur le site.",
@@ -343,7 +343,7 @@ const translations = {
     privacyText3:
       "Les photographies et le logo appartiennent à Amaru Amazon Experiences. Les photos comportent une discrète bande de droits d’auteur. Toute réutilisation nécessite une autorisation préalable.",
     filterCount: "expériences à explorer",
-    view: "Découvrir l’expérience",
+    view: "Aperçu",
     enquire: "L’inclure dans mon voyage ↗",
     flexible: "Parcours et durée à confirmer ensemble",
     choose: "Aidez-moi à créer mon voyage",
@@ -452,4 +452,65 @@ Object.assign(translations.fr, {
     "Vous pouvez découvrir toutes les expériences et tous les parcours sur cette page. Pour toute demande, contactez-nous sur WhatsApp :",
   privacyText1:
     "Ce site statique n’envoie pas votre demande à un serveur, n’utilise pas d’analytique et ne collecte aucun paiement. Les champs de demande restent dans la page actuelle et ne sont pas conservés par le site.",
+});
+
+// Travel planning confirmed by the team, 12 November 2026.
+Object.assign(translations.es, {
+  "faqQ7": "¿Cuántos días conviene quedarse?",
+  "faqA7": "Para conocer el destino con calma, el equipo de Amaru recomienda alrededor de cinco días y cuatro noches en Puerto Nariño. Es una orientación para planificar, no un paquete obligatorio: cuéntanos tus fechas e intereses para conversar sobre lo que encaja con tu tiempo y las condiciones del río.",
+  "faqQ8": "¿Qué servicios se pueden coordinar?",
+  "faqA8": "La propuesta puede reunir guía local, transporte fluvial, entradas y equipo, además de alojamiento y comidas cuando se soliciten. Las inclusiones dependen de las actividades y servicios contratados. Revisa qué está incluido, qué se paga aparte y el precio total antes de confirmar.",
+  "faqQ9": "¿Debo llevar equipo especializado?",
+  "faqA9": "Según la actividad, la propuesta puede incluir botas, capas de lluvia, hamacas o linternas. Consulta qué elementos, tallas y cantidades están disponibles y qué necesitas llevar. El equipo y la alimentación de una noche de selva deben quedar especificados para esa experiencia de pernocte.",
+  "faqQ10": "¿En qué se diferencian la caminata nocturna y el pernocte?",
+  "faqA10": "La caminata permite explorar la selva cuando oscurece y termina con el regreso acordado; no supone dormir en el bosque. El pernocte continúa hasta la mañana y requiere otra preparación para caminar, descansar y adaptarse al entorno. Elige según tus intereses y comodidad, y confirma el itinerario con Amaru.",
+  "faqQ11": "¿Es necesario llevar efectivo?",
+  "faqA11": "Prevé suficientes pesos colombianos para gastos personales, comidas adicionales, compras locales e imprevistos. Organiza el efectivo en Leticia antes de viajar y consulta los medios de pago aceptados. La conexión en Puerto Nariño puede ser limitada: guarda los contactos y datos útiles del viaje para consultarlos sin conexión."
+});
+
+// Travel planning confirmed by the team, 12 November 2026.
+Object.assign(translations.fr, {
+  "faqQ7": "Combien de jours prévoir sur place ?",
+  "faqA7": "Pour découvrir la région sans se presser, l’équipe d’Amaru recommande environ cinq jours et quatre nuits à Puerto Nariño. C’est un conseil de préparation, pas un forfait obligatoire : précisez vos dates et vos envies pour discuter des possibilités selon votre temps et les conditions du fleuve.",
+  "faqQ8": "Quels services peuvent être organisés ?",
+  "faqA8": "La proposition peut réunir un guide local, les transports fluviaux, les entrées et le matériel, ainsi que l’hébergement et les repas si vous le souhaitez. Les prestations dépendent des activités et services réservés. Vérifiez ce qui est inclus, ce qui reste à payer séparément et le prix total avant de confirmer.",
+  "faqQ9": "Faut-il apporter du matériel spécialisé ?",
+  "faqA9": "Selon l’activité, la proposition peut prévoir bottes, capes de pluie, hamacs ou lampes. Demandez quels éléments, tailles et quantités sont disponibles et ce que vous devez apporter. Le matériel et les repas d’une nuit en forêt doivent être précisés pour cette nuitée.",
+  "faqQ10": "Quelle différence entre promenade nocturne et nuit en forêt ?",
+  "faqA10": "La promenade explore la forêt après la tombée de la nuit et se termine par le retour convenu ; elle ne comprend pas de nuitée. Rester jusqu’au matin demande une autre préparation pour marcher, dormir et s’adapter au milieu. Choisissez selon vos envies et votre confort, puis confirmez l’itinéraire avec Amaru.",
+  "faqQ11": "Faut-il prévoir des espèces ?",
+  "faqA11": "Prévoyez assez de pesos colombiens pour vos dépenses personnelles, repas supplémentaires, achats locaux et imprévus. Organisez vos espèces à Leticia avant de partir et vérifiez les moyens de paiement acceptés. La connexion à Puerto Nariño peut être limitée : enregistrez les contacts et informations utiles pour les consulter hors ligne."
+});
+
+Object.assign(translations.en, {
+  "byArrangement": "TIME AGREED TOGETHER",
+  "effortLow": "Low effort",
+  "effortModerate": "Moderate effort",
+  "effortModerateHigh": "Moderate to high effort",
+  "effortHigh": "High effort",
+  "effortConfirm": "Confirm for your route",
+  "effortLabel": "Physical effort",
+  "effortNote": "Levels are indicative. Terrain, water levels, weather and your group can change the demands of an outing."
+});
+
+Object.assign(translations.es, {
+  "byArrangement": "HORARIO A COORDINAR",
+  "effortLow": "Exigencia baja",
+  "effortModerate": "Exigencia moderada",
+  "effortModerateHigh": "Exigencia moderada a alta",
+  "effortHigh": "Exigencia alta",
+  "effortConfirm": "A confirmar según el recorrido",
+  "effortLabel": "Exigencia física",
+  "effortNote": "Los niveles son orientativos. El terreno, el agua, el clima y las características del grupo pueden cambiar la exigencia."
+});
+
+Object.assign(translations.fr, {
+  "byArrangement": "HORAIRE À CONVENIR",
+  "effortLow": "Effort faible",
+  "effortModerate": "Effort modéré",
+  "effortModerateHigh": "Effort modéré à élevé",
+  "effortHigh": "Effort élevé",
+  "effortConfirm": "À confirmer selon le parcours",
+  "effortLabel": "Effort physique",
+  "effortNote": "Les niveaux sont indicatifs. Terrain, eau, météo et composition du groupe peuvent modifier les exigences de la sortie."
 });

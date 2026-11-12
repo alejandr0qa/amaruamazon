@@ -6,6 +6,8 @@ import { siteUrl, languages, languagePaths, contactEmail } from "../site.config.
 import { experiencePath, experiencePages, experienceCopy, experienceDescriptions, experienceAlt } from "../src/experience-pages.mjs";
 import { experienceEditorial, editorialSources } from "../src/experience-editorial.mjs";
 
+import { experienceMedia } from "../src/experience-media.mjs";
+
 export function checkExperiencePages({ root, data, version, sitemap }) {
   const walk = function* (node) {
     yield node;
@@ -34,7 +36,7 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
     assert.ok(text(find((n) => n.tagName === "main")).includes(experiencePages[item.id][lang][2]));
     assert.ok(text(find((n) => n.tagName === "main")).includes(item.duration?.[lang] || copy.confirmDuration));
     const context = all((n) => attr(n, "data-editorial-context") !== undefined);
-    assert.equal(context.length, 2, `${route}: readable territorial context in initial HTML`);
+    assert.equal(context.length, experienceEditorial[item.id][lang].paragraphs.length, `${route}: readable territorial context in initial HTML`);
     assert.deepEqual(context.map(text), experienceEditorial[item.id][lang].paragraphs);
     const tips = find((n) => attr(n, "data-editorial-tips") !== undefined);
     assert.equal(text(tips), experiencePages[item.id][lang][2]);
@@ -85,7 +87,7 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
       if (attr(node, "data-lang")) assert.equal(target.pathname.slice(1), experiencePath(item.id, attr(node, "data-lang")));
     }
     const scripts = all((n) => n.tagName === "script" && attr(n, "src"));
-    assert.equal(scripts.length, 1);
+    assert.equal(scripts.length, experienceMedia[item.id] ? 2 : 1);
     assert.ok(attr(scripts[0], "src").endsWith(`experience.js?v=${version}`));
     for (const image of all((n) => n.tagName === "img")) {
       assert.ok(attr(image, "alt")); assert.ok(attr(image, "width")); assert.ok(attr(image, "height"));
@@ -94,6 +96,14 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
         assert.ok(fs.existsSync(path.resolve(root, route, file)), `${route}: missing responsive ${file}`);
       }
     }
+    assert.ok(!all((n) => ["video", "audio", "source"].includes(n.tagName)).length, route + ": no initial media fetch");
+    const mediaButton = find((n) => attr(n, "data-media-src"));
+    if (experienceMedia[item.id]) {
+      assert.ok(mediaButton, route + ": on-demand video control");
+      assert.ok(fs.statSync(path.resolve(root, route, attr(mediaButton, "data-media-src"))).size < 3 * 1024 * 1024);
+      assert.ok(attr(scripts[1], "src").endsWith(`media.js?v=${version}`));
+    } else assert.equal(mediaButton, undefined);
+    assert.ok(text(find((n) => attr(n, "data-effort") !== undefined)).trim());
     const cover = find((n) => (attr(n, "class") || "").split(" ").includes("experience-cover"));
     assert.equal(attr(cover, "alt"), experienceAlt[item.id][lang]);
     assert.ok(attr(cover, "srcset")?.includes("480w"));
@@ -118,5 +128,5 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
     for (const alternate of [...languages, "x-default"])
       assert.ok(sitemapEntry.includes(`hreflang="${alternate}" href="${new URL(experiencePath(item.id, alternate === "x-default" ? "en" : alternate), siteUrl).href}"`));
   }
-  assert.equal(pageTitles.size, 24);
+  assert.equal(pageTitles.size, data.experiences.length * languages.length);
 }

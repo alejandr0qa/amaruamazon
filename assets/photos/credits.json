@@ -130,5 +130,33 @@
     "width": 1200,
     "height": 828,
     "bytes": 447638
+  },
+  "city-tour": {
+    "source": "city-tour/city tour/IMG_20260728_110420.jpg",
+    "source_sha256": "db3240d367c2e6f04552a67a8c2bba31d762046ad96f64188320e69214f8ba41",
+    "width": 1200,
+    "height": 828,
+    "bytes": 222514
+  },
+  "flooded-forest": {
+    "source": "canotaje-en-selva-inundada/CANOTAJE EN SELVA INUNDADA/IMG_20260223_110936.jpg",
+    "source_sha256": "04bed1a90cae5efa2562f6d08dc631f6f8a7d09a6fcb7e8027d36e5af08ca278",
+    "width": 1200,
+    "height": 828,
+    "bytes": 316592
+  },
+  "birdwatching-new": {
+    "source": "tour-avistamiento-de-aves/avistamiento de aves/IMG-20260730-WA0278.jpg",
+    "source_sha256": "da4d3c0256ce1dcaeed211c30bbb4b02999ce2f7892c10c080d27676dbe09358",
+    "width": 1200,
+    "height": 828,
+    "bytes": 72678
+  },
+  "oje": {
+    "source": "58120.jpg",
+    "source_sha256": "03816939a78c389a1cd178f99dac9862b73d98138a96ac7f7f9fd13228172a86",
+    "width": 1200,
+    "height": 828,
+    "bytes": 393458
   }
 }
