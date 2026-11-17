@@ -2473,3 +2473,40 @@ h2 { font-size: clamp(40px, 4vw, 56px); }
   .experience-information > #practical { padding: 23px; }
   .experience-intro .button, .experience-contact .button { width: 100%; gap: 8px; }
 }
+
+/* Balance incomplete catalogue rows without changing cards, order or filters.
+   Count only visible cards so the same layout follows the existing filters. */
+@supports selector(:nth-child(1 of .experience-card:not([hidden]))) {
+  @media (min-width: 851px) {
+    .experience-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .experience-grid > .experience-card { grid-column: span 2; }
+
+    /* A remainder of two forms a centred pair at the original card width. */
+    .experience-grid > :nth-last-child(2 of .experience-card:not([hidden])):nth-child(3n + 1 of .experience-card:not([hidden])) {
+      grid-column: 2 / span 2;
+    }
+    .experience-grid > :nth-last-child(1 of .experience-card:not([hidden])):nth-child(3n + 2 of .experience-card:not([hidden])) {
+      grid-column: 4 / span 2;
+    }
+
+    /* Replace a final 3 + 1 with two centred pairs, keeping image proportions. */
+    .experience-grid > :nth-last-child(4 of .experience-card:not([hidden])):nth-child(3n + 1 of .experience-card:not([hidden])),
+    .experience-grid > :nth-last-child(2 of .experience-card:not([hidden])):nth-child(3n of .experience-card:not([hidden])) {
+      grid-column: 2 / span 2;
+    }
+    .experience-grid > :nth-last-child(3 of .experience-card:not([hidden])):nth-child(3n + 2 of .experience-card:not([hidden])),
+    .experience-grid > :nth-last-child(1 of .experience-card:not([hidden])):nth-child(3n + 1 of .experience-card:not([hidden])) {
+      grid-column: 4 / span 2;
+    }
+    .experience-grid > :nth-child(1 of .experience-card:not([hidden])):nth-last-child(1 of .experience-card:not([hidden])) {
+      grid-column: 3 / span 2;
+    }
+  }
+  @media (min-width: 501px) and (max-width: 850px) {
+    .experience-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .experience-grid > .experience-card { grid-column: span 2; }
+    .experience-grid > :nth-last-child(1 of .experience-card:not([hidden])):nth-child(odd of .experience-card:not([hidden])) {
+      grid-column: 2 / span 2;
+    }
+  }
+}
