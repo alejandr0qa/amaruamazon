@@ -1,0 +1,1829 @@
+{
+  "checkedAt": "2026-11-17T20:43:50.470Z",
+  "browser": "Chromium",
+  "checks": [
+    "three languages",
+    "desktop/tablet/mobile",
+    "all four filters",
+    "same content order and card/image widths",
+    "same row heights",
+    "centred rows",
+    "no horizontal overflow",
+    "no script errors",
+    "works without JavaScript"
+  ],
+  "results": [
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "en",
+      "state": "before",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "birdwatching",
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community",
+          "wildlife"
+        ],
+        [
+          "city-tour",
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "en",
+      "state": "after",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "birdwatching",
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community",
+          "wildlife"
+        ],
+        [
+          "city-tour",
+          "oje"
+        ],
+        [
+          "caimans",
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.34375,
+        397.328125,
+        397.34375,
+        397.328125
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "en",
+      "filter": "water",
+      "count": 5,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "caimans",
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "en",
+      "filter": "forest",
+      "count": 5,
+      "rows": [
+        [
+          "birdwatching",
+          "night-walk",
+          "camp"
+        ],
+        [
+          "wildlife",
+          "oje"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "en",
+      "filter": "culture",
+      "count": 3,
+      "rows": [
+        [
+          "cacao",
+          "community",
+          "city-tour"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "en",
+      "filter": "all",
+      "count": 13,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "birdwatching",
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community",
+          "wildlife"
+        ],
+        [
+          "city-tour",
+          "oje"
+        ],
+        [
+          "caimans",
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "es",
+      "state": "before",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "birdwatching",
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community",
+          "wildlife"
+        ],
+        [
+          "city-tour",
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "es",
+      "state": "after",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "birdwatching",
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community",
+          "wildlife"
+        ],
+        [
+          "city-tour",
+          "oje"
+        ],
+        [
+          "caimans",
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.34375,
+        397.328125,
+        397.34375,
+        397.328125
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "es",
+      "filter": "water",
+      "count": 5,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "caimans",
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "es",
+      "filter": "forest",
+      "count": 5,
+      "rows": [
+        [
+          "birdwatching",
+          "night-walk",
+          "camp"
+        ],
+        [
+          "wildlife",
+          "oje"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "es",
+      "filter": "culture",
+      "count": 3,
+      "rows": [
+        [
+          "cacao",
+          "community",
+          "city-tour"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "es",
+      "filter": "all",
+      "count": 13,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "birdwatching",
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community",
+          "wildlife"
+        ],
+        [
+          "city-tour",
+          "oje"
+        ],
+        [
+          "caimans",
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "fr",
+      "state": "before",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "birdwatching",
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community",
+          "wildlife"
+        ],
+        [
+          "city-tour",
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "fr",
+      "state": "after",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "birdwatching",
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community",
+          "wildlife"
+        ],
+        [
+          "city-tour",
+          "oje"
+        ],
+        [
+          "caimans",
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.328125,
+        397.328125,
+        397.34375,
+        397.34375,
+        397.328125,
+        397.34375,
+        397.328125
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "fr",
+      "filter": "water",
+      "count": 5,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "caimans",
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "fr",
+      "filter": "forest",
+      "count": 5,
+      "rows": [
+        [
+          "birdwatching",
+          "night-walk",
+          "camp"
+        ],
+        [
+          "wildlife",
+          "oje"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "fr",
+      "filter": "culture",
+      "count": 3,
+      "rows": [
+        [
+          "cacao",
+          "community",
+          "city-tour"
+        ]
+      ]
+    },
+    {
+      "device": "desktop",
+      "width": 1366,
+      "lang": "fr",
+      "filter": "all",
+      "count": 13,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio",
+          "kayak"
+        ],
+        [
+          "birdwatching",
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community",
+          "wildlife"
+        ],
+        [
+          "city-tour",
+          "oje"
+        ],
+        [
+          "caimans",
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "en",
+      "state": "before",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "birdwatching"
+        ],
+        [
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community"
+        ],
+        [
+          "wildlife",
+          "city-tour"
+        ],
+        [
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "en",
+      "state": "after",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "birdwatching"
+        ],
+        [
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community"
+        ],
+        [
+          "wildlife",
+          "city-tour"
+        ],
+        [
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "en",
+      "filter": "water",
+      "count": 5,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "en",
+      "filter": "forest",
+      "count": 5,
+      "rows": [
+        [
+          "birdwatching",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "wildlife"
+        ],
+        [
+          "oje"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "en",
+      "filter": "culture",
+      "count": 3,
+      "rows": [
+        [
+          "cacao",
+          "community"
+        ],
+        [
+          "city-tour"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "en",
+      "filter": "all",
+      "count": 13,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "birdwatching"
+        ],
+        [
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community"
+        ],
+        [
+          "wildlife",
+          "city-tour"
+        ],
+        [
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "es",
+      "state": "before",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "birdwatching"
+        ],
+        [
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community"
+        ],
+        [
+          "wildlife",
+          "city-tour"
+        ],
+        [
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "es",
+      "state": "after",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "birdwatching"
+        ],
+        [
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community"
+        ],
+        [
+          "wildlife",
+          "city-tour"
+        ],
+        [
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "es",
+      "filter": "water",
+      "count": 5,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "es",
+      "filter": "forest",
+      "count": 5,
+      "rows": [
+        [
+          "birdwatching",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "wildlife"
+        ],
+        [
+          "oje"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "es",
+      "filter": "culture",
+      "count": 3,
+      "rows": [
+        [
+          "cacao",
+          "community"
+        ],
+        [
+          "city-tour"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "es",
+      "filter": "all",
+      "count": 13,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "birdwatching"
+        ],
+        [
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community"
+        ],
+        [
+          "wildlife",
+          "city-tour"
+        ],
+        [
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "fr",
+      "state": "before",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "birdwatching"
+        ],
+        [
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community"
+        ],
+        [
+          "wildlife",
+          "city-tour"
+        ],
+        [
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "fr",
+      "state": "after",
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "birdwatching"
+        ],
+        [
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community"
+        ],
+        [
+          "wildlife",
+          "city-tour"
+        ],
+        [
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340,
+        340
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "fr",
+      "filter": "water",
+      "count": 5,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "fr",
+      "filter": "forest",
+      "count": 5,
+      "rows": [
+        [
+          "birdwatching",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "wildlife"
+        ],
+        [
+          "oje"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "fr",
+      "filter": "culture",
+      "count": 3,
+      "rows": [
+        [
+          "cacao",
+          "community"
+        ],
+        [
+          "city-tour"
+        ]
+      ]
+    },
+    {
+      "device": "tablet",
+      "width": 768,
+      "lang": "fr",
+      "filter": "all",
+      "count": 13,
+      "rows": [
+        [
+          "tarapoto",
+          "san-antonio"
+        ],
+        [
+          "kayak",
+          "birdwatching"
+        ],
+        [
+          "cacao",
+          "night-walk"
+        ],
+        [
+          "camp",
+          "community"
+        ],
+        [
+          "wildlife",
+          "city-tour"
+        ],
+        [
+          "oje",
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "en",
+      "state": "before",
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "birdwatching"
+        ],
+        [
+          "cacao"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "community"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "city-tour"
+        ],
+        [
+          "oje"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "en",
+      "state": "after",
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "birdwatching"
+        ],
+        [
+          "cacao"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "community"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "city-tour"
+        ],
+        [
+          "oje"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "en",
+      "filter": "water",
+      "count": 5,
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "en",
+      "filter": "forest",
+      "count": 5,
+      "rows": [
+        [
+          "birdwatching"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "oje"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "en",
+      "filter": "culture",
+      "count": 3,
+      "rows": [
+        [
+          "cacao"
+        ],
+        [
+          "community"
+        ],
+        [
+          "city-tour"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "en",
+      "filter": "all",
+      "count": 13,
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "birdwatching"
+        ],
+        [
+          "cacao"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "community"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "city-tour"
+        ],
+        [
+          "oje"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "es",
+      "state": "before",
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "birdwatching"
+        ],
+        [
+          "cacao"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "community"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "city-tour"
+        ],
+        [
+          "oje"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "es",
+      "state": "after",
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "birdwatching"
+        ],
+        [
+          "cacao"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "community"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "city-tour"
+        ],
+        [
+          "oje"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "es",
+      "filter": "water",
+      "count": 5,
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "es",
+      "filter": "forest",
+      "count": 5,
+      "rows": [
+        [
+          "birdwatching"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "oje"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "es",
+      "filter": "culture",
+      "count": 3,
+      "rows": [
+        [
+          "cacao"
+        ],
+        [
+          "community"
+        ],
+        [
+          "city-tour"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "es",
+      "filter": "all",
+      "count": 13,
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "birdwatching"
+        ],
+        [
+          "cacao"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "community"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "city-tour"
+        ],
+        [
+          "oje"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "fr",
+      "state": "before",
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "birdwatching"
+        ],
+        [
+          "cacao"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "community"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "city-tour"
+        ],
+        [
+          "oje"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "fr",
+      "state": "after",
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "birdwatching"
+        ],
+        [
+          "cacao"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "community"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "city-tour"
+        ],
+        [
+          "oje"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ],
+      "cardWidths": [
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350,
+        350
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "fr",
+      "filter": "water",
+      "count": 5,
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "fr",
+      "filter": "forest",
+      "count": 5,
+      "rows": [
+        [
+          "birdwatching"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "oje"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "fr",
+      "filter": "culture",
+      "count": 3,
+      "rows": [
+        [
+          "cacao"
+        ],
+        [
+          "community"
+        ],
+        [
+          "city-tour"
+        ]
+      ]
+    },
+    {
+      "device": "mobile",
+      "width": 390,
+      "lang": "fr",
+      "filter": "all",
+      "count": 13,
+      "rows": [
+        [
+          "tarapoto"
+        ],
+        [
+          "san-antonio"
+        ],
+        [
+          "kayak"
+        ],
+        [
+          "birdwatching"
+        ],
+        [
+          "cacao"
+        ],
+        [
+          "night-walk"
+        ],
+        [
+          "camp"
+        ],
+        [
+          "community"
+        ],
+        [
+          "wildlife"
+        ],
+        [
+          "city-tour"
+        ],
+        [
+          "oje"
+        ],
+        [
+          "caimans"
+        ],
+        [
+          "flooded-forest"
+        ]
+      ]
+    }
+  ]
+}
