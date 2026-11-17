@@ -8,6 +8,8 @@ Thumbs.db
 # Node (por si se agrega en el futuro)
 node_modules/
 .env
+.env.*
+!.env.example
 
 # Editor
 .vscode/
@@ -16,3 +18,10 @@ node_modules/
 imagenes-brenda/
 .codex-preview/
 __pycache__/
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.wrangler/
+playwright-report/
+test-results/
+cloudflare/reviews/wrangler.production.jsonc

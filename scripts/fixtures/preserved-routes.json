@@ -5,6 +5,9 @@
   "/experiences/lake-tarapoto/",
   "/es/experiencias/lago-tarapoto/",
   "/fr/experiences/lac-tarapoto/",
+  "/experiences/san-antonio-cacao-victoria-regia-sloths/",
+  "/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+  "/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
   "/experiences/daytime-kayaking/",
   "/es/experiencias/kayak-diurno-amazonas/",
   "/fr/experiences/kayak-de-jour-amazonie/",
@@ -25,5 +28,17 @@
   "/fr/experiences/rencontres-culturelles/",
   "/experiences/rainforest-walks/",
   "/es/experiencias/caminatas-selva-fauna/",
-  "/fr/experiences/randonnees-foret-faune/"
+  "/fr/experiences/randonnees-foret-faune/",
+  "/experiences/puerto-narino-city-tour/",
+  "/es/experiencias/city-tour-puerto-narino/",
+  "/fr/experiences/visite-puerto-narino/",
+  "/experiences/oje-tree/",
+  "/es/experiencias/arbol-oje/",
+  "/fr/experiences/arbre-oje/",
+  "/experiences/night-caiman-watching/",
+  "/es/experiencias/avistamiento-caimanes/",
+  "/fr/experiences/observation-caimans-nuit/",
+  "/experiences/flooded-forest-canoeing/",
+  "/es/experiencias/canotaje-selva-inundada/",
+  "/fr/experiences/canoe-foret-inondee/"
 ]

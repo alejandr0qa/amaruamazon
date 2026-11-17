@@ -455,6 +455,8 @@ Object.assign(translations.fr, {
 });
 
 // Travel planning confirmed by the team, 12 November 2026.
+Object.assign(translations.es, { privacyText1: 'El formulario de consulta de viaje no envía tu consulta a un servidor, no usa analítica ni recibe pagos. Sus campos permanecen en la página actual y no se almacenan. Las opiniones de viajeros tienen un tratamiento independiente, descrito a continuación y en su formulario.' });
+Object.assign(translations.fr, { privacyText1: 'Le formulaire de demande de voyage n’envoie pas votre demande à un serveur, n’utilise pas d’analytique et ne collecte aucun paiement. Ses champs restent dans la page actuelle sans être conservés. Les avis des voyageurs font l’objet d’un traitement distinct, décrit ci-dessous et dans leur formulaire.' });
 Object.assign(translations.es, {
   "faqQ7": "¿Cuántos días conviene quedarse?",
   "faqA7": "Para conocer el destino con calma, el equipo de Amaru recomienda alrededor de cinco días y cuatro noches en Puerto Nariño. Es una orientación para planificar, no un paquete obligatorio: cuéntanos tus fechas e intereses para conversar sobre lo que encaja con tu tiempo y las condiciones del río.",

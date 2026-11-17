@@ -88,7 +88,8 @@ export function checkExperiencePages({ root, data, version, sitemap }) {
       if (attr(node, "data-lang")) assert.equal(target.pathname.slice(1), experiencePath(item.id, attr(node, "data-lang")));
     }
     const scripts = all((n) => n.tagName === "script" && attr(n, "src"));
-    assert.equal(scripts.length, experienceMedia[item.id] ? 2 : 1);
+    assert.equal(scripts.length, experienceMedia[item.id] ? 3 : 2);
+    assert.ok(attr(scripts.at(-1), "src").endsWith(`reviews-loader.js?v=${version}`));
     assert.ok(attr(scripts[0], "src").endsWith(`experience.js?v=${version}`));
     for (const image of all((n) => n.tagName === "img")) {
       assert.ok(attr(image, "alt")); assert.ok(attr(image, "width")); assert.ok(attr(image, "height"));

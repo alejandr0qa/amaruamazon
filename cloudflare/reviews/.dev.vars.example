@@ -1,0 +1,8 @@
+# Optional manual local configuration; the preview script generates private values.
+ENVIRONMENT="local"
+ALLOWED_ORIGINS="http://127.0.0.1:8077,http://localhost:8077"
+TURNSTILE_HOSTNAMES="127.0.0.1,localhost"
+# Supply random independent values of at least 32 bytes. Never commit real values.
+ADMIN_TOKEN=""
+RATE_SECRET=""
+TURNSTILE_SECRET=""

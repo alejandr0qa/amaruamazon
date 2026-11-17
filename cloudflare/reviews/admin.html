@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Moderación de opiniones · Amaru</title>
+    <link rel="stylesheet" href="/admin.css" />
+    <script src="/admin.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Opiniones de viajeros</h1>
+      <p>
+        Publica experiencias auténticas, también las críticas. Los indicadores
+        de spam requieren revisión humana. El texto y las estrellas no se pueden
+        editar.
+      </p>
+      <form id="login">
+        <label
+          >Clave de administración
+          <input
+            id="token"
+            type="password"
+            required
+            minlength="32"
+            autocomplete="off" /></label
+        ><button>Entrar</button>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+      <section id="workspace" hidden>
+        <div class="toolbar">
+          <label
+            >Estado
+            <select id="filter">
+              <option value="pending">Pendientes</option>
+              <option value="approved">Aprobadas</option>
+              <option value="rejected">Rechazadas</option>
+              <option value="hidden">Ocultas</option>
+            </select></label
+          ><button id="refresh">Actualizar</button
+          ><button id="logout">Salir</button>
+        </div>
+        <p>
+          Comprueba experiencia, consentimiento, posibles datos personales y
+          autenticidad. No rechaces por una puntuación baja. Si hay datos
+          sensibles, solicita una nueva opinión al viajero; no reescribas su
+          comentario.
+        </p>
+        <div id="reviews"></div>
+        <button id="more" hidden>Ver más</button>
+        <h2>Solicitudes de eliminación</h2>
+        <p>
+          El viajero puede borrar su opinión con el código entregado al
+          enviarla. Sin código: atender por info@amaruamazonexperiences.com,
+          comprobar la autoría con información mínima de la reserva y usar
+          «Eliminar datos». No pedir documentos de identidad salvo necesidad
+          justificada. El borrado elimina también el historial de moderación
+          asociado.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

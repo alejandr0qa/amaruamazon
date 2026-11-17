@@ -1,0 +1,989 @@
+{
+  "checkedAt": "2026-11-17T20:16:13.175Z",
+  "lastCrawlReported": "2026-11-14",
+  "robots": {
+    "status": 200,
+    "text": "User-agent: *\nAllow: /\nSitemap: https://amaruamazonexperiences.com/sitemap.xml\n"
+  },
+  "sitemapStatus": 200,
+  "sitemapUrls": [
+    "https://amaruamazonexperiences.com/",
+    "https://amaruamazonexperiences.com/es/",
+    "https://amaruamazonexperiences.com/fr/",
+    "https://amaruamazonexperiences.com/experiences/lake-tarapoto/",
+    "https://amaruamazonexperiences.com/es/experiencias/lago-tarapoto/",
+    "https://amaruamazonexperiences.com/fr/experiences/lac-tarapoto/",
+    "https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/",
+    "https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+    "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+    "https://amaruamazonexperiences.com/experiences/daytime-kayaking/",
+    "https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/",
+    "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/",
+    "https://amaruamazonexperiences.com/experiences/birdwatching/",
+    "https://amaruamazonexperiences.com/es/experiencias/avistamiento-aves/",
+    "https://amaruamazonexperiences.com/fr/experiences/observation-oiseaux/",
+    "https://amaruamazonexperiences.com/experiences/amazonian-cacao/",
+    "https://amaruamazonexperiences.com/es/experiencias/cacao-amazonico/",
+    "https://amaruamazonexperiences.com/fr/experiences/cacao-amazonien/",
+    "https://amaruamazonexperiences.com/experiences/rainforest-night-walk/",
+    "https://amaruamazonexperiences.com/es/experiencias/caminata-nocturna-selva/",
+    "https://amaruamazonexperiences.com/fr/experiences/promenade-nocturne-foret/",
+    "https://amaruamazonexperiences.com/experiences/night-in-rainforest/",
+    "https://amaruamazonexperiences.com/es/experiencias/noche-selva-amazonica/",
+    "https://amaruamazonexperiences.com/fr/experiences/nuit-foret-amazonienne/",
+    "https://amaruamazonexperiences.com/experiences/cultural-encounters/",
+    "https://amaruamazonexperiences.com/es/experiencias/encuentros-culturales/",
+    "https://amaruamazonexperiences.com/fr/experiences/rencontres-culturelles/",
+    "https://amaruamazonexperiences.com/experiences/rainforest-walks/",
+    "https://amaruamazonexperiences.com/es/experiencias/caminatas-selva-fauna/",
+    "https://amaruamazonexperiences.com/fr/experiences/randonnees-foret-faune/",
+    "https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/",
+    "https://amaruamazonexperiences.com/es/experiencias/city-tour-puerto-narino/",
+    "https://amaruamazonexperiences.com/fr/experiences/visite-puerto-narino/",
+    "https://amaruamazonexperiences.com/experiences/oje-tree/",
+    "https://amaruamazonexperiences.com/es/experiencias/arbol-oje/",
+    "https://amaruamazonexperiences.com/fr/experiences/arbre-oje/",
+    "https://amaruamazonexperiences.com/experiences/night-caiman-watching/",
+    "https://amaruamazonexperiences.com/es/experiencias/avistamiento-caimanes/",
+    "https://amaruamazonexperiences.com/fr/experiences/observation-caimans-nuit/",
+    "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+    "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+    "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"
+  ],
+  "results": [
+    {
+      "url": "https://amaruamazonexperiences.com/experiences/oje-tree/",
+      "status": 200,
+      "location": null,
+      "robotsHeader": null,
+      "robotsMeta": [],
+      "canonical": [
+        "https://amaruamazonexperiences.com/experiences/oje-tree/"
+      ],
+      "hreflang": {
+        "en": "https://amaruamazonexperiences.com/experiences/oje-tree/",
+        "es": "https://amaruamazonexperiences.com/es/experiencias/arbol-oje/",
+        "fr": "https://amaruamazonexperiences.com/fr/experiences/arbre-oje/",
+        "x-default": "https://amaruamazonexperiences.com/experiences/oje-tree/"
+      },
+      "title": "The Ojé tree near Puerto Nariño | Puerto Nariño | Amaru",
+      "h1": [
+        "The Ojé tree near Puerto Nariño"
+      ],
+      "mainWords": 390,
+      "editorial": [
+        "Pause beside the roots and notice how they spread across the forest floor. Around the Ojé tree, smaller plants, textures and changing light invite a closer look at the living forest. Allow time to observe rather than treating the walk as a race to a single photograph."
+      ],
+      "imageCount": 6,
+      "links": [
+        "https://amaruamazonexperiences.com/experiences/oje-tree/#main",
+        "https://amaruamazonexperiences.com/#home",
+        "https://amaruamazonexperiences.com/#experiences",
+        "https://amaruamazonexperiences.com/#journeys",
+        "https://amaruamazonexperiences.com/#our-story",
+        "https://amaruamazonexperiences.com/experiences/oje-tree/",
+        "https://amaruamazonexperiences.com/es/experiencias/arbol-oje/",
+        "https://amaruamazonexperiences.com/fr/experiences/arbre-oje/",
+        "https://amaruamazonexperiences.com/#plan",
+        "https://amaruamazonexperiences.com/",
+        "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AInterested%20in%3A%20The%20Oj%C3%A9%20tree%0APlease%20help%20me%20plan%20this%20experience.%20What%20duration%2C%20meeting%20point%2C%20requirements%20and%20inclusions%20should%20I%20consider%3F%0A%0APlease%20share%20availability%2C%20the%20full%20price%2C%20inclusions%20and%20booking%20conditions.",
+        "https://www.parquesnacionales.gov.co/nuestros-parques/pnn-amacayacu/",
+        "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AInterested%20in%3A%20The%20Oj%C3%A9%20tree%0APlease%20help%20me%20plan%20this%20experience.%20What%20duration%2C%20meeting%20point%2C%20requirements%20and%20inclusions%20should%20I%20consider%3F%0A%0APlease%20share%20availability%2C%20the%20full%20price%2C%20inclusions%20and%20booking%20conditions.",
+        "https://amaruamazonexperiences.com/?experience=oje#plan",
+        "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AInterested%20in%3A%20The%20Oj%C3%A9%20tree%0APlease%20help%20me%20plan%20this%20experience.%20What%20duration%2C%20meeting%20point%2C%20requirements%20and%20inclusions%20should%20I%20consider%3F%0A%0APlease%20share%20availability%2C%20the%20full%20price%2C%20inclusions%20and%20booking%20conditions.",
+        "mailto:info@amaruamazonexperiences.com",
+        "https://amaruamazonexperiences.com/experiences/rainforest-walks/",
+        "https://amaruamazonexperiences.com/experiences/night-in-rainforest/",
+        "https://amaruamazonexperiences.com/experiences/birdwatching/",
+        "https://amaruamazonexperiences.com/#experiences",
+        "https://amaruamazonexperiences.com/#home",
+        "https://amaruamazonexperiences.com/#experiences",
+        "https://amaruamazonexperiences.com/#plan",
+        "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AInterested%20in%3A%20The%20Oj%C3%A9%20tree%0APlease%20help%20me%20plan%20this%20experience.%20What%20duration%2C%20meeting%20point%2C%20requirements%20and%20inclusions%20should%20I%20consider%3F%0A%0APlease%20share%20availability%2C%20the%20full%20price%2C%20inclusions%20and%20booking%20conditions.",
+        "mailto:info@amaruamazonexperiences.com"
+      ],
+      "inSitemap": true,
+      "inbound": [
+        "https://amaruamazonexperiences.com/",
+        "https://amaruamazonexperiences.com/experiences/rainforest-walks/",
+        "https://amaruamazonexperiences.com/es/experiencias/arbol-oje/",
+        "https://amaruamazonexperiences.com/fr/experiences/arbre-oje/",
+        "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"
+      ],
+      "alternatives": [
+        {
+          "locale": "en",
+          "url": "https://amaruamazonexperiences.com/experiences/oje-tree/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/experiences/oje-tree/"
+          ],
+          "reciprocal": true,
+          "title": "The Ojé tree near Puerto Nariño | Puerto Nariño | Amaru",
+          "h1": [
+            "The Ojé tree near Puerto Nariño"
+          ],
+          "editorial": [
+            "Pause beside the roots and notice how they spread across the forest floor. Around the Ojé tree, smaller plants, textures and changing light invite a closer look at the living forest. Allow time to observe rather than treating the walk as a race to a single photograph."
+          ]
+        },
+        {
+          "locale": "es",
+          "url": "https://amaruamazonexperiences.com/es/experiencias/arbol-oje/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/es/experiencias/arbol-oje/"
+          ],
+          "reciprocal": true,
+          "title": "El árbol Ojé en la selva amazónica | Puerto Nariño | Amaru",
+          "h1": [
+            "El árbol Ojé en la selva amazónica"
+          ],
+          "editorial": [
+            "Detente junto a las raíces y observa cómo se extienden por el suelo del bosque. Alrededor del árbol Ojé, las plantas más pequeñas, las texturas y los cambios de luz invitan a mirar la selva con atención. Reserva tiempo para observar y disfrutar el camino, además de llevarte una fotografía."
+          ]
+        },
+        {
+          "locale": "fr",
+          "url": "https://amaruamazonexperiences.com/fr/experiences/arbre-oje/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/fr/experiences/arbre-oje/"
+          ],
+          "reciprocal": true,
+          "title": "L’arbre Ojé en forêt amazonienne | Puerto Nariño | Amaru",
+          "h1": [
+            "L’arbre Ojé en forêt amazonienne"
+          ],
+          "editorial": [
+            "Arrêtez-vous près des racines et observez leur déploiement sur le sol forestier. Autour de l’arbre Ojé, petites plantes, textures et lumière invitent à regarder la forêt de plus près. Prenez le temps d’observer et de profiter du chemin, au-delà d’une seule photographie."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/",
+      "status": 200,
+      "location": null,
+      "robotsHeader": null,
+      "robotsMeta": [],
+      "canonical": [
+        "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"
+      ],
+      "hreflang": {
+        "en": "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+        "es": "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+        "fr": "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/",
+        "x-default": "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"
+      },
+      "title": "Canoë en forêt amazonienne inondée | Puerto Nariño | Amaru",
+      "h1": [
+        "Canoë en forêt amazonienne inondée"
+      ],
+      "mainWords": 463,
+      "editorial": [
+        "Dans certaines parties de l’Amazonie, la montée de l’eau transforme les liens entre forêt et fleuve. Arbres et végétation entourent le canoë et offrent un autre regard qu’une marche sur terre ferme. Le niveau de l’eau détermine les possibilités : la sortie se prépare selon les conditions, sans promesse fixe d’accès."
+      ],
+      "imageCount": 7,
+      "links": [
+        "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/#main",
+        "https://amaruamazonexperiences.com/fr/#home",
+        "https://amaruamazonexperiences.com/fr/#experiences",
+        "https://amaruamazonexperiences.com/fr/#journeys",
+        "https://amaruamazonexperiences.com/fr/#our-story",
+        "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+        "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+        "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/",
+        "https://amaruamazonexperiences.com/fr/#plan",
+        "https://amaruamazonexperiences.com/fr/",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20Cano%C3%AB%20en%20for%C3%AAt%20inond%C3%A9e%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "https://www.parquesnacionales.gov.co/nuestros-parques/pnn-amacayacu/",
+        "https://amaruamazonexperiences.com/assets/videos/flooded-forest.mp4",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20Cano%C3%AB%20en%20for%C3%AAt%20inond%C3%A9e%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "https://amaruamazonexperiences.com/fr/?experience=flooded-forest#plan",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20Cano%C3%AB%20en%20for%C3%AAt%20inond%C3%A9e%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "mailto:info@amaruamazonexperiences.com",
+        "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/",
+        "https://amaruamazonexperiences.com/fr/experiences/arbre-oje/",
+        "https://amaruamazonexperiences.com/fr/experiences/observation-caimans-nuit/",
+        "https://amaruamazonexperiences.com/fr/#experiences",
+        "https://amaruamazonexperiences.com/fr/#home",
+        "https://amaruamazonexperiences.com/fr/#experiences",
+        "https://amaruamazonexperiences.com/fr/#plan",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20Cano%C3%AB%20en%20for%C3%AAt%20inond%C3%A9e%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "mailto:info@amaruamazonexperiences.com"
+      ],
+      "inSitemap": true,
+      "inbound": [
+        "https://amaruamazonexperiences.com/fr/",
+        "https://amaruamazonexperiences.com/fr/experiences/randonnees-foret-faune/",
+        "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+        "https://amaruamazonexperiences.com/fr/experiences/observation-caimans-nuit/",
+        "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/"
+      ],
+      "alternatives": [
+        {
+          "locale": "en",
+          "url": "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"
+          ],
+          "reciprocal": true,
+          "title": "Canoeing in flooded Amazon forest | Puerto Nariño | Amaru",
+          "h1": [
+            "Canoeing in flooded Amazon forest"
+          ],
+          "editorial": [
+            "In parts of the Amazon, higher water transforms the relationship between forest and river. Trees and vegetation surround the canoe, offering a different view from a dry-ground walk. The water level determines what is possible, so this experience is planned around conditions rather than a fixed promise of access."
+          ]
+        },
+        {
+          "locale": "es",
+          "url": "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/"
+          ],
+          "reciprocal": true,
+          "title": "Canotaje en la selva inundada | Puerto Nariño | Amaru",
+          "h1": [
+            "Canotaje en la selva inundada"
+          ],
+          "editorial": [
+            "En algunas zonas del Amazonas, el agua transforma la relación entre el bosque y el río. Los árboles y la vegetación rodean la canoa y ofrecen una perspectiva distinta de una caminata por tierra firme. El nivel del agua determina las posibilidades: la salida se prepara según las condiciones y no como una promesa fija de acceso."
+          ]
+        },
+        {
+          "locale": "fr",
+          "url": "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"
+          ],
+          "reciprocal": true,
+          "title": "Canoë en forêt amazonienne inondée | Puerto Nariño | Amaru",
+          "h1": [
+            "Canoë en forêt amazonienne inondée"
+          ],
+          "editorial": [
+            "Dans certaines parties de l’Amazonie, la montée de l’eau transforme les liens entre forêt et fleuve. Arbres et végétation entourent le canoë et offrent un autre regard qu’une marche sur terre ferme. Le niveau de l’eau détermine les possibilités : la sortie se prépare selon les conditions, sans promesse fixe d’accès."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+      "status": 200,
+      "location": null,
+      "robotsHeader": null,
+      "robotsMeta": [],
+      "canonical": [
+        "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/"
+      ],
+      "hreflang": {
+        "en": "https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/",
+        "es": "https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+        "fr": "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+        "x-default": "https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/"
+      },
+      "title": "San Antonio del Cacao : Victoria Regia et paresseux | Puerto Nariño | Amaru",
+      "h1": [
+        "San Antonio del Cacao : Victoria Regia et paresseux"
+      ],
+      "mainWords": 540,
+      "editorial": [
+        "Le voyage commence sur le fleuve, avec le temps d’observer les rives avant de rejoindre San Antonio. La Victoria Regia et la possibilité d’apercevoir des paresseux réunissent deux regards sur l’Amazonie : à la surface de l’eau et dans les arbres.",
+        "Prenez le temps d’observer les formes des feuilles, la végétation et les mouvements dans les branches. Cette excursion associe la destination et ses attraits naturels ; Victoria Regia et paresseux font partie de la même proposition. La faune se déplace librement et la patience fait aussi partie de l’expérience."
+      ],
+      "imageCount": 8,
+      "links": [
+        "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/#main",
+        "https://amaruamazonexperiences.com/fr/#home",
+        "https://amaruamazonexperiences.com/fr/#experiences",
+        "https://amaruamazonexperiences.com/fr/#journeys",
+        "https://amaruamazonexperiences.com/fr/#our-story",
+        "https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/",
+        "https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+        "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+        "https://amaruamazonexperiences.com/fr/#plan",
+        "https://amaruamazonexperiences.com/fr/",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20San%20Antonio%20%C2%B7%20Victoria%20Regia%20et%20paresseux%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "https://colombia.travel/es/puerto-narino",
+        "https://amaruamazonexperiences.com/assets/videos/san-antonio-sloth.mp4",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20San%20Antonio%20%C2%B7%20Victoria%20Regia%20et%20paresseux%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "https://amaruamazonexperiences.com/fr/?experience=san-antonio#plan",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20San%20Antonio%20%C2%B7%20Victoria%20Regia%20et%20paresseux%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "mailto:info@amaruamazonexperiences.com",
+        "https://amaruamazonexperiences.com/fr/experiences/lac-tarapoto/",
+        "https://amaruamazonexperiences.com/fr/experiences/randonnees-foret-faune/",
+        "https://amaruamazonexperiences.com/fr/experiences/cacao-amazonien/",
+        "https://amaruamazonexperiences.com/fr/#experiences",
+        "https://amaruamazonexperiences.com/fr/#home",
+        "https://amaruamazonexperiences.com/fr/#experiences",
+        "https://amaruamazonexperiences.com/fr/#plan",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20San%20Antonio%20%C2%B7%20Victoria%20Regia%20et%20paresseux%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "mailto:info@amaruamazonexperiences.com"
+      ],
+      "inSitemap": true,
+      "inbound": [
+        "https://amaruamazonexperiences.com/fr/",
+        "https://amaruamazonexperiences.com/fr/experiences/lac-tarapoto/",
+        "https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/",
+        "https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+        "https://amaruamazonexperiences.com/fr/experiences/cacao-amazonien/"
+      ],
+      "alternatives": [
+        {
+          "locale": "en",
+          "url": "https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/"
+          ],
+          "reciprocal": true,
+          "title": "San Antonio del Cacao: Victoria Regia & sloths | Puerto Nariño | Amaru",
+          "h1": [
+            "San Antonio del Cacao: Victoria Regia & sloths"
+          ],
+          "editorial": [
+            "The journey begins on the river, with time to watch the changing banks before reaching San Antonio. Here, Victoria Regia and the chance of spotting sloths bring two different ways of looking at the Amazon together: across the water and up into the trees.",
+            "Take time to notice the shapes of the leaves, the surrounding vegetation and movement among the branches. This excursion combines the destination and its natural attractions; Victoria Regia and sloths are not presented as separate tours. Wildlife remains free to move, so patience is part of the experience."
+          ]
+        },
+        {
+          "locale": "es",
+          "url": "https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/"
+          ],
+          "reciprocal": true,
+          "title": "San Antonio del Cacao: Victoria Regia y perezosos | Puerto Nariño | Amaru",
+          "h1": [
+            "San Antonio del Cacao: Victoria Regia y perezosos"
+          ],
+          "editorial": [
+            "El viaje comienza en el río, con tiempo para mirar las orillas antes de llegar a San Antonio. Allí, la Victoria Regia y la posibilidad de encontrar perezosos reúnen dos formas de descubrir el Amazonas: observar el agua y levantar la mirada hacia los árboles.",
+            "Detente en las formas de las hojas, la vegetación cercana y el movimiento entre las ramas. Esta excursión combina el destino y sus atractivos naturales; Victoria Regia y perezosos forman parte de la misma propuesta. La fauna se desplaza libremente y observar con paciencia también es parte de la experiencia."
+          ]
+        },
+        {
+          "locale": "fr",
+          "url": "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/"
+          ],
+          "reciprocal": true,
+          "title": "San Antonio del Cacao : Victoria Regia et paresseux | Puerto Nariño | Amaru",
+          "h1": [
+            "San Antonio del Cacao : Victoria Regia et paresseux"
+          ],
+          "editorial": [
+            "Le voyage commence sur le fleuve, avec le temps d’observer les rives avant de rejoindre San Antonio. La Victoria Regia et la possibilité d’apercevoir des paresseux réunissent deux regards sur l’Amazonie : à la surface de l’eau et dans les arbres.",
+            "Prenez le temps d’observer les formes des feuilles, la végétation et les mouvements dans les branches. Cette excursion associe la destination et ses attraits naturels ; Victoria Regia et paresseux font partie de la même proposition. La faune se déplace librement et la patience fait aussi partie de l’expérience."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/",
+      "status": 200,
+      "location": null,
+      "robotsHeader": null,
+      "robotsMeta": [],
+      "canonical": [
+        "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/"
+      ],
+      "hreflang": {
+        "en": "https://amaruamazonexperiences.com/experiences/daytime-kayaking/",
+        "es": "https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/",
+        "fr": "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/",
+        "x-default": "https://amaruamazonexperiences.com/experiences/daytime-kayaking/"
+      },
+      "title": "Kayak de jour en Amazonie | Puerto Nariño | Amaru",
+      "h1": [
+        "Kayak de jour en Amazonie"
+      ],
+      "mainWords": 473,
+      "editorial": [
+        "À Puerto Nariño, l’eau fait aussi partie des chemins du quotidien. Pagayer invite à regarder autrement les paysages fluviaux : la ligne des rives, l’ombre des arbres et les reflets qui accompagnent le mouvement. Kaya est l’expérience de jour d’Amaru, pour découvrir les environs à la lumière naturelle et apprécier le rythme de chaque coup de pagaie.",
+        "Le niveau de l’eau et la météo peuvent modifier les conditions de navigation en Amazonie. Préparer une sortie commence donc par un échange sur la période de votre séjour. Paysages paisibles, photographie ou première découverte de la pagaie : précisez vos envies pour connaître les possibilités et les prérequis."
+      ],
+      "imageCount": 6,
+      "links": [
+        "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/#main",
+        "https://amaruamazonexperiences.com/fr/#home",
+        "https://amaruamazonexperiences.com/fr/#experiences",
+        "https://amaruamazonexperiences.com/fr/#journeys",
+        "https://amaruamazonexperiences.com/fr/#our-story",
+        "https://amaruamazonexperiences.com/experiences/daytime-kayaking/",
+        "https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/",
+        "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/",
+        "https://amaruamazonexperiences.com/fr/#plan",
+        "https://amaruamazonexperiences.com/fr/",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20Kaya%20%C2%B7%20kayak%20de%20jour%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "https://colombia.travel/es/puerto-narino",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20Kaya%20%C2%B7%20kayak%20de%20jour%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "https://amaruamazonexperiences.com/fr/?experience=kayak#plan",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20Kaya%20%C2%B7%20kayak%20de%20jour%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "mailto:info@amaruamazonexperiences.com",
+        "https://amaruamazonexperiences.com/fr/experiences/lac-tarapoto/",
+        "https://amaruamazonexperiences.com/fr/experiences/randonnees-foret-faune/",
+        "https://amaruamazonexperiences.com/fr/experiences/cacao-amazonien/",
+        "https://amaruamazonexperiences.com/fr/#experiences",
+        "https://amaruamazonexperiences.com/fr/#home",
+        "https://amaruamazonexperiences.com/fr/#experiences",
+        "https://amaruamazonexperiences.com/fr/#plan",
+        "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20m%E2%80%99int%C3%A9resse%20%C3%A0%3A%20Kaya%20%C2%B7%20kayak%20de%20jour%0AJe%20souhaite%20pr%C3%A9parer%20cette%20exp%C3%A9rience.%20Quelle%20dur%C3%A9e%2C%20quel%20rendez-vous%2C%20quels%20pr%C3%A9requis%20et%20quelles%20prestations%20dois-je%20pr%C3%A9voir%20%3F%0A%0AMerci%20de%20partager%20la%20disponibilit%C3%A9%2C%20le%20prix%20total%2C%20les%20prestations%20et%20les%20conditions%20de%20r%C3%A9servation.",
+        "mailto:info@amaruamazonexperiences.com"
+      ],
+      "inSitemap": true,
+      "inbound": [
+        "https://amaruamazonexperiences.com/fr/",
+        "https://amaruamazonexperiences.com/fr/experiences/lac-tarapoto/",
+        "https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/",
+        "https://amaruamazonexperiences.com/experiences/daytime-kayaking/",
+        "https://amaruamazonexperiences.com/fr/experiences/cacao-amazonien/",
+        "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"
+      ],
+      "alternatives": [
+        {
+          "locale": "en",
+          "url": "https://amaruamazonexperiences.com/experiences/daytime-kayaking/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/experiences/daytime-kayaking/"
+          ],
+          "reciprocal": true,
+          "title": "Daytime kayaking in the Amazon | Puerto Nariño | Amaru",
+          "h1": [
+            "Daytime kayaking in the Amazon"
+          ],
+          "editorial": [
+            "Water is part of everyday travel around Puerto Nariño. Paddling offers a closer perspective on the river landscape: the line of the bank, the shade of trees and the changing reflections. Kaya is Amaru’s daytime experience, with natural light for taking in the surroundings and time to enjoy the simple rhythm of moving across the water.",
+            "The Amazon’s waterways change with water levels and weather. Those changes are part of planning a paddling outing, so choose your experience by discussing the conditions for your visit. If you are drawn to quiet scenery, photography or trying paddling for the first time, share that interest so Amaru can explain the options and requirements."
+          ]
+        },
+        {
+          "locale": "es",
+          "url": "https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/"
+          ],
+          "reciprocal": true,
+          "title": "Kayak diurno en el Amazonas | Puerto Nariño | Amaru",
+          "h1": [
+            "Kayak diurno en el Amazonas"
+          ],
+          "editorial": [
+            "En Puerto Nariño, el agua también es camino. Remar ofrece otra perspectiva del paisaje fluvial: la línea de la orilla, la sombra de los árboles y los reflejos que cambian con el movimiento. Kaya es la experiencia diurna de Amaru, una invitación a observar el entorno con luz natural y disfrutar del ritmo de cada remada.",
+            "El nivel del agua y el clima pueden cambiar las condiciones de navegación en el Amazonas. Por eso, planear una salida empieza por conversar sobre el momento de tu visita. Si te atraen los paisajes tranquilos, la fotografía o la idea de remar por primera vez, cuéntalo para conocer las opciones y los requisitos de la actividad."
+          ]
+        },
+        {
+          "locale": "fr",
+          "url": "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/"
+          ],
+          "reciprocal": true,
+          "title": "Kayak de jour en Amazonie | Puerto Nariño | Amaru",
+          "h1": [
+            "Kayak de jour en Amazonie"
+          ],
+          "editorial": [
+            "À Puerto Nariño, l’eau fait aussi partie des chemins du quotidien. Pagayer invite à regarder autrement les paysages fluviaux : la ligne des rives, l’ombre des arbres et les reflets qui accompagnent le mouvement. Kaya est l’expérience de jour d’Amaru, pour découvrir les environs à la lumière naturelle et apprécier le rythme de chaque coup de pagaie.",
+            "Le niveau de l’eau et la météo peuvent modifier les conditions de navigation en Amazonie. Préparer une sortie commence donc par un échange sur la période de votre séjour. Paysages paisibles, photographie ou première découverte de la pagaie : précisez vos envies pour connaître les possibilités et les prérequis."
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+      "status": 200,
+      "location": null,
+      "robotsHeader": null,
+      "robotsMeta": [],
+      "canonical": [
+        "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"
+      ],
+      "hreflang": {
+        "en": "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+        "es": "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+        "fr": "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/",
+        "x-default": "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"
+      },
+      "title": "Canoeing in flooded Amazon forest | Puerto Nariño | Amaru",
+      "h1": [
+        "Canoeing in flooded Amazon forest"
+      ],
+      "mainWords": 427,
+      "editorial": [
+        "In parts of the Amazon, higher water transforms the relationship between forest and river. Trees and vegetation surround the canoe, offering a different view from a dry-ground walk. The water level determines what is possible, so this experience is planned around conditions rather than a fixed promise of access."
+      ],
+      "imageCount": 7,
+      "links": [
+        "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/#main",
+        "https://amaruamazonexperiences.com/#home",
+        "https://amaruamazonexperiences.com/#experiences",
+        "https://amaruamazonexperiences.com/#journeys",
+        "https://amaruamazonexperiences.com/#our-story",
+        "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+        "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+        "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/",
+        "https://amaruamazonexperiences.com/#plan",
+        "https://amaruamazonexperiences.com/",
+        "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AInterested%20in%3A%20Canoeing%20in%20flooded%20forest%0APlease%20help%20me%20plan%20this%20experience.%20What%20duration%2C%20meeting%20point%2C%20requirements%20and%20inclusions%20should%20I%20consider%3F%0A%0APlease%20share%20availability%2C%20the%20full%20price%2C%20inclusions%20and%20booking%20conditions.",
+        "https://www.parquesnacionales.gov.co/nuestros-parques/pnn-amacayacu/",
+        "https://amaruamazonexperiences.com/assets/videos/flooded-forest.mp4",
+        "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AInterested%20in%3A%20Canoeing%20in%20flooded%20forest%0APlease%20help%20me%20plan%20this%20experience.%20What%20duration%2C%20meeting%20point%2C%20requirements%20and%20inclusions%20should%20I%20consider%3F%0A%0APlease%20share%20availability%2C%20the%20full%20price%2C%20inclusions%20and%20booking%20conditions.",
+        "https://amaruamazonexperiences.com/?experience=flooded-forest#plan",
+        "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AInterested%20in%3A%20Canoeing%20in%20flooded%20forest%0APlease%20help%20me%20plan%20this%20experience.%20What%20duration%2C%20meeting%20point%2C%20requirements%20and%20inclusions%20should%20I%20consider%3F%0A%0APlease%20share%20availability%2C%20the%20full%20price%2C%20inclusions%20and%20booking%20conditions.",
+        "mailto:info@amaruamazonexperiences.com",
+        "https://amaruamazonexperiences.com/experiences/daytime-kayaking/",
+        "https://amaruamazonexperiences.com/experiences/oje-tree/",
+        "https://amaruamazonexperiences.com/experiences/night-caiman-watching/",
+        "https://amaruamazonexperiences.com/#experiences",
+        "https://amaruamazonexperiences.com/#home",
+        "https://amaruamazonexperiences.com/#experiences",
+        "https://amaruamazonexperiences.com/#plan",
+        "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AInterested%20in%3A%20Canoeing%20in%20flooded%20forest%0APlease%20help%20me%20plan%20this%20experience.%20What%20duration%2C%20meeting%20point%2C%20requirements%20and%20inclusions%20should%20I%20consider%3F%0A%0APlease%20share%20availability%2C%20the%20full%20price%2C%20inclusions%20and%20booking%20conditions.",
+        "mailto:info@amaruamazonexperiences.com"
+      ],
+      "inSitemap": true,
+      "inbound": [
+        "https://amaruamazonexperiences.com/",
+        "https://amaruamazonexperiences.com/experiences/rainforest-walks/",
+        "https://amaruamazonexperiences.com/experiences/night-caiman-watching/",
+        "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+        "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"
+      ],
+      "alternatives": [
+        {
+          "locale": "en",
+          "url": "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/"
+          ],
+          "reciprocal": true,
+          "title": "Canoeing in flooded Amazon forest | Puerto Nariño | Amaru",
+          "h1": [
+            "Canoeing in flooded Amazon forest"
+          ],
+          "editorial": [
+            "In parts of the Amazon, higher water transforms the relationship between forest and river. Trees and vegetation surround the canoe, offering a different view from a dry-ground walk. The water level determines what is possible, so this experience is planned around conditions rather than a fixed promise of access."
+          ]
+        },
+        {
+          "locale": "es",
+          "url": "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/"
+          ],
+          "reciprocal": true,
+          "title": "Canotaje en la selva inundada | Puerto Nariño | Amaru",
+          "h1": [
+            "Canotaje en la selva inundada"
+          ],
+          "editorial": [
+            "En algunas zonas del Amazonas, el agua transforma la relación entre el bosque y el río. Los árboles y la vegetación rodean la canoa y ofrecen una perspectiva distinta de una caminata por tierra firme. El nivel del agua determina las posibilidades: la salida se prepara según las condiciones y no como una promesa fija de acceso."
+          ]
+        },
+        {
+          "locale": "fr",
+          "url": "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/",
+          "status": 200,
+          "canonical": [
+            "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/"
+          ],
+          "reciprocal": true,
+          "title": "Canoë en forêt amazonienne inondée | Puerto Nariño | Amaru",
+          "h1": [
+            "Canoë en forêt amazonienne inondée"
+          ],
+          "editorial": [
+            "Dans certaines parties de l’Amazonie, la montée de l’eau transforme les liens entre forêt et fleuve. Arbres et végétation entourent le canoë et offrent un autre regard qu’une marche sur terre ferme. Le niveau de l’eau détermine les possibilités : la sortie se prépare selon les conditions, sans promesse fixe d’accès."
+          ]
+        }
+      ]
+    }
+  ],
+  "extras": [
+    [
+      {
+        "url": "https://amaruamazonexperiences.com/es/?experience=camp",
+        "status": 200,
+        "location": null,
+        "robotsHeader": null,
+        "robotsMeta": [],
+        "canonical": [
+          "https://amaruamazonexperiences.com/es/"
+        ],
+        "hreflang": {
+          "en": "https://amaruamazonexperiences.com/",
+          "es": "https://amaruamazonexperiences.com/es/",
+          "fr": "https://amaruamazonexperiences.com/fr/",
+          "x-default": "https://amaruamazonexperiences.com/"
+        },
+        "title": "Experiencias en el Amazonas colombiano · Puerto Nariño | Amaru",
+        "h1": [
+          "\n             Hay viajes que   se quedan contigo. \n          "
+        ],
+        "mainWords": 2943,
+        "editorial": [],
+        "imageCount": 32,
+        "links": [
+          "https://amaruamazonexperiences.com/es/?experience=camp#main",
+          "https://amaruamazonexperiences.com/es/?experience=camp#home",
+          "https://amaruamazonexperiences.com/es/?experience=camp#experiences",
+          "https://amaruamazonexperiences.com/es/?experience=camp#journeys",
+          "https://amaruamazonexperiences.com/es/?experience=camp#our-story",
+          "https://amaruamazonexperiences.com/",
+          "https://amaruamazonexperiences.com/es/",
+          "https://amaruamazonexperiences.com/fr/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/?experience=camp#experiences",
+          "https://amaruamazonexperiences.com/es/?experience=camp#journeys",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/lago-tarapoto/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/avistamiento-aves/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/cacao-amazonico/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/caminata-nocturna-selva/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/noche-selva-amazonica/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/encuentros-culturales/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/caminatas-selva-fauna/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/city-tour-puerto-narino/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/arbol-oje/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/avistamiento-caimanes/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://amaruamazonexperiences.com/assets/photos/water-lilies.webp",
+          "https://amaruamazonexperiences.com/assets/photos/birdwatching.webp",
+          "https://amaruamazonexperiences.com/assets/photos/frog.webp",
+          "https://amaruamazonexperiences.com/assets/photos/forest-canoe.webp",
+          "https://amaruamazonexperiences.com/assets/photos/roots.webp",
+          "https://amaruamazonexperiences.com/assets/photos/sunset.webp",
+          "https://amaruamazonexperiences.com/assets/photos/city-tour.webp",
+          "https://amaruamazonexperiences.com/assets/photos/flooded-forest.webp",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://wa.me/573132560145?text=%C2%A1Hola%2C%20Amaru!%20Me%20gustar%C3%ADa%20planear%20un%20viaje%20al%20Amazonas.%0A%0AMe%20gustar%C3%ADa%20recibir%20ayuda%20para%20elegir%20experiencias%20y%20organizar%20mi%20visita.",
+          "mailto:info@amaruamazonexperiences.com",
+          "https://amaruamazonexperiences.com/es/?experience=camp#home",
+          "https://amaruamazonexperiences.com/es/?experience=camp#experiences",
+          "https://amaruamazonexperiences.com/es/?experience=camp#plan",
+          "https://wa.me/573132560145?text=%C2%A1Hola%2C%20Amaru!%20Me%20gustar%C3%ADa%20planear%20un%20viaje%20al%20Amazonas.%0A%0AMe%20gustar%C3%ADa%20recibir%20ayuda%20para%20elegir%20experiencias%20y%20organizar%20mi%20visita.",
+          "https://wa.me/573132560145?text=%C2%A1Hola%2C%20Amaru!%20Me%20gustar%C3%ADa%20planear%20un%20viaje%20al%20Amazonas.%0A%0AMe%20gustar%C3%ADa%20recibir%20ayuda%20para%20elegir%20experiencias%20y%20organizar%20mi%20visita.",
+          "mailto:info@amaruamazonexperiences.com"
+        ]
+      }
+    ],
+    [
+      {
+        "url": "https://amaruamazonexperiences.com/?experience=tarapoto",
+        "status": 200,
+        "location": null,
+        "robotsHeader": null,
+        "robotsMeta": [],
+        "canonical": [
+          "https://amaruamazonexperiences.com/"
+        ],
+        "hreflang": {
+          "en": "https://amaruamazonexperiences.com/",
+          "es": "https://amaruamazonexperiences.com/es/",
+          "fr": "https://amaruamazonexperiences.com/fr/",
+          "x-default": "https://amaruamazonexperiences.com/"
+        },
+        "title": "Amazon Rainforest Experiences in Puerto Nariño | Amaru",
+        "h1": [
+          "\n             Some journeys   stay with you. \n          "
+        ],
+        "mainWords": 2833,
+        "editorial": [],
+        "imageCount": 32,
+        "links": [
+          "https://amaruamazonexperiences.com/?experience=tarapoto#main",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#home",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#experiences",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#journeys",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#our-story",
+          "https://amaruamazonexperiences.com/",
+          "https://amaruamazonexperiences.com/es/",
+          "https://amaruamazonexperiences.com/fr/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#experiences",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#journeys",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/lake-tarapoto/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/san-antonio-cacao-victoria-regia-sloths/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/daytime-kayaking/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/birdwatching/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/amazonian-cacao/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/rainforest-night-walk/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/night-in-rainforest/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/cultural-encounters/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/rainforest-walks/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/puerto-narino-city-tour/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/oje-tree/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/night-caiman-watching/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/experiences/flooded-forest-canoeing/",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://amaruamazonexperiences.com/assets/photos/water-lilies.webp",
+          "https://amaruamazonexperiences.com/assets/photos/birdwatching.webp",
+          "https://amaruamazonexperiences.com/assets/photos/frog.webp",
+          "https://amaruamazonexperiences.com/assets/photos/forest-canoe.webp",
+          "https://amaruamazonexperiences.com/assets/photos/roots.webp",
+          "https://amaruamazonexperiences.com/assets/photos/sunset.webp",
+          "https://amaruamazonexperiences.com/assets/photos/city-tour.webp",
+          "https://amaruamazonexperiences.com/assets/photos/flooded-forest.webp",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AI%20would%20like%20help%20choosing%20experiences%20and%20organising%20my%20visit.",
+          "mailto:info@amaruamazonexperiences.com",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#home",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#experiences",
+          "https://amaruamazonexperiences.com/?experience=tarapoto#plan",
+          "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AI%20would%20like%20help%20choosing%20experiences%20and%20organising%20my%20visit.",
+          "https://wa.me/573132560145?text=Hello%20Amaru!%20I%20would%20like%20to%20plan%20a%20trip%20to%20the%20Amazon.%0A%0AI%20would%20like%20help%20choosing%20experiences%20and%20organising%20my%20visit.",
+          "mailto:info@amaruamazonexperiences.com"
+        ]
+      }
+    ],
+    [
+      {
+        "url": "http://amaruamazonexperiences.com/fr/",
+        "status": 301,
+        "location": "https://amaruamazonexperiences.com/fr/",
+        "robotsHeader": null,
+        "robotsMeta": [],
+        "canonical": [],
+        "hreflang": {},
+        "title": "301 Moved Permanently",
+        "h1": [
+          "301 Moved Permanently"
+        ],
+        "mainWords": 1,
+        "editorial": [],
+        "imageCount": 0,
+        "links": []
+      },
+      {
+        "url": "https://amaruamazonexperiences.com/fr/",
+        "status": 200,
+        "location": null,
+        "robotsHeader": null,
+        "robotsMeta": [],
+        "canonical": [
+          "https://amaruamazonexperiences.com/fr/"
+        ],
+        "hreflang": {
+          "en": "https://amaruamazonexperiences.com/",
+          "es": "https://amaruamazonexperiences.com/es/",
+          "fr": "https://amaruamazonexperiences.com/fr/",
+          "x-default": "https://amaruamazonexperiences.com/"
+        },
+        "title": "Expériences en Amazonie colombienne · Puerto Nariño | Amaru",
+        "h1": [
+          "\n             Certains voyages   restent en vous. \n          "
+        ],
+        "mainWords": 2949,
+        "editorial": [],
+        "imageCount": 32,
+        "links": [
+          "https://amaruamazonexperiences.com/fr/#main",
+          "https://amaruamazonexperiences.com/fr/#home",
+          "https://amaruamazonexperiences.com/fr/#experiences",
+          "https://amaruamazonexperiences.com/fr/#journeys",
+          "https://amaruamazonexperiences.com/fr/#our-story",
+          "https://amaruamazonexperiences.com/",
+          "https://amaruamazonexperiences.com/es/",
+          "https://amaruamazonexperiences.com/fr/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/#experiences",
+          "https://amaruamazonexperiences.com/fr/#journeys",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/lac-tarapoto/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/san-antonio-cacao-victoria-regia-paresseux/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/kayak-de-jour-amazonie/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/observation-oiseaux/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/cacao-amazonien/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/promenade-nocturne-foret/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/nuit-foret-amazonienne/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/rencontres-culturelles/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/randonnees-foret-faune/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/visite-puerto-narino/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/arbre-oje/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/observation-caimans-nuit/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/experiences/canoe-foret-inondee/",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://amaruamazonexperiences.com/assets/photos/water-lilies.webp",
+          "https://amaruamazonexperiences.com/assets/photos/birdwatching.webp",
+          "https://amaruamazonexperiences.com/assets/photos/frog.webp",
+          "https://amaruamazonexperiences.com/assets/photos/forest-canoe.webp",
+          "https://amaruamazonexperiences.com/assets/photos/roots.webp",
+          "https://amaruamazonexperiences.com/assets/photos/sunset.webp",
+          "https://amaruamazonexperiences.com/assets/photos/city-tour.webp",
+          "https://amaruamazonexperiences.com/assets/photos/flooded-forest.webp",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20souhaite%20%C3%AAtre%20conseill%C3%A9%20pour%20choisir%20mes%20exp%C3%A9riences%20et%20organiser%20ma%20visite.",
+          "mailto:info@amaruamazonexperiences.com",
+          "https://amaruamazonexperiences.com/fr/#home",
+          "https://amaruamazonexperiences.com/fr/#experiences",
+          "https://amaruamazonexperiences.com/fr/#plan",
+          "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20souhaite%20%C3%AAtre%20conseill%C3%A9%20pour%20choisir%20mes%20exp%C3%A9riences%20et%20organiser%20ma%20visite.",
+          "https://wa.me/573132560145?text=Bonjour%20Amaru%20!%20Je%20souhaite%20organiser%20un%20voyage%20en%20Amazonie.%0A%0AJe%20souhaite%20%C3%AAtre%20conseill%C3%A9%20pour%20choisir%20mes%20exp%C3%A9riences%20et%20organiser%20ma%20visite.",
+          "mailto:info@amaruamazonexperiences.com"
+        ]
+      }
+    ],
+    [
+      {
+        "url": "http://amaruamazonexperiences.com/es/",
+        "status": 301,
+        "location": "https://amaruamazonexperiences.com/es/",
+        "robotsHeader": null,
+        "robotsMeta": [],
+        "canonical": [],
+        "hreflang": {},
+        "title": "301 Moved Permanently",
+        "h1": [
+          "301 Moved Permanently"
+        ],
+        "mainWords": 1,
+        "editorial": [],
+        "imageCount": 0,
+        "links": []
+      },
+      {
+        "url": "https://amaruamazonexperiences.com/es/",
+        "status": 200,
+        "location": null,
+        "robotsHeader": null,
+        "robotsMeta": [],
+        "canonical": [
+          "https://amaruamazonexperiences.com/es/"
+        ],
+        "hreflang": {
+          "en": "https://amaruamazonexperiences.com/",
+          "es": "https://amaruamazonexperiences.com/es/",
+          "fr": "https://amaruamazonexperiences.com/fr/",
+          "x-default": "https://amaruamazonexperiences.com/"
+        },
+        "title": "Experiencias en el Amazonas colombiano · Puerto Nariño | Amaru",
+        "h1": [
+          "\n             Hay viajes que   se quedan contigo. \n          "
+        ],
+        "mainWords": 2943,
+        "editorial": [],
+        "imageCount": 32,
+        "links": [
+          "https://amaruamazonexperiences.com/es/#main",
+          "https://amaruamazonexperiences.com/es/#home",
+          "https://amaruamazonexperiences.com/es/#experiences",
+          "https://amaruamazonexperiences.com/es/#journeys",
+          "https://amaruamazonexperiences.com/es/#our-story",
+          "https://amaruamazonexperiences.com/",
+          "https://amaruamazonexperiences.com/es/",
+          "https://amaruamazonexperiences.com/fr/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/#experiences",
+          "https://amaruamazonexperiences.com/es/#journeys",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/lago-tarapoto/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/san-antonio-cacao-victoria-regia-perezosos/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/kayak-diurno-amazonas/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/avistamiento-aves/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/cacao-amazonico/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/caminata-nocturna-selva/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/noche-selva-amazonica/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/encuentros-culturales/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/caminatas-selva-fauna/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/city-tour-puerto-narino/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/arbol-oje/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/avistamiento-caimanes/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/experiencias/canotaje-selva-inundada/",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://amaruamazonexperiences.com/assets/photos/water-lilies.webp",
+          "https://amaruamazonexperiences.com/assets/photos/birdwatching.webp",
+          "https://amaruamazonexperiences.com/assets/photos/frog.webp",
+          "https://amaruamazonexperiences.com/assets/photos/forest-canoe.webp",
+          "https://amaruamazonexperiences.com/assets/photos/roots.webp",
+          "https://amaruamazonexperiences.com/assets/photos/sunset.webp",
+          "https://amaruamazonexperiences.com/assets/photos/city-tour.webp",
+          "https://amaruamazonexperiences.com/assets/photos/flooded-forest.webp",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://wa.me/573132560145?text=%C2%A1Hola%2C%20Amaru!%20Me%20gustar%C3%ADa%20planear%20un%20viaje%20al%20Amazonas.%0A%0AMe%20gustar%C3%ADa%20recibir%20ayuda%20para%20elegir%20experiencias%20y%20organizar%20mi%20visita.",
+          "mailto:info@amaruamazonexperiences.com",
+          "https://amaruamazonexperiences.com/es/#home",
+          "https://amaruamazonexperiences.com/es/#experiences",
+          "https://amaruamazonexperiences.com/es/#plan",
+          "https://wa.me/573132560145?text=%C2%A1Hola%2C%20Amaru!%20Me%20gustar%C3%ADa%20planear%20un%20viaje%20al%20Amazonas.%0A%0AMe%20gustar%C3%ADa%20recibir%20ayuda%20para%20elegir%20experiencias%20y%20organizar%20mi%20visita.",
+          "https://wa.me/573132560145?text=%C2%A1Hola%2C%20Amaru!%20Me%20gustar%C3%ADa%20planear%20un%20viaje%20al%20Amazonas.%0A%0AMe%20gustar%C3%ADa%20recibir%20ayuda%20para%20elegir%20experiencias%20y%20organizar%20mi%20visita.",
+          "mailto:info@amaruamazonexperiences.com"
+        ]
+      }
+    ]
+  ]
+}
