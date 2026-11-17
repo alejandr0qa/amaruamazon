@@ -6,7 +6,7 @@
 - [Revisión individual de las cinco URL, patrones conocidos y tres URL pendientes](docs/indexation-review-2026-11-17.md).
 - [Pruebas y límites de la validación](docs/review/2026-11-17/validation.md).
 
-Para probar: `npm ci`, `npm run build`, `npm run preview:reviews`; abrir http://127.0.0.1:8077/es/#traveller-reviews. El Worker y D1 se ejecutan solo en local. El panel de moderación está en http://127.0.0.1:8787/admin; la clave local se obtiene de `.codex-preview/reviews/admin-token`, ignorado por Git. No se activaron recursos, DNS ni pagos, y no se publica desde esta rama.
+Para probar localmente: `npm ci`, `npm run build`, `npm run preview:reviews`; abrir http://127.0.0.1:8077/es/#traveller-reviews. El panel local está en http://127.0.0.1:8787/admin; su clave se obtiene de `.codex-preview/reviews/admin-token`, ignorado por Git. La activación de Worker, D1 y Turnstile Free fue autorizada tras revisar esa vista previa y se probó con la integración real antes de publicar. [Activación, evidencias y administración de producción](docs/cloudflare-activation-2026-11-17.md). DNS y planes de pago permanecen sin cambios.
 
 Web estática de experiencias en Puerto Nariño, Amazonas, Colombia. Inglés principal, español y francés. Los precios se consultan directamente con Amaru; la historia de los dos viajeros se basa en el material entregado por el equipo. Nombres y retratos autorizados siguen pendientes.
 

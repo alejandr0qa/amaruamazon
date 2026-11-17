@@ -1,0 +1,193 @@
+{
+  "checkedAt": "2026-11-17T23:31:18.155Z",
+  "worker": "https://amaru-traveller-reviews.amaruamazon-col.workers.dev",
+  "sitekey": "0x4AAAAAAGGAWL-65sKBHRaH",
+  "plan": "Workers Free (verified in Cloudflare dashboard)",
+  "database": "amaru-reviews",
+  "workerVersion": "eaf30bf5-7b10-47b8-901b-bab04887d3e7",
+  "smoke": {
+    "checkedAt": "2026-11-17T23:20:30.477Z",
+    "origin": "https://amaru-traveller-reviews.amaruamazon-col.workers.dev",
+    "results": [
+      {
+        "path": "/preflight",
+        "method": "GET",
+        "status": 200,
+        "noindex": "noindex, nofollow",
+        "cors": null
+      },
+      {
+        "path": "/v1/reviews",
+        "method": "GET",
+        "status": 200,
+        "noindex": "noindex, nofollow",
+        "cors": null
+      },
+      {
+        "path": "/v1/admin/reviews",
+        "method": "GET",
+        "status": 401,
+        "error": "unauthorized",
+        "noindex": "noindex, nofollow",
+        "cors": null
+      },
+      {
+        "path": "/v1/reviews",
+        "method": "GET",
+        "status": 403,
+        "error": "origin_denied",
+        "noindex": "noindex, nofollow",
+        "cors": null
+      },
+      {
+        "path": "/v1/reviews",
+        "method": "OPTIONS",
+        "status": 204,
+        "noindex": null,
+        "cors": "https://amaruamazonexperiences.com"
+      },
+      {
+        "path": "/v1/reviews",
+        "method": "POST",
+        "status": 400,
+        "error": "verification_failed",
+        "noindex": "noindex, nofollow",
+        "cors": "https://amaru-traveller-reviews.amaruamazon-col.workers.dev"
+      }
+    ]
+  },
+  "realSubmission": {
+    "checkedAt": "2026-11-17T23:25:06.594Z",
+    "origin": "https://amaru-traveller-reviews.amaruamazon-col.workers.dev",
+    "realTurnstileAccepted": true,
+    "storedInRemoteD1": true,
+    "status": "pending",
+    "rating": 2,
+    "consentVersion": "2026-11-17-v1",
+    "invisibleBeforeApproval": true,
+    "replayedTokenHttp": 400,
+    "replayedTokenError": "verification_failed",
+    "providerReplayErrors": [
+      "invalid-input-response"
+    ],
+    "privateFieldsNotExposed": true
+  },
+  "approval": {
+    "checkedAt": "2026-11-17T23:26:01.333Z",
+    "approvedExplicitlyThroughAdmin": true,
+    "originalCommentPreserved": true,
+    "rating": 2,
+    "onlyPublicFields": [
+      "id",
+      "experience",
+      "language",
+      "public_name",
+      "rating",
+      "comment",
+      "created_at"
+    ]
+  },
+  "cleanup": {
+    "checkedAt": "2026-11-17T23:28:40.388Z",
+    "reviews": 0,
+    "moderationLog": 0,
+    "authorDeletionOnRemoteD1": true,
+    "testCountersRemoved": 3,
+    "finalWidgetDomains": [
+      "amaruamazonexperiences.com"
+    ],
+    "preflightHostnameRemoved": true
+  },
+  "finalChecks": [
+    {
+      "path": "/preflight",
+      "method": "GET",
+      "status": 404,
+      "error": "not_found",
+      "cors": null
+    },
+    {
+      "path": "/reviews-config.js",
+      "method": "GET",
+      "status": 404,
+      "error": "not_found",
+      "cors": null
+    },
+    {
+      "path": "/v1/reviews",
+      "method": "GET",
+      "status": 200,
+      "cors": "https://amaruamazonexperiences.com"
+    },
+    {
+      "path": "/v1/admin/reviews",
+      "method": "GET",
+      "status": 401,
+      "error": "unauthorized",
+      "cors": null
+    },
+    {
+      "path": "/v1/admin/reviews?status=pending",
+      "method": "GET",
+      "status": 200,
+      "cors": null
+    },
+    {
+      "path": "/v1/admin/reviews?status=approved",
+      "method": "GET",
+      "status": 200,
+      "cors": null
+    },
+    {
+      "path": "/v1/admin/reviews?status=hidden",
+      "method": "GET",
+      "status": 200,
+      "cors": null
+    },
+    {
+      "path": "/v1/admin/reviews?status=rejected",
+      "method": "GET",
+      "status": 200,
+      "cors": null
+    },
+    {
+      "path": "/v1/reviews",
+      "method": "POST",
+      "status": 403,
+      "error": "origin_denied",
+      "cors": null
+    },
+    {
+      "path": "/v1/reviews",
+      "method": "GET",
+      "status": 403,
+      "error": "origin_denied",
+      "cors": null
+    }
+  ],
+  "schedules": {
+    "schedules": [
+      {
+        "cron": "17 4 * * *",
+        "created_on": "2026-11-17T23:17:21.320061Z",
+        "modified_on": "2026-11-17T23:17:21.320061Z"
+      }
+    ]
+  },
+  "secretNames": [
+    "ADMIN_TOKEN",
+    "RATE_SECRET",
+    "TURNSTILE_SECRET"
+  ],
+  "finalWidget": {
+    "domains": [
+      "amaruamazonexperiences.com"
+    ],
+    "mode": "managed",
+    "clearanceLevel": "no_clearance"
+  },
+  "privateCredentialsOutsideRepository": true,
+  "websiteDNSUnmodified": true,
+  "paidServicesNotActivated": true,
+  "publicWebsiteNotYetChanged": true
+}

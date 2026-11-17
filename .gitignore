@@ -25,3 +25,4 @@ __pycache__/
 playwright-report/
 test-results/
 cloudflare/reviews/wrangler.production.jsonc
+cloudflare/reviews/wrangler.preflight.jsonc

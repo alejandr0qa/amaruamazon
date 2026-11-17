@@ -1,6 +1,6 @@
 # Opiniones de viajeros: vista previa y operación
 
-Preparado el 17 de noviembre de 2026. Rama `codex/traveller-reviews-indexation`. No se han creado recursos remotos, modificado DNS, activado planes de pago ni publicado cambios. La configuración pública de la rama mantiene el envío web desactivado hasta su activación autorizada.
+Preparado el 17 de noviembre de 2026. Rama `codex/traveller-reviews-indexation`. El propietario autorizó la activación tras revisar la vista previa. Worker, D1 y Turnstile Free están creados y la integración real pasó antes de publicar el cliente. No se modificó DNS ni se activaron planes de pago. [Recursos, prueba real y acceso de administración](cloudflare-activation-2026-11-17.md).
 
 ## Probar en desarrollo
 
@@ -57,17 +57,17 @@ El cuerpo de opiniones, los códigos privados, las IP y las claves no se escribe
 
 Revisar estos plazos y el contacto con el responsable de Amaru antes de activar el sistema. La política del formulario y la del diálogo general ya distinguen consultas de viaje por WhatsApp de opiniones almacenadas. Cambiar el aviso de consentimiento requiere cambiar su versión tanto en `src/reviews.mjs`/cliente como en el Worker y probar la migración de comportamiento.
 
-## Activación propuesta, pendiente de autorización
+## Activación autorizada y referencia de despliegue
 
 Arquitectura: GitHub Pages conserva las mismas 42 URL; un Worker independiente en `workers.dev` recibe y sirve opiniones; una D1 almacena registros y moderación; un widget Turnstile protege el envío. **No requiere DNS nuevo, rutas del dominio ni servicios de pago.** El cliente solo usa HTTPS al hablar con una API remota.
 
-Solicitar autorización para estos recursos concretos después de revisar el PR y la vista previa: un Worker Free `amaru-traveller-reviews`, una D1 Free `amaru-reviews`, un widget Turnstile Free y un cron diario. No ejecutar los comandos de esta sección hasta tener esa autorización. No se han ejecutado en esta fase.
+Se activaron con autorización del propietario: un Worker Free `amaru-traveller-reviews`, una D1 Free `amaru-reviews`, un widget Turnstile Free y un cron diario. Los pasos siguientes describen el procedimiento; **no repetir la creación de recursos** en la cuenta ya configurada. Para operación actual, consultar el [informe de activación](cloudflare-activation-2026-11-17.md).
 
 1. Confirmar cuenta y plan Free, acceso del administrador, correo de derechos operativo y política/plazos aprobados. Confirmar o habilitar el subdominio `workers.dev` de esa cuenta, sin modificar el DNS del sitio.
 2. Crear una D1 y copiar `cloudflare/reviews/wrangler.jsonc` a `cloudflare/reviews/wrangler.production.jsonc` (ignorado por Git). Sustituir el ID de ceros por el ID real. Mantener `ENVIRONMENT=production`, el origen exacto `https://amaruamazonexperiences.com` y ese hostname de Turnstile. No añadir localhost a producción.
 3. Crear un widget Turnstile Managed para `amaruamazonexperiences.com`, sin pre-clearance. Copiar su sitekey pública y conservar su secret key exclusivamente como secreto del Worker.
 4. Generar dos valores aleatorios independientes de 32 bytes o más para `ADMIN_TOKEN` y `RATE_SECRET`. Guardarlos en un gestor privado. Ninguna clave privada va en Git, HTML, `reviews-config.js`, capturas o cuerpo del PR. La sitekey de Turnstile y la URL del Worker sí son públicas.
-5. Solo tras autorización, desde la raíz:
+5. Comandos de referencia de la activación autorizada, desde la raíz:
 
 ```powershell
 npx wrangler login
@@ -80,8 +80,8 @@ npx wrangler secret put RATE_SECRET --config cloudflare/reviews/wrangler.product
 npx wrangler secret put TURNSTILE_SECRET --config cloudflare/reviews/wrangler.production.jsonc
 ```
 
-6. Probar en la API autorizada que los secretos ausentes fallan sin publicar, que un origen ajeno se rechaza, que administración exige clave, que el desafío real verifica `hostname` y `action=review`, y que aprobar/ocultar/borrar funciona. Probar también el cron y confirmar métricas. Hasta entonces la integración con Turnstile real y el consumo CPU en el edge quedan pendientes; las claves dummy oficiales no devuelven el mismo hostname/action que producción.
-7. En un cambio revisable, poner la URL HTTPS y **solo la sitekey pública** en `reviews-config.js`; ejecutar build y pruebas. Publicar Pages y activar recursos únicamente con autorización. El PR actual no modifica el endpoint del sitio en vivo.
+6. La prueba con Turnstile real verificó los controles de hostname y `action=review`, almacenamiento pendiente, aprobación, ocultación, rechazo y borrado; también origen ajeno, administración protegida y tokens inválidos. El cron remoto está configurado y su primer disparo automático queda por observar; el manejador se probó localmente. Vigilar métricas de CPU y cuotas en el edge, sin confundirlas con pruebas locales.
+7. `reviews-config.js` contiene la URL HTTPS y **solo la sitekey pública**. Las 42 páginas se regeneraron y probaron conservando el ajuste visual ya publicado. El cliente se publica únicamente después de completar la integración real autorizada.
 
 No añadir un paso de deploy a GitHub Actions. Para revertir la integración del cliente, vaciar `apiBase` y `turnstileSiteKey`, regenerar y publicar mediante el proceso aprobado. Esto vuelve a ofrecer el contacto por correo; conservar acceso privado a los datos para atender derechos hasta su eliminación autorizada.
 

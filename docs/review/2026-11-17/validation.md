@@ -20,7 +20,7 @@ Pruebas de servidor: ningún envío pasa directamente a público; conservación 
 
 Pruebas de navegador: consentimiento inicialmente sin marcar y validación nativa; envío ES/EN/FR; aprobación explícita de una crítica de una estrella; comprobación de texto con caracteres HTML sin ejecución; ocultación y borrado; panel sin sesión persistente; selección de la experiencia de la ficha; contenido público sin JS; ausencia de peticiones iniciales a API, Turnstile o MP4; error de red con texto conservado y mensaje traducido; configuración desactivada con alternativa por correo; carga de Turnstile al abrir, expiración, recuperación y reset tras fallo. En móvil se comprobó que no hay desbordamiento horizontal y que funcionan controles nativos de teclado.
 
-Estas pruebas no sustituyen una auditoría completa de accesibilidad o seguridad del sitio ni una prueba de carga en Cloudflare. No se midieron CPU/cuotas reales del edge ni se usaron claves privadas reales; esa comprobación se hará tras autorización de activación. Las claves dummy oficiales responden `example.com` sin `action`, por lo que no se debilitaron los controles de producción para hacerlas pasar.
+Estas pruebas automatizadas no sustituyen una auditoría completa de accesibilidad o seguridad ni una prueba de carga. Tras la autorización del propietario se completó también la [integración real con Worker, D1 y Turnstile](../../cloudflare-activation-2026-11-17.md), antes de publicar el cliente. El consumo de CPU/cuotas del edge requiere seguimiento operativo. Las claves dummy oficiales responden `example.com` sin `action`; no se debilitaron los controles de producción para hacerlas pasar.
 
 ## Rendimiento y preservación
 
