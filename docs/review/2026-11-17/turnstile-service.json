@@ -1,0 +1,30 @@
+{
+  "checkedAt": "2026-11-17T20:26:03.462Z",
+  "source": "https://developers.cloudflare.com/turnstile/troubleshooting/testing/",
+  "note": "Official dummy keys test network and provider pass/fail/reused responses. Dummy success uses example.com and has no action; production hostname/action checks are tested separately with controlled responses, and must be smoke-tested after authorized activation.",
+  "results": [
+    {
+      "label": "pass",
+      "httpStatus": 200,
+      "success": true,
+      "hostname": "example.com",
+      "errors": []
+    },
+    {
+      "label": "fail",
+      "httpStatus": 200,
+      "success": false,
+      "errors": [
+        "invalid-input-response"
+      ]
+    },
+    {
+      "label": "reused",
+      "httpStatus": 200,
+      "success": false,
+      "errors": [
+        "timeout-or-duplicate"
+      ]
+    }
+  ]
+}

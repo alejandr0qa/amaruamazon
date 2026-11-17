@@ -34,7 +34,7 @@ const credits = JSON.parse(read("assets/photos/credits.json"));
 const version = crypto
   .createHash("sha256")
   .update(
-    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js", "media.js"]
+    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js", "media.js", "reviews.js", "reviews.css", "reviews-config.js", "reviews-loader.js"]
       .map((name) => read(name).replace(/\r\n/g, "\n"))
       .join("\n"),
   )
@@ -300,5 +300,5 @@ assert.equal(read("robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${new URL("s
 checkExperiencePages({ root, data, version, sitemap });
 await checkFeatures();
 console.log(
-  `PASS: 3 homepages + ${data.experiences.length * 3} experience pages, all 27 existing URLs retained, ${expectedPages}-URL sitemap, localized SEO, links, WhatsApp, no analytics or public prices.`,
+  `PASS: 3 homepages + ${data.experiences.length * 3} experience pages, all 42 existing URLs retained, ${expectedPages}-URL sitemap, localized SEO, links, WhatsApp, no analytics or public prices.`,
 );

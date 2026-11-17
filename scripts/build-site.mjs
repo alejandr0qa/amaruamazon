@@ -8,6 +8,7 @@ import { experiencePath, experienceCopy, experienceAlt, sceneAlt } from "../src/
 import { buildExperiencePages } from "./build-experience-pages.mjs";
 
 import { testimonials, renderTestimonials } from "../src/testimonials.mjs";
+import { renderReviews, reviewCopy } from "../src/reviews.mjs";
 const root = path.resolve(import.meta.dirname, "..");
 const read = (name) =>
   fs.readFileSync(path.join(root, name), "utf8").replace(/\r\n/g, "\n");
@@ -68,7 +69,7 @@ fs.writeFileSync(
 const version = crypto
   .createHash("sha256")
   .update(
-    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js", "media.js"]
+    ["style.css", "main.js", "i18n.js", "content.js", "render.js", "experience.js", "media.js", "reviews.js", "reviews.css", "reviews-config.js", "reviews-loader.js"]
       .map(read)
       .join("\n"),
   )
@@ -195,12 +196,12 @@ for (const lang of languages) {
     fullExperienceLabel: experienceCopy[lang].full,
   };
   setHtml(byId("experience-grid"), data.render.experienceCards(context));
-  const testimonialHtml = renderTestimonials(testimonials, lang, data.render.escape);
+  const testimonialHtml = renderTestimonials(testimonials, lang, data.render.escape) + renderReviews({lang,experiences:data.experiences,escape:data.render.escape});
   if (testimonialHtml) {
     const faq = byId("travel-info");
-    const section = parseFragment(testimonialHtml).childNodes[0];
-    section.parentNode = faq.parentNode;
-    faq.parentNode.childNodes.splice(faq.parentNode.childNodes.indexOf(faq), 0, section);
+    const sections = parseFragment(testimonialHtml).childNodes.filter(n => n.tagName);
+    sections.forEach(section => { section.parentNode = faq.parentNode; });
+    faq.parentNode.childNodes.splice(faq.parentNode.childNodes.indexOf(faq), 0, ...sections);
   }
   setText(byId("filter-status"), `${data.experiences.length} ${t("filterCount")}`);
   setHtml(byId("journey-content"), data.render.journeyPanels(context));
@@ -223,6 +224,10 @@ for (const lang of languages) {
     "https://wa.me/573132560145?text=" +
       encodeURIComponent(t("hello") + "\n\n" + t("quickFallback")),
   );
+  // Also make the review-specific processing notice available from global privacy.
+  const notice = parseFragment(`<p>${data.render.escape(reviewCopy[lang].privacy)}</p>`).childNodes[0];
+  const privacy = [...walk(byId("privacy-dialog"))].find(n => (attr(n,"class")||"").includes("privacy-content"));
+  notice.parentNode = privacy; privacy.childNodes.push(notice);
   const output = path.join(root, languagePaths[lang], "index.html");
   fs.mkdirSync(path.dirname(output), { recursive: true });
   fs.writeFileSync(

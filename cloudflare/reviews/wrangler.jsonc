@@ -1,0 +1,17 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "amaru-traveller-reviews",
+  "main": "worker.mjs",
+  "compatibility_date": "2026-11-17",
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": { "enabled": false },
+  "rules": [{ "type": "Text", "globs": ["**/*.html", "**/*.txt"], "fallthrough": true }],
+  "vars": {
+    "ALLOWED_ORIGINS": "https://amaruamazonexperiences.com",
+    "TURNSTILE_HOSTNAMES": "amaruamazonexperiences.com",
+    "ENVIRONMENT": "production"
+  },
+  "d1_databases": [{ "binding": "DB", "database_name": "amaru-reviews", "database_id": "00000000-0000-0000-0000-000000000000", "migrations_dir": "migrations" }],
+  "triggers": { "crons": ["17 4 * * *"] }
+}

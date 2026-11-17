@@ -1,0 +1,41 @@
+(() => {
+  'use strict';
+  const $=s=>document.querySelector(s), status=$('#status'), list=$('#reviews');
+  let token='', next=null;
+  async function api(path,data) {
+    const r=await fetch('/v1/admin/'+path,{method:data?'POST':'GET',headers:{Authorization:'Bearer '+token,...(data?{'Content-Type':'application/json'}:{})},...(data?{body:JSON.stringify(data)}:{})});
+    const b=await r.json(); if(!r.ok)throw new Error(b.error==='stale_review'?'La opinión cambió. Actualiza la lista.':b.error==='unauthorized'?'Clave incorrecta o caducada.':b.error==='rate_limited'?'Límite temporal alcanzado. Intenta más tarde.':'No se pudo completar la operación.'); return b;
+  }
+  const node=(tag,text)=>{const n=document.createElement(tag);n.textContent=text;return n;};
+  function render(review) {
+    const card=document.createElement('article'); card.append(node('h2',review.public_name+' · '+review.rating+'/5 ★'));
+    card.append(node('p',review.experience+' · '+review.language+' · '+new Date(review.created_at).toLocaleString('es-CO')));
+    card.append(node('small','ID: '+review.id));
+    card.append(node('small','Consentimiento: '+review.consent_version+' · '+new Date(review.consent_at).toLocaleString('es-CO')));
+    const quote=node('blockquote',review.comment); quote.lang=review.language; card.append(quote);
+    const flags=JSON.parse(review.flags); if(flags.length)card.append(node('p','Revisar: '+flags.join(', ')));
+    if(review.moderation_reason)card.append(node('p','Última decisión: '+review.moderation_reason));
+    const label=node('label','Motivo de la decisión (obligatorio)'); const reason=document.createElement('textarea');reason.maxLength=300;reason.minLength=5;label.append(reason);card.append(label);
+    const actions=document.createElement('div');actions.className='actions';
+    for(const [value,text] of [['approved','Aprobar'],['rejected','Rechazar'],['hidden','Ocultar'],['delete','Eliminar datos']]) {
+      const button=node('button',text);button.type='button';if(value==='delete')button.className='danger';
+      button.addEventListener('click',async()=>{
+        if(reason.value.trim().length<5){status.textContent='Indica un motivo de al menos cinco caracteres.';reason.focus();return;}
+        if(value==='delete'&&!confirm('¿Eliminar definitivamente esta opinión y sus datos?'))return;
+        actions.querySelectorAll('button').forEach(b=>b.disabled=true);
+        try { await api(value==='delete'?'delete':'moderate',{id:review.id,reason:reason.value,status:value,updatedAt:review.updated_at});await load();status.textContent=value==='delete'?'Datos eliminados.':'Decisión guardada.'; }
+        catch(e){status.textContent=e.message;actions.querySelectorAll('button').forEach(b=>b.disabled=false);}
+      });actions.append(button);
+    }
+    card.append(actions);list.append(card);
+  }
+  async function load(append=false) {
+    const b=await api('reviews?status='+$('#filter').value+(append&&next?'&before='+next:''));
+    if(!append)list.replaceChildren(); b.reviews.forEach(render);next=b.next;$('#more').hidden=!next;
+    status.textContent=list.children.length?'Opiniones cargadas.':'No hay opiniones en este estado.';
+  }
+  const safeLoad=(append=false)=>load(append).catch(e=>status.textContent=e.message);
+  $('#login').addEventListener('submit',async e=>{e.preventDefault();token=$('#token').value;$('#token').value='';try{await load();$('#workspace').hidden=false;$('#login').hidden=true;}catch(e){token='';status.textContent=e.message;}});
+  $('#filter').addEventListener('change',()=>safeLoad());$('#refresh').addEventListener('click',()=>safeLoad());$('#more').addEventListener('click',()=>safeLoad(true));
+  $('#logout').addEventListener('click',()=>{token='';list.replaceChildren();$('#workspace').hidden=true;$('#login').hidden=false;status.textContent='Sesión cerrada.';});
+})();

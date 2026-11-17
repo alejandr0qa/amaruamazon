@@ -6,6 +6,7 @@ import { experiencePages, experienceCopy, experiencePath, experienceDescriptions
 import { experienceEditorial, editorialSources, editorialSourceLabel } from "../src/experience-editorial.mjs";
 
 import { experienceMedia, mediaCopy } from "../src/experience-media.mjs";
+import { renderReviews } from "../src/reviews.mjs";
 // Complementary experiences, including all newly confirmed activities.
 const relatedExperiences = {
   tarapoto: ["kayak", "san-antonio", "city-tour"],
@@ -136,6 +137,7 @@ export function buildExperiencePages({ root, data, version }) {
         <div id="practical"><h2>${escape(copy.practical)}</h2><dl><dt>${escape(copy.timing)}</dt><dd>${escape(t(item.time))}</dd><dt>${escape(copy.duration)}</dt><dd>${escape(item.duration?.[lang] || copy.confirmDuration)}</dd><dt>${escape(t("effortLabel"))}</dt><dd data-effort>${escape(t(item.effort || "effortConfirm"))}</dd></dl><p class="effort-note">${escape(t("effortNote"))}</p><p data-editorial-tips>${escape(advice)}</p>${mediaHtml}</div>
         <div class="experience-confirm"><h3>${escape(copy.confirm)}</h3><p>${escape(copy.confirmText)}</p><p>${escape(copy.note)}</p></div>
       </section>
+      ${renderReviews({lang,experiences:data.experiences,escape,experience:item.id})}
       <section class="plan-section section" id="plan" aria-labelledby="contact-title"><div class="wrap experience-contact"><div>
         <p class="eyebrow light">AMARU AMAZON EXPERIENCES</p><h2 id="contact-title">${escape(copy.contact)}</h2><p>${escape(copy.contactText)}</p>
         <a class="button button-gold" data-experience-whatsapp href="${whatsapp}" target="_blank" rel="noopener noreferrer">${escape(copy.cta)}</a>
@@ -152,6 +154,10 @@ export function buildExperiencePages({ root, data, version }) {
       const mediaScript = parseFragment(`<script src="${base}media.js?v=${version}" defer></script>`).childNodes[0];
       mediaScript.parentNode = body;
       body.childNodes.push(mediaScript);
+    }
+    for (const filename of ['reviews-loader.js']) {
+      const reviewScript = parseFragment(`<script src="${base}${filename}?v=${version}" defer></script>`).childNodes[0];
+      reviewScript.parentNode = body; body.childNodes.push(reviewScript);
     }
     const output = path.join(root, route, "index.html");
     fs.mkdirSync(path.dirname(output), { recursive: true });
